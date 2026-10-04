@@ -1,0 +1,21 @@
+--- a/backends/backend-sdl/src/arc/backend/sdl/SdlGraphics.java
++++ b/backends/backend-sdl/src/arc/backend/sdl/SdlGraphics.java
+@@ -155,7 +155,7 @@
+ 
+     @Override
+     public float getDeltaTime(){
+-        return deltaTime;
++        return System.getenv("GGBENCH_CAPTURE") != null ? 1f/60f : deltaTime;
+     }
+ 
+     @Override
+--- a/arc-core/src/arc/util/Time.java
++++ b/arc-core/src/arc/util/Time.java
+@@ -101,6 +101,7 @@
+ 
+     public static void setInternalTime(double timeInternal){
+         timeRaw = timeInternal;
++        if(System.getenv("GGBENCH_CAPTURE") != null) { globalTimeRaw = timeInternal; globalTime = (float)timeInternal; }
+         time = (float)timeInternal;
+     }
+ 

@@ -1,0 +1,82 @@
+diff --git a/src/main_menu.cpp b/src/main_menu.cpp
+index e749927..3e2368f 100644
+--- a/src/main_menu.cpp
++++ b/src/main_menu.cpp
+@@ -590,6 +590,22 @@ bool main_menu::opening_screen()
+     world_generator->set_active_world( nullptr );
+     world_generator->init();
+ 
++    if( std::getenv( "GGBENCH_CAPTURE" ) ) {
++        init_strings();
++        get_avatar() = avatar();
++        g->gamemode = get_special_game( special_game_type::TUTORIAL );
++        WORLD *world = world_generator->make_new_world( special_game_type::TUTORIAL );
++        if( !world ) { throw std::runtime_error( "Tutorial world creation failed" ); }
++        world->active_mod_order.clear();
++        world->active_mod_order.emplace_back( MOD_INFORMATION_dda );
++        world->active_mod_order.emplace_back( MOD_INFORMATION_dda_tutorial );
++        world_generator->set_active_world( world );
++        g->setup();
++        if( !g->gamemode->init() ) { throw std::runtime_error( "Tutorial initialization failed" ); }
++        setenv( "GGBENCH_READY", "1", 1 );
++        return true;
++    }
++
+     init_strings();
+ 
+     load_char_templates();
+diff --git a/src/sdltiles.cpp b/src/sdltiles.cpp
+index 020cf3d..8070ea0 100644
+--- a/src/sdltiles.cpp
++++ b/src/sdltiles.cpp
+@@ -34,6 +34,9 @@
+ #endif
+ 
+ #include "avatar.h"
++#include "item.h"
++#include "item_location.h"
++#include <iostream>
+ #include "cached_options.h"
+ #include "cata_assert.h"
+ #include "cata_scope_helpers.h"
+@@ -564,6 +567,16 @@ void refresh_display()
+     }
+     draw_virtual_joystick();
+ #endif
++    if( const char *capture = std::getenv( "GGBENCH_CAPTURE" ) ) {
++        int width = 0, height = 0;
++        SDL_GetRendererOutputSize( renderer.get(), &width, &height );
++        SDL_Surface *surface = SDL_CreateRGBSurfaceWithFormat( 0, width, height, 32, SDL_PIXELFORMAT_ARGB8888 );
++        if( !surface || SDL_RenderReadPixels( renderer.get(), nullptr, surface->format->format,
++                surface->pixels, surface->pitch ) != 0 || SDL_SaveBMP( surface, capture ) != 0 ) {
++            throw std::runtime_error( "Benchmark native camera capture failed" );
++        }
++        SDL_FreeSurface( surface );
++    }
+     SDL_RenderPresent( renderer.get() );
+     SetRenderTarget( renderer, display_buffer );
+ }
+@@ -3957,6 +3970,23 @@ input_event input_manager::get_input_event( const keyboard_mode preferred_keyboa
+         try_sdl_update();
+     }
+ 
++    if( std::getenv( "GGBENCH_CAPTURE" ) ) {
++        refresh_display();
++        const bool ready = std::getenv( "GGBENCH_READY" );
++        bool wielded = false, dead = false;
++        if( ready ) {
++            const item_location weapon = get_avatar().get_wielded_item();
++            wielded = weapon && weapon->typeId() == itype_id( "bat" );
++            dead = get_avatar().is_dead_state();
++        }
++        std::cout << "GGBENCH {\"ready\":" << (ready ? "true" : "false")
++                  << ",\"wielded\":" << (wielded ? "true" : "false")
++                  << ",\"dead\":" << (dead ? "true" : "false") << "}" << std::endl;
++        int key = 0;
++        if( !(std::cin >> key) ) { std::exit( 0 ); }
++        return input_event( key, input_event_t::keyboard_char );
++    }
++
+     if( inputdelay < 0 ) {
+         do {
+             CheckMessages();

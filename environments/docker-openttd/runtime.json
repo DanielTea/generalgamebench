@@ -1,0 +1,9 @@
+{
+  "image": "ggbench-openttd:15.3-lockstep-v1-arm64",
+  "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+  "repository": "https://github.com/OpenTTD/OpenTTD.git",
+  "platform": "linux/arm64",
+  "variant": "native-lockstep-v1",
+  "patch_sha256": "c2f9805f7ae07b6113b06f690ceabc8b4dd36099d3fdd0627433338a545ebaf9",
+  "submodules": {}
+}

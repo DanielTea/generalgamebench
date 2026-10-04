@@ -1,0 +1,44 @@
+{
+  "image": "ggbench-mindustry:160.5-lockstep-v1-arm64",
+  "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+  "repository": "https://github.com/Anuken/Mindustry.git",
+  "platform": "linux/arm64",
+  "variant": "native-lockstep-v1",
+  "temporary_engine_copy": true,
+  "arc_revision": "8eb00ffff0126d0576c67df46f99b8f6bccd96fe",
+  "artifacts": {
+    "Mindustry.jar": {
+      "url": "https://github.com/Anuken/Mindustry/releases/download/v160.5/Mindustry.jar",
+      "sha256": "c2fd5a5dcb8d306525bb47ff28121237d4d25f53868562946491f2ef261dc272"
+    },
+    "arc.tar.gz": {
+      "url": "https://codeload.github.com/Anuken/Arc/tar.gz/8eb00ffff0126d0576c67df46f99b8f6bccd96fe",
+      "sha256": "e9a288c7572036fe82283e627e5195742e5bdd1a0b98b10f8926e8c6ed5a4d1a"
+    },
+    "jnigen.jar": {
+      "url": "https://repo.maven.apache.org/maven2/com/badlogicgames/jnigen/jnigen-core/3.1.2/jnigen-core-3.1.2.jar",
+      "sha256": "a96b2e18bff7b3321ea7ab54920b6bb2bef93670ea37431e15bbb05d762da5b5"
+    },
+    "commons.jar": {
+      "url": "https://repo.maven.apache.org/maven2/com/badlogicgames/jnigen/jnigen-commons/3.1.2/jnigen-commons-3.1.2.jar",
+      "sha256": "0e748cf5220ca90796bf3eb525e3a8848156ff30b6241f20fcdae8cd2a18fc8d"
+    },
+    "logback-core.jar": {
+      "url": "https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar",
+      "sha256": "f8c2f05f42530b1852739507c1792f0080167850ed8f396444c6913d6617a293"
+    },
+    "logback-classic.jar": {
+      "url": "https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.4.12/logback-classic-1.4.12.jar",
+      "sha256": "4b4a99e1931bb0ea6c0b6c48d42bc48cde36a18e8dc9cc2f7b8c8a2364c2ec93"
+    },
+    "slf4j.jar": {
+      "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar",
+      "sha256": "a12578dde1ba00bd9b816d388a0b879928d00bab3c83c240f7013bf4196c579a"
+    },
+    "javaparser.jar": {
+      "url": "https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.14.14/javaparser-core-3.14.14.jar",
+      "sha256": "6781985e2b17142bd07e1a7be59b793485cb026b37667377d16610ae98148b6e"
+    }
+  },
+  "patch_sha256": "e8b825c645b81a6eaaf5d603e460a91ddc4992425876ca04e7f7ad4b1b2afd15"
+}

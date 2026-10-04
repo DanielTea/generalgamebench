@@ -1,0 +1,142 @@
+diff --git a/data/base/script/campaign/libcampaign_includes/misc.js b/data/base/script/campaign/libcampaign_includes/misc.js
+index 01b72d9..65224d3 100644
+--- a/data/base/script/campaign/libcampaign_includes/misc.js
++++ b/data/base/script/campaign/libcampaign_includes/misc.js
+@@ -792,7 +792,7 @@ function camSetOnMapEnemyUnitExp()
+ 
+ function __camGlobalContext()
+ {
+-	return Function('return this')(); // eslint-disable-line no-new-func
++	return globalThis;
+ }
+ 
+ function __camFindClusters(list, size)
+diff --git a/lib/sdl/gfx_api_gl_sdl.cpp b/lib/sdl/gfx_api_gl_sdl.cpp
+index 280f67a..9c2b3cb 100644
+--- a/lib/sdl/gfx_api_gl_sdl.cpp
++++ b/lib/sdl/gfx_api_gl_sdl.cpp
+@@ -24,6 +24,8 @@
+ #include <SDL3/SDL_hints.h>
+ #include <thread>
+ #include <chrono>
++#include <fstream>
++#include <vector>
+ 
+ bool vsyncIsEnabled = true;
+ 
+@@ -279,6 +281,17 @@ void sdl_OpenGL_Impl::swapWindow()
+ 	const uint64_t swapStartTime = SDL_GetTicks();
+ #endif
+ 
++    if (const char *capture = std::getenv("GGBENCH_CAPTURE")) {
++        int width = 0, height = 0;
++        SDL_GetWindowSizeInPixels(window, &width, &height);
++        std::vector<unsigned char> pixels(width * height * 3);
++        using ReadPixels = void (*)(int, int, int, int, unsigned, unsigned, void*);
++        auto readPixels = reinterpret_cast<ReadPixels>(SDL_GL_GetProcAddress("glReadPixels"));
++        readPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
++        std::ofstream out(capture, std::ios::binary);
++        out << "P6\n" << width << " " << height << "\n255\n";
++        for (int y = height - 1; y >= 0; --y) out.write(reinterpret_cast<char*>(pixels.data() + y * width * 3), width * 3);
++    }
+ 	SDL_GL_SwapWindow(window);
+ 
+ #if defined(WZ_OS_MAC)
+diff --git a/lib/sdl/main_sdl.cpp b/lib/sdl/main_sdl.cpp
+index 7edcc9c..5217568 100644
+--- a/lib/sdl/main_sdl.cpp
++++ b/lib/sdl/main_sdl.cpp
+@@ -35,6 +35,8 @@
+ #include "src/configuration.h"
+ #include "src/warzoneconfig.h"
+ #include "src/game.h"
++#include "src/scores.h"
++#include <iostream>
+ #include "gfx_api_sdl.h"
+ #include "gfx_api_gl_sdl.h"
+ #include "sdl_backend_private.h"
+@@ -570,8 +572,11 @@ void wzShowMouse(bool visible)
+ 	}
+ }
+ 
++static uint32_t benchmarkTicks = 0;
++
+ uint32_t wzGetTicks()
+ {
++	if (std::getenv("GGBENCH_CAPTURE")) return benchmarkTicks;
+ 	return static_cast<uint32_t>(SDL_GetTicks());
+ }
+ 
+@@ -3671,6 +3676,29 @@ unsigned lastLoopReturn = 0;
+ 
+ void wzEventLoopOneFrame(void* arg)
+ {
++    static unsigned frames = 0;
++    static int action = 0, pointerX = 480, pointerY = 320;
++    const bool benchmark = std::getenv("GGBENCH_CAPTURE");
++    if (benchmark) {
++        if (frames >= 40) {
++            std::cout << "GGBENCH {\"built\":" << missionData.strBuilt
++                      << ",\"lost\":" << missionData.unitsLost << "}" << std::endl;
++            if (!(std::cin >> action)) std::exit(0);
++            if (action == 1) pointerY -= 32;
++            if (action == 2) pointerX += 32;
++            if (action == 3) pointerY += 32;
++            if (action == 4) pointerX -= 32;
++            if (action == 10) pointerY -= 8;
++            if (action == 11) pointerX += 8;
++            if (action == 12) pointerY += 8;
++            if (action == 13) pointerX -= 8;
++            pointerX = std::max(0, std::min(959, pointerX));
++            pointerY = std::max(0, std::min(639, pointerY));
++        }
++        benchmarkTicks += 100;
++        ++frames;
++    }
++
+ #if defined(__EMSCRIPTEN__)
+ 	if (lastLoopReturn > 0)
+ 	{
+@@ -3750,6 +3778,29 @@ void wzEventLoopOneFrame(void* arg)
+ 		}
+ 	}
+ 
++    if (benchmark) {
++        SDL_MouseMotionEvent motion{};
++        motion.type = SDL_EVENT_MOUSE_MOTION;
++        motion.x = pointerX; motion.y = pointerY;
++        inputHandleMouseMotionEvent(&motion);
++        if (frames > 40) for (bool down : {true, false}) {
++            if (action == 5 || action == 6) {
++                SDL_MouseButtonEvent button{};
++                button.type = down ? SDL_EVENT_MOUSE_BUTTON_DOWN : SDL_EVENT_MOUSE_BUTTON_UP;
++                button.button = action == 5 ? SDL_BUTTON_LEFT : SDL_BUTTON_RIGHT;
++                button.x = pointerX; button.y = pointerY;
++                inputHandleMouseButtonEvent(&button);
++            }
++            if (action >= 7 && action <= 9) {
++                SDL_KeyboardEvent key{};
++                key.type = down ? SDL_EVENT_KEY_DOWN : SDL_EVENT_KEY_UP;
++                key.key = action == 7 ? SDLK_ESCAPE : action == 8 ? SDLK_F3 : SDLK_RETURN;
++                key.scancode = action == 7 ? SDL_SCANCODE_ESCAPE : action == 8 ? SDL_SCANCODE_F3 : SDL_SCANCODE_RETURN;
++                key.down = down;
++                inputHandleKeyEvent(&key);
++            }
++        }
++    }
+ 	processScreenSizeChangeNotificationIfNeeded();
+ 	mainLoop();				// WZ does its thing
+ 	inputNewFrame();			// reset input states
+diff --git a/src/main.cpp b/src/main.cpp
+index 46522b8..dd13d2d 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -1887,7 +1887,7 @@ int realmain(int argc, char *argv[])
+ 	}
+ 
+ 	// Initialize random number generators
+-	srand((unsigned int)time(NULL));
++	srand(std::getenv("GGBENCH_SEED") ? std::strtoul(std::getenv("GGBENCH_SEED"), nullptr, 10) : (unsigned int)time(NULL));
+ 	gameSRand((uint32_t)rand());
+ 
+ 	// NOTE: it is now safe to use debug() calls to make sure output gets captured.

@@ -1,8 +1,30 @@
 # Measured results provenance
 
+## Version 0.3 — native integration validation
+
+Evaluated on 2026-10-04 on the same Apple M3 Max Mac. Ten additional bounded tasks bring the runnable catalog to **43 scenarios across 36 cards**. The new tasks are Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. Nine engines run in local Linux ARM64 containers; Unity uses the pinned native Mac example.
+
+The complete fixed integration-control cohort contains **21 episodes and 4,303 recorded decisions**, with **zero errors or aborted episodes**. Every episode passed independent exact camera, score and termination replay. Each of the ten tasks used the random reference policy with seeds 5000 and 5001 and a 200-decision horizon. A Unity idle control used seed 71 and a 1,200-decision horizon, reaching the engine's natural termination at decision 1,000. Native termination can shorten an episode.
+
+This is validation evidence, not an expanded model ranking. **No hosted or local model was called for this cohort.** The local, exhibition and official ranking arrays remain byte-for-byte equivalent under canonical JSON hashing to v0.2. The 17-model exhibition still compares the original 33 scenarios. No new tasks are blended into those scores. All evidence remains local-unattested; the official track is empty.
+
+`integrations-0.3/campaign.json` fixes the complete cohort and hashes every benchmark source, dependency lock and admitted runtime build file before execution. The recorder checks those hashes again after the final replay. `episodes.json`, `evidence-roots.json` and `replay-validation.json` retain every final episode, chain head and replay result. `admission-validation.json` also records the individual native checks, the 63-passing-check unit suite, and the earlier SuperTuxKart worker timeout followed by its passing isolated regression. Earlier diagnostic cohorts exposed renderer bugs and were retained locally; the entire fixed final cohort was rerun after the fixes, without score-based selection.
+
+The [v0.3.0 release](https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0) includes the selected event ledgers, results and native PNG observations in `generalgamebench-evidence-v0.3.0.tar.gz`. Verify `SHA256SUMS`, extract at the repository root, install the pinned runtimes, then replay any episode, for example:
+
+```sh
+uv run generalgamebench verify runs/integration-release-0.3-verified/random/warzone-first-derrick-5000
+```
+
+The separate diagnostic-media archive contains only the native preview frames for **unadmitted** 0 A.D., StarCraft II and Veloren prototypes. `diagnostic-media.json` hashes those frames; `diagnostic-replay.json` preserves the failed paired image hashes and native counters. These files do not enter scored evidence or rankings. The prototypes' precise failures and reproducible source are documented under `environments/experimental-*`. Six other game families still need usable installations/assets and adapter work.
+
+The portable Hugging Face export contains the updated catalog and the unchanged v0.2 ranking rows. No Space or Dataset was uploaded. No archive contains engine binaries, commercial game packages, model weights or credentials. Source patches and rendered game media retain the third-party terms documented in the repository.
+
+---
+
 ## Season 0.2 — expanded Mac suite
 
-Evaluated on 2026-10-04. **1,089 actual episodes and 14,394 recorded decisions**, all replay-verified before publication. The suite covers 33 scenarios across 26 of 45 environment cards. Nineteen cards remain unadmitted; no modern commercial AAA title is ranked. Every result is **local-unattested**, and the official track is empty.
+Evaluated on 2026-10-04. **1,089 actual episodes and 14,394 recorded decisions**, all replay-verified before publication. The suite covers 33 scenarios across 26 of 45 environment cards. At that release, nineteen cards remained unadmitted; no modern commercial AAA title is ranked. Every result is **local-unattested**, and the official track is empty.
 
 - Local controls: four built-in policies, 33 scenarios, seeds 4000–4002, 24-decision horizon: 396 episodes.
 - Model exhibition: all 17 configured vision-capable models (seven OpenAI, three Anthropic and seven fully cached local MLX models), the same 33 scenarios, seed 3000, eight-decision horizon: 561 episodes.

@@ -1,0 +1,15 @@
+{
+  "image": "ggbench-craftium:0.0.1-lockstep-v2-arm64",
+  "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
+  "repository": "https://github.com/mikelma/craftium.git",
+  "platform": "linux/arm64",
+  "variant": "serial-lockstep-v2",
+  "temporary_engine_copy": true,
+  "patch_sha256": "34bd59069c91ab27c3feb92ad984dca553b1f392592642c2887e8d0478c136ca",
+  "submodules": {
+    "craftium-envs/minetest_game": "b9c089474cc343b37f90cb8cefc4b5553af2e9ea",
+    "craftium-envs/common_mods/mobs": "03fbe477c31d7c55068d0b085a0ea0b071e97e01",
+    "craftium-envs/common_mods/mobs_monster": "4ab678d7ec8bbd4ea3a1af711c44b05238aebb67",
+    "craftium-envs/common_mods/superflat": "bdc6630f07d99245b62970214c0588fbc52f992d"
+  }
+}

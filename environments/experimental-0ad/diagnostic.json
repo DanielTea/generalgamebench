@@ -1,0 +1,21 @@
+{
+  "status": "diagnostic-not-admitted",
+  "engine_version": "0.28.0",
+  "source_url": "https://releases.wildfiregames.com/0ad-0.28.0-unix-build.tar.xz",
+  "source_sha256": "27e217755ef76a922fe58dbf593d96e54b6ed2375d23f548c35619aa6bd5a42a",
+  "assets": {
+    "url": "https://releases.wildfiregames.com/0ad-0.28.0-unix-data.tar.xz",
+    "sha256": "e844b30ae2102c47e0a4fff2f0e0ef05ba0cebb1890aa72276fa12457c39526f",
+    "size": 1415012652
+  },
+  "patch_sha256": "7bc5a1ba7da112234f23fd43958ae9ddcaf042be4deb94f7595e529c068e2561",
+  "platform": "linux/arm64",
+  "prototype_goal_seed": 71,
+  "prototype_goal_step": 246,
+  "initial_frame_mismatched_pixels_after_ui_fix": 661,
+  "replay_policy": "exact-pixels-required-no-tolerance",
+  "cleaned_goal_replay_frames_compared": 247,
+  "cleaned_goal_replay_frames_different": 247,
+  "cleaned_goal_native_scores_equal": true,
+  "cleaned_goal_initial_mismatched_pixels": 28
+}

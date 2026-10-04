@@ -1,0 +1,6 @@
+.git
+build
+obj
+tests
+Dockerfile
+.dockerignore

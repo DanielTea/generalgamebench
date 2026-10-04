@@ -1,0 +1,400 @@
+--- a/source/main.cpp
++++ b/source/main.cpp
+@@ -80,6 +80,7 @@
+ #include "ps/VideoMode.h"
+ #include "ps/XML/Xeromyces.h"
+ #include "renderer/Renderer.h"
++#include "renderer/TimeManager.h"
+ #include "rlinterface/RLInterface.h"
+ #include "scriptinterface/JSON.h"
+ #include "scriptinterface/ScriptContext.h"
+@@ -88,6 +89,8 @@
+ #include "scriptinterface/ScriptInterface.h"
+ #include "scriptinterface/ScriptRequest.h"
+ #include "simulation2/system/TurnManager.h"
++#include "simulation2/Simulation2.h"
++#include <iostream>
+ #include "soundmanager/ISoundManager.h"
+ 
+ #include <SDL_events.h>
+@@ -390,6 +393,28 @@
+ static void Frame(RL::Interface* rlInterface, const int fixedFrameFrequency)
+ #endif // CONFIG2_DAP_INTERFACE
+ {
++    static unsigned benchmarkFrames = 0;
++    static int benchmarkAction = 0, pointerX = 480, pointerY = 320;
++    const bool benchmark = std::getenv("GGBENCH_CAPTURE");
++    const bool benchmarkPlaying = benchmark && g_Game && g_Game->IsGameStarted();
++    if (benchmarkPlaying) {
++        g_Renderer.GetTimeManager().SetBenchmarkTime(benchmarkFrames * 0.02);
++        if (benchmarkFrames >= 100 && (benchmarkFrames - 100) % 5 == 0) {
++            double wood = 0;
++            const bool ok = g_Game->GetSimulation2()->GetScriptInterface().Eval(
++                "QueryPlayerIDInterface(1, IID_StatisticsTracker).GetStatistics().resourcesGathered.wood", wood);
++            if (!ok) throw std::runtime_error("Cannot read native wood statistic");
++            std::cout << "GGBENCH {\"wood\":" << wood << "}" << std::endl;
++            if (!(std::cin >> benchmarkAction)) std::exit(0);
++            if (benchmarkAction == 1) pointerY -= 32;
++            if (benchmarkAction == 2) pointerX += 32;
++            if (benchmarkAction == 3) pointerY += 32;
++            if (benchmarkAction == 4) pointerX -= 32;
++            pointerX = std::clamp(pointerX, 0, 959);
++            pointerY = std::clamp(pointerY, 0, 639);
++        }
++        ++benchmarkFrames;
++    }
+ 	g_Profiler2.RecordFrameStart();
+ 	PROFILE2("frame");
+ 	g_Profiler2.IncrementFrameNumber();
+@@ -414,7 +439,7 @@
+ 	ENSURE(realTimeSinceLastFrame > 0.0f);
+ 
+ 	// Decide if update is necessary
+-	const bool needUpdate{g_app_has_focus || g_NetClient || !g_PauseOnFocusLoss};
++	const bool needUpdate{benchmark || g_app_has_focus || g_NetClient || !g_PauseOnFocusLoss};
+ 
+ 	// If we are not running a multiplayer game, disable updates when the game is
+ 	// minimized or out of focus and relinquish the CPU a bit, in order to make
+@@ -435,6 +460,33 @@
+ 	RendererIncrementalLoad();
+ 
+ 	PumpEvents();
++    if (benchmarkPlaying) {
++        SDL_Event_ ev{};
++        ev.ev.type = SDL_MOUSEMOTION;
++        ev.ev.motion.x = pointerX; ev.ev.motion.y = pointerY;
++        in_dispatch_event(&ev);
++        if (benchmarkFrames > 100 && (benchmarkFrames - 101) % 5 < 2) {
++            const bool down = (benchmarkFrames - 101) % 5 == 0;
++            if (benchmarkAction == 5 || benchmarkAction == 6) {
++                ev = {};
++                ev.ev.type = down ? SDL_MOUSEBUTTONDOWN : SDL_MOUSEBUTTONUP;
++                ev.ev.button.button = benchmarkAction == 5 ? SDL_BUTTON_LEFT : SDL_BUTTON_RIGHT;
++                ev.ev.button.state = down ? SDL_PRESSED : SDL_RELEASED;
++                ev.ev.button.clicks = 1;
++                ev.ev.button.x = pointerX; ev.ev.button.y = pointerY;
++                in_dispatch_event(&ev);
++            }
++            if (benchmarkAction == 7 || benchmarkAction == 8) {
++                ev = {};
++                ev.ev.type = down ? SDL_KEYDOWN : SDL_KEYUP;
++                ev.ev.key.state = down ? SDL_PRESSED : SDL_RELEASED;
++                ev.ev.key.keysym.sym = benchmarkAction == 7 ? SDLK_ESCAPE : SDLK_RETURN;
++                ev.ev.key.keysym.scancode = benchmarkAction == 7 ? SDL_SCANCODE_ESCAPE : SDL_SCANCODE_RETURN;
++                in_dispatch_event(&ev);
++            }
++        }
++    }
++
+ 
+ 	// if the user quit by closing the window, the GL context will be broken and
+ 	// may crash when we call Render() on some drivers, so leave this loop
+@@ -487,7 +539,7 @@
+ 
+ 	g_Profiler.Frame();
+ 
+-	LimitFPS();
++	if (!benchmark) LimitFPS();
+ }
+ 
+ static void NonVisualFrame()
+--- a/source/graphics/LOSTexture.cpp
++++ b/source/graphics/LOSTexture.cpp
+@@ -158,7 +158,7 @@
+ 		RecomputeTexture(deviceCommandContext);
+ 		// We need to subtract the frame time because without it we have the
+ 		// same output images for the current and previous frames.
+-		m_LastTextureRecomputeTime = timer_Time() - g_Renderer.GetTimeManager().GetFrameDelta();
++		m_LastTextureRecomputeTime = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time()) - g_Renderer.GetTimeManager().GetFrameDelta();
+ 		m_WhichTexture = 1u - m_WhichTexture;
+ 		m_Dirty = false;
+ 	}
+@@ -181,7 +181,7 @@
+ 		shader->GetBindingSlot(str_losTex2), m_SmoothTextures[1u - m_WhichTexture].get());
+ 
+ 	const float delta = Clamp<float>(
+-		(timer_Time() - m_LastTextureRecomputeTime) * 2.0f, 0.0f, 1.0f);
++		((std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time()) - m_LastTextureRecomputeTime) * 2.0f, 0.0f, 1.0f);
+ 	deviceCommandContext->SetUniform(shader->GetBindingSlot(str_delta), delta);
+ 
+ 	Renderer::Backend::IDeviceCommandContext::Rect viewportRect{};
+--- a/source/graphics/MiniMapTexture.cpp
++++ b/source/graphics/MiniMapTexture.cpp
+@@ -16,6 +16,8 @@
+  */
+ 
+ #include "precompiled.h"
++#include "renderer/Renderer.h"
++#include "renderer/TimeManager.h"
+ 
+ #include "MiniMapTexture.h"
+ 
+@@ -510,7 +512,7 @@
+ 	// (note: since units only move a few pixels per second on the minimap,
+ 	// we can get away with infrequent updates; this is slow)
+ 	// TODO: Update all but camera at same speed as simulation
+-	const double currentTime = timer_Time();
++	const double currentTime = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time());
+ 	const bool doUpdate = (currentTime - m_LastFinalTextureUpdate > 0.5) || m_FinalTextureDirty;
+ 	if (!doUpdate)
+ 		return;
+--- a/source/gui/GUITooltip.cpp
++++ b/source/gui/GUITooltip.cpp
+@@ -16,6 +16,8 @@
+  */
+ 
+ #include "precompiled.h"
++#include "renderer/Renderer.h"
++#include "renderer/TimeManager.h"
+ 
+ #include "GUITooltip.h"
+ 
+@@ -197,7 +199,7 @@
+ void GUITooltip::Update(IGUIObject* Nearest, const CVector2D& MousePos, CGUI& GUI)
+ {
+ 	// Called once per frame, so efficiency isn't vital
+-	double now = timer_Time();
++	double now = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time());
+ 
+ 	CStr style;
+ 	int nextstate = -1;
+--- a/source/gui/CGUISprite.cpp
++++ b/source/gui/CGUISprite.cpp
+@@ -43,6 +43,7 @@
+ // of data):
+ 
+ CGUISpriteInstance::CGUISpriteInstance()
++    : m_RoundCoordinates(true)
+ {
+ }
+ 
+--- a/source/gui/GUIRenderer.cpp
++++ b/source/gui/GUIRenderer.cpp
+@@ -191,6 +191,7 @@
+ 			continue; // i.e. don't continue with this image
+ 		}
+ 
++		Call.m_ObjectSize = ObjectSize;
+ 		Call.m_Vertices = ObjectSize;
+ 		if ((*cit)->m_RoundCoordinates && RoundCoordinates)
+ 		{
+@@ -344,6 +345,7 @@
+ 			std::swap(texCoords.bottom, texCoords.top);
+ 		}
+ 
++
+ 		canvas.DrawTexture(cit->m_Texture,
+ 			rect, texCoords, cit->m_ColorMultiply, cit->m_ColorAdd, cit->m_GrayscaleFactor);
+ 	}
+--- a/source/gui/CGUI.cpp
++++ b/source/gui/CGUI.cpp
+@@ -39,6 +39,8 @@
+ #include "lib/input.h"
+ #include "lib/path.h"
+ #include "lib/timer.h"
++#include "renderer/Renderer.h"
++#include "renderer/TimeManager.h"
+ #include "lib/utf8.h"
+ #include "maths/Size2D.h"
+ #include "ps/CLogger.h"
+@@ -231,8 +233,8 @@
+ 			case SDL_BUTTON_LEFT:
+ 				if (pNearest)
+ 				{
+-					double timeElapsed = timer_Time() - pNearest->m_LastClickTime[SDL_BUTTON_LEFT];
+-					pNearest->m_LastClickTime[SDL_BUTTON_LEFT] = timer_Time();
++					double timeElapsed = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time()) - pNearest->m_LastClickTime[SDL_BUTTON_LEFT];
++					pNearest->m_LastClickTime[SDL_BUTTON_LEFT] = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time());
+ 					if (timeElapsed < SELECT_DBLCLICK_RATE)
+ 						ret = pNearest->SendMouseEvent(GUIM_MOUSE_DBLCLICK_LEFT, EventNameMouseLeftDoubleClick);
+ 					else
+@@ -242,8 +244,8 @@
+ 			case SDL_BUTTON_RIGHT:
+ 				if (pNearest)
+ 				{
+-					double timeElapsed = timer_Time() - pNearest->m_LastClickTime[SDL_BUTTON_RIGHT];
+-					pNearest->m_LastClickTime[SDL_BUTTON_RIGHT] = timer_Time();
++					double timeElapsed = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time()) - pNearest->m_LastClickTime[SDL_BUTTON_RIGHT];
++					pNearest->m_LastClickTime[SDL_BUTTON_RIGHT] = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time());
+ 					if (timeElapsed < SELECT_DBLCLICK_RATE)
+ 						ret = pNearest->SendMouseEvent(GUIM_MOUSE_DBLCLICK_RIGHT, EventNameMouseRightDoubleClick);
+ 					else
+--- a/source/gui/ObjectTypes/CMiniMap.cpp
++++ b/source/gui/ObjectTypes/CMiniMap.cpp
+@@ -16,6 +16,8 @@
+  */
+ 
+ #include "precompiled.h"
++#include "renderer/Renderer.h"
++#include "renderer/TimeManager.h"
+ 
+ #include "CMiniMap.h"
+ 
+@@ -405,7 +407,7 @@
+ 
+ 	DrawViewRect(canvas);
+ 
+-	const double currentTime = timer_Time();
++	const double currentTime = (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time());
+ 	while (!m_MapFlares.empty() && m_FlareLifetimeSeconds + m_MapFlares.front().time < currentTime)
+ 		m_MapFlares.pop_front();
+ 
+@@ -423,6 +425,6 @@
+ 		LOGERROR("CMiniMap::Flare: Couldn't parse color string");
+ 		return false;
+ 	}
+-	m_MapFlares.push_back({ pos, color, timer_Time() });
++	m_MapFlares.push_back({ pos, color, (std::getenv("GGBENCH_CAPTURE") ? g_Renderer.GetTimeManager().GetGlobalTime() : timer_Time()) });
+ 	return true;
+ }
+--- a/source/ps/GameSetup/HWDetect.cpp
++++ b/source/ps/GameSetup/HWDetect.cpp
+@@ -23,7 +23,9 @@
+ #include "lib/debug.h"
+ #include "lib/external_libraries/curl.h"
+ #include "lib/external_libraries/enet.h"
++#if CONFIG2_LOBBY
+ #include "lib/external_libraries/gloox.h"
++#endif
+ #include "lib/external_libraries/png.h"
+ #include "lib/external_libraries/libsdl.h"
+ #include "lib/path.h"
+@@ -209,7 +211,9 @@
+ 	appendLibrary(LibraryReporter{rq, "boost"}.Add("version", BOOST_VERSION).MakeReport());
+ 	appendLibrary(LibraryReporter{rq, "enet"}.Add("version", std::to_string(ENET_VERSION)).MakeReport());
+ 	appendLibrary(LibraryReporter{rq, "fmt"}.Add("version", FMT_VERSION).MakeReport());
++#if CONFIG2_LOBBY
+ 	appendLibrary(LibraryReporter{rq, "gloox"}.Add("version", gloox_version()).MakeReport());
++#endif
+ 	appendLibrary(LibraryReporter{rq, "libicu"}.Add("version", U_ICU_VERSION).MakeReport());
+ 	appendLibrary(LibraryReporter{rq, "libcurl"}.Add("version", std::string(curl_version())).MakeReport());
+ #if CONFIG2_AUDIO
+--- a/source/ps/GameSetup/GameSetup.cpp
++++ b/source/ps/GameSetup/GameSetup.cpp
+@@ -524,7 +524,7 @@
+ #endif
+ 
+ 	// Initialise the low-quality rand function
+-	srand(time(NULL));	// NOTE: this rand should *not* be used for simulation!
++	srand(std::getenv("GGBENCH_SEED") ? std::strtoul(std::getenv("GGBENCH_SEED"), nullptr, 10) : time(NULL));	// NOTE: this rand should *not* be used for simulation!
+ }
+ 
+ bool Autostart(const CmdLineArgs& args);
+--- a/source/renderer/ModelRenderer.cpp
++++ b/source/renderer/ModelRenderer.cpp
+@@ -455,6 +455,7 @@
+ 			PS::Memory::ScopedLinearAllocator>>;
+ 
+ 	MaterialBuckets_t materialBuckets((MaterialBuckets_t::allocator_type(scopedLinearAllocator)));
++	std::vector<SMRMaterialBucketKey> materialOrder;
+ 
+ 	{
+ 		PROFILE3("bucketing by material");
+@@ -470,6 +471,7 @@
+ 			{
+ 				std::pair<MaterialBuckets_t::iterator, bool> inserted = materialBuckets.insert(
+ 					std::make_pair(key, ModelList_t(ModelList_t::allocator_type(scopedLinearAllocator))));
++				materialOrder.push_back(key);
+ 				inserted.first->second.reserve(32);
+ 				inserted.first->second.push_back(model);
+ 			}
+@@ -496,8 +498,9 @@
+ 
+ 	{
+ 		PROFILE3("processing material buckets");
+-		for (MaterialBuckets_t::iterator it = materialBuckets.begin(); it != materialBuckets.end(); ++it)
+-		{
++		for (const auto& materialKey : materialOrder)
++		{
++			auto it = materialBuckets.find(materialKey);
+ 			CShaderDefines defines = context;
+ 			defines.SetMany(it->first.defines);
+ 			CShaderTechniquePtr tech = g_Renderer.GetShaderManager().LoadEffect(it->first.effect, defines);
+@@ -535,7 +538,7 @@
+ 				// TODO: This only sorts by base texture. While this is an OK approximation
+ 				// for most cases (as related samplers are usually used together), it would be better
+ 				// to take all the samplers into account when sorting here.
+-				std::sort(it->second.begin(), it->second.end(), SMRBatchModel());
++				if (!std::getenv("GGBENCH_CAPTURE")) std::sort(it->second.begin(), it->second.end(), SMRBatchModel());
+ 
+ 				// Add a tech bucket pointing at this model list
+ 				SMRTechBucket techBucket{tech, it->second};
+@@ -547,7 +550,7 @@
+ 	{
+ 		PROFILE3("sorting tech buckets");
+ 		// Sort by technique, for better batching
+-		std::sort(techBuckets.begin(), techBuckets.end(), SMRCompareTechBucket());
++		if (!std::getenv("GGBENCH_CAPTURE")) std::sort(techBuckets.begin(), techBuckets.end(), SMRCompareTechBucket());
+ 	}
+ 
+ 	// List of models corresponding to sortByDistItems[i].model
+@@ -560,7 +563,7 @@
+ 	{
+ 		{
+ 			PROFILE3("sorting items by dist");
+-			std::sort(sortByDistItems.begin(), sortByDistItems.end(), SMRCompareSortByDistItem());
++			std::stable_sort(sortByDistItems.begin(), sortByDistItems.end(), SMRCompareSortByDistItem());
+ 		}
+ 
+ 		{
+@@ -778,6 +781,7 @@
+ 						CModelRData* rdata = static_cast<CModelRData*>(model->GetRenderData());
+ 						ENSURE(rdata->GetKey() == m->vertexRenderer.get());
+ 
++
+ 						m->vertexRenderer->RenderModel(deviceCommandContext, shader, model, rdata);
+ 					}
+ 				}
+--- a/source/renderer/TimeManager.h
++++ b/source/renderer/TimeManager.h
+@@ -27,6 +27,7 @@
+ 	double GetGlobalTime() const;
+ 
+ 	void Update(double delta);
++	void SetBenchmarkTime(double time) { m_GlobalTime = time; }
+ 
+ private:
+ 	double m_FrameDelta = 0.0;
+--- a/source/renderer/Renderer.cpp
++++ b/source/renderer/Renderer.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "precompiled.h"
++#include <fstream>
+ 
+ #include "Renderer.h"
+ 
+@@ -495,9 +496,20 @@
+ 
+ 		RenderFrameImpl(true, true);
+ 
+-		m->deviceCommandContext->Flush();
+-		if (needsPresent)
+-			m->device->Present();
++        const char* capture = std::getenv("GGBENCH_CAPTURE");
++        std::vector<unsigned char> camera;
++        if (capture && needsPresent) {
++            camera.resize(g_xres * g_yres * 3);
++            m->deviceCommandContext->ReadbackFramebufferSync(0, 0, g_xres, g_yres, camera.data());
++        }
++        m->deviceCommandContext->Flush();
++        if (needsPresent) m->device->Present();
++        if (!camera.empty()) {
++            std::ofstream out(capture, std::ios::binary);
++            out << "P6\n" << g_xres << " " << g_yres << "\n255\n";
++            for (int y = g_yres - 1; y >= 0; --y)
++                out.write(reinterpret_cast<char*>(camera.data() + y * g_xres * 3), g_xres * 3);
++        }
+ 	}
+ }
+ 
+@@ -548,7 +560,7 @@
+ 			// is going to be rendered anyway.
+ 			framebuffer =
+ 				m->deviceCommandContext->GetDevice()->GetCurrentBackbuffer(
+-					Renderer::Backend::AttachmentLoadOp::DONT_CARE,
++					std::getenv("GGBENCH_CAPTURE") ? Renderer::Backend::AttachmentLoadOp::CLEAR : Renderer::Backend::AttachmentLoadOp::DONT_CARE,
+ 					Renderer::Backend::AttachmentStoreOp::STORE,
+ 					Renderer::Backend::AttachmentLoadOp::CLEAR,
+ 					Renderer::Backend::AttachmentStoreOp::DONT_CARE);

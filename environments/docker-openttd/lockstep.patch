@@ -1,0 +1,106 @@
+diff --git a/src/openttd.cpp b/src/openttd.cpp
+index 7d585b0..1ae0aec 100644
+--- a/src/openttd.cpp
++++ b/src/openttd.cpp
+@@ -1355,6 +1355,7 @@ void GameLoop()
+ 		static auto last_time = std::chrono::steady_clock::now();
+ 		auto now = std::chrono::steady_clock::now();
+ 		auto delta_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_time);
++		if (std::getenv("GGBENCH_CAPTURE")) delta_ms = std::chrono::milliseconds(30);
+ 		if (delta_ms.count() != 0) {
+ 			TimerManager<TimerGameRealtime>::Elapsed(delta_ms);
+ 			last_time = now;
+diff --git a/src/video/null_v.cpp b/src/video/null_v.cpp
+index 65fc9f3..5d73446 100644
+--- a/src/video/null_v.cpp
++++ b/src/video/null_v.cpp
+@@ -14,6 +14,14 @@
+ #include "../window_func.h"
+ #include "null_v.h"
+ 
++#include "../company_base.h"
++#include "../company_func.h"
++#include "../openttd.h"
++#include <iostream>
++#include <fstream>
++#include <cstdlib>
++
++static std::vector<Colour> benchmark_pixels;
+ #include "../safeguards.h"
+ 
+ /** Factory for the null video driver. */
+@@ -36,6 +44,15 @@ std::optional<std::string_view> VideoDriver_Null::Start(const StringList &parm)
+ 	_screen.dst_ptr = nullptr;
+ 	ScreenSizeChanged();
+ 
++	if (std::getenv("GGBENCH_CAPTURE")) {
++        BlitterFactory::SelectBlitter("32bpp-simple");
++        benchmark_pixels.resize(_screen.width * _screen.height);
++        _screen.dst_ptr = benchmark_pixels.data();
++        _cursor.in_window = true;
++        _cursor.UpdateCursorPosition(_screen.width / 2, _screen.height / 2);
++        return std::nullopt;
++    }
++
+ 	/* Do not render, nor blit */
+ 	Debug(misc, 1, "Forcing blitter 'null'...");
+ 	BlitterFactory::SelectBlitter("null");
+@@ -48,6 +65,33 @@ void VideoDriver_Null::MakeDirty(int, int, int, int) {}
+ 
+ void VideoDriver_Null::MainLoop()
+ {
++    if (const char* path = std::getenv("GGBENCH_CAPTURE")) {
++        for (int i = 0; i < 16; ++i) { ::GameLoop(); ::InputLoop(); ::UpdateWindows(); }
++        while (!_exit_game) {
++            std::ofstream f(path, std::ios::binary);
++            f << "P6\n" << _screen.width << " " << _screen.height << "\n255\n";
++            for (const auto &pixel : benchmark_pixels) { f.put(pixel.r); f.put(pixel.g); f.put(pixel.b); }
++            f.close();
++            const Company* company = Company::GetIfValid(_local_company);
++            std::cout << "GGBENCH {\"roads\":" << (company ? company->infrastructure.GetRoadTotal() : 0)
++                << ",\"ready\":" << (company ? "true" : "false") << "}" << std::endl;
++            int action;
++            if (!(std::cin >> action)) return;
++            if (action >= 1 && action <= 4) {
++                const int dx[] = {0, 0, 32, 0, -32};
++                const int dy[] = {0, -32, 0, 32, 0};
++                _cursor.UpdateCursorPosition(std::clamp(_cursor.pos.x + dx[action], 0, _screen.width - 1),
++                    std::clamp(_cursor.pos.y + dy[action], 0, _screen.height - 1));
++            } else if (action == 5) { _left_button_down = true; }
++            else if (action == 6) { _left_button_down = false; _left_button_clicked = false; }
++            else if (action == 7) { HandleKeypress(WKC_SHIFT | WKC_F8, 0); }
++            else if (action == 8) { HandleKeypress('3', '3'); }
++            else if (action == 9) { HandleKeypress(WKC_ESC, 0); }
++            ::InputLoop(); ::GameLoop(); ::UpdateWindows();
++        }
++        return;
++    }
++
+ 	uint i;
+ 
+ 	for (i = 0; i < this->ticks; i++) {
+diff --git a/src/video/null_v.h b/src/video/null_v.h
+index d6a835f..38f51df 100644
+--- a/src/video/null_v.h
++++ b/src/video/null_v.h
+@@ -30,7 +30,7 @@ public:
+ 
+ 	bool ToggleFullscreen(bool fullscreen) override;
+ 	std::string_view GetName() const override { return "null"; }
+-	bool HasGUI() const override { return false; }
++	bool HasGUI() const override { return std::getenv("GGBENCH_CAPTURE") != nullptr; }
+ };
+ 
+ /** Factory the null video driver. */
+diff --git a/src/window.cpp b/src/window.cpp
+index ea6dc5b..93533bb 100644
+--- a/src/window.cpp
++++ b/src/window.cpp
+@@ -3129,6 +3129,7 @@ void UpdateWindows()
+ 	static auto last_time = std::chrono::steady_clock::now();
+ 	auto now = std::chrono::steady_clock::now();
+ 	auto delta_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_time);
++	if (std::getenv("GGBENCH_CAPTURE")) delta_ms = std::chrono::milliseconds(30);
+ 
+ 	if (delta_ms.count() == 0) return;
+ 

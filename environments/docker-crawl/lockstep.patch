@@ -1,0 +1,104 @@
+diff --git a/crawl-ref/source/main.cc b/crawl-ref/source/main.cc
+index 6ecd266..9b4ca01 100644
+--- a/crawl-ref/source/main.cc
++++ b/crawl-ref/source/main.cc
+@@ -442,7 +442,7 @@ NORETURN static void _launch_game()
+                     << species::name(you.species)
+                     << " " << get_job_name(you.char_class) << ".</yellow>";
+         // TODO: seeded sprint?
+-        if (crawl_state.type == GAME_TYPE_CUSTOM_SEED)
++        if (crawl_state.type == GAME_TYPE_CUSTOM_SEED && !std::getenv("GGBENCH_CAPTURE"))
+             msg::stream << endl << "<white>" << seed_description() << "</white>";
+         else
+         {
+diff --git a/crawl-ref/source/tileview.cc b/crawl-ref/source/tileview.cc
+index 671db11..b293ed0 100644
+--- a/crawl-ref/source/tileview.cc
++++ b/crawl-ref/source/tileview.cc
+@@ -511,7 +511,7 @@ void tile_init_flavour(const coord_def &gc, const int domino)
+     if (!map_bounds(gc))
+         return;
+ 
+-    uint32_t seed = you.birth_time + you.where_are_you +
++    uint32_t seed = (std::getenv("GGBENCH_CAPTURE") ? you.game_seed : you.birth_time) + you.where_are_you +
+         (you.depth << 8) + (gc.x << 16) + (gc.y << 24);
+ 
+     int rand1 = hash_with_seed(INT_MAX, seed, 0);
+@@ -1198,7 +1198,7 @@ static unsigned int _pick_floor_tile(tileidx_t base_tile, coord_def gc)
+     unsigned int count = tile_dngn_count(base_tile);
+     uint32_t seed = you.where_are_you + (you.depth << 8)
+                     + (gc.x << 16) + (gc.y << 24);
+-    unsigned int offset = hash_with_seed(count, seed, you.birth_time);
++    unsigned int offset = hash_with_seed(count, seed, (std::getenv("GGBENCH_CAPTURE") ? you.game_seed : you.birth_time));
+     return base_tile + offset;
+ }
+ 
+diff --git a/crawl-ref/source/windowmanager-sdl.cc b/crawl-ref/source/windowmanager-sdl.cc
+index d5d1a42..35ae4e7 100644
+--- a/crawl-ref/source/windowmanager-sdl.cc
++++ b/crawl-ref/source/windowmanager-sdl.cc
+@@ -4,6 +4,13 @@
+ #ifdef USE_SDL
+ 
+ #include "windowmanager-sdl.h"
++#include "player.h"
++#include <SDL2/SDL_opengl.h>
++#include <iostream>
++#include <fstream>
++#include <cstdlib>
++
++static unsigned int benchmark_ticks = 0;
+ 
+ #include "sound.h"      // Needs to be here because WINMM_PLAY_SOUNDS is used below
+ 
+@@ -742,6 +749,7 @@ void SDLWrapper::resize(coord_def &m_windowsz)
+ 
+ unsigned int SDLWrapper::get_ticks() const
+ {
++    if (std::getenv("GGBENCH_CAPTURE")) return benchmark_ticks;
+     return SDL_GetTicks();
+ }
+ 
+@@ -931,6 +939,22 @@ int SDLWrapper::send_textinput(wm_event *event)
+ 
+ int SDLWrapper::wait_event(wm_event *event, int timeout)
+ {
++    if (std::getenv("GGBENCH_CAPTURE")) {
++        if (timeout == 0) return 0;
++        std::cout << "GGBENCH {\"xp\":" << you.experience
++                  << ",\"hp\":" << you.hp << ",\"level\":" << you.experience_level
++                  << ",\"turns\":" << you.num_turns << "}" << std::endl;
++        int key;
++        if (!(std::cin >> key)) std::exit(0);
++        benchmark_ticks += 100;
++        *event = {};
++        event->type = WME_KEYDOWN;
++        event->key.state = SDL_PRESSED;
++        event->key.keysym.sym = key;
++        event->key.keysym.unicode = key;
++        return 1;
++    }
++
+     SDL_Event sdlevent;
+ 
+     if (!m_textinput_queue.empty())
+@@ -1061,6 +1085,19 @@ void SDLWrapper::remove_timer(unsigned int& timer_id)
+ 
+ void SDLWrapper::swap_buffers()
+ {
++    if (const char* path = std::getenv("GGBENCH_CAPTURE")) {
++        int width, height;
++        SDL_GL_GetDrawableSize(m_window, &width, &height);
++        std::vector<unsigned char> pixels(width * height * 3);
++        glPixelStorei(GL_PACK_ALIGNMENT, 1);
++        glReadPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
++        std::ofstream out(path, std::ios::binary | std::ios::trunc);
++        out << "P6\n" << width << " " << height << "\n255\n";
++        for (int row=height-1; row>=0; --row)
++            out.write(reinterpret_cast<const char*>(pixels.data()+row*width*3), width*3);
++        if (!out) throw std::runtime_error("Benchmark camera capture failed");
++    }
++
+     SDL_GL_SwapWindow(m_window);
+ }
+ 

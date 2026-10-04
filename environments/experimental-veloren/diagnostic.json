@@ -1,0 +1,22 @@
+{
+  "status": "diagnostic-not-admitted",
+  "repository": "https://gitlab.com/veloren/veloren.git",
+  "engine_revision": "f6294887b13b287160d2de75809675ee521f65f4",
+  "platform": "linux/arm64",
+  "patch_sha256": "083d33686f8b288d897ad78792f9fa89ef797b0ed69b0e16821f188eec662818",
+  "actions": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    6,
+    0,
+    0
+  ],
+  "replay_frames_compared": 11,
+  "replay_frames_different": 11,
+  "rewarded_route_verified": false
+}

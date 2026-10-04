@@ -1,0 +1,243 @@
+{
+  "created_at": "2026-10-04T21:01:21.725567+00:00",
+  "purpose": "integration-validation-only",
+  "trust": "local-unattested",
+  "mode": "exhibition",
+  "model_calls": 0,
+  "cohort": [
+    {
+      "agent": "random",
+      "game": "unity-food-collector",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "unity-food-collector",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "football-empty-goal",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "football-empty-goal",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "supertuxkart-lighthouse",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "supertuxkart-lighthouse",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "luanti-chop-tree",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "luanti-chop-tree",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "supertux-first-coin",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "supertux-first-coin",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "dcss-first-experience",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "dcss-first-experience",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "openttd-first-road",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "openttd-first-road",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "mindustry-copper",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "mindustry-copper",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "cdda-first-weapon",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "cdda-first-weapon",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "warzone-first-derrick",
+      "seed": 5000,
+      "steps": 200
+    },
+    {
+      "agent": "random",
+      "game": "warzone-first-derrick",
+      "seed": 5001,
+      "steps": 200
+    },
+    {
+      "agent": "idle",
+      "game": "unity-food-collector",
+      "seed": 71,
+      "steps": 1200
+    }
+  ],
+  "source_hashes": {
+    "src/generalgamebench/__init__.py": "8ae6d038d0d8189304981311135efa8bd45fa10b2ad3cc0b29931bb050209a27",
+    "src/generalgamebench/baselines.py": "eb754c8b6a514830e44252f13659b90cb10eb2fd28bd41b88b211610991d5fc5",
+    "src/generalgamebench/cdda_engine.py": "a08b820bc30d9567e4381a0b6a28132b14ddba4400325c72fa2f28c2296aabdf",
+    "src/generalgamebench/cli.py": "bcdd2a173c0ec884414769297eb2361cb4c0650fce3d97e2fc8bf8d9ecba045e",
+    "src/generalgamebench/container_runtime.py": "e300ae3ecd241436d4267086d31cef4772f94467842c4b855b1b4dd778ac96d2",
+    "src/generalgamebench/craftium_engine.py": "69543db8b45604e5907919750bf49221997e2346aca2bc0c073d6a6baebcae04",
+    "src/generalgamebench/crawl_engine.py": "45e84af8418b6c126a70943959f10d68b781eb533db210cae6a90559b4a493ca",
+    "src/generalgamebench/environment_worker.py": "94441cd6d5ae9c7d1de4d25b389138fcb9d10f5e85eb6a9dbac564028b181bca",
+    "src/generalgamebench/evidence.py": "e3032853329dc6cfe9ecbbe65b7740045b130f2072a96729b12d05a0393b7413",
+    "src/generalgamebench/football_engine.py": "d0139ee8753fd98a4179a26fc782b1df2ac5221a083a4dd278156c8a07ac969e",
+    "src/generalgamebench/games.py": "a6afd3b87924feff8cc6329b1cd8e2572eb6ffe7a7817352403dd3b0e29d8a02",
+    "src/generalgamebench/mindustry_engine.py": "75d10a633e0117c6a7d65771919c357e4b40e2d8062d7fa3b21cca15ce2d16e7",
+    "src/generalgamebench/mlx_agent.py": "c0b264c621814a8f6a08ee3a55ba757c14ef6d4b1b4ab8060c3a904865755f9d",
+    "src/generalgamebench/model_inventory.py": "d290c6c2a409be4c24ab077841413b376ea293eef00dd28ac4140805aba01258",
+    "src/generalgamebench/model_prompt.py": "610d84d210e04b21c6cb105d6db1da5f5abfa35066ae57ad3d35b99481c5b45c",
+    "src/generalgamebench/models.py": "2daa3e3bf1e698dee81e5e8eae77124612ec3264639250508db14cf7fdecb8cd",
+    "src/generalgamebench/openttd_engine.py": "ab61044dd53f45f8cce33d94b086c0b82e392f580a61e1e39b0b7444fb760f09",
+    "src/generalgamebench/protocol.py": "75e4b4db184ddb6ce669fe14b58e8927d3745f68c8425e3cbba8ffe7ad875c5a",
+    "src/generalgamebench/ranking.py": "2d33ec985ac5c35687a1ab6628c43135b2fe116a5cad87969bcd967ffd21636b",
+    "src/generalgamebench/registry.py": "41422edf54749e5086d6d46830cc1a1781fd1b43cb331bbf8b6cb2f62232d2d9",
+    "src/generalgamebench/runner.py": "4e30e6c4ba746d2f9207eaa9503108676a93d170a29f4e4e2c90cd4a67f6203f",
+    "src/generalgamebench/supertux_engine.py": "2ca3c6bf9b183f5daccb94aedc96e441c8a3f42fe207e29d2ecca8e120b9652d",
+    "src/generalgamebench/unity_engine.py": "babde86b883e4144502f5f6b1cf1370f658ad8a533b4174dfb12c70e97b7e8b3",
+    "src/generalgamebench/warzone_engine.py": "aaf80b6a91628f50796f9f6cc4bf07eea31bd934c2a281a4f9a83d52ea5d9fe0",
+    "src/generalgamebench/worker_game.py": "975a71d9f657e192e63d5782927a135143ad8480c0061b51935a8b7630b38a6c",
+    "pyproject.toml": "9cbea8e9657e3383d2d4f9891e908e7e7504f129bf81595a89ddf0054e429232",
+    "uv.lock": "5c520c55d2fd5ec4a768f5ee08a0a1842f7a0332791d270e6b4c0ed39797f544",
+    "scripts/record_integration_evidence.py": "6bc244eb9c63f9bba9e86af432832a91842e2cc3c513b510fab469a82f4bdefc",
+    "environments/unity/requirements.txt": "a7d7f356677c2bc063838d765d86bec63941c9dc8038adce3939fbba2b4c0d58",
+    "environments/unity/README.md": "58892045cb549e45efd3ba86df65d9c641752a4ada3f6703d8cb1e706f68016f",
+    "environments/unity/install.py": "6f96b58067bb4b377ce4bb4b143a458afd9e37e02c0a967a1fc82a058bd8d9fb",
+    "environments/unity/assets.json": "7f50a1c7265f0969d3bbca2c3bbfda43c27c6157dcc9b217570d5c5c4bbcb50a",
+    "environments/unity/requirements.lock": "7e66fa658ef74ae9dccd59e80ca564656032b6acd3938160580175058bf3834b",
+    "environments/docker-football/runtime.json": "7e478095b939ac5f2508251e13f69c339ea32603257eb50da267e8063b77c8b0",
+    "environments/docker-football/Dockerfile": "f80d2678702090848120fa12b924c38433576b3c8a477260a2cbf7b10f537b64",
+    "environments/docker-football/dockerignore": "170a0bc24824929849c8c20c88b4bacf802b91775c15780fbb6723b0b7b75f9b",
+    "environments/docker-football/README.md": "60757067a2cebf8f45758e43a5b7c28fef4f25c9b05a98bc3774edcca228d24d",
+    "environments/docker-football/install.py": "d35cafef8ed181da6935e876a1a166bff0acb7064867229c359d4d9b2ca421f8",
+    "environments/docker-stk/runtime.json": "de7b6685bd239ad765d7e6b3725b78a91ca972690410b8bb66247096dd4c8ab7",
+    "environments/docker-stk/Dockerfile": "2df6557e5aa2624ad54dbe272dee164cd566a54b806f12ccd6c0fd61ae42205c",
+    "environments/docker-stk/simulation-clock.patch": "0fcdcc56c9ee69cc7f4a2316fe25b4171315671b52adb05dbb9ff27f3d7aac69",
+    "environments/docker-stk/dockerignore": "6503caa9949106e6fb2950e4252c5b3ae06f2fff62804ccd7bc1e280544ae169",
+    "environments/docker-stk/README.md": "f227a11dac98c94f3f3d80b56f66099354832632f4ce60c4857d4e3704e59659",
+    "environments/docker-stk/COPYING": "d27207a5213f746aac53893e9ecc18456e9595d3ffa662bd1ec9eb10787c214a",
+    "environments/docker-stk/install.py": "0f559a412c919c523b032857705e10930c14ab9c9dc33e8e81c436a8d5187c62",
+    "environments/docker-craftium/runtime.json": "9ccb701d69c59bc8b916555ae27369e4e74d708ba9e7e414fba4540f9f4658ea",
+    "environments/docker-craftium/lockstep.patch": "34bd59069c91ab27c3feb92ad984dca553b1f392592642c2887e8d0478c136ca",
+    "environments/docker-craftium/Dockerfile": "1e6548b34a10bd41f5b759d9e86a0a052c98125335c9af328779ebe779ac2891",
+    "environments/docker-craftium/COPYING.LESSER": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+    "environments/docker-craftium/dockerignore": "9eb706613fa0c271112ca4d4fc7aa4f41a96ff92d2f923d4ace478e3de2fb504",
+    "environments/docker-craftium/README.md": "08a69098f6cf35ac4e84c789d7914db099c2c411d3d2c4588196463061d779b4",
+    "environments/docker-craftium/COPYING": "8f24005e2313e7a15cbfcd91fed60f77a0f4d9b52c1cf29ed0b9dfe455fa3c8d",
+    "environments/docker-craftium/install.py": "5d36965796fb5046cd5914de99b3f220c146e153ee50ac22ea439c810fbf5ef3",
+    "environments/docker-supertux/runtime.json": "d7851af8eb426e11c85b3d1722af1822a9fb22c0b4a88d503afadb23f919b012",
+    "environments/docker-supertux/lockstep.patch": "077cb334357c497ae2be8dc0d474c857d8dcf47d8d4a0a8211dc4abab0ba4e00",
+    "environments/docker-supertux/Dockerfile": "afe234af238350f1dd3e8f314744413775d1648b437ffa7721143c738833930a",
+    "environments/docker-supertux/dockerignore": "2ebe8eaa53984fad2c5d858553ed1641ce613364e34dd9a36cb099fab18549cf",
+    "environments/docker-supertux/README.md": "798ffaba1998224bab09c1bdaed294836b2eddeceaef28a975a8ac9ec40ef644",
+    "environments/docker-supertux/install.py": "6722f72a61abcdaa37b1d3875cb7e8314f299325878d3724764c4521768b543a",
+    "environments/docker-supertux/version.cmake": "c5022c6a999e5363a4c9b09c2066a32d30f11aad69c4ad9bcd2d9c5ad4be757b",
+    "environments/docker-supertux/LICENSE.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "environments/docker-crawl/runtime.json": "e404098a0d706fb51d08d8f0abb4181cb8ba99c2540ba96c8778b27d1fb8aa44",
+    "environments/docker-crawl/LICENSE": "9567806dee0f63849647525d0e3a739f1e5f40e8956e394ef51b0026ebad96eb",
+    "environments/docker-crawl/lockstep.patch": "d2e5aaafed8816effd74d916b1e4577318c975377fc1897e8fda3e3f2748a9a9",
+    "environments/docker-crawl/Dockerfile": "b6d36a123d5c200df9fe17a95fa410d181986d300bea2cdf8c22b274a99464bc",
+    "environments/docker-crawl/dockerignore": "c00f40da466bb053a864f3c4054eb9f8fb161ce7295af0c7c239512586205935",
+    "environments/docker-crawl/README.md": "d280d174eebb5fad330685a3e71f197a0009b7fd78ec36c47734bd35b1c441d5",
+    "environments/docker-crawl/TILES-LICENSE.txt": "ab21679efe73b9f6ce86b1438920fedaf01f1578834ebeb4da314495bb44b8c7",
+    "environments/docker-crawl/install.py": "5ae8f8844abf4ae05ffa7afbadad9d21402ae5ccafb661a4a46b18f0b4c17ea9",
+    "environments/docker-openttd/runtime.json": "392a06b8d5154818a7d8e9fe5fcc4e2622f95077e3bcb14a92db15bd6f595ca2",
+    "environments/docker-openttd/OPENGFX-COPYRIGHT": "d60e622ade1b5e21638527220d37744c56aae30ce37248f475dc1c2f7ae85093",
+    "environments/docker-openttd/lockstep.patch": "c2f9805f7ae07b6113b06f690ceabc8b4dd36099d3fdd0627433338a545ebaf9",
+    "environments/docker-openttd/Dockerfile": "237093d563146f3ef1ef34b3aeb46f9d7f0feb64e9878184038feb0d338352ce",
+    "environments/docker-openttd/verify-assets.py": "2d6a67b75d7c62f14640824d46cbba21126f71f16695a8e9e48bc0e9867b2408",
+    "environments/docker-openttd/dockerignore": "1bc0000ca19d988026a6c35d61567b3e73d6907b41e50a521c84ae20b11f3cf6",
+    "environments/docker-openttd/README.md": "2adbc06db8f2b4fdc83bda05f9405ec2a40f4e6fc5095fbf37f820f8bf287bd9",
+    "environments/docker-openttd/COPYING.md": "50ac792e113700dd23ecb25ed6f341eb383bed36cb8fd87aa164f4e44f2760b3",
+    "environments/docker-openttd/assets-hashes.json": "ce87096748300023607f3b60602796bef43e25c0ba5588af762b5a0cf6b8e113",
+    "environments/docker-openttd/install.py": "b9882fabfa108862be9bc6805546c7de301f3f53cf229bb70c3f112b24f4b136",
+    "environments/docker-mindustry/BenchmarkLauncher.java": "f35b1657fceef7192e7a3ad2213d039173b96fa7f4d6502f19d3975908bf0e1f",
+    "environments/docker-mindustry/ARC-LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "environments/docker-mindustry/runtime.json": "8745856fbde6345c07863d8d175ed545b47cfafc5529b3fba0c74ece4f9f8ce3",
+    "environments/docker-mindustry/clock.patch": "e8b825c645b81a6eaaf5d603e460a91ddc4992425876ca04e7f7ad4b1b2afd15",
+    "environments/docker-mindustry/Dockerfile": "9302bb1e7198a39d96edf275f1686d4ffc8dc7cee7657080556d380a1f5445b8",
+    "environments/docker-mindustry/Generate.java": "aa1515561f7d425fa18c847b66ae2ca7e828dfd7506c7c57d6d8229894da121c",
+    "environments/docker-mindustry/dockerignore": "802193a67e0d000e14f5cadd099fc95ad131df79b6891d3cdd53cbfbf839cfc6",
+    "environments/docker-mindustry/README.md": "173393cb0827ac09bba1c3cfd068a75b899a3052ced8db13d47fea46c8d897a2",
+    "environments/docker-mindustry/COPYING": "963392e038d7bea128e55cc67dd691c204593db3527060667f0c82f0f0a1be64",
+    "environments/docker-mindustry/install.py": "9176aa70ed66d0cc1be74f336fc91c8a14fc4f94fba926d94cd20181561f43cf",
+    "environments/docker-cdda/runtime.json": "c5c44d0d345aedcc9ace86fcbf1dbe5d35a47ac19016580fa1e6e11538fba14f",
+    "environments/docker-cdda/lockstep.patch": "61bd4633dcbe0b46a06209fcb9a05cc37802454dfa3cb91becb641b773c195d5",
+    "environments/docker-cdda/Dockerfile": "e6457df44791b6b4e57cb3f34d53322c9b4351355d1f284201c3183c2e18e99f",
+    "environments/docker-cdda/dockerignore": "5802cf28d0cbb987eecd3125beca23f92afdc78bf1d55ad1aa6d43cb5131c12b",
+    "environments/docker-cdda/README.md": "bbb862084e97e75667a20ac0221588854ef94915f158cd204c9e55ed338b8423",
+    "environments/docker-cdda/install.py": "8fc4940e277ef9462b47b6be0c6f188d0a31a0c703dda6cbb68c912be80944d9",
+    "environments/docker-cdda/LICENSE.txt": "084da39f4c3cfb6cbdc7f34e4402a93ae54e9800982e91131cec29efab1e1d2d",
+    "environments/docker-warzone/runtime.json": "6abcfeac9277647bc43fdbeed753965f68b6dbce48e8babfb8f443ab83d7780b",
+    "environments/docker-warzone/lockstep.patch": "bdcc2680d393cbd47c0bb9cb3ffa2e190af8ecb39d6a869790247a86a9982ee6",
+    "environments/docker-warzone/COPYING.NONGPL": "0c57f9f5d95df3c4e562e134831680bf6902a1c2381bd162f2214179a07b9302",
+    "environments/docker-warzone/Dockerfile": "127ea983ccdb8bac42251d8d95db1e50111fea5e9f0a319c710a01e1cf8f9dd2",
+    "environments/docker-warzone/dockerignore": "02d403e4a3690535ea2451e924fc1b5392f9e5885f344c6b71ca44cba0246140",
+    "environments/docker-warzone/README.md": "70582fcef99c8e7e5876e1e289e2556796062649870c6793e51d7d5fe3c8dbf1",
+    "environments/docker-warzone/COPYING": "e6d6a009505e345fe949e1310334fcb0747f28dae2856759de102ab66b722cb4",
+    "environments/docker-warzone/install.py": "e0e8abefab0f06077fe6132902f041ffa2a774d6ed2977432d445ae097cb5422",
+    "environments/docker-warzone/COPYING.README": "3f0ff94d5e06172b571e77fda97a263eb8ba62f186333f60d8cacd50106cb5c0",
+    "environments/docker-warzone/autorevision.cache": "19bd91883fc6cf16693187d8f6777992cb4b69994c0fdbc8d027f9c693c4b897"
+  }
+}

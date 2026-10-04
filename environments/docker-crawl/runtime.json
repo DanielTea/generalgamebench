@@ -1,0 +1,9 @@
+{
+  "image": "ggbench-crawl:0.34.0-lockstep-v1-arm64",
+  "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+  "repository": "https://github.com/crawl/crawl.git",
+  "platform": "linux/arm64",
+  "variant": "native-lockstep-v1",
+  "patch_sha256": "d2e5aaafed8816effd74d916b1e4577318c975377fc1897e8fda3e3f2748a9a9",
+  "submodules": {}
+}

@@ -1,0 +1,91 @@
+{
+  "scope": "v0.3 native integration validation; not model rankings",
+  "trust": "local-unattested",
+  "checks": [
+    {
+      "check": "cdda-admission.log",
+      "summary": "2 passed, 51 deselected in 56.36s",
+      "log_sha256": "74be6c494523b0d74b57c63de9f9ee28eaf579ae17487fbf29829ae7dfba7875"
+    },
+    {
+      "check": "craftium-v2-admission.log",
+      "summary": "3 passed, 39 deselected in 449.47s (0:07:29)",
+      "log_sha256": "f64501d3c9404149407180ebb0676ce90a5827e2533ed7a090f2cc6cc036870e"
+    },
+    {
+      "check": "crawl-admission.log",
+      "summary": "3 passed, 41 deselected in 41.13s",
+      "log_sha256": "5333951e421408ee69447668ee72c30c2d0f2cc2c041b57e4f60b4604e366bbd"
+    },
+    {
+      "check": "football-admission.log",
+      "summary": "2 passed, 28 deselected in 29.28s",
+      "log_sha256": "48b771b796e9228889f71897ef02807853cf8d7595c6ccc865ca5f24d087d479"
+    },
+    {
+      "check": "mindustry-admission.log",
+      "summary": "2 passed, 47 deselected in 141.69s (0:02:21)",
+      "log_sha256": "a86cbdcd0743475717a207c755b1cf700cdd85151249c509ee8da82465a41ccc"
+    },
+    {
+      "check": "openttd-admission.log",
+      "summary": "3 passed, 44 deselected in 48.21s",
+      "log_sha256": "a1f4f4ecddaddc490b6b5ebe24fc1c7eb52ec1e662f9b1ecb2ee640e3fa82e8f"
+    },
+    {
+      "check": "supertux-admission.log",
+      "summary": "3 passed, 38 deselected in 12.58s",
+      "log_sha256": "ae1918741e1ccb3a1bd95ded223f5b01d148fef17bfea0a6f309a66486e3a4d5"
+    },
+    {
+      "check": "warzone-admission.log",
+      "summary": "2 passed, 51 deselected in 139.58s (0:02:19)",
+      "log_sha256": "2e13812769299a766667dc271739f37ec287b8d8afa8a67773a5d654adba3557"
+    },
+    {
+      "check": "unity/admission-tests.log",
+      "summary": "2 passed, 26 deselected in 28.86s",
+      "log_sha256": "ad032da934a81a03fa85274ae76305cd775852614f709fc7890d9f57a9b7f182"
+    },
+    {
+      "check": "stk-final-tests.log",
+      "summary": "1 failed, 4 passed, 30 deselected in 294.44s (0:04:54)",
+      "log_sha256": "e756e126d62e1c3de19a69f836b516e1ebb5030f94f1f2a0ee784f66605ae316"
+    },
+    {
+      "check": "stk-random-regression.log",
+      "summary": "1 passed, 37 deselected in 185.64s (0:03:05)",
+      "log_sha256": "747e1f80e445e9fc934ab855d3501039fbab8fa67dbc1c0b3204a7013f8fe081"
+    },
+    {
+      "check": "pre-cohort-tests.log",
+      "summary": "63 passed, 53 skipped in 3.21s",
+      "log_sha256": "8a05b0cacd1a1dfde3a4e0a8a14e289ac78667d30be25ad45f7be42562b18fce"
+    }
+  ],
+  "note": "The SuperTuxKart combined check had a worker timeout in one test; the isolated regression subsequently passed. All scheduled integration-control episodes also require full exact replay before publication. The unit suite skips optional native checks unless explicitly enabled; the separate native checks above executed the installed engines.",
+  "test_source_sha256": {
+    "tests/test_container_runtime.py": "ae25b1dd4e6118f81e416d753a06917428a799cd076ac691ee0b5e228cd2cb89",
+    "tests/test_evidence.py": "697318bad501ac38ca4b68f5e927bdf81e456fe21789e890fbd1c6ed8a31a373",
+    "tests/test_games.py": "14f26d4f3cde277ee18a58243464bb3e2f9de076e8c199c81b9eb5ed5e6a8ce4",
+    "tests/test_huggingface.py": "b124352404007a4c3df3093f25531cec491d7909173174f97dc5ae8e19053401",
+    "tests/test_integrations.py": "457d14863cde74d4ea39f60f54da49ad0ea71b389d1f2879b58cf76ecd70b7a6",
+    "tests/test_models.py": "0f2e58b22c6ec8a13011cef1f34fb747c9c7e1680d86e3097a2be15596720d42",
+    "tests/test_protocol.py": "152bd6ba88b501db3cc1d2013fcab3ee2335a9b4e34878e8274a2154351bac82",
+    "tests/test_ranking.py": "6236f9c9fe8fdad2b271c97922f59450ba75abacc4b770da8158e126e3499159",
+    "tests/test_registry.py": "5bb8fdfa22b2254cb56bb73519cc757029660195a522a5546a05b1ab267be73e",
+    "tests/test_worker_game.py": "387b893b5bc8a860ce40a580c63cacdf72abdc9fc74442af6d6e38f30f208ee6"
+  },
+  "static_checks": {
+    "ruff_check": "passed",
+    "ruff_format": "92 files formatted",
+    "javascript_syntax": "passed",
+    "git_diff_check": "passed",
+    "0ad_patch_dry_run": "13 files apply to official source archive"
+  },
+  "model_rankings_unchanged": {
+    "local": "1bf8e51004aee8f630d04c2c8ec1db24c9771b8e0f91b7819969c5e6f3dde60a",
+    "exhibition": "15b350997819a06fd21ae7576687d7f08a8d20d4f5eace35f2d26c86c0004d51",
+    "official": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

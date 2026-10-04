@@ -1,0 +1,17 @@
+[
+  {
+    "name": "generalgamebench-diagnostic-media-v0.3.0.tar.gz",
+    "size_bytes": 38611393,
+    "sha256": "1ad34c5bbbb9cd2ee34349393d0e555b62cbf65b6e4d570441f6a01c9a539c77"
+  },
+  {
+    "name": "generalgamebench-evidence-v0.3.0.tar.gz",
+    "size_bytes": 898899323,
+    "sha256": "b74e105eb1af1ac5ec40e8982a28e8129268e86df90b5cce41d72c8d45d0064d"
+  },
+  {
+    "name": "generalgamebench-huggingface-v0.3.0.tar.gz",
+    "size_bytes": 23758783,
+    "sha256": "a50c1d02d667dab3ffb643294d088d85d9bcdeadbde44b4c1ca5e17391b53773"
+  }
+]

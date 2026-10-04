@@ -1,4 +1,4 @@
-"""Experimental, unadmitted pixels-only facade over a pinned Unity VisualFoodCollector executable.
+"""Pixels-only facade over a pinned Unity VisualFoodCollector executable.
 
 Private vectors, agent IDs, action masks and rewards never become observations.
 The executable is installed separately; no Unity editor is required.

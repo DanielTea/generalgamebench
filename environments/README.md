@@ -44,9 +44,26 @@ uv run generalgamebench run --agent random --games procgen-maze minihack-room cr
 
 Each admitted optional task is tested in two independent processes with the same seed and actions. Every rendered PNG, final raw reward, normalized score and engine metadata must match exactly. Tests also exercise MiniHack goal completion and Procgen automatic reset boundaries. A test of one family member is not validation of its whole library.
 
-The registry currently admits 23 optional tasks: all 16 Procgen games, Crafter, MiniWorld OneRoom, five-piston Pistonball, ALE Breakout, the bundled Airstriker demo, NetHack Score and MiniHack Room. Combined with the two originals and eight Doom scenarios, that is 33 scenarios across 26 catalog cards. The catalog has 45 cards; 19 remain unadmitted.
+The registry admits 33 optional tasks: all 16 Procgen games, Crafter, MiniWorld OneRoom, Pistonball, ALE Breakout, Airstriker, NetHack, MiniHack, Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. With two original games and eight Doom scenarios, this is 43 scenarios across 36 of 45 catalog cards. Nine cards remain unadmitted. Published v0.2 model standings retain their original 33-task suite.
 
-SuperTuxKart Lighthouse is experimental. PySuperTuxKart2 0.7.4 runs on this Mac and uses separately cached 1.5 assets, but exact screenshot replay fails. Its wind renderer reads a render timer as well as randomness, so the task is outside `TASKS`, the CLI and published suites. Crossing the start line must not award a lap: the adapter clamps the engine's negative pre-start distance instead of subtracting it. Experimental code is not a passing integration.
+Install the ten new runtimes separately:
+
+| Game task | Runtime |
+| --- | --- |
+| Unity VisualFoodCollector | [Pinned Mac executable](unity/README.md) |
+| Football Academy | [Linux ARM64](docker-football/README.md) |
+| SuperTuxKart Lighthouse | [Linux ARM64](docker-stk/README.md) |
+| Luanti ChopTree | [Linux ARM64](docker-craftium/README.md) |
+| SuperTux first coin | [Linux ARM64](docker-supertux/README.md) |
+| Dungeon Crawl Stone Soup first experience | [Linux ARM64](docker-crawl/README.md) |
+| OpenTTD first road | [Linux ARM64](docker-openttd/README.md) |
+| Mindustry copper | [Linux ARM64](docker-mindustry/README.md) |
+| Cataclysm: DDA first weapon | [Linux ARM64](docker-cdda/README.md) |
+| Warzone 2100 first derrick | [Linux ARM64](docker-warzone/README.md) |
+
+Docker Desktop must be running for the Linux engines. Installers verify upstream revisions and patches; game binaries are not committed. Containers have no external network and mount only referee source plus separately verified assets where needed. The immutable image ID enters episode metadata, so replay fails closed after an image change. These are trusted engine containers, not arbitrary submission sandboxes.
+
+[0 A.D.](experimental-0ad/README.md), [StarCraft II](experimental-sc2/README.md) and [Veloren](experimental-veloren/README.md) have reproducible development probes but fail admission. They are not task-registry entries. See [all remaining blockers](../docs/GAMES.md#remaining-work).
 
 ## Frozen task definitions
 
@@ -60,6 +77,17 @@ Every task exposes rendered RGB pixels, a documented discrete action set and one
 - **Stable-Retro:** Airstriker Genesis demo only. One emulator step per action, buttons exposed separately, raw score / 10000. No retail ROM collection is included.
 - **NetHack:** native tile renderer, score reward / 1000, fixed core and display seeds, compass/vertical/wait/more controls. This restricted-control task does not claim the full NetHack action space.
 - **MiniHack:** Room-5x5, fixed core and display seeds, the same native tile renderer; reaching the goal yields one.
+- **Unity:** VisualFoodCollector, one selected agent's native 84×84 camera, fixed neutral peers. Green food +1 and red food −1; net food divided by a fixed target of ten.
+- **Football:** Academy close-range empty-goal scenario, 320×180 native pixel wrapper, eight movement directions and shoot. Release held controls between decisions; native goal reward only.
+- **Luanti:** pinned Craftium snowy forest, steel axe and native 64×64 camera. Explicit serial-lockstep patch; one dug tree node scores one and completes the task. Death or the declared horizon also ends play.
+- **SuperTuxKart:** Lighthouse time trial, one kart, 320×240 camera, 0.2 simulated seconds per decision. Explicit simulation-clock engine patch and fixed neutral pre-roll. Score is nonnegative native distance divided by track length, without subtracting the negative starting sentinel.
+
+- **SuperTux:** original Welcome to Antarctica level, native 640×480 SDL camera, first coin or death; eight 15 ms physics frames per decision.
+- **Dungeon Crawl Stone Soup:** native 800×600 tiles, Minotaur Fighter on Dungeon:1, first experience or death; ordinary turn-based keys.
+- **OpenTTD:** native 800×600 software renderer, seeded 64×64 map, first owned road; only ordinary mouse and toolbar inputs.
+- **Mindustry:** native 960×640 Ground Zero, 15 copper collected by mining; six 1/60-second native frames per decision.
+- **Cataclysm: DDA:** native 960×640 UltimateCataclysm tutorial, first baseball bat wielded; normal movement, dismissal and inventory keys.
+- **Warzone 2100:** native 960×640 TUTORIAL3, first oil derrick completed; normal truck selection and cursor controls, 100 ms native ticks.
 
 Clamping to [0,1] is only for aggregation; the evidence retains raw values and score metadata. Game families have different natural timescales. Equal decision budgets are a transparent integration demonstration, not proof of equal difficulty or equal simulated time.
 

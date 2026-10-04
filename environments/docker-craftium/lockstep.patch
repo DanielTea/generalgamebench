@@ -1,0 +1,333 @@
+diff --git a/irr/src/CSceneManager.cpp b/irr/src/CSceneManager.cpp
+index 05f8de7..85a4df4 100644
+--- a/irr/src/CSceneManager.cpp
++++ b/irr/src/CSceneManager.cpp
+@@ -517,7 +517,7 @@ void CSceneManager::drawAll()
+ 		CurrentRenderPass = ESNRP_SOLID;
+ 		Driver->getOverrideMaterial().Enabled = ((Driver->getOverrideMaterial().EnablePasses & CurrentRenderPass) != 0);
+ 
+-		std::sort(SolidNodeList.begin(), SolidNodeList.end());
++		// Benchmark variant: preserve scene registration order.
+ 
+ 		for (auto &it : SolidNodeList)
+ 			render_node(it.Node);
+diff --git a/src/client/client.cpp b/src/client/client.cpp
+index 1633533..ac99be7 100644
+--- a/src/client/client.cpp
++++ b/src/client/client.cpp
+@@ -698,7 +698,8 @@ void Client::step(float dtime)
+ {
+     syncClientStep();
+ 
+-	dtime -= m_craftium_lag;
++	if (g_settings->getBool("sync_env_mode")) dtime = 0.02f;
++	else dtime -= m_craftium_lag;
+ 
+ 	// printf("client dtime: %f, LIM: %f\n", dtime, DTIME_LIMIT);
+ 	// Limit a bit
+@@ -880,6 +881,7 @@ void Client::step(float dtime)
+ 		Replace updated meshes
+ 	*/
+ 	{
++		if (g_settings->getBool("sync_env_mode")) m_mesh_update_manager->flush();
+ 		int num_processed_meshes = 0;
+ 		std::vector<v3s16> blocks_to_ack;
+ 		bool force_update_shadows = false;
+diff --git a/src/client/clientmap.cpp b/src/client/clientmap.cpp
+index aad5c70..1260311 100644
+--- a/src/client/clientmap.cpp
++++ b/src/client/clientmap.cpp
+@@ -30,7 +30,7 @@ namespace {
+ 
+ 		using MeshBufList = std::vector<MeshBuf>;
+ 
+-		using MeshBufListMap = std::unordered_map<video::SMaterial, MeshBufList>;
++		using MeshBufListMap = std::vector<std::pair<video::SMaterial, MeshBufList>>;
+ 
+ 		std::array<MeshBufListMap, MAX_TILE_LAYERS> maps;
+ 
+@@ -56,7 +56,9 @@ namespace {
+ 			// Append to the correct layer
+ 			auto &map = maps[layer];
+ 			const video::SMaterial &m = buf->getMaterial();
+-			auto &bufs = map[m]; // default constructs if non-existent
++			auto it = std::find_if(map.begin(), map.end(), [&] (const auto &entry) { return entry.first == m; });
++			if (it == map.end()) { map.emplace_back(m, MeshBufList{}); it = map.end() - 1; }
++			auto &bufs = it->second;
+ 			bufs.emplace_back(position, buf);
+ 		}
+ 
+@@ -888,9 +890,7 @@ static u32 transformBuffersToDrawOrder(
+ 	 * - vertex and index data is immutable
+ 	 * - we know when to invalidate (invalidateMapBlockMesh does this)
+ 	 */
+-	std::sort(to_merge.begin(), to_merge.end(), [] (const auto &l, const auto &r) {
+-		return static_cast<void*>(l.second) < static_cast<void*>(r.second);
+-	});
++	// Benchmark variant: keep deterministic block traversal order in merged buffers.
+ 	// cache key is a string of sorted raw pointers
+ 	std::string key;
+ 	key.reserve(sizeof(void*) * to_merge.size());
+diff --git a/src/client/craftium.h b/src/client/craftium.h
+index eda1c5a..e9dcd0c 100644
+--- a/src/client/craftium.h
++++ b/src/client/craftium.h
+@@ -122,11 +122,6 @@ inline void syncServerStep() {
+         syncServerInit();
+ 
+ 
+-    if (sem_post(srv_sem_B) < 0) {
+-        perror("[SyncServerStep] Error posting sem B");
+-        exit(EXIT_FAILURE);
+-    }
+-
+     if (sem_wait(srv_sem_A) < 0) {
+         perror("[SyncServerStep] Error waiting sem A");
+         exit(EXIT_FAILURE);
+@@ -135,6 +130,15 @@ inline void syncServerStep() {
+     // printf("=> SRV end\n");
+ }
+ 
++inline void syncServerFinish() {
++    if (!g_settings->getBool("sync_env_mode")) return;
++    if (sem_post(srv_sem_B) < 0) {
++        perror("[SyncServerStep] Error posting sem B");
++        exit(EXIT_FAILURE);
++    }
++
++}
++
+ inline void syncClientStep() {
+     if (!g_settings->getBool("sync_env_mode")) {
+         return;
+diff --git a/src/client/game.cpp b/src/client/game.cpp
+index 21add1d..6ec89d1 100644
+--- a/src/client/game.cpp
++++ b/src/client/game.cpp
+@@ -1027,6 +1027,8 @@ void Game::run()
+ #endif
+ 
+ 	auto framemarker = FrameMarker("Game::run()-frame").started();
++	u32 benchmark_frame = 0;
++	if (g_settings->getBool("sync_env_mode")) device->getTimer()->stop();
+ 
+ 	while (m_rendering_engine->run()
+ 			&& !(*kill || g_gamecallback->shutdown_requested
+@@ -1038,6 +1040,10 @@ void Game::run()
+ 		//    m_rendering_engine->run() from this iteration
+ 		//  + Sleep time until the wanted FPS are reached
+ 		draw_times.limit(device, &dtime);
++		if (g_settings->getBool("sync_env_mode")) {
++			dtime = 0.02f;
++			device->getTimer()->setTime(++benchmark_frame * 20);
++		}
+ 
+ 		framemarker.start();
+ 
+@@ -1387,7 +1393,7 @@ bool Game::createClient(const GameStartData &start_data)
+ 
+ 	/* Clouds
+ 	 */
+-	clouds = make_irr<Clouds>(smgr, shader_src, -1, myrand());
++	clouds = make_irr<Clouds>(smgr, shader_src, -1, g_settings->getBool("sync_env_mode") ? static_cast<u32>(std::stoull(g_settings->get("fixed_map_seed"))) : myrand());
+ 
+ 	/* Skybox
+ 	 */
+diff --git a/src/client/mesh_generator_thread.cpp b/src/client/mesh_generator_thread.cpp
+index 712c785..fd0847e 100644
+--- a/src/client/mesh_generator_thread.cpp
++++ b/src/client/mesh_generator_thread.cpp
+@@ -333,3 +333,8 @@ bool MeshUpdateManager::isRunning()
+ 			return true;
+ 	return false;
+ }
++
++void MeshUpdateManager::flush()
++{
++    while (!m_queue_in.idle()) sleep_ms(1);
++}
+diff --git a/src/client/mesh_generator_thread.h b/src/client/mesh_generator_thread.h
+index c8db03d..e360aa0 100644
+--- a/src/client/mesh_generator_thread.h
++++ b/src/client/mesh_generator_thread.h
+@@ -56,6 +56,12 @@ class MeshUpdateQueue
+ 	// Marks a position as finished, unblocking the next update
+ 	void done(v3s16 pos);
+ 
++	bool idle()
++	{
++		MutexAutoLock lock(m_mutex);
++		return m_queue.empty() && m_inflight_blocks.empty();
++	}
++
+ 	u32 size()
+ 	{
+ 		MutexAutoLock lock(m_mutex);
+@@ -120,6 +126,7 @@ class MeshUpdateManager
+ 	bool getNextResult(MeshUpdateResult &r);
+ 
+ 
++	void flush();
+ 	void start();
+ 	void stop();
+ 	void wait();
+diff --git a/src/client/particles.cpp b/src/client/particles.cpp
+index 179c9c4..21f5cd7 100644
+--- a/src/client/particles.cpp
++++ b/src/client/particles.cpp
+@@ -24,6 +24,25 @@
+ 
+ #include "SMeshBuffer.h"
+ 
++#include "noise.h"
++namespace {
++PcgRandom &particleRandom() {
++    static PcgRandom rng(std::stoull(g_settings->get("fixed_map_seed")));
++    return rng;
++}
++float particleRandFloat() {
++    if (!g_settings->getBool("sync_env_mode")) return myrand_float();
++    return static_cast<float>(particleRandom().next()) / static_cast<float>(U32_MAX);
++}
++int particleRandRange(int low, int high) {
++    if (!g_settings->getBool("sync_env_mode")) return myrand_range(low, high);
++    return particleRandom().range(low, high);
++}
++float particleRandRange(float low, float high) {
++    return (high-low) * particleRandFloat() + low;
++}
++}
++
+ using BlendMode = ParticleParamTypes::BlendMode;
+ 
+ ClientParticleTexture::ClientParticleTexture(const ServerParticleTexture& p, ITextureSource *tsrc)
+@@ -267,7 +286,7 @@ ParticleSpawner::ParticleSpawner(
+ {
+ 	m_spawntimes.reserve(p.amount + 1);
+ 	for (u16 i = 0; i <= p.amount; i++) {
+-		float spawntime = myrand_float() * p.time;
++		float spawntime = particleRandFloat() * p.time;
+ 		m_spawntimes.push_back(spawntime);
+ 	}
+ 
+@@ -370,9 +389,9 @@ void ParticleSpawner::spawnParticle(ClientEnvironment *env, float radius,
+ 		mag.normalize();
+ 
+ 		v3f ofs = v3f(l,0,0);
+-		ofs.rotateXZBy(myrand_range(0.f,360.f));
+-		ofs.rotateYZBy(myrand_range(0.f,360.f));
+-		ofs.rotateXYBy(myrand_range(0.f,360.f));
++		ofs.rotateXZBy(particleRandRange(0.f,360.f));
++		ofs.rotateYZBy(particleRandRange(0.f,360.f));
++		ofs.rotateXYBy(particleRandRange(0.f,360.f));
+ 
+ 		pp.pos += ofs * mag;
+ 	}
+@@ -456,7 +475,7 @@ void ParticleSpawner::spawnParticle(ClientEnvironment *env, float radius,
+ 		if (m_texpool.size() == 0)
+ 			return;
+ 		texture = ClientParticleTexRef(m_texpool[m_texpool.size() == 1 ? 0
+-				: myrand_range(0, m_texpool.size()-1)]);
++				: particleRandRange(0, m_texpool.size()-1)]);
+ 		texpos = v2f(0.0f, 0.0f);
+ 		texsize = v2f(1.0f, 1.0f);
+ 		if (texture.tex->animated)
+@@ -537,7 +556,7 @@ void ParticleSpawner::step(float dtime, ClientEnvironment *env)
+ 			return;
+ 
+ 		for (int i = 0; i <= p.amount; i++) {
+-			if (myrand_float() < dtime)
++			if (particleRandFloat() < dtime)
+ 				spawnParticle(env, radius, attached_absolute_pos_rot_matrix);
+ 		}
+ 	}
+@@ -866,7 +885,7 @@ bool ParticleManager::getNodeParticleParams(const MapNode &n,
+ 	if (tilenum > 0 && tilenum <= 6)
+ 		texid = tilenum - 1;
+ 	else
+-		texid = myrand_range(0,5);
++		texid = particleRandRange(0,5);
+ 	const TileLayer &tile = f.tiles[texid].layers[0];
+ 	p.animation.type = TAT_NONE;
+ 
+@@ -876,13 +895,13 @@ bool ParticleManager::getNodeParticleParams(const MapNode &n,
+ 	else
+ 		*texture = tile.texture;
+ 
+-	float size = (myrand_range(0,8)) / 64.0f;
++	float size = (particleRandRange(0,8)) / 64.0f;
+ 	p.size = BS * size;
+ 	if (tile.scale)
+ 		size /= tile.scale;
+ 	texsize = v2f(size * 2.0f, size * 2.0f);
+-	texpos.X = (myrand_range(0,64)) / 64.0f - texsize.X;
+-	texpos.Y = (myrand_range(0,64)) / 64.0f - texsize.Y;
++	texpos.X = (particleRandRange(0,64)) / 64.0f - texsize.X;
++	texpos.Y = (particleRandRange(0,64)) / 64.0f - texsize.Y;
+ 
+ 	if (tile.has_color)
+ 		*color = tile.color;
+@@ -924,13 +943,13 @@ void ParticleManager::addNodeParticle(IGameDef *gamedef,
+ 	p.texture.blendmode = f.alpha == ALPHAMODE_BLEND
+ 			? BlendMode::alpha : BlendMode::clip;
+ 
+-	p.expirationtime = myrand_range(0, 100) / 100.0f;
++	p.expirationtime = particleRandRange(0, 100) / 100.0f;
+ 
+ 	// Physics
+ 	p.vel = v3f(
+-		myrand_range(-1.5f,1.5f),
+-		myrand_range(0.f,3.f),
+-		myrand_range(-1.5f,1.5f)
++		particleRandRange(-1.5f,1.5f),
++		particleRandRange(0.f,3.f),
++		particleRandRange(-1.5f,1.5f)
+ 	);
+ 	p.acc = v3f(
+ 		0.0f,
+@@ -938,9 +957,9 @@ void ParticleManager::addNodeParticle(IGameDef *gamedef,
+ 		0.0f
+ 	);
+ 	p.pos = v3f(
+-		(f32)pos.X + myrand_range(0.f, .5f) - .25f,
+-		(f32)pos.Y + myrand_range(0.f, .5f) - .25f,
+-		(f32)pos.Z + myrand_range(0.f, .5f) - .25f
++		(f32)pos.X + particleRandRange(0.f, .5f) - .25f,
++		(f32)pos.Y + particleRandRange(0.f, .5f) - .25f,
++		(f32)pos.Z + particleRandRange(0.f, .5f) - .25f
+ 	);
+ 
+ 	addParticle(std::make_unique<Particle>(
+diff --git a/src/main.cpp b/src/main.cpp
+index 95a2f7b..baa70d0 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -710,6 +710,7 @@ static bool init_common(const Settings &cmd_args, int argc, char *argv[])
+ 		std::string data = oss.str();
+ 		seed = murmur_hash_64_ua(data.c_str(), data.size(), 0xc0ffee);
+ 	}
++	if (g_settings->getBool("sync_env_mode")) seed = std::stoull(g_settings->get("fixed_map_seed"));
+ 	srand(seed);
+ 	mysrand(seed);
+ 
+diff --git a/src/server.cpp b/src/server.cpp
+index 1e42644..3548d33 100644
+--- a/src/server.cpp
++++ b/src/server.cpp
+@@ -143,7 +143,7 @@ void *ServerThread::run()
+ 			if (dtime > step_settings.steplen + 0.001f)
+ 				m_server->yieldToOtherThreads(dtime);
+ 
+-			m_server->AsyncRunStep(step_settings.pause ? 0.0f : dtime);
++			m_server->AsyncRunStep(step_settings.pause ? 0.0f : (g_settings->getBool("sync_env_mode") ? 0.02f : dtime));
+ 
+ 			const float remaining_time = step_settings.steplen
+ 					- 1e-6f * (porting::getTimeUs() - t0);
+@@ -162,6 +162,7 @@ void *ServerThread::run()
+ 		}
+ 
+ 		dtime = 1e-6f * (porting::getTimeUs() - t0);
++                syncServerFinish();
+ 		framemarker.end();
+ 	}
+ 

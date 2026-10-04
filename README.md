@@ -2,7 +2,7 @@
 
 [![The GeneralGameBench environment catalog: runnable games and research candidates](site/dist/media/environment-atlas.png)](https://danieltremer.com/generalgamebench/#games)
 
-*45 environment cards: 26 validated cards covering 33 scenarios, plus 19 unadmitted candidates. [Image credits](docs/MEDIA.md).*
+*45 environment cards: 36 validated cards covering 43 scenarios, plus nine unadmitted candidates. [Image credits](docs/MEDIA.md).*
 
 > “Intelligence is the ability to adapt to new environments.” — We test this.
 
@@ -10,7 +10,9 @@
 
 Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh observation, validate an action, measure the complete response path, and record referee-owned evidence.
 
-**Early reference implementation.** Two original 2D games, eight ViZDoom scenarios and 23 additional research tasks run on the tested Mac. These include all 16 Procgen games, Crafter, MiniWorld, Pistonball, Breakout, Airstriker, NetHack and MiniHack. Commercial AAA titles remain integration candidates; the experimental SuperTuxKart adapter fails its pixel-replay gate and is excluded. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
+**Early reference implementation.** Two original 2D games, eight ViZDoom scenarios and 33 additional tasks run on the tested Mac. Version 0.3 adds ten tasks: Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. Each has native scoring and exact replay checks. The nine Linux engines use local ARM64 containers. Commercial AAA titles remain integration candidates. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
+
+The published model standings remain the frozen v0.2 cohort of 33 scenarios. New integrations have separate control-policy validation evidence; they are not mixed into older model rankings. See [coverage and remaining work](docs/GAMES.md).
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
 

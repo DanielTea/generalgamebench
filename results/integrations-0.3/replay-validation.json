@@ -1,0 +1,128 @@
+{
+  "runs/integration-release-0.3-verified/random/unity-food-collector-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/unity-food-collector-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/football-empty-goal-5000": {
+    "valid": true,
+    "steps": 27,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/football-empty-goal-5001": {
+    "valid": true,
+    "steps": 27,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/supertuxkart-lighthouse-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/supertuxkart-lighthouse-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/luanti-chop-tree-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/luanti-chop-tree-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/supertux-first-coin-5000": {
+    "valid": true,
+    "steps": 36,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/supertux-first-coin-5001": {
+    "valid": true,
+    "steps": 36,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/dcss-first-experience-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/dcss-first-experience-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/openttd-first-road-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/openttd-first-road-5001": {
+    "valid": true,
+    "steps": 177,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/mindustry-copper-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/mindustry-copper-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/cdda-first-weapon-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/cdda-first-weapon-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/warzone-first-derrick-5000": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/random/warzone-first-derrick-5001": {
+    "valid": true,
+    "steps": 200,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/integration-release-0.3-verified/idle/unity-food-collector-71": {
+    "valid": true,
+    "steps": 1000,
+    "replayed": true,
+    "authentication": "local-unattested"
+  }
+}

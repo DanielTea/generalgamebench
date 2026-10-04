@@ -1,0 +1,9 @@
+{
+  "image": "ggbench-cdda:0.I-1-lockstep-v1-arm64",
+  "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+  "repository": "https://github.com/CleverRaven/Cataclysm-DDA.git",
+  "platform": "linux/arm64",
+  "variant": "native-lockstep-v1",
+  "patch_sha256": "61bd4633dcbe0b46a06209fcb9a05cc37802454dfa3cb91becb641b773c195d5",
+  "submodules": {}
+}

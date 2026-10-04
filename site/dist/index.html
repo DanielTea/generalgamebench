@@ -15,7 +15,7 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141518'/%3E%3Cpath d='M6 24L16 6l10 18h-6l-4-8-4 8z' fill='%23ff5a1f'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="style.css?v=cards-1" />
-    <script src="app.js?v=cards-1" defer></script>
+    <script src="app.js?v=integrations-4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
@@ -32,7 +32,7 @@
       <section class="intro">
         <div>
           <span class="eyebrow"
-            >OPEN GAME INTELLIGENCE BENCHMARK // V0.2.0</span
+            >OPEN GAME INTELLIGENCE BENCHMARK // V0.3.0</span
           >
           <h1>Agent<br /><em>leaderboard.</em></h1>
           <p class="motto">
@@ -49,10 +49,10 @@
       </section>
       <section class="metrics" aria-label="Benchmark statistics">
         <div>
-          <strong id="episodes">—</strong><span>measured episodes</span>
+          <strong id="episodes">—</strong><span>leaderboard episodes</span>
         </div>
         <div>
-          <strong id="decisions">—</strong><span>recorded decisions</span>
+          <strong id="decisions">—</strong><span>leaderboard decisions</span>
         </div>
         <div><strong id="scenario-count">—</strong><span>runnable scenarios</span></div>
         <div>
@@ -148,13 +148,17 @@
           >
         </div>
         <p class="explanation">
-          26 of 45 environment cards now contain a validated task, covering 33
-          runnable scenarios. The remaining 19 include an experimental racing
-          adapter and planned indie and AAA integrations. Library cards cover
+          36 of 45 environment cards now contain a validated task, covering 43
+          runnable scenarios. The remaining nine need further replay validation,
+          game-specific adapters or usable game installations. Library cards cover
           only the tasks named in their details. Every validated card includes
           a screenshot and a short clip from recorded evaluation frames.
-          Candidate cards use credited project previews and link to project media;
-          those previews are not benchmark results. Clips play only when selected.
+          Three experimental cards show unranked native diagnostic captures; other candidates use credited project previews.
+          These previews are not benchmark results. Clips play only when selected.
+          Ten new tasks now cover Unity, Football, SuperTuxKart, Luanti, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100;
+          the model standings above remain the frozen 33-scenario evaluation.
+          Their separate validation includes 21 control runs and 4,303 decisions, all replay-verified.
+          <a href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0">Download the new integration evidence.</a>
         </p>
         <div id="game-grid" class="game-grid"></div>
       </section>

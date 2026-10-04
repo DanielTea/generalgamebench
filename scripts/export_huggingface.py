@@ -20,7 +20,7 @@ def export(site: Path, destination: Path):
         "---\ntitle: GeneralGameBench\nsdk: static\napp_file: index.html\n"
         "license: mit\npinned: false\n---\n\n"
         "# GeneralGameBench\n\n"
-        "Other benchmarks test productivity/usefulness, we test intelligence.\n\n"
+        "“Intelligence is the ability to adapt to new environments.” — We test this.\n\n"
         "Static, read-only leaderboard. Evaluation workers run separately. "
         "No provider credentials or game execution belong in this Space.\n\n"
         "MIT applies to original code. Game media retains its separate rights; "

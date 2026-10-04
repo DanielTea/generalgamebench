@@ -9,7 +9,9 @@ import contextlib
 import importlib.metadata
 import io
 import json
+import os
 import sys
+import tempfile
 import traceback
 
 import numpy as np
@@ -111,10 +113,112 @@ class Environment:
             self.actions = [a.name.lower() for a in actions]
             self.mapping = list(range(len(actions)))
             self.image = self.engine.render().copy()
+        elif self.kind == "cdda-first-weapon":
+            if __package__:
+                from .cdda_engine import CDDAPixelsEnv
+            else:
+                from cdda_engine import CDDAPixelsEnv
+
+            self.package = "Cataclysm: Dark Days Ahead"
+            self.engine = CDDAPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "warzone-first-derrick":
+            if __package__:
+                from .warzone_engine import WarzonePixelsEnv
+            else:
+                from warzone_engine import WarzonePixelsEnv
+
+            self.package = "Warzone 2100"
+            self.engine = WarzonePixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "mindustry-copper":
+            if __package__:
+                from .mindustry_engine import MindustryPixelsEnv
+            else:
+                from mindustry_engine import MindustryPixelsEnv
+
+            self.package = "Mindustry"
+            self.engine = MindustryPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "openttd-first-road":
+            if __package__:
+                from .openttd_engine import OpenTTDPixelsEnv
+            else:
+                from openttd_engine import OpenTTDPixelsEnv
+
+            self.package = "OpenTTD"
+            self.engine = OpenTTDPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "dcss-first-experience":
+            if __package__:
+                from .crawl_engine import CrawlPixelsEnv
+            else:
+                from crawl_engine import CrawlPixelsEnv
+
+            self.package = "DCSS"
+            self.engine = CrawlPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "supertux-first-coin":
+            if __package__:
+                from .supertux_engine import SuperTuxPixelsEnv
+            else:
+                from supertux_engine import SuperTuxPixelsEnv
+
+            self.package = "SuperTux"
+            self.engine = SuperTuxPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "luanti-chop-tree":
+            if __package__:
+                from .craftium_engine import CraftiumPixelsEnv
+            else:
+                from craftium_engine import CraftiumPixelsEnv
+
+            self.package = "craftium"
+            self.engine = CraftiumPixelsEnv(seed, max_steps)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "football-empty-goal":
+            if __package__:
+                from .football_engine import FootballPixelsEnv
+            else:
+                from football_engine import FootballPixelsEnv
+
+            self.package = "gfootball"
+            self.engine = FootballPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
+        elif self.kind == "unity-food-collector":
+            # This file is also launched directly by the legacy Python worker.
+            if __package__:
+                from .unity_engine import UnityPixelsEnv
+            else:
+                from unity_engine import UnityPixelsEnv
+
+            self.package = "mlagents-envs"
+            self.engine = UnityPixelsEnv(seed)
+            self.actions = list(self.engine.actions)
+            self.mapping = list(range(len(self.actions)))
+            self.image = self.engine.reset()
         elif self.kind == "supertuxkart-lighthouse":
             import pystk2
 
             self.package = "PySuperTuxKart2"
+            self.scratch = tempfile.TemporaryDirectory(prefix="ggbench-stk-")
+            os.environ["SUPERTUXKART_SAVEDIR"] = self.scratch.name
             graphics = pystk2.GraphicsConfig.ld()
             graphics.display = False
             graphics.screen_width, graphics.screen_height = 320, 240
@@ -138,6 +242,11 @@ class Environment:
                     break
             else:
                 raise ValueError("Race failed to start")
+            # Fixed neutral pre-roll lets the native starting camera/GUI settle.
+            # This is part of task initialization, identical for every agent.
+            for _ in range(50):
+                self.engine.step(pystk2.Action())
+            self.state.update()
             self.actions = [
                 "wait",
                 "accelerate",
@@ -203,7 +312,11 @@ class Environment:
             "task_id": task["id"],
             "task_version": task["task_version"],
             "engine": self.package,
-            "engine_version": importlib.metadata.version(self.package),
+            "engine_version": (
+                self.engine.engine_version
+                if hasattr(self.engine, "engine_version")
+                else importlib.metadata.version(self.package)
+            ),
             "numpy_version": np.__version__,
             "observation": "rendered-rgb-only",
             "score_range": task["score_range"],
@@ -211,6 +324,105 @@ class Environment:
             "simulation": "lockstep",
             "replay": "exact-frame-and-score",
         }
+        if self.kind == "unity-food-collector":
+            self.metadata.update(
+                assets_sha256=self.engine.assets_sha256,
+                scene="VisualFoodCollector",
+                controlled_agent="lowest-initial-agent-id",
+                peer_policy="no-op",
+                capture_frame_rate=30,
+                camera_size=[84, 84],
+                reward_definition="sum of native food rewards; green +1, red -1",
+            )
+        elif self.kind == "cdda-first-weapon":
+            self.metadata.update(
+                scenario="native tutorial; first wielded baseball bat",
+                camera_size=[960, 640],
+                renderer="native SDL2 software / UltimateCataclysm tiles",
+                control_policy="one native key per decision; tutorial popups remain visible",
+                reward_definition="one when the native avatar wields the tutorial baseball bat",
+                initialization="native tutorial world and preset character; fresh user directory",
+            )
+        elif self.kind == "warzone-first-derrick":
+            self.metadata.update(
+                scenario="native TUTORIAL3; first constructed oil derrick",
+                camera_size=[960, 640],
+                renderer="native SDL3/OpenGL / Xvfb / Mesa",
+                cursor_step_pixels=32,
+                fine_cursor_step_pixels=8,
+                step_milliseconds=100,
+                initialization="40 native frames; fresh tutorial and settings",
+                reward_definition="one on first native completed structure; two unit losses end task",
+            )
+        elif self.kind == "mindustry-copper":
+            self.metadata.update(
+                scenario="serpulo/groundZero; native first-15-copper tutorial objective",
+                camera_size=[960, 640],
+                renderer="native SDL/OpenGL / Xvfb / Mesa",
+                initialization="120 native frames; fresh player and settings",
+                cursor_step_pixels=32,
+                frames_per_action=6,
+                physics_step_seconds=1 / 60,
+                optional_effects=False,
+                reward_definition="native player-plus-core copper gain from initial total; target 15",
+            )
+        elif self.kind == "openttd-first-road":
+            self.metadata.update(
+                scenario="new 64x64 company in 1950; first owned road",
+                camera_size=[800, 600],
+                renderer="native 32bpp software framebuffer; OpenGFX 7.1",
+                cursor_step_pixels=32,
+                step_milliseconds=30,
+                initialization="16 native ticks; fresh company and configuration",
+                reward_definition="one when native company infrastructure owns at least two road bits",
+            )
+        elif self.kind == "dcss-first-experience":
+            self.metadata.update(
+                scenario="Dungeon:1; Minotaur Fighter with war axe; first experience",
+                camera_size=[800, 600],
+                renderer="native SDL2 tiles / Mesa",
+                control_policy="one native key per decision; no auto-explore or auto-fight",
+                reward_definition="one on first native experience gain; death ends task",
+                seed_policy="native uint64 seed; benchmark zero maps to uint64 maximum",
+                initialization="advance title and seed-confirmation menus before observing",
+            )
+        elif self.kind == "supertux-first-coin":
+            self.metadata.update(
+                level="world1/welcome_antarctica.stl",
+                camera_size=[640, 480],
+                renderer="SDL software",
+                frames_per_action=8,
+                physics_step_seconds=0.015,
+                reward_definition="native level coin count; first coin completes task",
+                initialization="skip level-introduction menu and fades; fresh player/save",
+            )
+        elif self.kind == "luanti-chop-tree":
+            self.metadata.update(
+                scenario="Craftium/ChopTree-v0: first tree block",
+                camera_size=[64, 64],
+                step_seconds=0.02,
+                seed_policy="pinned world snapshot; fixed map/Lua seed on initial reset",
+                engine_variant="serial-lockstep-v2",
+                weather="disabled via upstream enable_weather setting",
+                mesh_generation_threads=1,
+                reward_definition="native Lua tree-node dig reward; first reward completes task",
+            )
+        elif self.kind == "football-empty-goal":
+            self.metadata.update(
+                scenario="academy_empty_goal_close",
+                camera_size=[320, 180],
+                control_policy="release movement and shot before each decision",
+                reward_definition="native goal reward, no checkpoint shaping",
+            )
+        elif self.kind == "supertuxkart-lighthouse":
+            self.metadata.update(
+                track="lighthouse",
+                step_seconds=0.2,
+                neutral_preroll_steps=50,
+                renderer="Mesa software / deterministic-render-v1",
+                camera_size=[int(self.image.shape[1]), int(self.image.shape[0])],
+                reward_definition="max(0, native overall distance) / native track length",
+            )
 
     def frame(self):
         image = np.asarray(self.image)
@@ -303,6 +515,7 @@ class Environment:
             self.engine.stop()
             self.engine = None
             pystk2.clean()
+            self.scratch.cleanup()
         if hasattr(self.engine, "close"):
             self.engine.close()
 
@@ -311,8 +524,6 @@ def main():
     output = sys.stdout
     # Native libraries may also print; duplicate the original protocol fd and
     # redirect OS stdout before loading an engine.
-    import os
-
     output = os.fdopen(os.dup(sys.stdout.fileno()), "w", buffering=1)
     os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
     env = None
