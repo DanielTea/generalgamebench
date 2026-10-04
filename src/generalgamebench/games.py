@@ -190,8 +190,16 @@ class DoomGame:
 
 
 def make_game(game_id: str, seed: int, max_steps: int = 80):
+    if type(seed) is not int or not 0 <= seed < 2**31 or max_steps < 1:
+        raise ValueError("Use a nonnegative 31-bit seed and a positive horizon")
     if game_id in NATIVE:
         return NativeGame(game_id, seed, max_steps)
     if game_id in DOOM:
         return DoomGame(game_id, seed, max_steps)
+    from .registry import TASKS
+
+    if game_id in TASKS:
+        from .worker_game import WorkerGame
+
+        return WorkerGame(game_id, seed, max_steps)
     raise ValueError(f"Unknown game {game_id!r}; use arena games")

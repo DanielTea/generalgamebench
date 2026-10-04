@@ -32,7 +32,7 @@
       <section class="intro">
         <div>
           <span class="eyebrow"
-            >OPEN GAME INTELLIGENCE BENCHMARK // V0.1.1</span
+            >OPEN GAME INTELLIGENCE BENCHMARK // V0.2.0</span
           >
           <h1>Agent<br /><em>leaderboard.</em></h1>
           <p class="motto">
@@ -54,7 +54,7 @@
         <div>
           <strong id="decisions">—</strong><span>recorded decisions</span>
         </div>
-        <div><strong>10</strong><span>runnable scenarios</span></div>
+        <div><strong id="scenario-count">—</strong><span>runnable scenarios</span></div>
         <div>
           <strong id="catalog-count">—</strong
           ><span>researched candidates</span>
@@ -69,9 +69,9 @@
           <a class="small-link" href="data.json" download>Download results</a>
         </div>
         <div class="tabs" role="group" aria-label="Leaderboard track">
-          <button data-track="local" class="active" aria-pressed="true">
+          <button data-track="local" aria-pressed="false">
             Local baselines</button
-          ><button data-track="exhibition" aria-pressed="false">
+          ><button data-track="exhibition" class="active" aria-pressed="true">
             Model exhibition</button
           ><button data-track="official" aria-pressed="false">
             Official ranked
@@ -80,6 +80,9 @@
         <p id="track-description" class="explanation">
           Loading measured results…
         </p>
+        <label class="score-filter">Score view
+          <select id="score-game"><option value="all">Entire fixed suite</option></select>
+        </label>
         <div class="table-wrap">
           <table>
             <thead>
@@ -88,22 +91,24 @@
                 <th scope="col">Agent</th>
                 <th scope="col">Score / 100</th>
                 <th scope="col">95% interval</th>
-                <th scope="col">p95 reaction</th>
-                <th scope="col">Maximum</th>
+                <th scope="col">Suite p95</th>
+                <th scope="col">Suite maximum</th>
+                <th scope="col">Suite errors</th>
                 <th scope="col">&lt;100 ms</th>
               </tr>
             </thead>
             <tbody id="rankings">
               <tr>
-                <td colspan="7">Gameplay measurements are being prepared.</td>
+                <td colspan="8">Gameplay measurements are being prepared.</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p id="suite" class="footnote"></p>
+        <details class="availability"><summary>Configured models and run status</summary><ul id="availability"></ul></details>
         <p class="footnote">
           <a
-            href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.1.0"
+            href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0"
             >Download full replay evidence</a
           >
           ·
@@ -143,9 +148,10 @@
           >
         </div>
         <p class="explanation">
-          Original 2D games and real Doom scenarios run today. Indie, modern 3D
-          and AAA titles below are a researched roadmap; listing a title does
-          not mean it is integrated or licensed for automation. Screenshots show
+          26 of 45 environment cards now contain a validated task, covering 33
+          runnable scenarios. The remaining 19 include an experimental racing
+          adapter and planned indie and AAA integrations. Library cards cover
+          only the task named in their details. Screenshots show
           what each game looks like; project previews are not benchmark results.
           Clips play only when selected.
         </p>
@@ -156,8 +162,9 @@
           <span class="eyebrow">01 / MEASURE</span>
           <h3>The whole response path.</h3>
           <p>
-            Rendering, image encoding, transport, inference and validation. No
-            hiding a slow model behind a fast input call.
+            Snapshot retrieval, image encoding, transport, inference and validation.
+            Engine updates between decisions are outside the clock; these are
+            lockstep tasks, not continuous real-time gameplay.
           </p>
         </div>
         <div>
@@ -223,6 +230,7 @@ uv run generalgamebench run --agent react \
       <a href="https://danieltremer.com/blog/generalgamebench/"
         >The project story</a
       >
+      <a href="https://github.com/DanielTea/generalgamebench/blob/main/docs/HUGGING_FACE.md">Hugging Face export plan</a>
     </footer>
   </body>
 </html>

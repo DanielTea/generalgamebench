@@ -1,0 +1,14 @@
+{
+  "datasets_version": "5.0.1",
+  "manifest_files": 76,
+  "tracks": {
+    "local": {
+      "rows": 132,
+      "suite_id": "678589daa5921ab24e7bd38a33e85ba2914ce80503518b0f465c56498f6b722c"
+    },
+    "exhibition": {
+      "rows": 693,
+      "suite_id": "db40999da8ab9b383e127646a8913431d4fe878b9ebc882c0cfadedc9f5c44ed"
+    }
+  }
+}

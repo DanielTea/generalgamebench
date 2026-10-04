@@ -1,0 +1,94 @@
+[
+  {
+    "provider": "openai",
+    "model": "gpt-6-astra",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-6-sol",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-5.6-sol",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-5.6-luna",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-5.5",
+    "source": "configured-codex-model-list"
+  },
+  {
+    "provider": "claude",
+    "model": "claude-opus-5[1m]",
+    "source": "configured-claude-model-list"
+  },
+  {
+    "provider": "claude",
+    "model": "claude-sonnet-5",
+    "source": "configured-claude-model-list"
+  },
+  {
+    "provider": "claude",
+    "model": "claude-haiku-4-5-20251001",
+    "source": "configured-claude-model-list"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/FastVLM-0.5B-bf16",
+    "revision": "81ffe929046666c43de53691147b1669ba0f3a4c",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "revision": "da28692b5f139cb0ec58a356b437486b7dac7462",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/Qwen3.5-27B-4bit",
+    "revision": "45797d2985a12c55e6473686e9ea91b95e959553",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/Qwen3.5-2B-4bit",
+    "revision": "674aaa7240b91e8012fcad5d791b7dfe5ba90207",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/Qwen3.5-9B-4bit",
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "source": "installed-huggingface-cache"
+  },
+  {
+    "provider": "mlx",
+    "model": "mlx-community/UI-Venus-1.5-2B-6bit",
+    "revision": "95e3994ac9d74fe047cf44c072f6569db62856e7",
+    "source": "installed-huggingface-cache"
+  }
+]

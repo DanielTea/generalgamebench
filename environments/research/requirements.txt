@@ -1,0 +1,8 @@
+numpy==1.26.4
+Pillow==11.3.0
+crafter==1.8.3
+miniworld==2.1.0
+pettingzoo[butterfly]==1.27.0
+ale-py==0.12.1
+stable-retro==1.0.1
+PySuperTuxKart2==0.7.4

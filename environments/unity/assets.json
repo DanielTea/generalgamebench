@@ -1,0 +1,9 @@
+{
+  "url": "https://storage.googleapis.com/mlagents-test-environments/1.1.0/darwin/Startup.zip",
+  "archive_sha256": "947d11ca1b3f86419e66ed9af5956e850cc39344fdb7705f1f392096343f251b",
+  "app_tree_sha256": "c28e27b2d3af4391a3e1e95b0871e01a16ef657ee062bb91e7740ac9d0c99be5",
+  "application": "Startup/Startup.app",
+  "platform": "macOS x86_64 (Rosetta on Apple Silicon)",
+  "python": "3.10.12",
+  "excluded_generated_directory": "Contents/ML-Agents/Timers/"
+}

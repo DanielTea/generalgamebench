@@ -1,6 +1,6 @@
 "use strict";
 let dataset = { local: [], exhibition: [], catalog: [] };
-let active = "local";
+let active = "exhibition";
 const $ = (id) => document.getElementById(id);
 const labels = {
   idle: "Idle / control",
@@ -19,13 +19,27 @@ function el(tag, text, cls) {
   return e;
 }
 function renderBoard() {
-  const rows = dataset[active] || [];
+  const requested = $("score-game").value;
+  const available = (dataset[active] || [])[0]?.games || [];
+  const game = available.includes(requested) ? requested : "all";
+  const all = el("option", "Entire fixed suite");
+  all.value = "all";
+  $("score-game").replaceChildren(all);
+  available.forEach(id => {
+    const option = el("option", id);
+    option.value = id;
+    $("score-game").append(option);
+  });
+  $("score-game").value = game;
+  $("score-game").disabled = !available.length;
+  const rows = [...(dataset[active] || [])].sort((a, b) =>
+    (game === "all" ? b.score - a.score : b.per_game[game] - a.per_game[game]) || a.agent.localeCompare(b.agent));
   $("rankings").replaceChildren();
   const descriptions = {
     local:
       "Measured local baseline runs. Provisional rankings on a fixed suite; sub-100 ms eligibility is reported separately from trust.",
     exhibition:
-      "Actual model gameplay with a fresh authenticated CLI call for every image. Startup is included in reaction time. Two seeds and short episodes are a smoke test, not a robust model comparison.",
+      "Actual OpenAI, Claude and local vision-model gameplay, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Hosted calls include CLI startup; local models stay loaded. Timing reflects a shared Mac running concurrent evaluations.",
     official:
       "No certified entries yet. Admission requires independent isolated execution, hidden evaluation seeds and signed runner evidence. Local results cannot promote themselves.",
   };
@@ -39,24 +53,35 @@ function renderBoard() {
         : "No completed measurements in this track.",
       "empty",
     );
-    td.colSpan = 7;
+    td.colSpan = 8;
     tr.append(td);
     $("rankings").append(tr);
   }
+  let rank = 0;
+  const scoreOf = r => game === "all" ? r.score : r.per_game[game];
   rows.forEach((r, i) => {
+    if (i === 0 || scoreOf(r) < scoreOf(rows[i - 1]) - 1e-9) rank = i + 1;
     const tr = el("tr");
     const name = r.model || labels[r.agent] || r.agent;
     const vals = [
-      String(i + 1).padStart(2, "0"),
+      String(rank).padStart(2, "0"),
       name,
-      r.score.toFixed(1),
-      r.ci95
+      (game === "all" ? r.score : r.per_game[game]).toFixed(1),
+      r.ci95 && game === "all"
         ? `${r.ci95[0].toFixed(1)} – ${r.ci95[1].toFixed(1)}`
-        : "Insufficient seeds",
+        : game !== "all" ? "Suite interval only" : "Insufficient seeds",
       ms(r.p95_ms),
       ms(r.max_ms),
+      String(r.errors || 0),
     ];
-    vals.forEach((v, j) => tr.append(el("td", v, j === 0 ? "rank" : "")));
+    vals.forEach((v, j) => {
+      const cell = el("td", v, j === 0 ? "rank" : "");
+      if (j === 1) {
+        const transport = r.provider_metadata?.transport;
+        cell.append(el("small", transport === "persistent-mlx-jsonl" ? "Local vision model" : transport === "authenticated-cli-per-frame" ? "Hosted model · per-image call" : "Reference policy", "agent-kind"));
+      }
+      tr.append(cell);
+    });
     const td = el("td");
     td.append(
       el(
@@ -73,7 +98,7 @@ function renderBoard() {
     $("rankings").append(tr);
   });
   $("suite").textContent = rows.length
-    ? `${rows[0].games.join(" · ")} | ${rows[0].seeds} seeds per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation | intervals reflect seed variation only`
+    ? `${game === "all" ? rows[0].games.length + " equally weighted scenarios" : "Scores for " + game} | ${rows[0].seeds} seed(s) per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation. Timing, errors and the 100 ms gate always describe the entire suite. ${rows[0].seeds < 2 ? "One seed: no confidence interval. Some games barely start within this horizon." : "Intervals reflect seed variation only."}`
     : "";
   document.querySelectorAll("[data-track]").forEach((b) => {
     b.classList.toggle("active", b.dataset.track === active);
@@ -174,6 +199,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
   }),
 );
 $("game-filter").addEventListener("change", renderGames);
+$("score-game").addEventListener("change", renderBoard);
 fetch("data.json")
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
@@ -181,6 +207,12 @@ fetch("data.json")
   })
   .then((d) => {
     dataset = d;
+    const games = [...new Set([...d.local, ...d.exhibition].flatMap(r => r.games))];
+    $("scenario-count").textContent = d.coverage?.task_count || games.length;
+    $("availability").replaceChildren();
+    (d.model_status || []).forEach(model => {
+      $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.error_type ? "Setup failure: " + model.error_type : ""}`));
+    });
     const rows = [...d.local, ...d.exhibition];
     $("episodes").textContent = rows
       .reduce((n, r) => n + r.episodes, 0)

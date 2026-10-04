@@ -22,7 +22,7 @@ class PixelPolicy:
         if self.name == "random":
             return self.rng.randrange(len(actions))
         im = np.asarray(Image.open(io.BytesIO(base64.b64decode(obs["image_png"]))))
-        if "left" in actions:
+        if actions == ["wait", "left", "right", "up", "down"] and im.shape[:2] == (160, 160):
             cyan = (im[:, :, 1] > 190) & (im[:, :, 2] > 190) & (im[:, :, 0] < 100)
             ys, xs = np.where(cyan)
             if not len(xs):
