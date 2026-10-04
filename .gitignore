@@ -21,3 +21,6 @@ site/.assetsignore
 _vizdoom.ini
 
 /dist/
+.game-envs/
+.game-assets/
+.game-cache/

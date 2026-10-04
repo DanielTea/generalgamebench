@@ -66,6 +66,12 @@ def verify_episode(directory: Path, replay: bool = True) -> dict:
         raise ValueError("Unexpected evidence record")
     game = make_game(manifest["game"], manifest["seed"], manifest["max_steps"]) if replay else None
     try:
+        if manifest.get("game_metadata", {}) != result.get("game_metadata", {}):
+            raise ValueError("Game metadata mismatch")
+        if game and manifest.get("game_metadata") != getattr(game, "metadata", None):
+            # Empty metadata is the original native/Doom format.
+            if manifest.get("game_metadata") or getattr(game, "metadata", None):
+                raise ValueError("Replay engine or task version differs")
         seen_nonces = set()
         prior_time = -1
         for i, event in enumerate(events):

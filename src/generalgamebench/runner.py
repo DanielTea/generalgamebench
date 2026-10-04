@@ -42,10 +42,11 @@ def run_episode(
         "mode": mode,
         "actions": game.actions,
         "hardware": f"{platform.system()} {platform.machine()}",
-        "timing": "capture-start to validated action receipt; includes PNG and IPC",
+        "timing": "observation request to validated action receipt; includes snapshot, PNG and IPC; engine advance/render updates between decisions excluded",
         "simulation": "lockstep; late actions replaced with wait in realtime mode",
         "trust": "local-unattested",
         "created_at": time.time(),
+        "game_metadata": getattr(game, "metadata", {}),
     }
     ledger.append(manifest)
     latencies, errors, aborted = [], [], False
@@ -80,7 +81,8 @@ def run_episode(
             step = len(latencies)
             latencies.append(latency)
             game.step(applied)
-            # Persistence is outside the response clock; rendering and encoding are inside it.
+            # Snapshot retrieval/encoding are inside the response clock. Engine
+            # advance/render updates and evidence persistence are between decisions.
             (output / "frames" / f"{step:04d}.png").write_bytes(frame)
             ledger.append(
                 {
@@ -119,6 +121,7 @@ def run_episode(
             "latency_eligible": bool(latencies) and max(latencies) < 100 and not errors,
             "model": getattr(agent, "model", None),
             "provider_metadata": getattr(agent, "metadata", {}),
+            "game_metadata": manifest["game_metadata"],
         }
         ledger.append(result)
         (output / "result.json").write_text(json.dumps(result, indent=2))

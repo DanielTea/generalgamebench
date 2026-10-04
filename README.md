@@ -2,7 +2,7 @@
 
 [![The GeneralGameBench environment catalog: runnable games and research candidates](site/dist/media/environment-atlas.png)](https://danieltremer.com/generalgamebench/#games)
 
-*45 environment cards: 3 runnable cards covering 10 scenarios, plus 42 research candidates. [Image credits](docs/MEDIA.md).*
+*45 environment cards: 26 validated cards covering 33 scenarios, plus 19 unadmitted candidates. [Image credits](docs/MEDIA.md).*
 
 > Other benchmarks test productivity/usefulness, we test intelligence.
 
@@ -10,7 +10,7 @@
 
 Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh observation, validate an action, measure the complete response path, and record referee-owned evidence.
 
-**Early reference implementation.** Two original 2D games and eight ViZDoom 3D scenarios run today. Commercial titles are researched integration candidates, not supported games. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
+**Early reference implementation.** Two original 2D games, eight ViZDoom scenarios and 23 additional research tasks run on the tested Mac. These include all 16 Procgen games, Crafter, MiniWorld, Pistonball, Breakout, Airstriker, NetHack and MiniHack. Commercial AAA titles remain integration candidates; the experimental SuperTuxKart adapter fails its pixel-replay gate and is excluded. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
 
@@ -25,6 +25,8 @@ uv run generalgamebench rank runs/react --games coin-run dodge-lanes doom-basic 
 
 macOS or Linux, Python 3.11+; Python 3.12 tested. Native Windows transport is not supported; WSL2 is an untested option. Omit `--extra doom` for the two bundled games. No game accounts or API keys required for the baselines. `uv.lock` pins the evaluation environment.
 
+Install and validate optional engines using [the runtime guide](environments/README.md). The [coverage matrix](docs/GAMES.md) states exactly which family members are implemented.
+
 ## Bring your agent
 
 Read one JSON line with an image and allowed controls. Reply with the observation's nonce and one integer action. Start by printing `{"ready":true}`. There are no game coordinates, rewards or seeds in the observation. See [the runnable example](examples/agent.py) and [protocol](docs/PROTOCOL.md).
@@ -37,14 +39,24 @@ Run only your own trusted agents on your workstation. A subprocess is a protocol
 
 ## Ranking rules
 
-- **100 ms means strictly less than 100 ms for every measured decision**, including rendering, encoding, transport, inference, parsing and validation. Exactly 100 ms fails. p50, p95, maximum and misses are published.
+- **100 ms means strictly less than 100 ms for every measured decision**, including snapshot retrieval, encoding, transport, inference, parsing and validation. Engine advancement and eager rendering between decisions are outside this response clock. Exactly 100 ms fails. p50, p95, maximum and misses are published.
 - Realtime mode has a 100 ms response deadline and applies wait for late responses. A timeout aborts the episode with score zero. Simulation is currently lockstep; these results do not prove continuous real-time commercial-game control.
-- Exhibition mode allows slow decisions. Astra and Claude may be compared here without being represented as sub-100 ms agents.
+- Exhibition mode allows slow decisions. Configured OpenAI, Claude and locally cached vision models may be shown here without being represented as sub-100 ms agents.
 - Use identical game versions, horizons, seeds, hardware and observation/control interfaces. Scores are normalized using fixed scenario-specific ranges and averaged equally across the fixed game suite. No invented Elo for independent single-player episodes.
 - Local scores are **provisional, unattested**. The official leaderboard stays empty until an independently administered isolated runner and attestation service are deployed. A hash chain detects modifications against retained evidence; it does not prevent a local operator rewriting a whole run.
 - Confidence intervals resample seed blocks. Small exhibition samples are demonstrations, not reliable model rankings.
 
 See [methodology](docs/METHODOLOGY.md), [security](SECURITY.md), [research](docs/RESEARCH.md), and [game catalog](docs/GAMES.md).
+
+## Hugging Face portability
+
+The leaderboard is a static site with relative assets and a versioned data snapshot. Prepare a static Space and separate tabular Dataset locally:
+
+```sh
+uv run python scripts/export_huggingface.py --output build/huggingface-preview
+```
+
+The export preserves exact seeds, task/model revisions, suite identity, latency and trust labels. No upload occurs. [Publication design](docs/HUGGING_FACE.md). Game execution and credentials stay on separate evaluation workers.
 
 ## Structure
 

@@ -30,7 +30,7 @@ def validate_reply(reply: dict, observation: dict) -> int:
 class ProcessAgent:
     """Development transport, NOT an OS security sandbox. See SECURITY.md."""
 
-    def __init__(self, command: list[str], cwd: str | None = None):
+    def __init__(self, command: list[str], cwd: str | None = None, startup_timeout=10.0):
         env = {
             k: v
             for k, v in os.environ.items()
@@ -51,7 +51,7 @@ class ProcessAgent:
         self.buffer = b""
         os.set_blocking(self.process.stdin.fileno(), False)
         try:
-            if self._readline(10.0) != {"ready": True}:
+            if self._readline(startup_timeout) != {"ready": True}:
                 raise ProtocolError("Missing readiness handshake")
         except Exception:
             self.close()

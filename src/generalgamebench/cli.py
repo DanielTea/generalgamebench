@@ -10,6 +10,7 @@ from .evidence import verify_episode
 from .games import DOOM, NATIVE
 from .protocol import ProcessAgent
 from .ranking import summarize
+from .registry import TASKS
 from .runner import run_episode
 
 
@@ -17,6 +18,7 @@ def main():
     parser = argparse.ArgumentParser(prog="generalgamebench")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("games")
+    sub.add_parser("models")
     run = sub.add_parser("run")
     run.add_argument("--agent", choices=["idle", "random", "react", "tracker"], default="react")
     run.add_argument(
@@ -40,11 +42,30 @@ def main():
     board.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "games":
-        print(json.dumps({"bundled_original_2d": NATIVE, "optional_vizdoom_3d": DOOM}, indent=2))
+        from dataclasses import asdict
+
+        print(
+            json.dumps(
+                {
+                    "bundled_original_2d": NATIVE,
+                    "optional_vizdoom_3d": DOOM,
+                    "optional_tasks": [asdict(t) for t in TASKS.values()],
+                },
+                indent=2,
+            )
+        )
+    elif args.command == "models":
+        from .model_inventory import discover
+
+        print(json.dumps(discover(), indent=2))
     elif args.command == "verify":
         print(json.dumps(verify_episode(args.episode, replay=not args.no_replay), indent=2))
     elif args.command == "run":
-        if args.seeds < 1 or args.steps < 1 or any(g not in NATIVE + DOOM for g in args.games):
+        if (
+            args.seeds < 1
+            or args.steps < 1
+            or any(g not in NATIVE + DOOM + tuple(TASKS) for g in args.games)
+        ):
             parser.error("Use positive seeds/steps and known game IDs")
         if args.agent_command and not args.name:
             parser.error("--name is required for a custom agent")

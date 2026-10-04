@@ -57,3 +57,17 @@ def test_strict_deadline_and_single_seed_uncertainty():
     data[0]["latencies_ms"] = [100]
     result = summarize(data, ["one"], [1])[0]
     assert not result["latency_eligible"] and result["misses"] == 1 and result["ci95"] is None
+
+
+@pytest.mark.parametrize("change", ["model", "revision", "prompt", "engine"])
+def test_mixed_identity_or_engine_rejected(change):
+    data = rows()
+    if change == "model":
+        data[0]["model"] = "different-model"
+    elif change == "engine":
+        data[0]["game_metadata"] = {"engine_version": "different"}
+    else:
+        key = "revision" if change == "revision" else "prompt_version"
+        data[0]["provider_metadata"] = {key: "different"}
+    with pytest.raises(ValueError):
+        summarize(data, ["one", "two"], [1, 2, 3])
