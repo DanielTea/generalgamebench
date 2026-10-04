@@ -65,6 +65,7 @@ TASKS.update(
             "research",
             "Survive, collect resources, craft tools and unlock achievements.",
             (0, 22),
+            task_version="2",
         ),
         "miniworld-oneroom": Task(
             "miniworld-oneroom",

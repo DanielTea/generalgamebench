@@ -68,3 +68,7 @@ Clamping to [0,1] is only for aggregation; the evidence retains raw values and s
 The response clock starts at the referee's observation request and ends after validating one returned action. Snapshot retrieval, PNG encoding, transport, inference and parsing are included. Engine advancement and any eager rendering performed between decisions are outside that clock. These are lockstep tasks, not continuous real-time game-control measurements. MLX model loading is before readiness; per-frame CLI startup is inside the clock. Compare these transports with that difference in view.
 
 Pin runtime packages, assets, task version, evaluator source and hardware for comparisons. Exact replay on one machine does not guarantee cross-GPU byte identity. Local evidence remains unattested; no local result automatically enters the official track.
+
+### Crafter task version 2
+
+Crafter 1.8.3 keeps chunk objects in address-hashed Python sets. Its periodic creature population balancing can therefore choose different creatures despite identical seeds. The adapter sorts each chunk's objects by their unique tile positions before upstream balancing; other game mechanics are unchanged. This is an explicit benchmark variant, recorded as task version 2. The full Crafter cohort is regenerated for this task revision; version-1 episodes are not mixed into the release. The regression check repeats a 132-action seed-4001 trajectory in four fresh processes.

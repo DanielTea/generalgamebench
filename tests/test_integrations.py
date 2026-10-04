@@ -71,3 +71,27 @@ def test_procgen_stops_before_automatic_next_episode():
             game.step(0)
     finally:
         game.close()
+
+
+def test_crafter_respawn_is_stable_across_processes():
+    # Seed 4001 exposed address-ordered creature selection at the tick-10
+    # population rebalance. Extend well beyond that boundary in fresh workers.
+    actions = [1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1] * 12
+    reference = None
+    for _ in range(4):
+        game = make_game("crafter", 4001, len(actions))
+        try:
+            frames = []
+            for action in actions:
+                frames.append(game.frame())
+                game.step(action)
+                if game.done:
+                    break
+            measured = (frames, game.result())
+            assert game.metadata["task_version"] == "2"
+            if reference is None:
+                reference = measured
+            else:
+                assert measured == reference
+        finally:
+            game.close()

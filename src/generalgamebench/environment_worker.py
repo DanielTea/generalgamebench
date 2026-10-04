@@ -47,8 +47,16 @@ class Environment:
         elif self.kind == "crafter":
             import crafter
 
+            class DeterministicCrafter(crafter.Env):
+                def _balance_chunk(self, chunk, objects):
+                    # Upstream stores chunk objects in a set. Default object
+                    # hashes depend on memory addresses, changing which creature
+                    # a seeded random despawn selects across fresh processes.
+                    ordered = sorted(objects, key=lambda obj: tuple(int(v) for v in obj.pos))
+                    return super()._balance_chunk(chunk, ordered)
+
             self.package = "crafter"
-            self.engine = crafter.Env(seed=seed, length=max_steps, size=(160, 160))
+            self.engine = DeterministicCrafter(seed=seed, length=max_steps, size=(160, 160))
             self.image = self.engine.reset()
             self.mapping = list(range(self.engine.action_space.n))
             self.actions = list(self.engine.action_names)
