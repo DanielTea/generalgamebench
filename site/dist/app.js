@@ -100,7 +100,7 @@ function renderGames() {
           `status ${g.status}`,
         ),
       );
-      const a = el("a", "Project ↗");
+      const a = el("a", "Project");
       a.href = g.url;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
