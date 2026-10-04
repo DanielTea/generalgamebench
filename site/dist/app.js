@@ -2,6 +2,7 @@
 let dataset = { local: [], exhibition: [], catalog: [] };
 let active = "exhibition";
 const $ = (id) => document.getElementById(id);
+const mediaUrl = (path) => `${path}?v=cards-1`;
 const labels = {
   idle: "Idle / control",
   random: "Random / control",
@@ -112,9 +113,10 @@ function renderGames() {
     .filter((g) => filter === "all" || g.status === filter)
     .forEach((g) => {
       const card = el("article", undefined, "game-card");
+      card.id = `environment-${g.id}`;
       const figure = el("figure", undefined, "game-media");
       const image = el("img");
-      image.src = g.image;
+      image.src = mediaUrl(g.image);
       image.alt = g.image_alt;
       image.loading = "lazy";
       image.decoding = "async";
@@ -138,17 +140,24 @@ function renderGames() {
             still.src = still.dataset.poster;
           });
           if (!wasPlaying) {
-            image.src = g.animation;
+            image.src = mediaUrl(g.animation);
             play.setAttribute("aria-pressed", "true");
             play.textContent = "Stop preview";
           }
         });
-        image.dataset.poster = g.image;
+        image.dataset.poster = mediaUrl(g.image);
         figure.append(play);
+      } else {
+        const preview = el("a", g.preview_label || "View project media", "preview-link");
+        preview.href = g.preview_url || g.media_source;
+        preview.target = "_blank";
+        preview.rel = "noopener noreferrer";
+        preview.setAttribute("aria-label", `${preview.textContent} for ${g.name} (opens a new tab)`);
+        figure.append(preview);
       }
       const caption = el("figcaption");
       caption.append(el("span", g.media_kind));
-      const credit = el("a", "Image source");
+      const credit = el("a", g.media_kind === "Recorded benchmark" ? "Recorded evidence" : "Image source");
       credit.href = g.media_source;
       credit.target = "_blank";
       credit.rel = "noopener noreferrer";
@@ -161,6 +170,10 @@ function renderGames() {
         el("h3", g.name),
         el("p", g.description),
       );
+      const tasks = g.task_ids || [];
+      card.append(el("p", tasks.length
+        ? `${tasks.length} validated ${tasks.length === 1 ? "task" : "tasks"}${g.preview_task ? ` · Preview: ${g.preview_task}` : ""}`
+        : "No ranked task yet", "task-coverage"));
       const details = el("details", undefined, "game-details");
       details.append(
         el("summary", "Preview & integration details"),
@@ -168,9 +181,14 @@ function renderGames() {
         el("p", g.note),
         el("p", g.media_credit, "media-credit"),
       );
+      if (tasks.length) {
+        const taskList = el("ul", undefined, "task-list");
+        tasks.forEach(task => taskList.append(el("li", task)));
+        details.append(el("p", "Validated tasks"), taskList);
+      }
       if (g.video) {
         const download = el("a", "Download MP4 clip");
-        download.href = g.video;
+        download.href = mediaUrl(g.video);
         download.download = "";
         details.append(download);
       }
@@ -179,7 +197,9 @@ function renderGames() {
       bottom.append(
         el(
           "span",
-          g.status === "runnable" ? "RUNNABLE NOW" : "RESEARCH CANDIDATE",
+          ({ validated: "RUNNABLE NOW", "validation-failed": "REPLAY VALIDATION PENDING",
+            "runtime-blocked": "RUNTIME BLOCKED", experimental: "EXPERIMENTAL",
+            planned: "PLANNED" })[g.integration_state] || "RESEARCH CANDIDATE",
           `status ${g.status}`,
         ),
       );
@@ -200,7 +220,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json")
+fetch("data.json?v=cards-1", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
