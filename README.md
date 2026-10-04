@@ -1,8 +1,12 @@
 # GeneralGameBench
 
+[![The GeneralGameBench environment catalog: runnable games and research candidates](site/dist/media/environment-atlas.png)](https://danieltremer.com/generalgamebench/#games)
+
+*45 environment cards: 3 runnable cards covering 10 scenarios, plus 42 research candidates. [Image credits](docs/MEDIA.md).*
+
 > Other benchmarks test productivity/usefulness, we test intelligence.
 
-[Leaderboard](https://generalgamebench.daniel79437.chatgpt.site) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
+[Leaderboard](https://danieltremer.com/generalgamebench/) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
 
 Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh observation, validate an action, measure the complete response path, and record referee-owned evidence.
 

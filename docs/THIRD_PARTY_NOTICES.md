@@ -7,3 +7,5 @@ ViZDoom, its engine components, scenarios and bundled game assets are separate t
 NumPy, Pillow, pytest, Ruff, Python, model clients and other dependencies retain their own licenses. `uv.lock` records dependency versions. Astra and Claude are hosted proprietary models, accessed through the account's existing authenticated clients; no model weights or credentials are distributed.
 
 The site uses Google Fonts (DM Sans and Space Grotesk), fetched by the browser. If that service is unavailable, system sans-serif fonts are used. Game names and trademarks belong to their owners; listing a candidate does not imply affiliation, endorsement, licensing or automation permission.
+
+Environment screenshots, clips and the screenshot collage contain third-party game imagery and are not covered by the original-code MIT license. See [media credits and sources](MEDIA.md).

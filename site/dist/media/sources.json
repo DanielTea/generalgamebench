@@ -1,0 +1,427 @@
+[
+  {
+    "environment": "Luanti",
+    "image": "media/luanti.webp",
+    "source": "https://www.luanti.org/media/gallery/8.jpg",
+    "source_page": "https://www.luanti.org/en/",
+    "credit": "Luanti / Minetest Game contributors",
+    "kind": "Project preview",
+    "sha256": "70c54666b22585581ab63a92247f839a95cee6cb7e587248355a902a5075d040"
+  },
+  {
+    "environment": "SuperTuxKart",
+    "image": "media/supertuxkart.webp",
+    "source": "https://supertuxkart.net/assets/gallery/SuperTuxKart_1.5_2.jpg",
+    "source_page": "https://supertuxkart.net/nl/Gallery",
+    "credit": "SuperTuxKart contributors",
+    "kind": "Project preview",
+    "sha256": "6dfea9a674811fd5d2d919dea759054a2e751f7ca4e1f6806dab9e576f820d33"
+  },
+  {
+    "environment": "Veloren",
+    "image": "media/veloren.webp",
+    "source": "https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/250/screenshots/2025-05-08_Hrom_sparks-fly.webp?width=384&height=216",
+    "source_page": "https://veloren.net/",
+    "credit": "Hrom / Veloren community",
+    "kind": "Project preview",
+    "sha256": "b63b0df3934b69c116bd00a056c675f8c92a4e60f080e6d458c8fd0d13b927b4"
+  },
+  {
+    "environment": "Coin Run",
+    "image": "media/coin-run.webp",
+    "source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.1.0",
+    "source_page": "https://github.com/DanielTea/generalgamebench",
+    "credit": "Daniel Tremer / GeneralGameBench",
+    "kind": "Recorded benchmark",
+    "sha256": "da904745464344af8a1d9f52885b7cf0cc21ab7bda313aad080d5e23bee09eaa",
+    "video": "media/coin-run.mp4",
+    "animation": "media/coin-run.gif"
+  },
+  {
+    "environment": "Warzone 2100",
+    "image": "media/warzone-2100.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1241950/ss_e5c0abc792108d211343efeddf02f2488b7f1301.1920x1080.jpg?t=1584419815",
+    "source_page": "https://store.steampowered.com/app/1241950/",
+    "credit": "Pumpkin Studios, Underdone Gaming, Warzone 2100 Project / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "a26d40ad5018b0f8c4cf49ef6ae8d4bf26fdd79e34605be8079a116f7201b0e9"
+  },
+  {
+    "environment": "ViZDoom · eight scenarios",
+    "image": "media/vizdoom-eight-scenarios.webp",
+    "source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.1.0",
+    "source_page": "https://github.com/Farama-Foundation/ViZDoom",
+    "credit": "GeneralGameBench capture; Doom content by id Software; ViZDoom contributors",
+    "kind": "Recorded benchmark",
+    "sha256": "99c8ef4433b93ca4f1017588b43e5c73a15376b11dad5a402b010565bcf27511",
+    "video": "media/vizdoom-eight-scenarios.mp4",
+    "animation": "media/vizdoom-eight-scenarios.gif"
+  },
+  {
+    "environment": "Dodge Lanes",
+    "image": "media/dodge-lanes.webp",
+    "source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.1.0",
+    "source_page": "https://github.com/DanielTea/generalgamebench",
+    "credit": "Daniel Tremer / GeneralGameBench",
+    "kind": "Recorded benchmark",
+    "sha256": "568af625f8c6cb868894aa5f814c05fc48e74bd8606cc838a0143de9621ff3b6",
+    "video": "media/dodge-lanes.mp4",
+    "animation": "media/dodge-lanes.gif"
+  },
+  {
+    "environment": "0 A.D.",
+    "image": "media/0-a-d.webp",
+    "source": "https://play0ad.com/wp-content/gallery/screenshots/from_afar.jpg",
+    "source_page": "https://play0ad.com/media/screenshots/",
+    "credit": "Wildfire Games / 0 A.D. contributors",
+    "kind": "Project preview",
+    "sha256": "ca57d2eab63a6d1c5c2143c2306cd3de55185d33b4c79aa545befb621382716b"
+  },
+  {
+    "environment": "SuperTux",
+    "image": "media/supertux.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1572920/4e983ef4b472b854379e693c34e5526186e37fb5/ss_4e983ef4b472b854379e693c34e5526186e37fb5.1920x1080.jpg?t=1789861968",
+    "source_page": "https://store.steampowered.com/app/1572920/",
+    "credit": "The SuperTux Team / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "76e8850f16cdd7d2da8a32a2868da07291ec504c1bfa950267787a6ed5c36ef9"
+  },
+  {
+    "environment": "Mindustry",
+    "image": "media/mindustry.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1127400/ss_19dbb62a615fc63788cf499ab948947fe365a9d2.1920x1080.jpg?t=1784823019",
+    "source_page": "https://store.steampowered.com/app/1127400/",
+    "credit": "AnukenDev / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "99319aca1bbff3985daa3fd4b655ef0507adee12c99de3b5410efb2486c84605"
+  },
+  {
+    "environment": "OpenTTD",
+    "image": "media/openttd.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1536610/ss_c9a92a42367f9a8d9b753db033ed4e9936e8c5f8.1920x1080.jpg?t=1773680448",
+    "source_page": "https://store.steampowered.com/app/1536610/",
+    "credit": "OpenTTD / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "a77ea3d0cd6bc2dceac639289a821f5b6f9e51c784b5a531ac97150ce7c27224"
+  },
+  {
+    "environment": "Dungeon Crawl Stone Soup",
+    "image": "media/dungeon-crawl-stone-soup.webp",
+    "source": "https://crawl.develz.org/wordpress/wp-content/uploads/2014/05/musu.png",
+    "source_page": "https://crawl.develz.org/wordpress/screenshots",
+    "credit": "Dungeon Crawl Stone Soup contributors",
+    "kind": "Project preview",
+    "sha256": "a6ec66193e3688f1f9b2500d08aac86b1b1f494477792dc6aa16251e0db30a3b"
+  },
+  {
+    "environment": "Cataclysm: Dark Days Ahead",
+    "image": "media/cataclysm-dark-days-ahead.webp",
+    "source": "https://raw.githubusercontent.com/CleverRaven/Cataclysm-DDA/HEAD/data/screenshots/ultica-showcase-sep-2021.png",
+    "source_page": "https://github.com/CleverRaven/Cataclysm-DDA",
+    "credit": "Cataclysm: DDA contributors / Ultica artists",
+    "kind": "Project preview",
+    "sha256": "1171e450c5eab5f38e5dbb61d3eac2181683c5d0d2dfba7b1d1615b77cb5ebb0"
+  },
+  {
+    "environment": "MiniWorld",
+    "image": "media/miniworld.webp",
+    "source": "https://raw.githubusercontent.com/Farama-Foundation/Miniworld/HEAD/images/sidewalk_0.jpg",
+    "source_page": "https://github.com/Farama-Foundation/Miniworld",
+    "credit": "Farama Foundation / MiniWorld contributors",
+    "kind": "Project preview",
+    "sha256": "25246b10163f7587697d8e205c5b2de64a306cbbea2ef3645f73121a8461d839"
+  },
+  {
+    "environment": "NetHack",
+    "image": "media/nethack.webp",
+    "source": "https://raw.githubusercontent.com/facebookresearch/nle/HEAD/dat/nle/example_run.gif",
+    "source_page": "https://github.com/facebookresearch/nle",
+    "credit": "NetHack and NLE contributors",
+    "kind": "Project preview",
+    "sha256": "70080dc7fe620643367e6af198131b80c3fb418ca5bdd02c021441462b6283ba",
+    "video": "media/nethack.mp4",
+    "animation": "media/nethack.gif"
+  },
+  {
+    "environment": "Unity ML-Agents environments",
+    "image": "media/unity-ml-agents-environments.webp",
+    "source": "https://raw.githubusercontent.com/Unity-Technologies/ml-agents/HEAD/com.unity.ml-agents/Documentation~/images/soccer.png",
+    "source_page": "https://github.com/Unity-Technologies/ml-agents",
+    "credit": "Unity Technologies / ML-Agents contributors",
+    "kind": "Project preview",
+    "sha256": "330aef56e202cb6da9e9de67967a3ab9d1f8572cb43dea769c6979ece3c2449d"
+  },
+  {
+    "environment": "MiniHack",
+    "image": "media/minihack.webp",
+    "source": "https://raw.githubusercontent.com/facebookresearch/minihack/HEAD/docs/imgs/minihack_gameplay_collage.gif",
+    "source_page": "https://github.com/facebookresearch/minihack",
+    "credit": "MiniHack / Meta research contributors",
+    "kind": "Project preview",
+    "sha256": "1d5549a2f91050ebeda133b56a1706d0fa28881647a760da9965f3edb6150434",
+    "video": "media/minihack.mp4",
+    "animation": "media/minihack.gif"
+  },
+  {
+    "environment": "Rocket League / RocketSim",
+    "image": "media/rocket-league-rocketsim.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252950/23e7d4fcf10475923be9078e55b449b7fc9792d9/ss_23e7d4fcf10475923be9078e55b449b7fc9792d9.1920x1080.jpg?t=1789756890",
+    "source_page": "https://store.steampowered.com/app/252950/",
+    "credit": "Psyonix LLC / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "3e597838cb75eee0d1225ffb3294b01fb959468fc5db45e200b15d253d49af2e"
+  },
+  {
+    "environment": "StarCraft II",
+    "image": "media/starcraft-ii.webp",
+    "source": "https://blz-contentstack-images.akamaized.net/v3/assets/blt9c12f249ac15c7ec/blt045232b3225ed22e/6a2c6b65c0223bc1a54b49e8/game_features_legendary_multiplayer.png",
+    "source_page": "https://starcraft2.blizzard.com/en-us/",
+    "credit": "Blizzard Entertainment",
+    "kind": "Project preview",
+    "sha256": "6249eee286a56a5b45541b48acbb997f56fec9fec99f5fb95d5654df87813761"
+  },
+  {
+    "environment": "Crafter",
+    "image": "media/crafter.webp",
+    "source": "https://raw.githubusercontent.com/danijar/crafter/HEAD/media/video.gif",
+    "source_page": "https://github.com/danijar/crafter",
+    "credit": "Danijar Hafner / Crafter contributors",
+    "kind": "Project preview",
+    "sha256": "ec5b94b38d37479e8092e6b7351dcc93716ad293f2eb2861de4a677e081599b0",
+    "video": "media/crafter.mp4",
+    "animation": "media/crafter.gif"
+  },
+  {
+    "environment": "Cyberpunk 2077",
+    "image": "media/cyberpunk-2077.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/ss_2f649b68d579bf87011487d29bc4ccbfdd97d34f.1920x1080.jpg?t=1784714077",
+    "source_page": "https://store.steampowered.com/app/1091500/",
+    "credit": "CD PROJEKT RED / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "9ff146a3a0cf598d97b63df577c3f08dabc4a768a96acc38bcaf37a270b897f7"
+  },
+  {
+    "environment": "Factorio",
+    "image": "media/factorio.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427520/ss_36e4d8e5540805f5ed492d24d784ed9ba661752b.1920x1080.jpg?t=1787348817",
+    "source_page": "https://store.steampowered.com/app/427520/",
+    "credit": "Wube Software LTD. / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "a33208fe17fc642bb501a250fc3baa88382f8ab2ce150d659413ef13ac09d2da"
+  },
+  {
+    "environment": "Morrowind / OpenMW",
+    "image": "media/morrowind-openmw.webp",
+    "source": "https://openmw.org/wp-content/uploads/2022/02/screenshot029-min-1024x576.png",
+    "source_page": "https://openmw.org/media/",
+    "credit": "OpenMW community; Morrowind assets by Bethesda Softworks",
+    "kind": "Project preview",
+    "sha256": "5cc2a981fec153016b6aa47ce1d63e3b919f1c6efb668440633b32db29f8aa8e"
+  },
+  {
+    "environment": "Half-Life 2 / Source SDK",
+    "image": "media/half-life-2-source-sdk.webp",
+    "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg?t=1745368545",
+    "source_page": "https://store.steampowered.com/app/220/",
+    "credit": "Valve / publisher-provided Steam screenshot",
+    "kind": "Project preview",
+    "sha256": "e39e64f00706214d2a0368273eb74897a2fe475719a4478778a6f1eae6369a52"
+  },
+  {
+    "environment": "Minecraft",
+    "image": "media/minecraft.webp",
+    "source": "https://minerl.readthedocs.io/en/latest/_images/survival1.mp4.gif",
+    "source_page": "https://minerl.readthedocs.io/en/latest/",
+    "credit": "MineRL demonstration; Minecraft by Mojang Studios",
+    "kind": "Project preview",
+    "sha256": "453621f1d3d7618c101e369b24152411d81ec2862a0919b2adbe1b7410956bd8",
+    "video": "media/minecraft.mp4",
+    "animation": "media/minecraft.gif"
+  },
+  {
+    "environment": "Stable-Retro library",
+    "image": "media/stable-retro-library.webp",
+    "source": "https://raw.githubusercontent.com/Farama-Foundation/stable-retro/HEAD/docs/_static/img/retro_games.png",
+    "source_page": "https://github.com/Farama-Foundation/stable-retro",
+    "credit": "Farama Foundation; pictured games retain their respective copyrights",
+    "kind": "Project preview",
+    "sha256": "b2175d50453b849f7be40f71f90cd5fe13d861a384a0540be4f70a8f5bb36d0e"
+  },
+  {
+    "environment": "Atari / Arcade Learning Environment",
+    "image": "media/atari-arcade-learning-environment.webp",
+    "source": "https://raw.githubusercontent.com/Farama-Foundation/Arcade-Learning-Environment/HEAD/docs/_static/videos/environments/breakout.gif",
+    "source_page": "https://ale.farama.org/",
+    "credit": "Farama Foundation; Breakout by Atari",
+    "kind": "Project preview",
+    "sha256": "10ef79a135aae5b723277f17db40075e6d2ea92b3e43775d0d4f1a58dc0b1b64",
+    "video": "media/atari-arcade-learning-environment.mp4",
+    "animation": "media/atari-arcade-learning-environment.gif"
+  },
+  {
+    "environment": "Procgen / BigFish",
+    "image": "media/procgen-bigfish.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/bigfish.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "6695dde09c71cf58999844ff4605e42988d5ce2c34e753fb9b1cdd27a119a912"
+  },
+  {
+    "environment": "Procgen / BossFight",
+    "image": "media/procgen-bossfight.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/bossfight.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "9cda156c154c214a000118f9d3194a27ede35aef2b3bfb7b07bf8955993fb3a8"
+  },
+  {
+    "environment": "Procgen / CaveFlyer",
+    "image": "media/procgen-caveflyer.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/caveflyer.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "f55f059d3453a16f0748e11f21997e745f70ab6ba90187b559d6c16d5e10e145"
+  },
+  {
+    "environment": "Procgen / Climber",
+    "image": "media/procgen-climber.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/climber.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "8abb295e5c25c4ce71e08443d90161e9ee760c90d9f0ec673d332e2bd0f1dbda"
+  },
+  {
+    "environment": "Procgen / Chaser",
+    "image": "media/procgen-chaser.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/chaser.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "51ec5fe1e1710e03c7c21bfd2e062c9c0ecbb3dd2528f4378fd02103c6ee2ccc"
+  },
+  {
+    "environment": "PettingZoo environments",
+    "image": "media/pettingzoo-environments.webp",
+    "source": "https://raw.githubusercontent.com/Farama-Foundation/PettingZoo/HEAD/docs/environments/butterfly/butterfly_pistonball.gif",
+    "source_page": "https://pettingzoo.farama.org/environments/butterfly/pistonball/",
+    "credit": "Farama Foundation / PettingZoo contributors",
+    "kind": "Project preview",
+    "sha256": "00d96d251d5b47ba34ce3fa944b6b5df423bbba79755f8ee1b88d45e0d297c8b",
+    "video": "media/pettingzoo-environments.mp4",
+    "animation": "media/pettingzoo-environments.gif"
+  },
+  {
+    "environment": "Procgen / CoinRun",
+    "image": "media/procgen-coinrun.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/coinrun.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "00c12ca14b13456bb6e7c1053818a2f8fee9466e48e54e5048ebd51bc71f84b8"
+  },
+  {
+    "environment": "Procgen / Dodgeball",
+    "image": "media/procgen-dodgeball.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/dodgeball.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "41738767b10a2eaa400e7eb34189c737df729d42a06e767bcdbee9b3e391889d"
+  },
+  {
+    "environment": "Procgen / FruitBot",
+    "image": "media/procgen-fruitbot.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/fruitbot.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "04ee431084e1631a487900db735fe1f806a5e84497f291d52d714745cd4b9e1b"
+  },
+  {
+    "environment": "Procgen / Heist",
+    "image": "media/procgen-heist.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/heist.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "76c22450205cf645bc8705a40e2f7fafeafc15b84be2f17b9d96241f94c4d652"
+  },
+  {
+    "environment": "Procgen / Jumper",
+    "image": "media/procgen-jumper.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/jumper.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "c17059a0c2ca4b3181b9deb918327b2e312e7bab2c0d371e53bc340265e31bfb"
+  },
+  {
+    "environment": "Procgen / Leaper",
+    "image": "media/procgen-leaper.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/leaper.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "c0642369bc4c845d4fc254dcbab1f0834cb6a635965f75ea3450cd5c91fe7130"
+  },
+  {
+    "environment": "Procgen / Maze",
+    "image": "media/procgen-maze.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/maze.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "105cec15922a46695b3f16e7df85d9f962bc3f3b425ffd13101cf0ddf94d3457"
+  },
+  {
+    "environment": "Procgen / Miner",
+    "image": "media/procgen-miner.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/miner.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "ff5e8eca7a064ff2dc19dc383bc6b80e8bee15a94a28a8115d0c80a34d5415df"
+  },
+  {
+    "environment": "Google Research Football",
+    "image": "media/google-research-football.webp",
+    "source": "https://1.bp.blogspot.com/--ZLpcuDy8cg/XPqSR94pTsI/AAAAAAAAEMw/kx7V--J0oMMiA1wxjlCvNna9TISsafANgCLcBGAs/s640/image9.gif",
+    "source_page": "https://research.google/blog/introducing-google-research-football-a-novel-reinforcement-learning-environment/",
+    "credit": "Google Research / Football contributors",
+    "kind": "Project preview",
+    "sha256": "e199ddae5b1750e496c8bd7455a3f6ff1c49d4658671b961905ef95361bb5e5d",
+    "video": "media/google-research-football.mp4",
+    "animation": "media/google-research-football.gif"
+  },
+  {
+    "environment": "Procgen / Ninja",
+    "image": "media/procgen-ninja.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/ninja.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "fed11b347e049f2da54d24c2e366018cf2d14eb2eaae9d961993f7f27637590b"
+  },
+  {
+    "environment": "Procgen / Plunder",
+    "image": "media/procgen-plunder.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/plunder.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "696d19b3f0dfe6218663de4d9f445af72f41215c869e0dadea69a6fc6555e30d"
+  },
+  {
+    "environment": "Procgen / StarPilot",
+    "image": "media/procgen-starpilot.webp",
+    "source": "https://raw.githubusercontent.com/openai/procgen/HEAD/screenshots/starpilot.png",
+    "source_page": "https://github.com/openai/procgen",
+    "credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
+    "kind": "Project preview",
+    "sha256": "e0c8265e94d1bc2379d563d1eccdd7e70ab435b5ed5c65242d3757aa55fc4c63"
+  }
+]

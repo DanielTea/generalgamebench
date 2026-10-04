@@ -1,0 +1,1 @@
+Game media are excluded from the repository MIT license. Rights remain with their respective game, asset and capture authors. See sources.json and https://github.com/DanielTea/generalgamebench/blob/main/docs/MEDIA.md for per-image credits and source links.

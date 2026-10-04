@@ -87,11 +87,69 @@ function renderGames() {
     .filter((g) => filter === "all" || g.status === filter)
     .forEach((g) => {
       const card = el("article", undefined, "game-card");
+      const figure = el("figure", undefined, "game-media");
+      const image = el("img");
+      image.src = g.image;
+      image.alt = g.image_alt;
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.width = 640;
+      image.height = 360;
+      figure.append(image);
+      if (g.animation) {
+        const play = el("button", "Play preview", "preview-toggle");
+        play.type = "button";
+        play.setAttribute("aria-pressed", "false");
+        play.setAttribute(
+          "aria-label",
+          `Play or stop ${g.name} gameplay preview`,
+        );
+        play.addEventListener("click", () => {
+          const wasPlaying = play.getAttribute("aria-pressed") === "true";
+          document.querySelectorAll(".preview-toggle").forEach((other) => {
+            other.setAttribute("aria-pressed", "false");
+            other.textContent = "Play preview";
+            const still = other.parentElement.querySelector("img");
+            still.src = still.dataset.poster;
+          });
+          if (!wasPlaying) {
+            image.src = g.animation;
+            play.setAttribute("aria-pressed", "true");
+            play.textContent = "Stop preview";
+          }
+        });
+        image.dataset.poster = g.image;
+        figure.append(play);
+      }
+      const caption = el("figcaption");
+      caption.append(el("span", g.media_kind));
+      const credit = el("a", "Image source");
+      credit.href = g.media_source;
+      credit.target = "_blank";
+      credit.rel = "noopener noreferrer";
+      credit.title = g.media_credit;
+      caption.append(credit);
+      figure.append(caption);
       card.append(
+        figure,
         el("span", g.category, "category"),
         el("h3", g.name),
-        el("p", g.note),
+        el("p", g.description),
       );
+      const details = el("details", undefined, "game-details");
+      details.append(
+        el("summary", "Preview & integration details"),
+        el("p", g.media_caption),
+        el("p", g.note),
+        el("p", g.media_credit, "media-credit"),
+      );
+      if (g.video) {
+        const download = el("a", "Download MP4 clip");
+        download.href = g.video;
+        download.download = "";
+        details.append(download);
+      }
+      card.append(details);
       const bottom = el("div", undefined, "card-bottom");
       bottom.append(
         el(
