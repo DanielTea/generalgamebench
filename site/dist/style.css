@@ -692,6 +692,33 @@ footer > span:nth-child(2) {
   padding: 10px;
   cursor: pointer;
 }
+.preview-link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-block: 1px solid var(--line);
+  background: var(--surface);
+  font: 14px/1.6 var(--mono);
+}
+.game-card .task-coverage {
+  font: 14px/1.6 var(--mono);
+  overflow-wrap: anywhere;
+  margin-bottom: 18px;
+}
+.task-list {
+  padding-left: 20px;
+  font: 14px/1.6 var(--mono);
+  overflow-wrap: anywhere;
+}
+.game-media figcaption,
+.game-details summary,
+.game-details .media-credit,
+.game-details > a,
+.preview-toggle,
+.card-bottom {
+  font-size: 14px;
+}
+.card-bottom .status { max-width: 75%; }
 .preview-toggle:hover,
 .preview-toggle[aria-pressed="true"] {
   background: var(--accent);

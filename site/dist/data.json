@@ -11497,61 +11497,80 @@
   "catalog": [
     {
       "name": "Coin Run",
-      "category": "ORIGINAL \u00b7 2D",
-      "note": "Collect coins using only rendered pixels. Seeded 10\u00d710 world; fixed-horizon score.",
+      "category": "ORIGINAL · 2D",
+      "note": "Collect coins using only rendered pixels. Seeded 10×10 world; fixed-horizon score.",
       "url": "https://github.com/DanielTea/generalgamebench",
       "status": "runnable",
       "id": "coin-run",
       "description": "Guide the cyan player around a grid and collect yellow coins. Each move tests visual localization and a short route to the next target.",
       "image": "media/coin-run.webp",
-      "image_alt": "Coin Run gameplay preview",
-      "media_source": "https://github.com/DanielTea/generalgamebench",
+      "image_alt": "Coin Run: recorded coin-run gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Daniel Tremer / GeneralGameBench",
       "media_kind": "Recorded benchmark",
-      "media_caption": "Recorded evaluation frames; clip playback is illustrative, not a latency measurement.",
+      "media_caption": "Recorded coin-run task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/coin-run.mp4",
       "animation": "media/coin-run.gif",
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "task_ids": [
+        "coin-run"
+      ],
+      "preview_task": "coin-run"
     },
     {
       "name": "Dodge Lanes",
-      "category": "ORIGINAL \u00b7 2D",
+      "category": "ORIGINAL · 2D",
       "note": "Avoid falling obstacles. Two local visual policies and controls are included.",
       "url": "https://github.com/DanielTea/generalgamebench",
       "status": "runnable",
       "id": "dodge-lanes",
       "description": "Dodge falling red blocks by moving between lanes. Staying alive requires noticing approaching obstacles and choosing a safe position.",
       "image": "media/dodge-lanes.webp",
-      "image_alt": "Dodge Lanes gameplay preview",
-      "media_source": "https://github.com/DanielTea/generalgamebench",
+      "image_alt": "Dodge Lanes: recorded dodge-lanes gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Daniel Tremer / GeneralGameBench",
       "media_kind": "Recorded benchmark",
-      "media_caption": "Recorded evaluation frames; clip playback is illustrative, not a latency measurement.",
+      "media_caption": "Recorded dodge-lanes task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/dodge-lanes.mp4",
       "animation": "media/dodge-lanes.gif",
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "task_ids": [
+        "dodge-lanes"
+      ],
+      "preview_task": "dodge-lanes"
     },
     {
-      "name": "ViZDoom \u00b7 eight scenarios",
-      "category": "DOOM ENGINE \u00b7 3D",
+      "name": "ViZDoom · eight scenarios",
+      "category": "DOOM ENGINE · 3D",
       "note": "Basic, defend center, defend line, take cover, health gathering, corridor, home and prediction. These are eight scenarios of one game family.",
       "url": "https://github.com/Farama-Foundation/ViZDoom",
       "status": "runnable",
       "id": "vizdoom-eight-scenarios",
       "description": "First-person Doom tasks cover aiming, navigation, defense and survival. Eight scenarios share one game engine and present different control challenges.",
       "image": "media/vizdoom-eight-scenarios.webp",
-      "image_alt": "ViZDoom \u00b7 eight scenarios gameplay preview",
-      "media_source": "https://github.com/Farama-Foundation/ViZDoom",
+      "image_alt": "ViZDoom · eight scenarios: recorded doom-basic gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "GeneralGameBench capture; Doom content by id Software; ViZDoom contributors",
       "media_kind": "Recorded benchmark",
-      "media_caption": "Recorded evaluation frames; clip playback is illustrative, not a latency measurement.",
+      "media_caption": "Recorded doom-basic task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/vizdoom-eight-scenarios.mp4",
       "animation": "media/vizdoom-eight-scenarios.gif",
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "task_ids": [
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict"
+      ],
+      "preview_task": "doom-basic"
     },
     {
       "name": "SuperTuxKart",
-      "category": "OPEN SOURCE \u00b7 3D RACING",
+      "category": "OPEN SOURCE · 3D RACING",
       "note": "Experimental Lighthouse adapter launches and controls the real engine. Excluded from rankings: rendered tree/wind animation prevents exact screenshot replay. Scoring and replay admission remain under validation.",
       "url": "https://github.com/supertuxkart/stk-code",
       "status": "candidate",
@@ -11563,11 +11582,13 @@
       "media_credit": "SuperTuxKart contributors",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "validation-failed"
+      "integration_state": "validation-failed",
+      "preview_url": "https://supertuxkart.net/Gallery",
+      "preview_label": "Watch project videos"
     },
     {
       "name": "Luanti",
-      "category": "OPEN SOURCE \u00b7 3D SANDBOX",
+      "category": "OPEN SOURCE · 3D SANDBOX",
       "note": "The pinned Craftium Linux runtime installed on this Mac through Docker, but native Luanti crashed before returning a camera frame, including with software rendering. No task is admitted; see docs/INTEGRATION_ATTEMPTS.md.",
       "url": "https://github.com/luanti-org/luanti",
       "status": "candidate",
@@ -11579,11 +11600,13 @@
       "media_credit": "Luanti / Minetest Game contributors",
       "media_kind": "Project preview",
       "media_caption": "Minetest Game example on the Luanti engine.",
-      "integration_state": "runtime-blocked"
+      "integration_state": "runtime-blocked",
+      "preview_url": "https://www.luanti.org/en/",
+      "preview_label": "View project media"
     },
     {
       "name": "Veloren",
-      "category": "OPEN SOURCE \u00b7 3D RPG",
+      "category": "OPEN SOURCE · 3D RPG",
       "note": "Private test worlds are a promising route. Combat scoring and reproducible resets remain research work.",
       "url": "https://gitlab.com/veloren/veloren",
       "status": "candidate",
@@ -11595,11 +11618,13 @@
       "media_credit": "Hrom / Veloren community",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://veloren.net/",
+      "preview_label": "Watch project footage"
     },
     {
       "name": "Warzone 2100",
-      "category": "OPEN SOURCE \u00b7 3D RTS",
+      "category": "OPEN SOURCE · 3D RTS",
       "note": "Use offline skirmishes, fixed maps and native replay/result verification. Visual-control adapter required.",
       "url": "https://github.com/Warzone2100/warzone2100",
       "status": "candidate",
@@ -11611,11 +11636,13 @@
       "media_credit": "Pumpkin Studios, Underdone Gaming, Warzone 2100 Project / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/1241950/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "0 A.D.",
-      "category": "OPEN SOURCE \u00b7 3D RTS",
+      "category": "OPEN SOURCE · 3D RTS",
       "note": "Pin engine and map. Build an offline referee adapter; do not expose omniscient simulation data to the agent.",
       "url": "https://gitea.wildfiregames.com/0ad/0ad",
       "status": "candidate",
@@ -11627,11 +11654,13 @@
       "media_credit": "Wildfire Games / 0 A.D. contributors",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://play0ad.com/media/screenshots/",
+      "preview_label": "View game gallery"
     },
     {
       "name": "SuperTux",
-      "category": "OPEN SOURCE \u00b7 2D PLATFORMER",
+      "category": "OPEN SOURCE · 2D PLATFORMER",
       "note": "Local levels make reset, completion and survival scoring plausible. Adapter not implemented.",
       "url": "https://github.com/SuperTux/supertux",
       "status": "candidate",
@@ -11643,11 +11672,13 @@
       "media_credit": "The SuperTux Team / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/1572920/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "Mindustry",
-      "category": "INDIE \u00b7 2D STRATEGY",
+      "category": "INDIE · 2D STRATEGY",
       "note": "Open-source game with private scenarios. Score objectives externally; keep scripting and state APIs referee-only.",
       "url": "https://github.com/Anuken/Mindustry",
       "status": "candidate",
@@ -11659,11 +11690,13 @@
       "media_credit": "AnukenDev / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/1127400/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "OpenTTD",
-      "category": "OPEN SOURCE \u00b7 2D SIMULATION",
+      "category": "OPEN SOURCE · 2D SIMULATION",
       "note": "Fixed maps and scenario goals. Requires long-horizon scoring and a separate planning-oriented division.",
       "url": "https://github.com/OpenTTD/OpenTTD",
       "status": "candidate",
@@ -11675,53 +11708,57 @@
       "media_credit": "OpenTTD / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/1536610/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "NetHack",
-      "category": "ROGUELIKE \u00b7 2D",
+      "category": "ROGUELIKE · 2D",
       "note": "Validated on this Mac: nethack-score. Explore NetHack as the player character, survive and gain game score. Compass actions move or attack. The image is the game's native tile renderer. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/facebookresearch/nle",
       "status": "runnable",
       "id": "nethack",
       "description": "Explore a dangerous dungeon filled with monsters, objects and uncertain consequences. Turn-based decisions reward careful resource use and planning.",
       "image": "media/nethack.webp",
-      "image_alt": "NetHack gameplay preview",
-      "media_source": "https://github.com/facebookresearch/nle",
+      "image_alt": "NetHack: recorded nethack-score gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "NetHack and NLE contributors",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded nethack-score task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/nethack.mp4",
       "animation": "media/nethack.gif",
       "task_ids": [
         "nethack-score"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "preview_task": "nethack-score"
     },
     {
       "name": "MiniHack",
-      "category": "RESEARCH \u00b7 2D",
+      "category": "RESEARCH · 2D",
       "note": "Validated on this Mac: minihack-room. Navigate the small room to the staircase. Use compass directions; the goal gives reward one. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/facebookresearch/minihack",
       "status": "runnable",
       "id": "minihack",
       "description": "Small NetHack-based worlds isolate skills such as navigation, tool use and combat. The tiles show compact problems with different goals.",
       "image": "media/minihack.webp",
-      "image_alt": "MiniHack gameplay preview",
-      "media_source": "https://github.com/facebookresearch/minihack",
+      "image_alt": "MiniHack: recorded minihack-room gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "MiniHack / Meta research contributors",
-      "media_kind": "Project preview",
-      "media_caption": "Montage of MiniHack tasks from the project documentation.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded minihack-room task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/minihack.mp4",
       "animation": "media/minihack.gif",
       "task_ids": [
         "minihack-room"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "preview_task": "minihack-room"
     },
     {
       "name": "Dungeon Crawl Stone Soup",
-      "category": "ROGUELIKE \u00b7 2D",
+      "category": "ROGUELIKE · 2D",
       "note": "Open-source turn-based game. Tile capture and deterministic task/reset support need development.",
       "url": "https://github.com/crawl/crawl",
       "status": "candidate",
@@ -11733,11 +11770,13 @@
       "media_credit": "Dungeon Crawl Stone Soup contributors",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://crawl.develz.org/wordpress/screenshots",
+      "preview_label": "View game gallery"
     },
     {
       "name": "Cataclysm: Dark Days Ahead",
-      "category": "SURVIVAL \u00b7 2D",
+      "category": "SURVIVAL · 2D",
       "note": "Long-horizon planning and survival candidate. Requires pinned saves, visual interface and auditable objectives.",
       "url": "https://github.com/CleverRaven/Cataclysm-DDA",
       "status": "candidate",
@@ -11749,51 +11788,57 @@
       "media_credit": "Cataclysm: DDA contributors / Ultica artists",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://github.com/CleverRaven/Cataclysm-DDA",
+      "preview_label": "View project media"
     },
     {
       "name": "Crafter",
-      "category": "RESEARCH \u00b7 2D SURVIVAL",
+      "category": "RESEARCH · 2D SURVIVAL",
       "note": "Validated on this Mac: crafter. Survive, collect resources, craft tools and unlock achievements. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/danijar/crafter",
       "status": "runnable",
       "id": "crafter",
       "description": "Gather resources, craft tools and survive in a small procedural world. Progress is measured through achievements rather than one final objective.",
       "image": "media/crafter.webp",
-      "image_alt": "Crafter gameplay preview",
-      "media_source": "https://github.com/danijar/crafter",
+      "image_alt": "Crafter: recorded crafter gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Danijar Hafner / Crafter contributors",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded crafter task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/crafter.mp4",
       "animation": "media/crafter.gif",
       "task_ids": [
         "crafter"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "preview_task": "crafter"
     },
     {
       "name": "MiniWorld",
-      "category": "RESEARCH \u00b7 3D",
+      "category": "RESEARCH · 3D",
       "note": "Validated on this Mac: miniworld-oneroom. Navigate the first-person room and touch the red box. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/Farama-Foundation/Miniworld",
       "status": "runnable",
       "id": "miniworld",
       "description": "Navigate simple three-dimensional rooms, paths and mazes from a first-person view. Compact tasks make spatial perception and movement easy to study.",
       "image": "media/miniworld.webp",
-      "image_alt": "MiniWorld gameplay preview",
-      "media_source": "https://github.com/Farama-Foundation/Miniworld",
+      "image_alt": "MiniWorld: recorded miniworld-oneroom gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Farama Foundation / MiniWorld contributors",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded miniworld-oneroom task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "miniworld-oneroom"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/miniworld.mp4",
+      "animation": "media/miniworld.gif",
+      "preview_task": "miniworld-oneroom"
     },
     {
       "name": "Unity ML-Agents environments",
-      "category": "MODERN ENGINE \u00b7 3D / 2D",
+      "category": "MODERN ENGINE · 3D / 2D",
       "note": "Pinned official VisualFoodCollector executable launches on this Mac. A pixels-only adapter and deterministic replay probes are included as experimental work. Goal/scoring and full referee admission remain unfinished; no Unity score is ranked.",
       "url": "https://github.com/Unity-Technologies/ml-agents",
       "status": "candidate",
@@ -11805,11 +11850,13 @@
       "media_credit": "Unity Technologies / ML-Agents contributors",
       "media_kind": "Project preview",
       "media_caption": "Soccer example from the ML-Agents environment collection.",
-      "integration_state": "experimental"
+      "integration_state": "experimental",
+      "preview_url": "https://unity-technologies.github.io/ml-agents/Learning-Environment-Examples/",
+      "preview_label": "View project media"
     },
     {
       "name": "Google Research Football",
-      "category": "RESEARCH \u00b7 3D SPORT",
+      "category": "RESEARCH · 3D SPORT",
       "note": "Controlled football tasks. Keep raw state-based agents in a separate track from rendered-pixel agents.",
       "url": "https://github.com/google-research/football",
       "status": "candidate",
@@ -11827,7 +11874,7 @@
     },
     {
       "name": "Minecraft",
-      "category": "COMMERCIAL \u00b7 3D SANDBOX",
+      "category": "COMMERCIAL · 3D SANDBOX",
       "note": "MineRL/Malmo are established research routes, with version and installation constraints. Requires a lawful game setup and adapter.",
       "url": "https://github.com/minerllabs/minerl",
       "status": "candidate",
@@ -11845,7 +11892,7 @@
     },
     {
       "name": "StarCraft II",
-      "category": "AAA \u00b7 3D STRATEGY",
+      "category": "AAA · 3D STRATEGY",
       "note": "Official SC2 API and PySC2 provide a strong offline candidate. Feature layers and privileged state cannot enter the pixels-only track.",
       "url": "https://github.com/Blizzard/s2client-api",
       "status": "candidate",
@@ -11857,11 +11904,13 @@
       "media_credit": "Blizzard Entertainment",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://starcraft2.blizzard.com/en-us/",
+      "preview_label": "View project media"
     },
     {
       "name": "Rocket League / RocketSim",
-      "category": "COMMERCIAL \u00b7 3D SPORT",
+      "category": "COMMERCIAL · 3D SPORT",
       "note": "RLGym is a research route. Simulator and retail-game results must be distinct; visual capture and access constraints need validation.",
       "url": "https://github.com/RLGym/rlgym",
       "status": "candidate",
@@ -11873,11 +11922,13 @@
       "media_credit": "Psyonix LLC / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/252950/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "Factorio",
-      "category": "INDIE \u00b7 2D AUTOMATION",
+      "category": "INDIE · 2D AUTOMATION",
       "note": "Official Lua API can implement a trusted referee. Agents would receive screenshots only. Game license and deterministic scenario needed.",
       "url": "https://lua-api.factorio.com/latest/",
       "status": "candidate",
@@ -11889,11 +11940,13 @@
       "media_credit": "Wube Software LTD. / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/427520/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "Cyberpunk 2077",
-      "category": "AAA \u00b7 MODERN 3D",
+      "category": "AAA · MODERN 3D",
       "note": "Official REDmod exists. A repeatable offline benchmark is exploratory, requires licensed installs, hardware and task/referee work.",
       "url": "https://www.cyberpunk.net/en/modding-support",
       "status": "candidate",
@@ -11905,11 +11958,13 @@
       "media_credit": "CD PROJEKT RED / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/1091500/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "Morrowind / OpenMW",
-      "category": "COMMERCIAL ASSETS \u00b7 3D RPG",
+      "category": "COMMERCIAL ASSETS · 3D RPG",
       "note": "Open-source engine is a viable integration route; original game assets require separate rights. Scripted tasks and capture not implemented.",
       "url": "https://github.com/OpenMW/openmw",
       "status": "candidate",
@@ -11921,11 +11976,13 @@
       "media_credit": "OpenMW community; Morrowind assets by Bethesda Softworks",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://openmw.org/media/",
+      "preview_label": "View game gallery"
     },
     {
       "name": "Half-Life 2 / Source SDK",
-      "category": "AAA \u00b7 3D FPS",
+      "category": "AAA · 3D FPS",
       "note": "Source SDK offers an offline research path. Game assets and SDK terms remain separate; full adapter and validation needed.",
       "url": "https://github.com/ValveSoftware/source-sdk-2013",
       "status": "candidate",
@@ -11937,372 +11994,427 @@
       "media_credit": "Valve / publisher-provided Steam screenshot",
       "media_kind": "Project preview",
       "media_caption": "Representative game preview; integration remains a research candidate.",
-      "integration_state": "planned"
+      "integration_state": "planned",
+      "preview_url": "https://store.steampowered.com/app/220/",
+      "preview_label": "Watch official trailer"
     },
     {
       "name": "Atari / Arcade Learning Environment",
-      "category": "RETRO \u00b7 2D FAMILY",
+      "category": "RETRO · 2D FAMILY",
       "note": "Validated on this Mac: atari-breakout. Move the paddle and break bricks. Fire starts the ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
       "status": "runnable",
       "id": "atari-arcade-learning-environment",
       "description": "A collection of classic Atari games spans ball control, shooting and navigation. Simple-looking screens can demand precise timing and sustained control.",
       "image": "media/atari-arcade-learning-environment.webp",
-      "image_alt": "Atari / Arcade Learning Environment gameplay preview",
-      "media_source": "https://ale.farama.org/",
+      "image_alt": "Atari / Arcade Learning Environment: recorded atari-breakout gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Farama Foundation; Breakout by Atari",
-      "media_kind": "Project preview",
-      "media_caption": "Breakout example from the Arcade Learning Environment.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded atari-breakout task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/atari-arcade-learning-environment.mp4",
       "animation": "media/atari-arcade-learning-environment.gif",
       "task_ids": [
         "atari-breakout"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "preview_task": "atari-breakout"
     },
     {
       "name": "Stable-Retro library",
-      "category": "RETRO \u00b7 2D FAMILY",
+      "category": "RETRO · 2D FAMILY",
       "note": "Validated on this Mac: retro-airstriker. Pilot the ship, dodge enemies and shoot. This is the freely distributed Airstriker Genesis demo. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/Farama-Foundation/stable-retro",
       "status": "runnable",
       "id": "stable-retro-library",
       "description": "An emulator-based collection connects classic console games to agent interfaces. Different titles bring platforming, racing, fighting and other control tasks.",
       "image": "media/stable-retro-library.webp",
-      "image_alt": "Stable-Retro library gameplay preview",
-      "media_source": "https://github.com/Farama-Foundation/stable-retro",
-      "media_credit": "Farama Foundation; pictured games retain their respective copyrights",
-      "media_kind": "Project preview",
-      "media_caption": "Multi-game preview from Stable-Retro documentation.",
+      "image_alt": "Stable-Retro library: recorded retro-airstriker gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
+      "media_credit": "Airstriker demo authors / Stable-Retro contributors",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded retro-airstriker task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "retro-airstriker"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/stable-retro-library.mp4",
+      "animation": "media/stable-retro-library.gif",
+      "preview_task": "retro-airstriker"
     },
     {
       "name": "PettingZoo environments",
-      "category": "MULTI-AGENT \u00b7 2D FAMILY",
+      "category": "MULTI-AGENT · 2D FAMILY",
       "note": "Validated on this Mac: pettingzoo-pistonball. Move the ball left. Control the middle piston; the other pistons follow a fixed periodic policy. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/Farama-Foundation/PettingZoo",
       "status": "runnable",
       "id": "pettingzoo-environments",
       "description": "A collection of cooperative and competitive multi-agent games. Agents may need to coordinate, anticipate opponents or share control of a task.",
       "image": "media/pettingzoo-environments.webp",
-      "image_alt": "PettingZoo environments gameplay preview",
-      "media_source": "https://pettingzoo.farama.org/environments/butterfly/pistonball/",
+      "image_alt": "PettingZoo environments: recorded pettingzoo-pistonball gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "Farama Foundation / PettingZoo contributors",
-      "media_kind": "Project preview",
-      "media_caption": "Pistonball example from the PettingZoo collection.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded pettingzoo-pistonball task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "video": "media/pettingzoo-environments.mp4",
       "animation": "media/pettingzoo-environments.gif",
       "task_ids": [
         "pettingzoo-pistonball"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "preview_task": "pettingzoo-pistonball"
     },
     {
       "name": "Procgen / BigFish",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-bigfish. Eat smaller fish and avoid larger fish. Move in four directions. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-bigfish",
       "description": "Eat smaller fish, grow larger and keep clear of bigger predators.",
       "image": "media/procgen-bigfish.webp",
-      "image_alt": "Procgen / BigFish gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / BigFish: recorded procgen-bigfish gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-bigfish task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-bigfish"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-bigfish.mp4",
+      "animation": "media/procgen-bigfish.gif",
+      "preview_task": "procgen-bigfish"
     },
     {
       "name": "Procgen / BossFight",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-bossfight. Dodge enemy projectiles and shoot the boss. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-bossfight",
-      "description": "Dodge a boss ship\u2019s projectiles and attack when its shield drops.",
+      "description": "Dodge a boss ship’s projectiles and attack when its shield drops.",
       "image": "media/procgen-bossfight.webp",
-      "image_alt": "Procgen / BossFight gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / BossFight: recorded procgen-bossfight gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-bossfight task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-bossfight"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-bossfight.mp4",
+      "animation": "media/procgen-bossfight.gif",
+      "preview_task": "procgen-bossfight"
     },
     {
       "name": "Procgen / CaveFlyer",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-caveflyer. Fly through the cave to the exit without hitting walls. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-caveflyer",
       "description": "Pilot a rotating ship through dangerous caves to reach the exit.",
       "image": "media/procgen-caveflyer.webp",
-      "image_alt": "Procgen / CaveFlyer gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / CaveFlyer: recorded procgen-caveflyer gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-caveflyer task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-caveflyer"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-caveflyer.mp4",
+      "animation": "media/procgen-caveflyer.gif",
+      "preview_task": "procgen-caveflyer"
     },
     {
       "name": "Procgen / Chaser",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-chaser. Collect green orbs and avoid chasing enemies. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-chaser",
       "description": "Collect maze orbs while avoiding enemies and using temporary power-ups.",
       "image": "media/procgen-chaser.webp",
-      "image_alt": "Procgen / Chaser gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Chaser: recorded procgen-chaser gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-chaser task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-chaser"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-chaser.mp4",
+      "animation": "media/procgen-chaser.gif",
+      "preview_task": "procgen-chaser"
     },
     {
       "name": "Procgen / Climber",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-climber. Climb platforms and collect stars; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-climber",
       "description": "Jump between platforms, gather stars and stay clear of flying enemies.",
       "image": "media/procgen-climber.webp",
-      "image_alt": "Procgen / Climber gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Climber: recorded procgen-climber gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-climber task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-climber"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-climber.mp4",
+      "animation": "media/procgen-climber.gif",
+      "preview_task": "procgen-climber"
     },
     {
       "name": "Procgen / CoinRun",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-coinrun. Reach the coin at the end of the platform level; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-coinrun",
       "description": "Cross a platforming level, avoiding hazards to collect the final coin.",
       "image": "media/procgen-coinrun.webp",
-      "image_alt": "Procgen / CoinRun gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / CoinRun: recorded procgen-coinrun gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-coinrun task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-coinrun"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-coinrun.mp4",
+      "animation": "media/procgen-coinrun.gif",
+      "preview_task": "procgen-coinrun"
     },
     {
       "name": "Procgen / Dodgeball",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-dodgeball. Avoid enemy balls and defeat enemies; D throws a ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-dodgeball",
       "description": "Dodge enemy balls, return fire and reach the exit after clearing opponents.",
       "image": "media/procgen-dodgeball.webp",
-      "image_alt": "Procgen / Dodgeball gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Dodgeball: recorded procgen-dodgeball gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-dodgeball task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-dodgeball"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-dodgeball.mp4",
+      "animation": "media/procgen-dodgeball.gif",
+      "preview_task": "procgen-dodgeball"
     },
     {
       "name": "Procgen / FruitBot",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-fruitbot. Collect fruit while avoiding obstacles and non-fruit objects; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-fruitbot",
       "description": "Steer through gaps, collect fruit and avoid harmful objects while scrolling.",
       "image": "media/procgen-fruitbot.webp",
-      "image_alt": "Procgen / FruitBot gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / FruitBot: recorded procgen-fruitbot gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-fruitbot task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-fruitbot"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-fruitbot.mp4",
+      "animation": "media/procgen-fruitbot.gif",
+      "preview_task": "procgen-fruitbot"
     },
     {
       "name": "Procgen / Heist",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-heist. Collect keys to open matching doors and reach the gem. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-heist",
       "description": "Find colored keys and unlock a maze route to the hidden gem.",
       "image": "media/procgen-heist.webp",
-      "image_alt": "Procgen / Heist gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Heist: recorded procgen-heist gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-heist task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-heist"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-heist.mp4",
+      "animation": "media/procgen-heist.gif",
+      "preview_task": "procgen-heist"
     },
     {
       "name": "Procgen / Jumper",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-jumper. Jump across platforms to the carrot; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-jumper",
       "description": "Use double jumps to find a carrot in an open platforming level.",
       "image": "media/procgen-jumper.webp",
-      "image_alt": "Procgen / Jumper gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Jumper: recorded procgen-jumper gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-jumper task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-jumper"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-jumper.mp4",
+      "animation": "media/procgen-jumper.gif",
+      "preview_task": "procgen-jumper"
     },
     {
       "name": "Procgen / Leaper",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-leaper. Cross roads and water to reach the finish without being hit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-leaper",
       "description": "Cross traffic and hop between floating logs to reach the far side.",
       "image": "media/procgen-leaper.webp",
-      "image_alt": "Procgen / Leaper gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Leaper: recorded procgen-leaper gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-leaper task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-leaper"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-leaper.mp4",
+      "animation": "media/procgen-leaper.gif",
+      "preview_task": "procgen-leaper"
     },
     {
       "name": "Procgen / Maze",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-maze. Navigate the maze to the cheese using four-direction movement. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-maze",
       "description": "Guide a mouse through a generated maze to find its cheese.",
       "image": "media/procgen-maze.webp",
-      "image_alt": "Procgen / Maze gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Maze: recorded procgen-maze gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-maze task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-maze"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-maze.mp4",
+      "animation": "media/procgen-maze.gif",
+      "preview_task": "procgen-maze"
     },
     {
       "name": "Procgen / Miner",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-miner. Collect diamonds, avoid falling rocks, and reach the exit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-miner",
       "description": "Dig for diamonds while avoiding falling rocks, then find the exit.",
       "image": "media/procgen-miner.webp",
-      "image_alt": "Procgen / Miner gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Miner: recorded procgen-miner gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-miner task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-miner"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-miner.mp4",
+      "animation": "media/procgen-miner.gif",
+      "preview_task": "procgen-miner"
     },
     {
       "name": "Procgen / Ninja",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-ninja. Reach the mushroom; hold up to charge a jump and release to jump. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-ninja",
       "description": "Charge jumps across narrow ledges and clear bombs with throwing stars.",
       "image": "media/procgen-ninja.webp",
-      "image_alt": "Procgen / Ninja gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Ninja: recorded procgen-ninja gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-ninja task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-ninja"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-ninja.mp4",
+      "animation": "media/procgen-ninja.gif",
+      "preview_task": "procgen-ninja"
     },
     {
       "name": "Procgen / Plunder",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-plunder. Shoot enemy pirate ships and avoid friendly ships; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-plunder",
       "description": "Fire cannons at hostile pirate ships while sparing friendly vessels.",
       "image": "media/procgen-plunder.webp",
-      "image_alt": "Procgen / Plunder gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / Plunder: recorded procgen-plunder gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-plunder task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-plunder"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-plunder.mp4",
+      "animation": "media/procgen-plunder.gif",
+      "preview_task": "procgen-plunder"
     },
     {
       "name": "Procgen / StarPilot",
-      "category": "PROCEDURAL \u00b7 2D",
+      "category": "PROCEDURAL · 2D",
       "note": "Validated on this Mac: procgen-starpilot. Fly, dodge hazards and shoot enemies; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
       "url": "https://github.com/openai/procgen",
       "status": "runnable",
       "id": "procgen-starpilot",
       "description": "Pilot a scrolling spaceship through enemies, aimed projectiles and obstacles.",
       "image": "media/procgen-starpilot.webp",
-      "image_alt": "Procgen / StarPilot gameplay preview",
-      "media_source": "https://github.com/openai/procgen",
+      "image_alt": "Procgen / StarPilot: recorded procgen-starpilot gameplay",
+      "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0",
       "media_credit": "OpenAI / Procgen contributors; assets retain upstream licenses",
-      "media_kind": "Project preview",
-      "media_caption": "Representative project preview. The listed task now has a tested RGB adapter; this image is not a measured evaluation frame.",
+      "media_kind": "Recorded benchmark",
+      "media_caption": "Recorded procgen-starpilot task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
       "task_ids": [
         "procgen-starpilot"
       ],
-      "integration_state": "validated"
+      "integration_state": "validated",
+      "video": "media/procgen-starpilot.mp4",
+      "animation": "media/procgen-starpilot.gif",
+      "preview_task": "procgen-starpilot"
     }
   ],
   "coverage": {
