@@ -2,7 +2,7 @@ import copy
 
 import pytest
 
-from screenquest_arena.ranking import summarize
+from generalgamebench.ranking import summarize
 
 
 def rows():

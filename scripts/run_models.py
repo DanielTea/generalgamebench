@@ -4,8 +4,8 @@ import argparse
 import json
 from pathlib import Path
 
-from screenquest_arena.models import CLIModelAgent
-from screenquest_arena.runner import run_episode
+from generalgamebench.models import CLIModelAgent
+from generalgamebench.runner import run_episode
 
 p = argparse.ArgumentParser()
 p.add_argument("provider", choices=["astra", "claude"])

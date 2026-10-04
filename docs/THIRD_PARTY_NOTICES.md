@@ -1,6 +1,6 @@
 # Third-party notices
 
-Original ScreenQuest Arena code is MIT licensed, copyright 2026 Daniel Tremer. The architectural inspiration is [ScreenQuest](https://github.com/DanielTea/screenquest), also MIT; the new runner does not import its local game sessions or assets.
+Original GeneralGameBench code is MIT licensed, copyright 2026 Daniel Tremer. The architectural inspiration is [ScreenQuest](https://github.com/DanielTea/screenquest), also MIT; the new runner does not import its local game sessions or assets.
 
 ViZDoom, its engine components, scenarios and bundled game assets are separate third-party works. They are installed from the pinned upstream distribution and retain their upstream licenses: consult [ViZDoom](https://github.com/Farama-Foundation/ViZDoom) and the licenses included in that distribution. Screenshots in evaluation evidence are game-rendered output, not relicensed as original MIT artwork. No proprietary Doom WADs or other commercial game packages are redistributed by this repository.
 

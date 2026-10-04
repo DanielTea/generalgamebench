@@ -1,6 +1,6 @@
 # Research and design rationale
 
-Primary sources checked 2026-10-04. Recommendations below are our engineering synthesis, not claims that the sources endorse ScreenQuest Arena.
+Primary sources checked 2026-10-04. Recommendations below are our engineering synthesis, not claims that the sources endorse GeneralGameBench.
 
 | Evidence / primary source | What it informs here |
 | --- | --- |

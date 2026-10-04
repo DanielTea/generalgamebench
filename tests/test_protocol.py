@@ -3,7 +3,7 @@ import time
 
 import pytest
 
-from screenquest_arena.protocol import ProcessAgent, ProtocolError, validate_reply
+from generalgamebench.protocol import ProcessAgent, ProtocolError, validate_reply
 
 OBS = {"nonce": "fresh", "actions": ["wait", "left"], "image_png": ""}
 

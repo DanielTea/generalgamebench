@@ -432,14 +432,14 @@
       "name": "Coin Run",
       "category": "ORIGINAL \u00b7 2D",
       "note": "Collect coins using only rendered pixels. Seeded 10\u00d710 world; fixed-horizon score.",
-      "url": "https://github.com/DanielTea/screenquest-arena",
+      "url": "https://github.com/DanielTea/generalgamebench",
       "status": "runnable"
     },
     {
       "name": "Dodge Lanes",
       "category": "ORIGINAL \u00b7 2D",
       "note": "Avoid falling obstacles. Two local visual policies and controls are included.",
-      "url": "https://github.com/DanielTea/screenquest-arena",
+      "url": "https://github.com/DanielTea/generalgamebench",
       "status": "runnable"
     },
     {

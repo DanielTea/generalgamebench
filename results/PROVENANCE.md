@@ -4,6 +4,10 @@ Season 0, evaluated on 2026-10-04. These are actual played episodes, not sample/
 
 Hardware: Apple M3 Max, 48 GiB unified memory, macOS arm64, Python 3.12.8. This was a shared development workstation, not a dedicated calibrated evaluation host. The lockfile pins Python dependencies; `source-hashes.json` records the final reference package used for validation. No cross-hardware latency claim is made.
 
+## Rename and reproducibility
+
+This project was renamed from ScreenQuest Arena to GeneralGameBench in v0.1.1. Season 0 scores, evidence, source hashes, and the v0.1.0 release assets are unchanged. To reproduce the recorded source and dependency hashes exactly, check out [v0.1.0](https://github.com/DanielTea/generalgamebench/tree/v0.1.0); paths in `source-hashes.json` intentionally retain `src/screenquest_arena/`. The current package is `generalgamebench`, with `arena` retained as a command alias. The `screenquest/1` wire-protocol identifier remains stable for existing agents and recorded evidence.
+
 ## Campaigns
 
 - `baselines-final`: four policies (`idle`, `random`, `react`, `tracker`), ten scenarios, seeds 1000–1009, horizon 80: 400 episodes. The whole campaign was rerun after nonblocking transport/deadline hardening; the earlier full 400-episode development campaign is retained locally, not mixed into the published final one.

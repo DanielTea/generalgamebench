@@ -19,7 +19,7 @@ for agent in ["idle", "random", "react", "tracker"]:
         [
             sys.executable,
             "-m",
-            "screenquest_arena.cli",
+            "generalgamebench.cli",
             "run",
             "--agent",
             agent,

@@ -6,8 +6,8 @@ The implementation uses two original 2D games and eight ViZDoom scenarios. ViZDo
 
 | Environment | Category | Status | Feasibility / remaining work |
 | --- | --- | --- | --- |
-| [Coin Run](https://github.com/DanielTea/screenquest-arena) | ORIGINAL · 2D | runnable | Collect coins using only rendered pixels. Seeded 10×10 world; fixed-horizon score. |
-| [Dodge Lanes](https://github.com/DanielTea/screenquest-arena) | ORIGINAL · 2D | runnable | Avoid falling obstacles. Two local visual policies and controls are included. |
+| [Coin Run](https://github.com/DanielTea/generalgamebench) | ORIGINAL · 2D | runnable | Collect coins using only rendered pixels. Seeded 10×10 world; fixed-horizon score. |
+| [Dodge Lanes](https://github.com/DanielTea/generalgamebench) | ORIGINAL · 2D | runnable | Avoid falling obstacles. Two local visual policies and controls are included. |
 | [ViZDoom · eight scenarios](https://github.com/Farama-Foundation/ViZDoom) | DOOM ENGINE · 3D | runnable | Basic, defend center, defend line, take cover, health gathering, corridor, home and prediction. These are eight scenarios of one game family. |
 | [SuperTuxKart](https://github.com/supertuxkart/stk-code) | OPEN SOURCE · 3D RACING | candidate | Strong next candidate: controlled tracks, lap timing, renderer capture and deterministic resets need an adapter. |
 | [Luanti](https://github.com/luanti-org/luanti) | OPEN SOURCE · 3D SANDBOX | candidate | Modern voxel engine. Pin one game/modpack and separate referee-only Lua events from agent pixels. |

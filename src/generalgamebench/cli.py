@@ -14,7 +14,7 @@ from .runner import run_episode
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="arena")
+    parser = argparse.ArgumentParser(prog="generalgamebench")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("games")
     run = sub.add_parser("run")
@@ -51,7 +51,7 @@ def main():
         command = (
             shlex.split(args.agent_command)
             if args.agent_command
-            else [sys.executable, "-m", "screenquest_arena.baselines", args.agent]
+            else [sys.executable, "-m", "generalgamebench.baselines", args.agent]
         )
         name = args.name or args.agent
         if not name or any(

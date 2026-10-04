@@ -1,20 +1,22 @@
-# ScreenQuest Arena
+# GeneralGameBench
 
 > Other benchmarks test productivity/usefulness, we test intelligence.
 
-[Leaderboard](https://screenquest-arena.daniel79437.chatgpt.site) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
+[Leaderboard](https://generalgamebench.daniel79437.chatgpt.site) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
 
 Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh observation, validate an action, measure the complete response path, and record referee-owned evidence.
 
 **Early reference implementation.** Two original 2D games and eight ViZDoom 3D scenarios run today. Commercial titles are researched integration candidates, not supported games. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
 
+Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
+
 ## Try it
 
 ```sh
 uv sync --extra doom --extra dev
-uv run arena games
-uv run arena run --agent react --games coin-run dodge-lanes doom-basic --seeds 10 --output runs/react
-uv run arena rank runs/react --games coin-run dodge-lanes doom-basic --seeds 10 --output results/local.json
+uv run generalgamebench games
+uv run generalgamebench run --agent react --games coin-run dodge-lanes doom-basic --seeds 10 --output runs/react
+uv run generalgamebench rank runs/react --games coin-run dodge-lanes doom-basic --seeds 10 --output results/local.json
 ```
 
 macOS or Linux, Python 3.11+; Python 3.12 tested. Native Windows transport is not supported; WSL2 is an untested option. Omit `--extra doom` for the two bundled games. No game accounts or API keys required for the baselines. `uv.lock` pins the evaluation environment.
@@ -24,7 +26,7 @@ macOS or Linux, Python 3.11+; Python 3.12 tested. Native Windows transport is no
 Read one JSON line with an image and allowed controls. Reply with the observation's nonce and one integer action. Start by printing `{"ready":true}`. There are no game coordinates, rewards or seeds in the observation. See [the runnable example](examples/agent.py) and [protocol](docs/PROTOCOL.md).
 
 ```sh
-uv run arena run --agent-command 'python examples/agent.py' --name my-agent --output runs/my-agent
+uv run generalgamebench run --agent-command 'python examples/agent.py' --name my-agent --output runs/my-agent
 ```
 
 Run only your own trusted agents on your workstation. A subprocess is a protocol boundary, **not a security sandbox**. Submission review never executes arbitrary code in pull-request CI.
@@ -43,7 +45,7 @@ See [methodology](docs/METHODOLOGY.md), [security](SECURITY.md), [research](docs
 ## Structure
 
 ```text
-src/screenquest_arena/  referee, game adapters, protocol, evidence, statistics, policies
+src/generalgamebench/  referee, game adapters, protocol, evidence, statistics, policies
 examples/              minimal participant and container setup
 scripts/               benchmark campaigns and public-data export
 results/               measured public snapshots and provenance

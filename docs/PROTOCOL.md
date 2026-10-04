@@ -30,3 +30,5 @@ For desktop games, implement dedicated capture and bounded input on a licensed e
 2. Verify every episode and retain all attempted trials.
 3. Open the repository's **Agent evaluation submission** issue with source/model hashes, exact environment, full results and downloadable evidence. Never attach credentials, browser profiles or proprietary game assets.
 4. Maintainers inspect the artifacts and reproduce runs. No issue or uploaded score grants an official rank. Until independent infrastructure is deployed, results stay provisional.
+
+The `screenquest/1` protocol identifier is retained from the initial release for compatibility. GeneralGameBench is the current project name.

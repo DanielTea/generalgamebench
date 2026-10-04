@@ -2,8 +2,8 @@ import base64
 
 import pytest
 
-from screenquest_arena.baselines import PixelPolicy
-from screenquest_arena.games import DOOM, NATIVE, make_game
+from generalgamebench.baselines import PixelPolicy
+from generalgamebench.games import DOOM, NATIVE, make_game
 
 
 @pytest.mark.parametrize("game_id", NATIVE)

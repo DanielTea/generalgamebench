@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from screenquest_arena.evidence import Ledger, read_ledger, verify_episode
-from screenquest_arena.runner import run_episode
+from generalgamebench.evidence import Ledger, read_ledger, verify_episode
+from generalgamebench.runner import run_episode
 
 
 class Agent:
@@ -75,7 +75,7 @@ def test_timeout_zeroes_score_and_aborts(tmp_path):
 
 def test_exactly_100ms_is_ineligible_and_waits(tmp_path, monkeypatch):
     times = iter([0, 0, 100_000_000])
-    monkeypatch.setattr("screenquest_arena.runner.time.perf_counter_ns", lambda: next(times))
+    monkeypatch.setattr("generalgamebench.runner.time.perf_counter_ns", lambda: next(times))
 
     class Move:
         def act(self, obs, timeout):

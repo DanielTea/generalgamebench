@@ -1,6 +1,6 @@
 import pytest
 
-from screenquest_arena.models import parse_action
+from generalgamebench.models import parse_action
 
 
 @pytest.mark.parametrize("value", ["[]", '{"action":true}', '{"action":1,"reward":99}', "hello"])

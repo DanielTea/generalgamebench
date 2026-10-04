@@ -5,9 +5,9 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from screenquest_arena.evidence import read_ledger, verify_episode
-from screenquest_arena.games import DOOM, NATIVE
-from screenquest_arena.ranking import summarize
+from generalgamebench.evidence import read_ledger, verify_episode
+from generalgamebench.games import DOOM, NATIVE
+from generalgamebench.ranking import summarize
 
 root = Path(__file__).resolve().parents[1]
 
@@ -47,7 +47,7 @@ public = {
 (root / "results/evidence-roots.json").write_text(json.dumps(roots1 | roots2, indent=2) + "\n")
 source = {
     str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
-    for p in sorted((root / "src/screenquest_arena").glob("*.py"))
+    for p in sorted((root / "src/generalgamebench").glob("*.py"))
 }
 source["uv.lock"] = hashlib.sha256((root / "uv.lock").read_bytes()).hexdigest()
 (root / "results/source-hashes.json").write_text(json.dumps(source, indent=2) + "\n")

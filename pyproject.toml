@@ -3,8 +3,8 @@ requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
-name = "screenquest-arena"
-version = "0.1.0"
+name = "generalgamebench"
+version = "0.1.1"
 description = "Pixels-only game-agent evaluation with measured deadlines and auditable evidence"
 requires-python = ">=3.11"
 license = "MIT"
@@ -16,7 +16,8 @@ doom = ["vizdoom==1.3.1"]
 dev = ["pytest>=8,<10", "ruff==0.16.10"]
 
 [project.scripts]
-arena = "screenquest_arena.cli:main"
+generalgamebench = "generalgamebench.cli:main"
+arena = "generalgamebench.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
