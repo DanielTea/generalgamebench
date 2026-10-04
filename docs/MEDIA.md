@@ -58,6 +58,6 @@ The source manifest records original asset URLs, credits and image hashes: [sour
 
 ## Rebuild recorded previews
 
-Extract the v0.2.0 and v0.3.0 evidence archives at the repository root, install FFmpeg, then run `uv run python scripts/build_card_media.py` and `uv run python scripts/build_atlas.py`. The media builder validates each selected ledger and frame hash against the published evidence roots. It invokes no model or game engine. The source manifest includes the selected episode, evidence root, playback rate and generated asset hashes. The historical score snapshot stays unchanged.
+Extract the v0.2.0 archive and [restore the compact v0.3.0 evidence](../environments/evidence-codec/README.md), keeping their recorded episode paths under the repository root, install FFmpeg, then run `uv run python scripts/build_card_media.py` and `uv run python scripts/build_atlas.py`. The media builder validates each selected ledger and frame hash against the published evidence roots. It invokes no model or game engine. The source manifest includes the selected episode, evidence root, playback rate and generated asset hashes. The historical score snapshot stays unchanged.
 
 To rebuild the three native diagnostic previews, extract the separate v0.3 diagnostic-media archive and run `uv run python scripts/build_diagnostic_media.py` before rebuilding the atlas. Each original diagnostic PNG is checked against `results/integrations-0.3/diagnostic-media.json`. These previews have failed exact replay and remain outside all score evidence.

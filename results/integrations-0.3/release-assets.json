@@ -5,9 +5,9 @@
     "sha256": "1ad34c5bbbb9cd2ee34349393d0e555b62cbf65b6e4d570441f6a01c9a539c77"
   },
   {
-    "name": "generalgamebench-evidence-v0.3.0.tar.gz",
-    "size_bytes": 898899323,
-    "sha256": "b74e105eb1af1ac5ec40e8982a28e8129268e86df90b5cce41d72c8d45d0064d"
+    "name": "generalgamebench-evidence-v0.3.0.delta.tar.gz",
+    "size_bytes": 263966578,
+    "sha256": "bc2d37179db72656c6528f291c86f3a40869c741ced1f95d52962413ca95fbd8"
   },
   {
     "name": "generalgamebench-huggingface-v0.3.0.tar.gz",
