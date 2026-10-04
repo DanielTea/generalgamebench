@@ -1,0 +1,300 @@
+diff --git a/.dockerignore b/.dockerignore
+index b60de5b..5874b8c 100644
+--- a/.dockerignore
++++ b/.dockerignore
+@@ -1 +1,2 @@
+-**/target
++.git
++target
+diff --git a/common/src/clock.rs b/common/src/clock.rs
+index 723cb58..843402a 100644
+--- a/common/src/clock.rs
++++ b/common/src/clock.rs
+@@ -90,11 +90,17 @@ impl Clock {
+         }
+     }
+ 
+-    pub fn real_dt(&self) -> Duration { Duration::from_secs_f64(self.last_real_dt) }
++    pub fn real_dt(&self) -> Duration { Duration::from_secs_f64(if std::env::var_os("GGBENCH_CAPTURE").is_some() { 1.0 / 30.0 } else { self.last_real_dt }) }
+ 
+-    pub fn game_dt(&self) -> Duration { Duration::from_secs_f64(self.last_game_dt) }
++    pub fn game_dt(&self) -> Duration { Duration::from_secs_f64(if std::env::var_os("GGBENCH_CAPTURE").is_some() { 1.0 / 30.0 } else { self.last_game_dt }) }
+ 
+     pub fn tick(&mut self) {
++        if std::env::var_os("GGBENCH_CAPTURE").is_some() {
++            self.real_time += Duration::from_secs_f64(1.0 / 30.0);
++            self.game_time += Duration::from_secs_f64(1.0 / 30.0);
++            self.tick += 1;
++            return;
++        }
+         span!(_guard, "tick", "Clock::tick");
+         span!(guard, "clock work");
+ 
+@@ -156,8 +162,8 @@ impl Clock {
+         self.last_work = Instant::now();
+ 
+         // Progress real and game time
+-        self.real_time += Duration::from_secs_f64(self.last_real_dt);
+-        self.game_time += Duration::from_secs_f64(self.last_game_dt);
++        self.real_time += Duration::from_secs_f64(if std::env::var_os("GGBENCH_CAPTURE").is_some() { 1.0 / 30.0 } else { self.last_real_dt });
++        self.game_time += Duration::from_secs_f64(if std::env::var_os("GGBENCH_CAPTURE").is_some() { 1.0 / 30.0 } else { self.last_game_dt });
+ 
+         // Ensure game_time doesn't surpass real_time
+         self.game_time = self.game_time.min(self.real_time);
+diff --git a/voxygen/src/lib.rs b/voxygen/src/lib.rs
+index 3d5f777..8346ed0 100644
+--- a/voxygen/src/lib.rs
++++ b/voxygen/src/lib.rs
+@@ -27,6 +27,7 @@ pub mod panic_handler;
+ pub mod profile;
+ pub mod render;
+ pub mod run;
++pub mod benchmark;
+ pub mod scene;
+ pub mod session;
+ pub mod settings;
+diff --git a/voxygen/src/main.rs b/voxygen/src/main.rs
+index 8f445a8..3f1e372 100644
+--- a/voxygen/src/main.rs
++++ b/voxygen/src/main.rs
+@@ -109,6 +109,12 @@ fn main() {
+ 
+     // Load the settings
+     let mut settings = Settings::load(&config_dir);
++    if std::env::var_os("GGBENCH_CAPTURE").is_some() {
++        settings.graphics = settings.graphics.into_minimal();
++        settings.graphics.window.size = [960, 640];
++        settings.graphics.fullscreen.enabled = false;
++        settings.audio.output = AudioOutput::Off;
++    }
+     settings.display_warnings();
+ 
+     panic_handler::set_panic_hook(log_filename, logs_dir);
+diff --git a/voxygen/src/menu/char_selection/mod.rs b/voxygen/src/menu/char_selection/mod.rs
+index a33540f..ee1a19e 100644
+--- a/voxygen/src/menu/char_selection/mod.rs
++++ b/voxygen/src/menu/char_selection/mod.rs
+@@ -27,6 +27,7 @@ pub struct CharSelectionState {
+     client: Rc<RefCell<Client>>,
+     persisted_state: Rc<RefCell<hud::PersistedHudState>>,
+     scene: Scene,
++    benchmark_requested: bool,
+ }
+ 
+ impl CharSelectionState {
+@@ -50,6 +51,7 @@ impl CharSelectionState {
+             client,
+             persisted_state,
+             scene,
++            benchmark_requested: false,
+         }
+     }
+ 
+@@ -104,6 +106,19 @@ impl PlayState for CharSelectionState {
+             client.registered()
+         };
+         if client_registered {
++            if std::env::var_os("GGBENCH_CAPTURE").is_some() && !self.benchmark_requested {
++                let mut client = self.client.borrow_mut();
++                if !client.character_list().loading {
++                    if let Some(id) = client.character_list().characters.first().and_then(|c| c.character.id) {
++                        client.request_character(id, global_state.settings.graphics.view_distances());
++                        self.benchmark_requested = true;
++                    } else {
++                        client.create_character("GGBench".into(), None, None,
++                            comp::Body::Humanoid(comp::humanoid::Body::iter().next().unwrap()), false, None);
++                    }
++                }
++            }
++
+             // Handle window events
+             for event in events {
+                 if self.char_selection_ui.handle_event(event.clone()) {
+diff --git a/voxygen/src/menu/main/mod.rs b/voxygen/src/menu/main/mod.rs
+index f25f95b..a76920e 100644
+--- a/voxygen/src/menu/main/mod.rs
++++ b/voxygen/src/menu/main/mod.rs
+@@ -92,6 +92,19 @@ impl PlayState for MainMenuState {
+         #[cfg(feature = "singleplayer")]
+         {
+             global_state.singleplayer = SingleplayerState::None;
++            if std::env::var_os("GGBENCH_CAPTURE").is_some() {
++                global_state.singleplayer = SingleplayerState::init();
++                if let SingleplayerState::Init(ref mut worlds) = global_state.singleplayer {
++                    worlds.new_world();
++                    worlds.current = Some(0);
++                }
++                global_state.singleplayer.run(
++                    &global_state.tokio_runtime,
++                    &global_state.settings.language.selected_language,
++                    &global_state.i18n,
++                );
++            }
++
+         }
+ 
+         // Updated localization in case the selected language was changed
+diff --git a/voxygen/src/run.rs b/voxygen/src/run.rs
+index 8cbfb22..b94ffe8 100644
+--- a/voxygen/src/run.rs
++++ b/voxygen/src/run.rs
+@@ -216,12 +216,28 @@ fn handle_main_events_cleared(
+ 
+     if let Some(last) = states.last_mut() {
+         capped_fps = last.capped_fps();
+-
+-        span!(guard, "Render");
++        crate::benchmark::advance_server();
++        let mut benchmark_done = None;
++        if let Ok(path) = std::env::var("GGBENCH_CAPTURE") {
++            if last.name() == "Session" {
++                use std::sync::{Arc, atomic::{AtomicBool, Ordering}};
++                let frame = crate::benchmark::FRAMES.fetch_add(1, Ordering::SeqCst);
++                if frame >= 200 && (frame - 200) % 3 == 0 {
++                    let done = Arc::new(AtomicBool::new(false));
++                    let signal = done.clone();
++                    global_state.window.renderer_mut().create_screenshot(move |result| {
++                        result.expect("native screenshot").save(&path).expect("write camera");
++                        signal.store(true, Ordering::SeqCst);
++                    });
++                    benchmark_done = Some(done);
++                }
++            }
++        }
+ 
+         #[cfg(feature = "egui-ui")]
+         let mut platform_output = None;
+ 
++        span!(guard, "render");
+         // Render the screen using the global renderer
+         if let Some(mut drawer) = global_state
+             .window
+@@ -253,6 +269,21 @@ fn handle_main_events_cleared(
+         if global_state.clear_shadows_next_frame {
+             global_state.clear_shadows_next_frame = false;
+         }
++        if let Some(done) = benchmark_done {
++            use std::sync::atomic::Ordering;
++            use std::io::Write;
++            while !done.load(Ordering::SeqCst) {
++                global_state.window.renderer_mut().maintain();
++                std::thread::sleep(Duration::from_millis(1));
++            }
++            println!("GGBENCH {{\"collected\":{},\"dead\":{}}}",
++                crate::benchmark::COLLECTED.load(Ordering::SeqCst),
++                crate::benchmark::DEAD.load(Ordering::SeqCst));
++            std::io::stdout().flush().unwrap();
++            let mut line = String::new();
++            if std::io::stdin().read_line(&mut line).unwrap() == 0 { std::process::exit(0); }
++            crate::benchmark::ACTION.store(line.trim().parse().expect("action"), Ordering::SeqCst);
++        }
+ 
+         drop(guard);
+     }
+diff --git a/voxygen/src/session/mod.rs b/voxygen/src/session/mod.rs
+index a1bf518..37af182 100644
+--- a/voxygen/src/session/mod.rs
++++ b/voxygen/src/session/mod.rs
+@@ -375,6 +375,7 @@ impl SessionState {
+                                 }
+                             },
+                             InventoryUpdateEvent::Collected(item) => {
++                                if crate::benchmark::enabled() { crate::benchmark::COLLECTED.fetch_add(1, std::sync::atomic::Ordering::SeqCst); }
+                                 global_state.profile.tutorial.event_collect();
+                                 self.hud.new_loot_message(LootMessage {
+                                     amount: item.amount(),
+@@ -580,7 +581,11 @@ impl PlayState for SessionState {
+         }
+     }
+ 
+-    fn tick(&mut self, global_state: &mut GlobalState, events: Vec<Event>) -> PlayStateResult {
++    fn tick(&mut self, global_state: &mut GlobalState, mut events: Vec<Event>) -> PlayStateResult {
++        if crate::benchmark::enabled() {
++            crate::benchmark::inputs(&mut events);
++            crate::benchmark::DEAD.store(self.client.borrow().is_dead(), std::sync::atomic::Ordering::SeqCst);
++        }
+         span!(_guard, "tick", "<Session as PlayState>::tick");
+         // TODO: let mut client = self.client.borrow_mut();
+         // TODO: can this be a method on the session or are there borrowcheck issues?
+diff --git a/voxygen/src/singleplayer/mod.rs b/voxygen/src/singleplayer/mod.rs
+index 020f785..99841a2 100644
+--- a/voxygen/src/singleplayer/mod.rs
++++ b/voxygen/src/singleplayer/mod.rs
+@@ -206,11 +206,12 @@ fn run_server(mut server: Server, stop_server_r: Receiver<()>, paused: Arc<Atomi
+             Err(TryRecvError::Empty) => (),
+         }
+ 
++        crate::benchmark::server_wait();
+         // Wait for the next tick.
+         clock.tick();
+ 
+         // Skip updating the server if it's paused
+-        if paused.load(Ordering::SeqCst) && server.number_of_players() < 2 {
++        if !crate::benchmark::enabled() && paused.load(Ordering::SeqCst) && server.number_of_players() < 2 {
+             continue;
+         } else if server.number_of_players() > 1 {
+             paused.store(false, Ordering::SeqCst);
+@@ -230,5 +231,6 @@ fn run_server(mut server: Server, stop_server_r: Receiver<()>, paused: Arc<Atomi
+ 
+         // Clean up the server after a tick.
+         server.cleanup();
++        crate::benchmark::server_done();
+     }
+ }
+diff --git a/world/src/lib.rs b/world/src/lib.rs
+index 3def201..f38a762 100644
+--- a/world/src/lib.rs
++++ b/world/src/lib.rs
+@@ -456,7 +456,7 @@ impl World {
+         };
+ 
+         // Only use for rng affecting dynamic elements like chests and entities!
+-        let mut dynamic_rng = ChaCha8Rng::from_seed(rand::rng().random());
++        let mut dynamic_rng = if let Ok(seed) = std::env::var("GGBENCH_SEED") { ChaCha8Rng::seed_from_u64(seed.parse().expect("seed")) } else { ChaCha8Rng::from_seed(rand::rng().random()) };
+ 
+         // Apply layers (paths, caves, etc.)
+         let mut canvas = Canvas {
+--- /dev/null
++++ b/voxygen/src/benchmark.rs
+@@ -0,0 +1,41 @@
++use std::sync::{Condvar, Mutex, atomic::{AtomicBool, AtomicUsize, Ordering}};
++use crate::{game_input::GameInput, window::Event};
++static GATE: Mutex<(bool, u64, u64)> = Mutex::new((false, 0, 0));
++static WAKE: Condvar = Condvar::new();
++pub static FRAMES: AtomicUsize = AtomicUsize::new(0);
++pub static ACTION: AtomicUsize = AtomicUsize::new(0);
++pub static COLLECTED: AtomicUsize = AtomicUsize::new(0);
++pub static DEAD: AtomicBool = AtomicBool::new(false);
++pub fn enabled() -> bool { std::env::var_os("GGBENCH_CAPTURE").is_some() }
++pub fn server_wait() {
++    if !enabled() { return; }
++    let mut gate = GATE.lock().unwrap();
++    gate.0 = true;
++    WAKE.notify_all();
++    while gate.1 == gate.2 { gate = WAKE.wait(gate).unwrap(); }
++}
++pub fn server_done() {
++    if !enabled() { return; }
++    let mut gate = GATE.lock().unwrap();
++    gate.2 = gate.1;
++    WAKE.notify_all();
++}
++pub fn advance_server() {
++    if !enabled() { return; }
++    let mut gate = GATE.lock().unwrap();
++    if !gate.0 { return; }
++    gate.1 += 1;
++    WAKE.notify_all();
++    while gate.2 < gate.1 { gate = WAKE.wait(gate).unwrap(); }
++}
++pub fn inputs(events: &mut Vec<Event>) {
++    let action = ACTION.load(Ordering::SeqCst);
++    for (id, input) in [(1, GameInput::MoveForward), (2, GameInput::MoveRight),
++        (3, GameInput::MoveBack), (4, GameInput::MoveLeft), (5, GameInput::Jump),
++        (6, GameInput::Interact)] {
++        events.push(Event::InputUpdate(input, action == id));
++    }
++    if action == 7 || action == 8 {
++        events.push(Event::CursorPan(vek::Vec2::new(if action == 7 { -8.0 } else { 8.0 }, 0.0)));
++    }
++}

@@ -1,0 +1,10 @@
+.git
+dependencies-macosx
+Dockerfile*
+.dockerignore
+*.so
+*.dylib
+build
+dist
+*.egg-info
+__pycache__

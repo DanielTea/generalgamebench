@@ -1,0 +1,95 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1d19c9f..c77ad30 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.12...4.0)
+ # root CMakeLists for the SuperTuxKart project
+ project(SuperTuxKart)
+ 
++# GGBench: use the explicit target architecture when CMake itself runs in Rosetta.
++if(APPLE AND CMAKE_OSX_ARCHITECTURES STREQUAL "arm64")
++    set(CMAKE_SYSTEM_PROCESSOR "arm64")
++endif()
++
+ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+@@ -1016,4 +1021,4 @@ if(APPLE)
+ endif()
+ 
+ # Install python bindings
+-install(TARGETS pystk2 DESTINATION .)
+\ No newline at end of file
++install(TARGETS pystk2 DESTINATION .)
+diff --git a/lib/graphics_engine/src/ge_material_manager.cpp b/lib/graphics_engine/src/ge_material_manager.cpp
+index aaa0284..7478969 100644
+--- a/lib/graphics_engine/src/ge_material_manager.cpp
++++ b/lib/graphics_engine/src/ge_material_manager.cpp
+@@ -212,7 +212,7 @@ void GEMaterialManager::init()
+ void GEMaterialManager::update()
+ {
+     g_wind_direction = irr::core::vector3df(1.0f, 0.0f, 0.0f) *
+-        (getMonoTimeMs() / 1000.0f) * 1.5f;
++        (irr::os::Timer::getTime() / 1000.0f) * 1.5f;
+ }   // update
+ 
+ // ----------------------------------------------------------------------------
+diff --git a/lib/irrlicht/source/Irrlicht/CSceneManager.cpp b/lib/irrlicht/source/Irrlicht/CSceneManager.cpp
+index a9a256c..d36dbc1 100644
+--- a/lib/irrlicht/source/Irrlicht/CSceneManager.cpp
++++ b/lib/irrlicht/source/Irrlicht/CSceneManager.cpp
+@@ -1273,7 +1273,7 @@ void CSceneManager::drawAll(u32 flags)
+ 		CurrentRendertime = ESNRP_SOLID;
+ 		Driver->getOverrideMaterial().Enabled = ((Driver->getOverrideMaterial().EnablePasses & CurrentRendertime) != 0);
+ 
+-		SolidNodeList.sort(); // sort by textures
++		// GGBench: preserve scene registration order, not texture pointer addresses.
+ 
+ 		if (LightManager)
+ 		{
+diff --git a/pystk_cpp/pystk.cpp b/pystk_cpp/pystk.cpp
+index 558ec89..48c278a 100644
+--- a/pystk_cpp/pystk.cpp
++++ b/pystk_cpp/pystk.cpp
+@@ -422,6 +422,12 @@ bool PySTKRace::activePlayerCamera(size_t player_ix) {
+ }
+ 
+ void PySTKRace::start() {
++    // GGBench: render animation follows simulation time, never wall time.
++    benchmark_ticks_ = 0;
++    auto* timer = irr_driver->getDevice()->getTimer();
++    timer->setSpeed(0.0f);
++    if (!timer->isStopped()) timer->stop();
++    timer->setTime(0);
+     auto race_manager = RaceManager::get();
+     
+     // This will setup karts for all players
+@@ -747,6 +753,9 @@ bool PySTKRace::step() {
+         World::getWorld()->updateWorld(1);
+         World::getWorld()->updateTime(1);
+     }
++    benchmark_ticks_ += ticks;
++    irr_driver->getDevice()->getTimer()->setTime(
++        static_cast<irr::u32>(1000.0 * stk_config->ticks2Time(benchmark_ticks_)));
+     
+     // Update karts
+     if (config_.num_cameras > 0) {
+@@ -1226,4 +1235,4 @@ void PyGlobalEnvironment::clean() {
+ 
+     delete file_manager;
+     file_manager = NULL;
+-}
+\ No newline at end of file
++}
+diff --git a/pystk_cpp/pystk.hpp b/pystk_cpp/pystk.hpp
+index c41ad6a..488e04d 100644
+--- a/pystk_cpp/pystk.hpp
++++ b/pystk_cpp/pystk.hpp
+@@ -145,6 +145,7 @@ protected:
+ #endif  // SERVER_ONLY
+ 	PySTKRaceConfig config_;
+ 	float time_leftover_ = 0;
++	int benchmark_ticks_ = 0;
+ 
+ public:
+ 	PySTKRace(const PySTKRace &) = delete;

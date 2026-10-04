@@ -1,0 +1,1 @@
+public class Generate { public static void main(String[] args) throws Exception { new com.badlogic.gdx.jnigen.NativeCodeGenerator().generate("/build/src", "/engine/Mindustry.jar", "/build/native"); }}

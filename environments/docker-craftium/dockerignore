@@ -1,0 +1,8 @@
+.git
+**/.git
+Dockerfile*
+.dockerignore
+build
+dist
+*.egg-info
+__pycache__

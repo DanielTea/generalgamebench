@@ -2,7 +2,7 @@
 let dataset = { local: [], exhibition: [], catalog: [] };
 let active = "exhibition";
 const $ = (id) => document.getElementById(id);
-const mediaUrl = (path) => `${path}?v=cards-1`;
+const mediaUrl = (path) => `${path}?v=integrations-4`;
 const labels = {
   idle: "Idle / control",
   random: "Random / control",
@@ -38,9 +38,9 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     local:
-      "Measured local baseline runs. Provisional rankings on a fixed suite; sub-100 ms eligibility is reported separately from trust.",
+      "Frozen v0.2 baseline runs across 33 scenarios. Provisional rankings on a fixed suite; sub-100 ms eligibility is reported separately from trust. Newly admitted tasks are not mixed into these standings.",
     exhibition:
-      "Actual OpenAI, Claude and local vision-model gameplay, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Hosted calls include CLI startup; local models stay loaded. Timing reflects a shared Mac running concurrent evaluations.",
+      "Actual OpenAI, Claude and local vision-model gameplay in the frozen v0.2 suite of 33 scenarios, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Newly admitted tasks are not mixed into these standings. Hosted calls include CLI startup; local models stay loaded. Timing reflects a shared Mac running concurrent evaluations.",
     official:
       "No certified entries yet. Admission requires independent isolated execution, hidden evaluation seeds and signed runner evidence. Local results cannot promote themselves.",
   };
@@ -199,7 +199,7 @@ function renderGames() {
           "span",
           ({ validated: "RUNNABLE NOW", "validation-failed": "REPLAY VALIDATION PENDING",
             "runtime-blocked": "RUNTIME BLOCKED", experimental: "EXPERIMENTAL",
-            planned: "PLANNED" })[g.integration_state] || "RESEARCH CANDIDATE",
+            "assets-required": "GAME INSTALL NEEDED", planned: "PLANNED" })[g.integration_state] || "RESEARCH CANDIDATE",
           `status ${g.status}`,
         ),
       );
@@ -220,7 +220,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=cards-1", { cache: "no-cache" })
+fetch("data.json?v=integrations-4", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
@@ -228,7 +228,7 @@ fetch("data.json?v=cards-1", { cache: "no-cache" })
   .then((d) => {
     dataset = d;
     const games = [...new Set([...d.local, ...d.exhibition].flatMap(r => r.games))];
-    $("scenario-count").textContent = d.coverage?.task_count || games.length;
+    $("scenario-count").textContent = d.integration_coverage?.task_count || d.coverage?.task_count || games.length;
     $("availability").replaceChildren();
     (d.model_status || []).forEach(model => {
       $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.error_type ? "Setup failure: " + model.error_type : ""}`));

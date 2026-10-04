@@ -23,11 +23,19 @@ class WorkerGame:
         root = Path(__file__).resolve().parents[2]
         home = Path(os.environ.get("GGBENCH_ENV_ROOT", root / ".game-envs"))
         python = home / task.runtime / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
-        if not python.is_file():
+        self.container_cleanup = None
+        runtime_metadata = {}
+        if task.runtime.startswith("docker-"):
+            from .container_runtime import container_command
+
+            command, runtime_metadata, self.container_cleanup = container_command(task.runtime)
+        elif not python.is_file():
             raise RuntimeError(f"Install the {task.runtime} runtime; see environments/README.md")
+        else:
+            command = [str(python), "-u", str(Path(__file__).with_name("environment_worker.py"))]
         self.log = tempfile.TemporaryFile()
         self.process = subprocess.Popen(
-            [str(python), "-u", str(Path(__file__).with_name("environment_worker.py"))],
+            command,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=self.log,
@@ -55,7 +63,7 @@ class WorkerGame:
             )
             self.actions = response["actions"]
             self.instructions = response["instructions"]
-            self.metadata = response["metadata"]
+            self.metadata = {**response["metadata"], **runtime_metadata}
             self.done = False
         except BaseException:
             self.close()
@@ -101,13 +109,39 @@ class WorkerGame:
                 self._call({"command": "close"}, 2)
                 self.process.wait(timeout=2)
             except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.TimeoutExpired):
-                os.killpg(self.process.pid, signal.SIGTERM)
+                # Docker's Mac client may change its process group. Stop the
+                # owned container first; never signal an unrelated group.
+                self._remove_container()
+                self._signal_worker(signal.SIGTERM)
         try:
             self.process.wait(timeout=2)
         except subprocess.TimeoutExpired:
-            os.killpg(self.process.pid, signal.SIGKILL)
+            self._signal_worker(signal.SIGKILL)
             self.process.wait()
         self.selector.close()
         self.process.stdin.close()
         self.process.stdout.close()
         self.log.close()
+        self._remove_container()
+
+    def _signal_worker(self, sig):
+        if self.process.poll() is not None:
+            return
+        try:
+            if os.getpgid(self.process.pid) == self.process.pid:
+                os.killpg(self.process.pid, sig)
+            else:
+                self.process.send_signal(sig)
+        except (ProcessLookupError, PermissionError):
+            # A child can exit between poll/getpgid/kill. Popen checks its own
+            # child status again before sending a signal to the exact PID.
+            self.process.send_signal(sig)
+
+    def _remove_container(self):
+        if self.container_cleanup:
+            try:
+                subprocess.run(self.container_cleanup, capture_output=True, timeout=15, check=False)
+            except (OSError, subprocess.SubprocessError):
+                # A stopped/unreachable Docker daemon must not mask the original
+                # referee failure. --rm also cleans up on normal container exit.
+                pass

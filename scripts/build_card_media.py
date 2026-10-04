@@ -1,8 +1,9 @@
 """Build card previews from published evidence, without calling any model.
 
-Requires the v0.2.0 evidence archive extracted at the repository root and ffmpeg.
+Requires the v0.2.0 and v0.3.0 evidence archives at the repository root and ffmpeg.
 Preview selection uses the longest random-control episode, then the lowest seed.
 MiniWorld uses seed 4001, where the task's red box is visible in the recording.
+Unity, Luanti and Cataclysm use their clear initial camera as the poster.
 It never changes scores, episode selection, or the released result snapshot.
 """
 
@@ -31,6 +32,8 @@ def main():
     catalog = json.loads((ROOT / "docs/catalog.json").read_text())
     sources = json.loads((SITE / "media/sources.json").read_text())
     roots = json.loads((ROOT / "results/season-0.2/evidence-roots.json").read_text())
+    new_roots = json.loads((ROOT / "results/integrations-0.3/evidence-roots.json").read_text())
+    roots.update(new_roots)
     for card in catalog:
         if card["status"] != "runnable":
             continue
@@ -48,12 +51,19 @@ def main():
         path, frames = sorted(candidates, key=lambda item: (-len(item[1]), str(item[0])))[0]
         if task == "miniworld-oneroom":
             path, frames = next(item for item in candidates if item[0].name.endswith("-4001"))
-        poster_index = 19 if task == "miniworld-oneroom" else len(frames) // 2
+        poster_index = {
+            "miniworld-oneroom": 19,
+            "unity-food-collector": 0,
+            "luanti-chop-tree": 0,
+            "cdda-first-weapon": 0,
+        }.get(task, len(frames) // 2)
         episode = ROOT / path
         verify_episode(episode, replay=False)
         head = json.loads((episode / "events.jsonl").read_text().splitlines()[-1])["hash"]
         if head != roots[str(path)]:
             raise ValueError(f"Episode is not the published evidence: {path}")
+        release = RELEASE.replace("v0.2.0", "v0.3.0") if str(path) in new_roots else RELEASE
+        frame_count = min(24, len(frames))
         image, video, animation = (f"media/{card['id']}.{ext}" for ext in ("webp", "mp4", "gif"))
         base = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y"]
         subprocess.run(
@@ -74,6 +84,8 @@ def main():
             base
             + input_args
             + [
+                "-frames:v",
+                str(frame_count),
                 "-vf",
                 "scale=512:-2:flags=neighbor",
                 "-c:v",
@@ -91,6 +103,8 @@ def main():
             base
             + input_args
             + [
+                "-frames:v",
+                str(frame_count),
                 "-filter_complex",
                 "[0:v]scale=384:-2:flags=neighbor,split[a][b];"
                 "[a]palettegen[p];[b][p]paletteuse=dither=none",
@@ -106,7 +120,7 @@ def main():
             animation=animation,
             image_alt=f"{card['name']}: recorded {task} gameplay",
             media_kind="Recorded benchmark",
-            media_source=RELEASE,
+            media_source=release,
             preview_task=task,
             media_caption=f"Recorded {task} task with the random reference policy. "
             "Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
@@ -120,14 +134,15 @@ def main():
             image=image,
             video=video,
             animation=animation,
-            source=RELEASE,
-            source_page=RELEASE,
+            source=release,
+            source_page=release,
             credit=card["media_credit"],
             kind=card["media_kind"],
             episode=str(path),
             evidence_head=head,
             task=task,
-            frames=len(frames),
+            frames=frame_count,
+            episode_frames=len(frames),
             poster_frame=poster_index,
             fps=6,
             sha256=hashlib.sha256((SITE / image).read_bytes()).hexdigest(),

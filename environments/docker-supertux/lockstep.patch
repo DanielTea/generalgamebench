@@ -1,0 +1,138 @@
+diff --git a/external/partio_zip/zip_manager.hpp b/external/partio_zip/zip_manager.hpp
+index 666884d..5cc6ff8 100644
+--- a/external/partio_zip/zip_manager.hpp
++++ b/external/partio_zip/zip_manager.hpp
+@@ -47,6 +47,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ #include <string>
+ #include <stdexcept>
+ #include <vector>
++#include <memory>
+ 
+ namespace Partio{
+ struct ZipFileHeader;
+diff --git a/src/supertux/game_session.cpp b/src/supertux/game_session.cpp
+index 0e0bacd..d2f72f4 100644
+--- a/src/supertux/game_session.cpp
++++ b/src/supertux/game_session.cpp
+@@ -15,6 +15,7 @@
+ //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ #include "supertux/game_session.hpp"
++#include <cstdlib>
+ 
+ #include <cfloat>
+ 
+@@ -73,7 +74,7 @@ GameSession::GameSession(const std::string& levelfile_, Savegame& savegame, Stat
+   m_savegame(savegame),
+   m_play_time(0),
+   m_edit_mode(false),
+-  m_levelintro_shown(false),
++  m_levelintro_shown(std::getenv("GGBENCH_CAPTURE") != nullptr),
+   m_coins_at_start(),
+   m_bonus_at_start(),
+   m_max_fire_bullets_at_start(),
+diff --git a/src/supertux/main.cpp b/src/supertux/main.cpp
+index 1dc3648..6a8fa97 100644
+--- a/src/supertux/main.cpp
++++ b/src/supertux/main.cpp
+@@ -97,6 +97,11 @@ ConfigSubsystem::ConfigSubsystem() :
+     log_info << "Couldn't load config file: " << e.what() << ", using default settings" << std::endl;
+   }
+ 
++  if (const char* seed = std::getenv("GGBENCH_SEED")) {
++    m_config.random_seed = std::stoi(seed);
++    m_config.transitions_enabled = false;
++  }
++
+   // init random number stuff
+   gameRandom.seed(m_config.random_seed);
+   graphicsRandom.seed(0);
+@@ -522,7 +527,8 @@ Main::launch_game(const CommandLineArguments& args)
+         std::unique_ptr<GameSession> session (
+           new GameSession(filename, *m_savegame));
+ 
+-        g_config->random_seed = session->get_demo_random_seed(g_config->start_demo);
++        if (!std::getenv("GGBENCH_SEED"))
++          g_config->random_seed = session->get_demo_random_seed(g_config->start_demo);
+         gameRandom.seed(g_config->random_seed);
+         graphicsRandom.seed(0);
+ 
+diff --git a/src/supertux/screen_manager.cpp b/src/supertux/screen_manager.cpp
+index 5cd1a08..f1d2d06 100644
+--- a/src/supertux/screen_manager.cpp
++++ b/src/supertux/screen_manager.cpp
+@@ -43,6 +43,8 @@
+ #include "video/compositor.hpp"
+ #include "video/drawing_context.hpp"
+ 
++#include "control/codecontroller.hpp"
++#include <cstdlib>
+ #include <stdio.h>
+ #include <chrono>
+ #include <iostream>
+@@ -623,6 +625,41 @@ ScreenManager::run()
+   Integration::init_all();
+ 
+   handle_screen_switch();
++  if (std::getenv("GGBENCH_CAPTURE")) {
++    auto session = GameSession::current();
++    if (!session) throw std::runtime_error("Benchmark requires a level");
++    CodeController controls;
++    auto& player = session->get_current_sector().get_player();
++    player.set_controller(&controls);
++    bool ended = false;
++    auto emit = [&]() {
++      Compositor compositor(m_video_system);
++      draw(compositor, *m_fps_statistics);
++      const int coins = session->get_current_level().m_stats.get_coins();
++      ended = coins >= 1 || player.is_dying() || player.is_dead();
++      std::cout << "GGBENCH {\"coins\":" << coins
++                << ",\"done\":" << (ended ? "true" : "false") << "}" << std::endl;
++    };
++    emit();
++    int action;
++    while (!ended && (std::cin >> action)) {
++      if (action < 0 || action > 8) throw std::runtime_error("Invalid benchmark control");
++      for (int tick = 0; tick < 8; ++tick) {
++        controls.update();
++        controls.press(Control::LEFT, action == 1 || action == 4);
++        controls.press(Control::RIGHT, action == 2 || action == 5 || action == 6 || action == 7);
++        controls.press(Control::JUMP, action == 3 || action == 4 || action == 5 || action == 7);
++        controls.press(Control::ACTION, action == 6 || action == 7);
++        controls.press(Control::DOWN, action == 8);
++        g_game_time += seconds_per_step;
++        g_real_time = g_game_time;
++        update_gamelogic(seconds_per_step);
++        if (session->get_current_level().m_stats.get_coins() >= 1 || player.is_dying() || player.is_dead()) break;
++      }
++      emit();
++    }
++    return;
++  }
+ #ifdef __EMSCRIPTEN__
+   emscripten_set_main_loop(g_loop_iter, -1, 1);
+ #else
+diff --git a/src/video/sdl/sdl_video_system.cpp b/src/video/sdl/sdl_video_system.cpp
+index 36a0740..0b949ac 100644
+--- a/src/video/sdl/sdl_video_system.cpp
++++ b/src/video/sdl/sdl_video_system.cpp
+@@ -17,6 +17,7 @@
+ #include "video/sdl/sdl_video_system.hpp"
+ 
+ #include <sstream>
++#include <cstdlib>
+ 
+ #include "math/rect.hpp"
+ #include "supertux/gameconfig.hpp"
+@@ -128,6 +129,11 @@ SDLVideoSystem::get_vsync() const
+ void
+ SDLVideoSystem::flip()
+ {
++  if (const char* capture = std::getenv("GGBENCH_CAPTURE")) {
++    auto surface = make_screenshot();
++    if (!surface || SDL_SaveBMP(surface.get(), capture) != 0)
++      throw std::runtime_error("Benchmark camera capture failed");
++  }
+   m_renderer->flip();
+ }
+ 

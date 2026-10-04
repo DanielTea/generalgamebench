@@ -1,0 +1,15 @@
+{
+  "image": "ggbench-supertux:0.6.3-lockstep-v1-arm64",
+  "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+  "repository": "https://github.com/SuperTux/supertux.git",
+  "platform": "linux/arm64",
+  "variant": "native-lockstep-v1",
+  "patch_sha256": "077cb334357c497ae2be8dc0d474c857d8dcf47d8d4a0a8211dc4abab0ba4e00",
+  "submodules": {
+    "external/SDL_ttf": "8324741c73f15f85a1da96d05bb8362c0f57dabd",
+    "external/physfs": "36504d7207df8a93e6f36e016c47fbfabb8e1ed8",
+    "external/sexp-cpp": "6018831abc1e5d5020c7b62f99962806dacf4c9f",
+    "external/squirrel": "dda695e95f221b5e038796eab1f13d734dbd7270",
+    "external/tinygettext": "355659015e557749f6b514881c3a35d44d6e5f57"
+  }
+}

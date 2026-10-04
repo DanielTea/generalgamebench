@@ -1,0 +1,4 @@
+# Unified-diff context must retain its leading marker and upstream whitespace.
+*.patch -whitespace
+# Preserve this upstream notice byte-for-byte, including its original spacing.
+environments/docker-cdda/LICENSE.txt -whitespace
