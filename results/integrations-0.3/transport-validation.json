@@ -1,0 +1,28 @@
+{
+  "purpose": "lossless-evidence-transport-validation",
+  "trust": "local-unattested",
+  "files_equal_to_original": 4345,
+  "restored_episode_ledgers_verified": 21,
+  "encoder_image": "sha256:4710aa4fb71b78e451eb305df0d0b9f84baf342208755e452e99aba7bcacf931",
+  "encoder": {
+    "pillow": "11.3.0",
+    "zlib": "1.3.1",
+    "platform": "linux/arm64"
+  },
+  "pack": {
+    "files": 4345,
+    "delta_frames": 1483,
+    "original_bytes": 910138310,
+    "archive_bytes": 263966578
+  },
+  "restore": {
+    "files": 4345,
+    "original_checksums_verified": true
+  },
+  "unit_checks": "68 passed, 53 optional native checks skipped; five new transport checks included",
+  "source_hashes": {
+    "scripts/compact_evidence.py": "bc1aee22a2dc2d45928101f31393430a36b9aad4c65126a618e9dd1423754d8b",
+    "tests/test_compact_evidence.py": "344e33190666f524b7e2198f211467ab9f0af260a27ef71b3ec0b4906e68e7e2",
+    "environments/evidence-codec/Dockerfile": "4a68b6a22a88f3f88dcc92c1e0173cca3ac7a6cd8399c370e72aa8b7f7f524fd"
+  }
+}

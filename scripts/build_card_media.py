@@ -1,6 +1,6 @@
 """Build card previews from published evidence, without calling any model.
 
-Requires the v0.2.0 and v0.3.0 evidence archives at the repository root and ffmpeg.
+Requires the restored v0.2.0 and v0.3.0 evidence directories and ffmpeg.
 Preview selection uses the longest random-control episode, then the lowest seed.
 MiniWorld uses seed 4001, where the task's red box is visible in the recording.
 Unity, Luanti and Cataclysm use their clear initial camera as the poster.

@@ -10,10 +10,10 @@ This is validation evidence, not an expanded model ranking. **No hosted or local
 
 `integrations-0.3/campaign.json` fixes the complete cohort and hashes every benchmark source, dependency lock and admitted runtime build file before execution. The recorder checks those hashes again after the final replay. `episodes.json`, `evidence-roots.json` and `replay-validation.json` retain every final episode, chain head and replay result. `admission-validation.json` also records the individual native checks, the 63-passing-check unit suite, and the earlier SuperTuxKart worker timeout followed by its passing isolated regression. Earlier diagnostic cohorts exposed renderer bugs and were retained locally; the entire fixed final cohort was rerun after the fixes, without score-based selection.
 
-The [v0.3.0 release](https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0) includes the selected event ledgers, results and native PNG observations in `generalgamebench-evidence-v0.3.0.tar.gz`. Verify `SHA256SUMS`, extract at the repository root, install the pinned runtimes, then replay any episode, for example:
+The [v0.3.0 release](https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0) includes the selected event ledgers, results and native PNG observations in `generalgamebench-evidence-v0.3.0.delta.tar.gz`. This compact transport restores every original file byte-for-byte. Verify `SHA256SUMS` and follow the [lossless restoration instructions](../environments/evidence-codec/README.md); then install the pinned game runtime and replay any restored episode, for example:
 
 ```sh
-uv run generalgamebench verify runs/integration-release-0.3-verified/random/warzone-first-derrick-5000
+uv run generalgamebench verify build/restored/evidence/runs/integration-release-0.3-verified/random/warzone-first-derrick-5000
 ```
 
 The separate diagnostic-media archive contains only the native preview frames for **unadmitted** 0 A.D., StarCraft II and Veloren prototypes. `diagnostic-media.json` hashes those frames; `diagnostic-replay.json` preserves the failed paired image hashes and native counters. These files do not enter scored evidence or rankings. The prototypes' precise failures and reproducible source are documented under `environments/experimental-*`. Six other game families still need usable installations/assets and adapter work.
