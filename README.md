@@ -4,7 +4,7 @@
 
 *45 environment cards: 26 validated cards covering 33 scenarios, plus 19 unadmitted candidates. [Image credits](docs/MEDIA.md).*
 
-> Other benchmarks test productivity/usefulness, we test intelligence.
+> “Intelligence is the ability to adapt to new environments.” — We test this.
 
 [Leaderboard](https://danieltremer.com/generalgamebench/) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
 
