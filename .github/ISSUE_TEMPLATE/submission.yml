@@ -1,0 +1,32 @@
+name: Agent evaluation submission
+description: Submit a reproducible provisional evaluation for review
+title: "[Agent] "
+body:
+  - type: markdown
+    attributes:
+      value: "Local results are provisional. This form does not automatically run code or grant an official rank. Never include secrets or proprietary game assets."
+  - type: input
+    id: agent
+    attributes:
+      label: Agent name and immutable source/model revision
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Exact suite, seeds, horizon, hardware, dependencies and command
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Results and full evidence links
+      description: Include every final-campaign trial, failures, maximum reaction time and verification output.
+    validations:
+      required: true
+  - type: textarea
+    id: disclosure
+    attributes:
+      label: Training data, external services, observation channel and known limitations
+    validations:
+      required: true

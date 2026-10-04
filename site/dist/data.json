@@ -1,0 +1,747 @@
+{
+  "generated_at": "2026-10-04T11:17:17.906506+00:00",
+  "season": "0.1.0",
+  "local": [
+    {
+      "agent": "tracker",
+      "mode": "realtime",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 80,
+      "score": 54.528,
+      "ci95": [
+        52.088376339285716,
+        56.63760639880952
+      ],
+      "episodes": 100,
+      "seeds": 10,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict"
+      ],
+      "decisions": 6221,
+      "p50_ms": 1.339459,
+      "p95_ms": 1.780375,
+      "max_ms": 2.846291,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 86.75,
+        "dodge-lanes": 98.75,
+        "doom-basic": 53.357,
+        "doom-defend-center": 10.0,
+        "doom-defend-line": 28.095,
+        "doom-take-cover": 92.125,
+        "doom-health": 100.0,
+        "doom-corridor": 0.0,
+        "doom-home": 0.0,
+        "doom-predict": 76.198
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "react",
+      "mode": "realtime",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 80,
+      "score": 51.555,
+      "ci95": [
+        49.76473586309524,
+        53.7214025297619
+      ],
+      "episodes": 100,
+      "seeds": 10,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict"
+      ],
+      "decisions": 7148,
+      "p50_ms": 1.362312,
+      "p95_ms": 2.2511544999999997,
+      "max_ms": 15.573,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 86.75,
+        "dodge-lanes": 98.75,
+        "doom-basic": 17.048,
+        "doom-defend-center": 6.667,
+        "doom-defend-line": 38.095,
+        "doom-take-cover": 92.125,
+        "doom-health": 100.0,
+        "doom-corridor": 0.0,
+        "doom-home": 0.0,
+        "doom-predict": 76.114
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "random",
+      "mode": "realtime",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 80,
+      "score": 34.551,
+      "ci95": [
+        33.02060831964996,
+        36.36821328215165
+      ],
+      "episodes": 100,
+      "seeds": 10,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict"
+      ],
+      "decisions": 6256,
+      "p50_ms": 1.1417505000000001,
+      "p95_ms": 1.65341725,
+      "max_ms": 21.672875,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.75,
+        "dodge-lanes": 10.0,
+        "doom-basic": 39.381,
+        "doom-defend-center": 5.714,
+        "doom-defend-line": 35.714,
+        "doom-take-cover": 77.031,
+        "doom-health": 100.0,
+        "doom-corridor": 0.745,
+        "doom-home": 0.0,
+        "doom-predict": 76.176
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "idle",
+      "mode": "realtime",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 80,
+      "score": 24.976,
+      "ci95": [
+        23.740665922619048,
+        26.600773809523805
+      ],
+      "episodes": 100,
+      "seeds": 10,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict"
+      ],
+      "decisions": 6800,
+      "p50_ms": 1.1238335,
+      "p95_ms": 2.1526142499999996,
+      "max_ms": 5.939583,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 5.0,
+        "doom-basic": 0.0,
+        "doom-defend-center": 0.0,
+        "doom-defend-line": 13.333,
+        "doom-take-cover": 55.313,
+        "doom-health": 100.0,
+        "doom-corridor": 0.0,
+        "doom-home": 0.0,
+        "doom-predict": 76.114
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    }
+  ],
+  "exhibition": [
+    {
+      "agent": "astra",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 72.738,
+      "ci95": [
+        55.793650793650805,
+        89.68253968253968
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 47,
+      "p50_ms": 6699.384,
+      "p95_ms": 10163.987141799998,
+      "max_ms": 11593.279375,
+      "misses": 47,
+      "latency_eligible": false,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 80.714
+      },
+      "errors": 0,
+      "model": "gpt-6-astra",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6-astra",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 8
+      }
+    },
+    {
+      "agent": "claude",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 68.294,
+      "ci95": [
+        55.39682539682539,
+        81.1904761904762
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 3921.187583,
+      "p95_ms": 6099.6719101,
+      "max_ms": 6608.213542,
+      "misses": 48,
+      "latency_eligible": false,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 67.381
+      },
+      "errors": 0,
+      "model": "claude-opus-5",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-opus-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 8,
+        "resolved_models": [
+          "claude-opus-5"
+        ]
+      }
+    },
+    {
+      "agent": "react",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 67.897,
+      "ci95": [
+        55.39682539682539,
+        80.39682539682539
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 1.4450414999999999,
+      "p95_ms": 2.2542066999999997,
+      "max_ms": 2.720375,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "tracker",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 67.897,
+      "ci95": [
+        55.39682539682539,
+        80.39682539682539
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 1.5608335,
+      "p95_ms": 3.0712641499999997,
+      "max_ms": 4.215792,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "idle",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 56.19,
+      "ci95": [
+        56.190476190476204,
+        56.190476190476204
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 0.677125,
+      "p95_ms": 5.889918199999996,
+      "max_ms": 14.882584,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 68.571
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "random",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 55.794,
+      "ci95": [
+        55.793650793650805,
+        55.793650793650805
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 0.778583,
+      "p95_ms": 2.74686425,
+      "max_ms": 3.228166,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 67.381
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    }
+  ],
+  "official": [],
+  "catalog": [
+    {
+      "name": "Coin Run",
+      "category": "ORIGINAL \u00b7 2D",
+      "note": "Collect coins using only rendered pixels. Seeded 10\u00d710 world; fixed-horizon score.",
+      "url": "https://github.com/DanielTea/screenquest-arena",
+      "status": "runnable"
+    },
+    {
+      "name": "Dodge Lanes",
+      "category": "ORIGINAL \u00b7 2D",
+      "note": "Avoid falling obstacles. Two local visual policies and controls are included.",
+      "url": "https://github.com/DanielTea/screenquest-arena",
+      "status": "runnable"
+    },
+    {
+      "name": "ViZDoom \u00b7 eight scenarios",
+      "category": "DOOM ENGINE \u00b7 3D",
+      "note": "Basic, defend center, defend line, take cover, health gathering, corridor, home and prediction. These are eight scenarios of one game family.",
+      "url": "https://github.com/Farama-Foundation/ViZDoom",
+      "status": "runnable"
+    },
+    {
+      "name": "SuperTuxKart",
+      "category": "OPEN SOURCE \u00b7 3D RACING",
+      "note": "Strong next candidate: controlled tracks, lap timing, renderer capture and deterministic resets need an adapter.",
+      "url": "https://github.com/supertuxkart/stk-code",
+      "status": "candidate"
+    },
+    {
+      "name": "Luanti",
+      "category": "OPEN SOURCE \u00b7 3D SANDBOX",
+      "note": "Modern voxel engine. Pin one game/modpack and separate referee-only Lua events from agent pixels.",
+      "url": "https://github.com/luanti-org/luanti",
+      "status": "candidate"
+    },
+    {
+      "name": "Veloren",
+      "category": "OPEN SOURCE \u00b7 3D RPG",
+      "note": "Private test worlds are a promising route. Combat scoring and reproducible resets remain research work.",
+      "url": "https://gitlab.com/veloren/veloren",
+      "status": "candidate"
+    },
+    {
+      "name": "Warzone 2100",
+      "category": "OPEN SOURCE \u00b7 3D RTS",
+      "note": "Use offline skirmishes, fixed maps and native replay/result verification. Visual-control adapter required.",
+      "url": "https://github.com/Warzone2100/warzone2100",
+      "status": "candidate"
+    },
+    {
+      "name": "0 A.D.",
+      "category": "OPEN SOURCE \u00b7 3D RTS",
+      "note": "Pin engine and map. Build an offline referee adapter; do not expose omniscient simulation data to the agent.",
+      "url": "https://gitea.wildfiregames.com/0ad/0ad",
+      "status": "candidate"
+    },
+    {
+      "name": "SuperTux",
+      "category": "OPEN SOURCE \u00b7 2D PLATFORMER",
+      "note": "Local levels make reset, completion and survival scoring plausible. Adapter not implemented.",
+      "url": "https://github.com/SuperTux/supertux",
+      "status": "candidate"
+    },
+    {
+      "name": "Mindustry",
+      "category": "INDIE \u00b7 2D STRATEGY",
+      "note": "Open-source game with private scenarios. Score objectives externally; keep scripting and state APIs referee-only.",
+      "url": "https://github.com/Anuken/Mindustry",
+      "status": "candidate"
+    },
+    {
+      "name": "OpenTTD",
+      "category": "OPEN SOURCE \u00b7 2D SIMULATION",
+      "note": "Fixed maps and scenario goals. Requires long-horizon scoring and a separate planning-oriented division.",
+      "url": "https://github.com/OpenTTD/OpenTTD",
+      "status": "candidate"
+    },
+    {
+      "name": "NetHack",
+      "category": "ROGUELIKE \u00b7 2D",
+      "note": "NLE offers a research interface. Use rendered observations; terminal-symbol and state tracks must be separate.",
+      "url": "https://github.com/facebookresearch/nle",
+      "status": "candidate"
+    },
+    {
+      "name": "MiniHack",
+      "category": "RESEARCH \u00b7 2D",
+      "note": "NLE-based skill tasks. Archived upstream; installation/version compatibility needs validation.",
+      "url": "https://github.com/facebookresearch/minihack",
+      "status": "candidate"
+    },
+    {
+      "name": "Dungeon Crawl Stone Soup",
+      "category": "ROGUELIKE \u00b7 2D",
+      "note": "Open-source turn-based game. Tile capture and deterministic task/reset support need development.",
+      "url": "https://github.com/crawl/crawl",
+      "status": "candidate"
+    },
+    {
+      "name": "Cataclysm: Dark Days Ahead",
+      "category": "SURVIVAL \u00b7 2D",
+      "note": "Long-horizon planning and survival candidate. Requires pinned saves, visual interface and auditable objectives.",
+      "url": "https://github.com/CleverRaven/Cataclysm-DDA",
+      "status": "candidate"
+    },
+    {
+      "name": "Crafter",
+      "category": "RESEARCH \u00b7 2D SURVIVAL",
+      "note": "Achievement-based generalization tasks. An RGB adapter and achievement normalization remain to be implemented.",
+      "url": "https://github.com/danijar/crafter",
+      "status": "candidate"
+    },
+    {
+      "name": "MiniWorld",
+      "category": "RESEARCH \u00b7 3D",
+      "note": "Lightweight navigation environments. RGB rendering and platform-specific graphics setup need validation.",
+      "url": "https://github.com/Farama-Foundation/Miniworld",
+      "status": "candidate"
+    },
+    {
+      "name": "Unity ML-Agents environments",
+      "category": "MODERN ENGINE \u00b7 3D / 2D",
+      "note": "Custom Unity games can offer rendered cameras and independent referees. SDK support does not make arbitrary Unity titles controllable.",
+      "url": "https://github.com/Unity-Technologies/ml-agents",
+      "status": "candidate"
+    },
+    {
+      "name": "Google Research Football",
+      "category": "RESEARCH \u00b7 3D SPORT",
+      "note": "Controlled football tasks. Keep raw state-based agents in a separate track from rendered-pixel agents.",
+      "url": "https://github.com/google-research/football",
+      "status": "candidate"
+    },
+    {
+      "name": "Minecraft",
+      "category": "COMMERCIAL \u00b7 3D SANDBOX",
+      "note": "MineRL/Malmo are established research routes, with version and installation constraints. Requires a lawful game setup and adapter.",
+      "url": "https://github.com/minerllabs/minerl",
+      "status": "candidate"
+    },
+    {
+      "name": "StarCraft II",
+      "category": "AAA \u00b7 3D STRATEGY",
+      "note": "Official SC2 API and PySC2 provide a strong offline candidate. Feature layers and privileged state cannot enter the pixels-only track.",
+      "url": "https://github.com/Blizzard/s2client-api",
+      "status": "candidate"
+    },
+    {
+      "name": "Rocket League / RocketSim",
+      "category": "COMMERCIAL \u00b7 3D SPORT",
+      "note": "RLGym is a research route. Simulator and retail-game results must be distinct; visual capture and access constraints need validation.",
+      "url": "https://github.com/RLGym/rlgym",
+      "status": "candidate"
+    },
+    {
+      "name": "Factorio",
+      "category": "INDIE \u00b7 2D AUTOMATION",
+      "note": "Official Lua API can implement a trusted referee. Agents would receive screenshots only. Game license and deterministic scenario needed.",
+      "url": "https://lua-api.factorio.com/latest/",
+      "status": "candidate"
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "category": "AAA \u00b7 MODERN 3D",
+      "note": "Official REDmod exists. A repeatable offline benchmark is exploratory, requires licensed installs, hardware and task/referee work.",
+      "url": "https://www.cyberpunk.net/en/modding-support",
+      "status": "candidate"
+    },
+    {
+      "name": "Morrowind / OpenMW",
+      "category": "COMMERCIAL ASSETS \u00b7 3D RPG",
+      "note": "Open-source engine is a viable integration route; original game assets require separate rights. Scripted tasks and capture not implemented.",
+      "url": "https://github.com/OpenMW/openmw",
+      "status": "candidate"
+    },
+    {
+      "name": "Half-Life 2 / Source SDK",
+      "category": "AAA \u00b7 3D FPS",
+      "note": "Source SDK offers an offline research path. Game assets and SDK terms remain separate; full adapter and validation needed.",
+      "url": "https://github.com/ValveSoftware/source-sdk-2013",
+      "status": "candidate"
+    },
+    {
+      "name": "Atari / Arcade Learning Environment",
+      "category": "RETRO \u00b7 2D FAMILY",
+      "note": "Large established benchmark family. ROM permissions and pixel/action parity must be checked per title; not integrated.",
+      "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
+      "status": "candidate"
+    },
+    {
+      "name": "Stable-Retro library",
+      "category": "RETRO \u00b7 2D FAMILY",
+      "note": "Potential multi-console coverage. No copyrighted ROMs are bundled; verify each integration and its game assets.",
+      "url": "https://github.com/Farama-Foundation/stable-retro",
+      "status": "candidate"
+    },
+    {
+      "name": "PettingZoo environments",
+      "category": "MULTI-AGENT \u00b7 2D FAMILY",
+      "note": "Good route to simultaneous multi-agent competition. RGB-only support and outcome definitions must be checked environment by environment.",
+      "url": "https://github.com/Farama-Foundation/PettingZoo",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / BigFish",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / BossFight",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / CaveFlyer",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Chaser",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Climber",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / CoinRun",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Dodgeball",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / FruitBot",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Heist",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Jumper",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Leaper",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Maze",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Miner",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Ninja",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / Plunder",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    },
+    {
+      "name": "Procgen / StarPilot",
+      "category": "PROCEDURAL \u00b7 2D",
+      "note": "Research candidate from the 16-environment Procgen suite. Legacy package compatibility needs work; no adapter or measured result yet.",
+      "url": "https://github.com/openai/procgen",
+      "status": "candidate"
+    }
+  ]
+}

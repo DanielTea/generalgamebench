@@ -1,0 +1,229 @@
+{
+  "rankings": [
+    {
+      "agent": "astra",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 72.738,
+      "ci95": [
+        55.793650793650805,
+        89.68253968253968
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 47,
+      "p50_ms": 6699.384,
+      "p95_ms": 10163.987141799998,
+      "max_ms": 11593.279375,
+      "misses": 47,
+      "latency_eligible": false,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 80.714
+      },
+      "errors": 0,
+      "model": "gpt-6-astra",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6-astra",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 8
+      }
+    },
+    {
+      "agent": "claude",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 68.294,
+      "ci95": [
+        55.39682539682539,
+        81.1904761904762
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 3921.187583,
+      "p95_ms": 6099.6719101,
+      "max_ms": 6608.213542,
+      "misses": 48,
+      "latency_eligible": false,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 67.381
+      },
+      "errors": 0,
+      "model": "claude-opus-5",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-opus-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 8,
+        "resolved_models": [
+          "claude-opus-5"
+        ]
+      }
+    },
+    {
+      "agent": "react",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 67.897,
+      "ci95": [
+        55.39682539682539,
+        80.39682539682539
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 1.4450414999999999,
+      "p95_ms": 2.2542066999999997,
+      "max_ms": 2.720375,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "tracker",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 67.897,
+      "ci95": [
+        55.39682539682539,
+        80.39682539682539
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 1.5608335,
+      "p95_ms": 3.0712641499999997,
+      "max_ms": 4.215792,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 37.5,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "idle",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 56.19,
+      "ci95": [
+        56.190476190476204,
+        56.190476190476204
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 0.677125,
+      "p95_ms": 5.889918199999996,
+      "max_ms": 14.882584,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 68.571
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    },
+    {
+      "agent": "random",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.1.0",
+      "max_steps": 8,
+      "score": 55.794,
+      "ci95": [
+        55.793650793650805,
+        55.793650793650805
+      ],
+      "episodes": 6,
+      "seeds": 2,
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic"
+      ],
+      "decisions": 48,
+      "p50_ms": 0.778583,
+      "p95_ms": 2.74686425,
+      "max_ms": 3.228166,
+      "misses": 0,
+      "latency_eligible": true,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 67.381
+      },
+      "errors": 0,
+      "model": null,
+      "provider_metadata": {}
+    }
+  ]
+}
