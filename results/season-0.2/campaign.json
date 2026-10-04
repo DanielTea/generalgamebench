@@ -1,0 +1,119 @@
+{
+  "schema_version": "generalgamebench-campaign/1",
+  "version": "0.2.0",
+  "games": [
+    "coin-run",
+    "dodge-lanes",
+    "doom-basic",
+    "doom-defend-center",
+    "doom-defend-line",
+    "doom-take-cover",
+    "doom-health",
+    "doom-corridor",
+    "doom-home",
+    "doom-predict",
+    "procgen-bigfish",
+    "procgen-bossfight",
+    "procgen-caveflyer",
+    "procgen-chaser",
+    "procgen-climber",
+    "procgen-coinrun",
+    "procgen-dodgeball",
+    "procgen-fruitbot",
+    "procgen-heist",
+    "procgen-jumper",
+    "procgen-leaper",
+    "procgen-maze",
+    "procgen-miner",
+    "procgen-ninja",
+    "procgen-plunder",
+    "procgen-starpilot",
+    "crafter",
+    "miniworld-oneroom",
+    "pettingzoo-pistonball",
+    "atari-breakout",
+    "retro-airstriker",
+    "nethack-score",
+    "minihack-room"
+  ],
+  "seeds": [
+    3000
+  ],
+  "max_steps": 8,
+  "mode": "exhibition",
+  "timeout_s": 120,
+  "cloud_workers": 10,
+  "local_workers": 1,
+  "scope": "short integration exhibition; not a reliable model skill comparison",
+  "source_hashes": {
+    "src/generalgamebench/__init__.py": "45891c87049aba08a826f7495adb47c3091e439ea4f2179a9aabb8fe917151aa",
+    "src/generalgamebench/baselines.py": "eb754c8b6a514830e44252f13659b90cb10eb2fd28bd41b88b211610991d5fc5",
+    "src/generalgamebench/cli.py": "bcdd2a173c0ec884414769297eb2361cb4c0650fce3d97e2fc8bf8d9ecba045e",
+    "src/generalgamebench/environment_worker.py": "30ed1a39670227c1eceeb8de8e7491e670f23c5d091027bce909facb823ed323",
+    "src/generalgamebench/evidence.py": "e3032853329dc6cfe9ecbbe65b7740045b130f2072a96729b12d05a0393b7413",
+    "src/generalgamebench/games.py": "a6afd3b87924feff8cc6329b1cd8e2572eb6ffe7a7817352403dd3b0e29d8a02",
+    "src/generalgamebench/mlx_agent.py": "c0b264c621814a8f6a08ee3a55ba757c14ef6d4b1b4ab8060c3a904865755f9d",
+    "src/generalgamebench/model_inventory.py": "d290c6c2a409be4c24ab077841413b376ea293eef00dd28ac4140805aba01258",
+    "src/generalgamebench/model_prompt.py": "610d84d210e04b21c6cb105d6db1da5f5abfa35066ae57ad3d35b99481c5b45c",
+    "src/generalgamebench/models.py": "2daa3e3bf1e698dee81e5e8eae77124612ec3264639250508db14cf7fdecb8cd",
+    "src/generalgamebench/protocol.py": "75e4b4db184ddb6ce669fe14b58e8927d3745f68c8425e3cbba8ffe7ad875c5a",
+    "src/generalgamebench/ranking.py": "2d33ec985ac5c35687a1ab6628c43135b2fe116a5cad87969bcd967ffd21636b",
+    "src/generalgamebench/registry.py": "ef05135dc22cabd4d5ae05564502ae017733ecd218fdcc44192a6fa5432b9f5d",
+    "src/generalgamebench/runner.py": "4e30e6c4ba746d2f9207eaa9503108676a93d170a29f4e4e2c90cd4a67f6203f",
+    "src/generalgamebench/worker_game.py": "ab64a4b2a4739a0490731d6541ba463179ebf5ac7d14e0d08182783288a1e255"
+  },
+  "assignments": {
+    "runs/expanded-models-20261004": [
+      "gpt-6-astra",
+      "gpt-6-luna",
+      "gpt-6-sol"
+    ],
+    "runs/expanded-extra-20261004": [
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gpt-5.5",
+      "claude-opus-5[1m]",
+      "claude-sonnet-5",
+      "claude-haiku-4-5-20251001"
+    ],
+    "runs/expanded-local-20261004": [
+      "mlx-community/FastVLM-0.5B-bf16",
+      "mlx-community/Qwen3.5-0.8B-4bit",
+      "mlx-community/Qwen3.5-27B-4bit",
+      "mlx-community/Qwen3.5-2B-4bit",
+      "mlx-community/Qwen3.5-4B-4bit",
+      "mlx-community/Qwen3.5-9B-4bit",
+      "mlx-community/UI-Venus-1.5-2B-6bit"
+    ]
+  },
+  "concurrency_note": "Shared Apple M3 Max, 48 GiB RAM, 16 CPU cores. Up to ten hosted CLI evaluations and one local VLM; these are throughput exhibitions, not isolated latency microbenchmarks.",
+  "initial_source_hashes": {
+    "src/generalgamebench/__init__.py": "45891c87049aba08a826f7495adb47c3091e439ea4f2179a9aabb8fe917151aa",
+    "src/generalgamebench/baselines.py": "eb754c8b6a514830e44252f13659b90cb10eb2fd28bd41b88b211610991d5fc5",
+    "src/generalgamebench/cli.py": "bcdd2a173c0ec884414769297eb2361cb4c0650fce3d97e2fc8bf8d9ecba045e",
+    "src/generalgamebench/environment_worker.py": "327c4c04d79ec28dda465cb360656b75bd2c0c27139196f9e69c355627067d6a",
+    "src/generalgamebench/evidence.py": "e3032853329dc6cfe9ecbbe65b7740045b130f2072a96729b12d05a0393b7413",
+    "src/generalgamebench/games.py": "a6afd3b87924feff8cc6329b1cd8e2572eb6ffe7a7817352403dd3b0e29d8a02",
+    "src/generalgamebench/mlx_agent.py": "c0b264c621814a8f6a08ee3a55ba757c14ef6d4b1b4ab8060c3a904865755f9d",
+    "src/generalgamebench/model_inventory.py": "d290c6c2a409be4c24ab077841413b376ea293eef00dd28ac4140805aba01258",
+    "src/generalgamebench/model_prompt.py": "610d84d210e04b21c6cb105d6db1da5f5abfa35066ae57ad3d35b99481c5b45c",
+    "src/generalgamebench/models.py": "2daa3e3bf1e698dee81e5e8eae77124612ec3264639250508db14cf7fdecb8cd",
+    "src/generalgamebench/protocol.py": "75e4b4db184ddb6ce669fe14b58e8927d3745f68c8425e3cbba8ffe7ad875c5a",
+    "src/generalgamebench/ranking.py": "2d33ec985ac5c35687a1ab6628c43135b2fe116a5cad87969bcd967ffd21636b",
+    "src/generalgamebench/registry.py": "69d89a071e05a68c249d2a047e897d83440d2454eb93c5ad175b4e9baecfb8c7",
+    "src/generalgamebench/runner.py": "4e30e6c4ba746d2f9207eaa9503108676a93d170a29f4e4e2c90cd4a67f6203f",
+    "src/generalgamebench/worker_game.py": "ab64a4b2a4739a0490731d6541ba463179ebf5ac7d14e0d08182783288a1e255"
+  },
+  "initial_implementation_commit": "6f6f76ca55cf9160cfe57a9eb13f2120e2e422c3",
+  "implementation_commit": "ad38b2362575b537cce6638ea020b9bbb99c5e6c",
+  "task_revisions": {
+    "crafter": {
+      "task_version": "2",
+      "reason": "Address-ordered upstream creature sets broke deterministic gameplay replay. Regenerate the whole Crafter cohort using stable tile-position order, not selected episodes.",
+      "models": "runs/crafter-v2-models-20261004",
+      "local": "runs/crafter-v2-baselines-20261004",
+      "controls": "runs/crafter-v2-controls-20261004"
+    }
+  }
+}

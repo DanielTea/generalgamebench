@@ -1,5 +1,46 @@
 # Measured results provenance
 
+## Season 0.2 — expanded Mac suite
+
+Evaluated on 2026-10-04. **1,089 actual episodes and 14,394 recorded decisions**, all replay-verified before publication. The suite covers 33 scenarios across 26 of 45 environment cards. Nineteen cards remain unadmitted; no modern commercial AAA title is ranked. Every result is **local-unattested**, and the official track is empty.
+
+- Local controls: four built-in policies, 33 scenarios, seeds 4000–4002, 24-decision horizon: 396 episodes.
+- Model exhibition: all 17 configured vision-capable models (seven OpenAI, three Anthropic and seven fully cached local MLX models), the same 33 scenarios, seed 3000, eight-decision horizon: 561 episodes.
+- Matched exhibition controls: the four built-in policies, the same seed and horizon: 132 episodes.
+- There were 44 recorded errors and 44 aborted episodes. Aborted episodes score zero; they are retained, not replaced by successful retries. FastVLM's responses often failed the required JSON action protocol. These rows describe performance with this interface, not an inability to see images.
+
+### What was measured
+
+This is a short integration exhibition. Eight decisions barely start many games; the model cohort has one seed and no confidence interval. Hosted models use fresh authenticated CLI calls per observation; startup and network overhead are inside the response clock. Local models remain loaded, with model initialization outside that clock. Calls ran concurrently on a shared Apple M3 Max with 48 GiB RAM and 16 CPU cores (up to ten hosted evaluations and one local VLM). Latencies are observed end-to-end response times, not provider inference benchmarks or isolated hardware measurements.
+
+The clock includes snapshot retrieval, PNG encoding, transport, inference, parsing and action validation. Engine advancement and eager rendering between decisions are outside it. All simulation is lockstep. Strictly less than 100 ms on **every** measured decision is required for latency eligibility; errors or aborted episodes also disqualify a row. Passing this local timing gate does not grant official rank.
+
+Task definitions, score anchors and runtime installation instructions are in [environments/README.md](../environments/README.md). Families with multiple modes are admitted only for the specific tasks listed. The four built-in policies are coded references, not trained general game-playing models. The existing 2D heuristics do not confer skill in newly added games.
+
+### Source and evidence
+
+The original scored implementation is commit `6f6f76ca55cf9160cfe57a9eb13f2120e2e422c3`. A full replay audit found address-dependent creature selection in Crafter. Commit `ad38b2362575b537cce6638ea020b9bbb99c5e6c` fixes that ordering and records Crafter task version 2. Every Crafter episode was regenerated under that revision; the other 32 tasks and model interface are unchanged and their original episodes are retained. The campaign records both source-hash sets and the complete task-revision selection. Subsequent publication work adds UI, exports, documentation and an unadmitted Unity helper. The complete 83-check validation passed, including 26 optional real-engine checks. The report includes test-source and dependency-lock hashes.
+
+`season-0.2/snapshot.json` is the public leaderboard; `episodes.json` retains individual scores and timing arrays; `evidence-roots.json` lists the exact included paths and final hash-chain heads. `campaign.json` records fixed source hashes, seeds, horizon and model-to-directory assignments. `model-inventory.json` and `model-status.json` preserve model IDs, local weight revisions and completion status without private paths or account configuration. `validation.json` records the actual validation checks.
+
+Runs were split into disjoint model assignments before the secondary jobs started. Empty administrative reservations in the original driver prevent duplicate evaluations; they are not provider failures and are not included as episodes. Development connectivity probes, pre-admission engine diagnostics and earlier prompt experiments are excluded. No final run was selected by score. Each assigned model's complete final suite is included once. The whole Crafter cohort was replaced to fix the engine defect, not to improve selected scores; all original Crafter version-1 episodes remain local and are excluded uniformly.
+
+The [v0.2.0 release](https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0) contains `generalgamebench-evidence-v0.2.0.tar.gz`, the portable Hugging Face export, and `SHA256SUMS`. Extract the evidence into a new directory, install the pinned optional runtimes, and verify an episode:
+
+```sh
+uv run generalgamebench verify /path/to/extracted/runs/expanded-models-20261004/openai-gpt-6-astra/coin-run-3000
+```
+
+The archive contains only the selected event ledgers, result records and PNG observations. It does not contain credentials, model weights, game binaries, administrative reservations or development probes. Hashes and deterministic replay make the snapshot inspectable, but they are not independent attestation of its original wall-clock timing.
+
+### Future Hugging Face publication
+
+The prepared static Space and separate tabular Dataset use this same snapshot. Each dataset row retains track, task/engine metadata, model revision, exact seed set, decision horizon, suite identity, latency, errors and trust. The snapshot checksum binds every exported row to the source data. Game execution and credentials stay outside the Space. Nothing has been uploaded to Hugging Face yet; see [the publication design](../docs/HUGGING_FACE.md).
+
+---
+
+## Archived Season 0
+
 Season 0, evaluated on 2026-10-04. These are actual played episodes, not sample/mock data. Trust is **local-unattested** for every result.
 
 Hardware: Apple M3 Max, 48 GiB unified memory, macOS arm64, Python 3.12.8. This was a shared development workstation, not a dedicated calibrated evaluation host. The lockfile pins Python dependencies; `source-hashes.json` records the final reference package used for validation. No cross-hardware latency claim is made.

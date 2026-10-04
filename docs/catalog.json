@@ -72,7 +72,7 @@
   {
     "name": "Luanti",
     "category": "OPEN SOURCE · 3D SANDBOX",
-    "note": "Modern voxel engine. Pin one game/modpack and separate referee-only Lua events from agent pixels.",
+    "note": "The pinned Craftium Linux runtime installed on this Mac through Docker, but native Luanti crashed before returning a camera frame, including with software rendering. No task is admitted; see docs/INTEGRATION_ATTEMPTS.md.",
     "url": "https://github.com/luanti-org/luanti",
     "status": "candidate",
     "id": "luanti",
@@ -83,7 +83,7 @@
     "media_credit": "Luanti / Minetest Game contributors",
     "media_kind": "Project preview",
     "media_caption": "Minetest Game example on the Luanti engine.",
-    "integration_state": "planned"
+    "integration_state": "runtime-blocked"
   },
   {
     "name": "Veloren",
@@ -298,7 +298,7 @@
   {
     "name": "Unity ML-Agents environments",
     "category": "MODERN ENGINE · 3D / 2D",
-    "note": "Custom Unity games can offer rendered cameras and independent referees. SDK support does not make arbitrary Unity titles controllable.",
+    "note": "Pinned official VisualFoodCollector executable launches on this Mac. A pixels-only adapter and deterministic replay probes are included as experimental work. Goal/scoring and full referee admission remain unfinished; no Unity score is ranked.",
     "url": "https://github.com/Unity-Technologies/ml-agents",
     "status": "candidate",
     "id": "unity-ml-agents-environments",
@@ -309,7 +309,7 @@
     "media_credit": "Unity Technologies / ML-Agents contributors",
     "media_kind": "Project preview",
     "media_caption": "Soccer example from the ML-Agents environment collection.",
-    "integration_state": "planned"
+    "integration_state": "experimental"
   },
   {
     "name": "Google Research Football",

@@ -8,7 +8,7 @@ Prepare a portable Space and a separate Dataset without uploading anything:
 uv run python scripts/export_huggingface.py --output build/huggingface-preview
 ```
 
-The Space folder includes the HTML, data, media credits and `sdk: static` metadata. The Dataset folder contains JSONL configurations for each nonempty track, with one row per agent/game. It retains exact model identifiers, local weight revisions, seeds, decision horizons, latency eligibility, hardware and trust status. A checksum manifest covers the export. Neither credentials nor proprietary game installations belong in either repository.
+The Space folder includes the HTML, data, media credits and `sdk: static` metadata. The Dataset folder contains JSONL configurations for each nonempty track, with one row per agent/game. It retains exact model identifiers, local weight revisions, seeds, decision horizons, latency eligibility, hardware and trust status. The suite identifier includes task/engine metadata, and every row records the exact source snapshot checksum. A checksum manifest covers the export. Neither credentials nor proprietary game installations belong in either repository.
 
 Future publication should upload these folders into separate Space and Dataset repositories, using a narrowly scoped token supplied outside the code. Keep the scored snapshot immutable and link the Dataset revision from the Space. Model cards can link to the same evidence revision. A submission service and isolated evaluation workers are separate infrastructure; a static Space must never execute uploaded agent code.
 

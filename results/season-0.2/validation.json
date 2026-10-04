@@ -1,0 +1,449 @@
+{
+  "tested_at": "2026-10-04T14:01:01.039515+00:00",
+  "implementation_commit": "ad38b2362575b537cce6638ea020b9bbb99c5e6c",
+  "host": "Apple M3 Max, 48 GiB, macOS arm64",
+  "command": "GGBENCH_RUN_INTEGRATION=1 uv run pytest -q",
+  "passed": 83,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "test_end_to_end_and_replay",
+      "seconds": 0.031,
+      "passed": true
+    },
+    {
+      "name": "test_frame_tampering_detected",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "name": "test_chain_tampering_and_truncation",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "name": "test_rehashed_lies_still_fail_semantic_verification[score-1.0]",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "name": "test_rehashed_lies_still_fail_semantic_verification[latencies_ms-value1]",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "name": "test_rehashed_lies_still_fail_semantic_verification[aborted-True]",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "name": "test_rehashed_lies_still_fail_semantic_verification[raw_score-999]",
+      "seconds": 0.004,
+      "passed": true
+    },
+    {
+      "name": "test_timeout_zeroes_score_and_aborts",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "name": "test_exactly_100ms_is_ineligible_and_waits",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "name": "test_native_reproducibility[coin-run]",
+      "seconds": 0.018,
+      "passed": true
+    },
+    {
+      "name": "test_native_reproducibility[dodge-lanes]",
+      "seconds": 0.02,
+      "passed": true
+    },
+    {
+      "name": "test_visual_policy_collects_coins",
+      "seconds": 0.048,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-basic]",
+      "seconds": 0.439,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-defend-center]",
+      "seconds": 0.297,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-defend-line]",
+      "seconds": 0.324,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-take-cover]",
+      "seconds": 0.457,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-health]",
+      "seconds": 0.283,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-corridor]",
+      "seconds": 0.295,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-home]",
+      "seconds": 0.424,
+      "passed": true
+    },
+    {
+      "name": "test_doom_adapter_and_replay[doom-predict]",
+      "seconds": 0.301,
+      "passed": true
+    },
+    {
+      "name": "test_export_preserves_task_model_seed_and_trust",
+      "seconds": 0.008,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-bigfish]",
+      "seconds": 3.554,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-bossfight]",
+      "seconds": 3.874,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-caveflyer]",
+      "seconds": 3.242,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-chaser]",
+      "seconds": 3.374,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-climber]",
+      "seconds": 3.182,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-coinrun]",
+      "seconds": 3.312,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-dodgeball]",
+      "seconds": 3.226,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-fruitbot]",
+      "seconds": 3.851,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-heist]",
+      "seconds": 3.505,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-jumper]",
+      "seconds": 3.544,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-leaper]",
+      "seconds": 3.76,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-maze]",
+      "seconds": 3.42,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-miner]",
+      "seconds": 4.961,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-ninja]",
+      "seconds": 3.666,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-plunder]",
+      "seconds": 3.29,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[procgen-starpilot]",
+      "seconds": 3.874,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[crafter]",
+      "seconds": 2.077,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[miniworld-oneroom]",
+      "seconds": 2.026,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[pettingzoo-pistonball]",
+      "seconds": 2.694,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[atari-breakout]",
+      "seconds": 0.772,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[retro-airstriker]",
+      "seconds": 2.632,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[nethack-score]",
+      "seconds": 1.963,
+      "passed": true
+    },
+    {
+      "name": "test_actual_engine_replay[minihack-room]",
+      "seconds": 3.736,
+      "passed": true
+    },
+    {
+      "name": "test_minihack_goal_and_early_termination",
+      "seconds": 1.558,
+      "passed": true
+    },
+    {
+      "name": "test_procgen_stops_before_automatic_next_episode",
+      "seconds": 1.807,
+      "passed": true
+    },
+    {
+      "name": "test_crafter_respawn_is_stable_across_processes",
+      "seconds": 5.435,
+      "passed": true
+    },
+    {
+      "name": "test_model_invalid_output[[]]",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "name": "test_model_invalid_output[{\"action\":true}]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_model_invalid_output[{\"action\":1,\"reward\":99}]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_model_invalid_output[hello]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_model_json_and_fence",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[None]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply1]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply2]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply3]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply4]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply5]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply6]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply7]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_bad_actions_rejected[reply8]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_valid_action",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_roundtrip_and_secret_scrubbing",
+      "seconds": 0.038,
+      "passed": true
+    },
+    {
+      "name": "test_bad_wire_reply[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+      "seconds": 0.035,
+      "passed": true
+    },
+    {
+      "name": "test_bad_wire_reply[not-json]",
+      "seconds": 0.032,
+      "passed": true
+    },
+    {
+      "name": "test_bad_wire_reply[{\"nonce\":\"fresh\",\"action\":0}\\n{\"nonce\":\"fresh\",\"action\":1}]",
+      "seconds": 0.031,
+      "passed": true
+    },
+    {
+      "name": "test_deadline_and_child_cleanup",
+      "seconds": 0.058,
+      "passed": true
+    },
+    {
+      "name": "test_nonreader_cannot_block_supervisor",
+      "seconds": 0.06,
+      "passed": true
+    },
+    {
+      "name": "test_bad_handshake",
+      "seconds": 0.024,
+      "passed": true
+    },
+    {
+      "name": "test_balanced_aggregate_and_no_self_certification",
+      "seconds": 0.092,
+      "passed": true
+    },
+    {
+      "name": "test_invalid_or_unbalanced_data_rejected[duplicate]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_invalid_or_unbalanced_data_rejected[missing]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_invalid_or_unbalanced_data_rejected[nan]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_invalid_or_unbalanced_data_rejected[negative_time]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_invalid_or_unbalanced_data_rejected[mixed_hardware]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_strict_deadline_and_single_seed_uncertainty",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_mixed_identity_or_engine_rejected[model]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_mixed_identity_or_engine_rejected[revision]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_mixed_identity_or_engine_rejected[prompt]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_mixed_identity_or_engine_rejected[engine]",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_task_ids_and_scores_are_unambiguous",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_discovery_excludes_hidden_and_text_only_models",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "name": "test_local_discovery_rejects_incomplete_weight_shards",
+      "seconds": 0.002,
+      "passed": true
+    }
+  ],
+  "runtime_locks": {
+    "environments/research/requirements.lock": "91e173ad636752d8fb748a28cf4bd706eb3ae05bd4b4d913a8a39756e0673f11",
+    "environments/procgen/requirements.lock": "dccc78bacc748f14a0792fdcc9b972778a3f03680b405afd668126391acb9dda",
+    "environments/roguelike/requirements.lock": "5bda3aaa9e60ddfae23f29ff0a7aac11621f161402b5c982eed7803fae3dde68",
+    "environments/vlm/requirements.lock": "6ade6b04dbc178aea6428009ae88eed5dc6c863ffbc73572803d989511033c49"
+  },
+  "validation_source_hashes": {
+    "tests/test_evidence.py": "697318bad501ac38ca4b68f5e927bdf81e456fe21789e890fbd1c6ed8a31a373",
+    "tests/test_games.py": "14f26d4f3cde277ee18a58243464bb3e2f9de076e8c199c81b9eb5ed5e6a8ce4",
+    "tests/test_huggingface.py": "b124352404007a4c3df3093f25531cec491d7909173174f97dc5ae8e19053401",
+    "tests/test_integrations.py": "0619499f69d8aca4a35bf8880c20ff0ee127a413b75b203d0f53b49b167dd4de",
+    "tests/test_models.py": "0f2e58b22c6ec8a13011cef1f34fb747c9c7e1680d86e3097a2be15596720d42",
+    "tests/test_protocol.py": "152bd6ba88b501db3cc1d2013fcab3ee2335a9b4e34878e8274a2154351bac82",
+    "tests/test_ranking.py": "6236f9c9fe8fdad2b271c97922f59450ba75abacc4b770da8158e126e3499159",
+    "tests/test_registry.py": "5bb8fdfa22b2254cb56bb73519cc757029660195a522a5546a05b1ab267be73e",
+    "scripts/export_huggingface.py": "fef6f2bc15acbdb8cb55d0bb20ef1f6a386bb3631115b0e4b3a0d9a8ee382330"
+  },
+  "supplemental_checks": [
+    {
+      "command": "uv run pytest tests/test_huggingface.py -q",
+      "passed": 1,
+      "reason": "Preserve detailed hardware and concurrency context in the portable Dataset."
+    }
+  ]
+}

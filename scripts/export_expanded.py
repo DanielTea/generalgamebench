@@ -19,7 +19,10 @@ def agent_id(entry):
 
 
 def verified(path):
-    verify_episode(path)
+    try:
+        verify_episode(path)
+    except Exception as exc:
+        raise ValueError(f"Replay failed for {path.relative_to(ROOT)}: {exc}") from exc
     result = read_ledger(path / "events.jsonl")[-1]
     final = json.loads((path / "events.jsonl").read_text().splitlines()[-1])
     return result, str(path.relative_to(ROOT)), final["hash"]
@@ -37,6 +40,16 @@ def main():
     for source, digest in campaign["source_hashes"].items():
         if hashlib.sha256((ROOT / source).read_bytes()).hexdigest() != digest:
             raise ValueError(f"Scored source changed: {source}")
+
+    def selected(game, seed, agent, original, cohort):
+        revision = campaign.get("task_revisions", {}).get(game)
+        folder = ROOT / revision[cohort] / agent if revision else original
+        if revision and cohort == "models":
+            status = json.loads((folder / "status.json").read_text())
+            if status["status"] != "complete":
+                raise ValueError(f"Task revision campaign unfinished for {agent}: {game}")
+        return folder / f"{game}-{seed}"
+
     local_paths, exhibition_paths, statuses = [], [], []
     for relative, model_names in campaign["assignments"].items():
         for model_name in model_names:
@@ -46,8 +59,16 @@ def main():
             if not status_file.exists():
                 raise ValueError(f"Model has not been attempted: {model_name}")
             status = json.loads(status_file.read_text())
+            status["task_revisions"] = {
+                game: revision["task_version"]
+                for game, revision in campaign.get("task_revisions", {}).items()
+            }
             statuses.append(status)
-            paths = [folder / f"{game}-{seed}" for game in games for seed in seeds]
+            paths = [
+                selected(game, seed, agent_id(entry), folder, "models")
+                for game in games
+                for seed in seeds
+            ]
             completed = all((p / "result.json").exists() for p in paths)
             if not completed:
                 if status["status"] not in {"blocked", "provider-unavailable"}:
@@ -59,12 +80,14 @@ def main():
             exhibition_paths.extend(paths)
     for agent in ("idle", "random", "react", "tracker"):
         local_paths.extend(
-            ROOT / "runs/expanded-baselines-20261004" / agent / f"{game}-{seed}"
+            selected(game, seed, agent, ROOT / "runs/expanded-baselines-20261004" / agent, "local")
             for game in games
             for seed in (4000, 4001, 4002)
         )
         exhibition_paths.extend(
-            ROOT / "runs/expanded-controls-20261004" / agent / f"{game}-{seed}"
+            selected(
+                game, seed, agent, ROOT / "runs/expanded-controls-20261004" / agent, "controls"
+            )
             for game in games
             for seed in seeds
         )

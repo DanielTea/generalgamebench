@@ -37,7 +37,14 @@ def test_export_preserves_task_model_seed_and_trust(tmp_path):
         "provider_metadata": {"revision": "weights-sha", "prompt_version": "v2"},
     }
     (site / "data.json").write_text(
-        json.dumps({"season": "0.2", "exhibition": [ranking], "official": []})
+        json.dumps(
+            {
+                "season": "0.2",
+                "exhibition": [ranking],
+                "official": [],
+                "hardware_details": "M3 Max; concurrent",
+            }
+        )
     )
     out = tmp_path / "export"
     module.export(site, out)
@@ -46,7 +53,15 @@ def test_export_preserves_task_model_seed_and_trust(tmp_path):
     assert row["model_revision"] == "weights-sha"
     assert row["task_metadata"]["engine_version"] == "3"
     assert row["trust"] == "local-unattested"
+    assert row["hardware_details"] == "M3 Max; concurrent"
     assert len(row["suite_id"]) == 64
+    assert len(row["snapshot_sha256"]) == 64
+    ranking["task_metadata"]["maze"]["engine_version"] = "different-engine"
+    (site / "data.json").write_text(json.dumps({"exhibition": [ranking]}))
+    module.export(site, tmp_path / "different")
+    changed = json.loads((tmp_path / "different/dataset/exhibition.jsonl").read_text())
+    assert changed["suite_id"] != row["suite_id"]
+    assert changed["snapshot_sha256"] != row["snapshot_sha256"]
     assert not (out / "dataset/official.jsonl").exists()
     assert "sdk: static" in (out / "space/README.md").read_text()
     assert (out / "space/index.html").read_text() == (site / "index.html").read_text()

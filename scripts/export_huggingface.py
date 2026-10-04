@@ -10,7 +10,9 @@ from pathlib import Path
 def export(site: Path, destination: Path):
     if destination.exists():
         raise FileExistsError("Use a new output directory to preserve previous exports")
-    snapshot = json.loads((site / "data.json").read_text())
+    snapshot_bytes = (site / "data.json").read_bytes()
+    snapshot = json.loads(snapshot_bytes)
+    snapshot_hash = hashlib.sha256(snapshot_bytes).hexdigest()
     space, dataset = destination / "space", destination / "dataset"
     shutil.copytree(site, space)
     dataset.mkdir(parents=True)
@@ -30,8 +32,17 @@ def export(site: Path, destination: Path):
         for ranking in snapshot.get(track, []):
             suite = {
                 k: ranking.get(k)
-                for k in ("games", "seed_ids", "max_steps", "mode", "hardware", "version")
+                for k in (
+                    "games",
+                    "seed_ids",
+                    "max_steps",
+                    "mode",
+                    "hardware",
+                    "version",
+                    "task_metadata",
+                )
             }
+            suite["hardware_details"] = snapshot.get("hardware_details")
             suite_id = hashlib.sha256(json.dumps(suite, sort_keys=True).encode()).hexdigest()
             for game, score in ranking.get("per_game", {}).items():
                 metadata = ranking.get("provider_metadata", {})
@@ -41,6 +52,7 @@ def export(site: Path, destination: Path):
                         "track": track,
                         "season": snapshot.get("season"),
                         "generated_at": snapshot.get("generated_at"),
+                        "snapshot_sha256": snapshot_hash,
                         "agent_id": ranking["agent"],
                         "model_id": ranking.get("model"),
                         "model_revision": metadata.get("revision"),
@@ -61,6 +73,7 @@ def export(site: Path, destination: Path):
                         "decision_horizon": ranking["max_steps"],
                         "trust": ranking["trust"],
                         "hardware": ranking["hardware"],
+                        "hardware_details": snapshot.get("hardware_details"),
                         "suite_errors": ranking.get("errors", 0),
                         "suite_aborted_episodes": ranking.get("aborted_episodes"),
                     }
