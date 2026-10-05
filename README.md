@@ -16,7 +16,9 @@ The [Mac vision model campaign](results/hf-vlm-2026-10-05) uses four models with
 
 All 43 scenarios passed native recording and exact replay on Linux x86_64. The [Linux validation report](results/linux-2026-10-05) links the successful workflow and each scenario result.
 
-The model table shows only the new verified runs. The [previous snapshot](results/hf-vlm-2026-10-05/previous-snapshot.json) keeps the earlier model and reference policy results. Earlier campaign directories and release files keep their original evidence and recording rules. The page has two views: Model exhibition and Official ranked. See the [test method](docs/METHODOLOGY.md) and [coverage](docs/GAMES.md).
+The [hosted model rerun](results/hosted-rerun-2026-10-05) uses the same 43 scenarios, seed, prompt, renderer, and decision limit. The Mac runs one model and one game at a time. Hosted calls include command startup and network time. Local models retain their weights in memory. The table gives the conditions for each model. It does not measure model-only speed.
+
+The model table shows only verified runs with the current task setup. The [previous snapshot](results/hf-vlm-2026-10-05/previous-snapshot.json) keeps the earlier model and reference policy results. Earlier campaign directories and release files keep their original evidence and recording rules. The page has two views: Model exhibition and Official ranked. See the [test method](docs/METHODOLOGY.md) and [coverage](docs/GAMES.md).
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
 

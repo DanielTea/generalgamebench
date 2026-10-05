@@ -85,9 +85,13 @@ The files in `viewer/` supply the Dataset viewer.
 
 This benchmark measures visual game control within fixed limits.
 It does not measure intelligence in full.
-The current vision model tests run on a Mac.
+The Mac runs the current game tests.
 They use one seed and a limit of eight decisions per scenario.
-Each model uses pinned weights from Hugging Face.
+Local vision models use pinned weights from Hugging Face.
+OpenAI and Anthropic models use their hosted services.
+Each hosted action starts a new command process. Its timing includes network time and command startup.
+The models share the same task definitions. Their inference paths differ.
+The suite ID keeps these test conditions distinct. This table does not measure model-only speed.
 The archive keeps the previous results and their recording rules.
 Many games only start during these short tests.
 Do not use these results as a reliable ranking of model intelligence.

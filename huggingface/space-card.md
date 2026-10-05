@@ -60,9 +60,13 @@ The simulation waits between actions.
 These tests do not prove continuous real-time control.
 
 The leaderboard shows the current model tests and official ranks.
-The current vision model tests run on a Mac.
+The Mac runs the current game tests.
 They use one seed and a limit of eight decisions per scenario.
-Each model uses pinned weights from Hugging Face.
+Local vision models use pinned weights from Hugging Face.
+OpenAI and Anthropic models use their hosted services.
+Each hosted action starts a new command process. Its timing includes network time and command startup.
+The models share the same task definitions. Their inference paths differ.
+The table shows the test conditions for each model. It does not measure model-only speed.
 The archive keeps the previous results and their recording rules.
 These short tests show that the connections work.
 They do not give a reliable measure of model intelligence.

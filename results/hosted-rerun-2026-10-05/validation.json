@@ -1,0 +1,150 @@
+{
+  "source_checksums_match": true,
+  "retained_rows_unchanged": 4,
+  "previous_snapshot_sha256": "83b8ac55725e66ed2db376b4ea651262d970b079fdd3b755dd32374b47b7775a",
+  "snapshot_sha256": "1d3be201d5f268651ae1995ac1cb9eedbff0a2f6a779710db9ec02057e95c274",
+  "models": 15,
+  "episodes": 645,
+  "incomplete_episodes": 0,
+  "decisions": 4208,
+  "errors": 138,
+  "native_replay_checks": 645,
+  "latency_passes": 0,
+  "independent_metrics": [
+    {
+      "agent": "openai-gpt-6-astra",
+      "model": "gpt-6-astra",
+      "score": 18.125,
+      "p95_ms": 18023.86950655,
+      "errors": 0,
+      "decisions": 342,
+      "latency_eligible": false
+    },
+    {
+      "agent": "claude-claude-opus-5-1m-",
+      "model": "claude-opus-5[1m]",
+      "score": 17.998,
+      "p95_ms": 3273.0903916500006,
+      "errors": 0,
+      "decisions": 340,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-5-6-terra",
+      "model": "gpt-5.6-terra",
+      "score": 17.992,
+      "p95_ms": 15372.738708350005,
+      "errors": 0,
+      "decisions": 340,
+      "latency_eligible": false
+    },
+    {
+      "agent": "claude-claude-sonnet-5",
+      "model": "claude-sonnet-5",
+      "score": 17.757,
+      "p95_ms": 2761.4562360500004,
+      "errors": 0,
+      "decisions": 340,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-5-5",
+      "model": "gpt-5.5",
+      "score": 17.344,
+      "p95_ms": 12131.91553605,
+      "errors": 0,
+      "decisions": 340,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-6-sol",
+      "model": "gpt-6-sol",
+      "score": 15.703,
+      "p95_ms": 14712.849447749999,
+      "errors": 3,
+      "decisions": 336,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-5-6-sol",
+      "model": "gpt-5.6-sol",
+      "score": 15.323,
+      "p95_ms": 16570.744368699987,
+      "errors": 0,
+      "decisions": 344,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-6-luna",
+      "model": "gpt-6-luna",
+      "score": 15.03,
+      "p95_ms": 17991.2067731,
+      "errors": 0,
+      "decisions": 344,
+      "latency_eligible": false
+    },
+    {
+      "agent": "openai-gpt-5-6-luna",
+      "model": "gpt-5.6-luna",
+      "score": 14.437,
+      "p95_ms": 13674.887067049998,
+      "errors": 0,
+      "decisions": 344,
+      "latency_eligible": false
+    },
+    {
+      "agent": "claude-claude-sonnet-5-5",
+      "model": "claude-sonnet-5-5",
+      "score": 14.176,
+      "p95_ms": 4268.193458300002,
+      "errors": 4,
+      "decisions": 320,
+      "latency_eligible": false
+    },
+    {
+      "agent": "claude-claude-haiku-4-5-20251001",
+      "model": "claude-haiku-4-5-20251001",
+      "score": 13.201,
+      "p95_ms": 15912.665583,
+      "errors": 4,
+      "decisions": 331,
+      "latency_eligible": false
+    },
+    {
+      "agent": "mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit",
+      "model": "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
+      "score": 12.718,
+      "p95_ms": 663.8795995999999,
+      "errors": 1,
+      "decisions": 337,
+      "latency_eligible": false
+    },
+    {
+      "agent": "mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx",
+      "model": "mlx-community/SmolVLM2-256M-Video-Instruct-mlx",
+      "score": 0.211,
+      "p95_ms": 1565.5551666,
+      "errors": 41,
+      "decisions": 57,
+      "latency_eligible": false
+    },
+    {
+      "agent": "mlx-mlx-community-FastVLM-0-5B-bf16",
+      "model": "mlx-community/FastVLM-0.5B-bf16",
+      "score": 0.0,
+      "p95_ms": 1429.3062501499992,
+      "errors": 42,
+      "decisions": 50,
+      "latency_eligible": false
+    },
+    {
+      "agent": "mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx",
+      "model": "mlx-community/SmolVLM2-500M-Video-Instruct-mlx",
+      "score": 0.0,
+      "p95_ms": 1982.700783,
+      "errors": 43,
+      "decisions": 43,
+      "latency_eligible": false
+    }
+  ]
+}

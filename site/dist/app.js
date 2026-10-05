@@ -43,7 +43,7 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "These vision models run on the Mac with weights from Hugging Face. Each model uses all 43 scenarios, one seed and a limit of eight decisions per game. This short test checks integration. It cannot establish model skill. The suite p95 must be below 200 ms to pass the latency test. Scores and errors remain separate. Models run one at a time after three gray startup images. All game calls count. Run settings show the test conditions. The archive keeps the previous results.",
+      "These models use the same 43 scenarios, seed 3000 and a limit of eight decisions per game. The Mac runs one model and one game at a time. Local vision models retain their weights after three gray startup images. Hosted models start a new command process for each image. Their timing includes network time and command startup. The suite p95 must be below 200 ms to pass the latency test. All game calls count. Scores and errors remain separate. Run settings show the conditions for each model. These short tests check integration. They cannot establish model skill. The archive keeps the previous results.",
     official:
       "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
   };
@@ -235,7 +235,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=hf-vlm-2026-10-05", { cache: "no-cache" })
+fetch("data.json?v=hosted-rerun-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();

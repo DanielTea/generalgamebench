@@ -1,0 +1,8 @@
+{
+  "campaign": "results/hf-vlm-2026-10-05/campaign.json",
+  "snapshot_sha256": "83b8ac55725e66ed2db376b4ea651262d970b079fdd3b755dd32374b47b7775a",
+  "evidence_roots_sha256": "ff0a47112c2898d986a42dce96cac6b95b7a20a6ddf9389f22cdb7134f87a7a0",
+  "replay_validation_sha256": "42291429266e2dcd3f25d25b613cb7766ee7dbb25a863b340bb0fb83a5306d22",
+  "episodes": 172,
+  "note": "Native replay passed before the local model publication. This export checks the unchanged source, ledger, image hashes, and ranking again. It reuses that fixed native replay report."
+}

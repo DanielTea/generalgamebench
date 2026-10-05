@@ -42,6 +42,12 @@ It keeps the previous snapshot without changes in the archive.
 The Mac runs all model tests. Hugging Face hosts the page and the results Dataset.
 The full suite also passed [Linux x86_64 validation](../results/linux-2026-10-05/README.md).
 
+The [hosted rerun](../results/hosted-rerun-2026-10-05/README.md) uses the same game,
+seed, prompt, evaluator, and renderer settings. Its exporter retains the four
+local vision models and adds only complete verified hosted suites.
+Each row keeps its own test conditions. Hosted command calls and local MLX calls
+use different inference paths. Their suite IDs remain distinct.
+
 The root JSONL files retain nested metadata.
 The viewer files store variable engine and provider metadata as JSON strings.
 This format prevents conflicts between Dataset viewer column types.

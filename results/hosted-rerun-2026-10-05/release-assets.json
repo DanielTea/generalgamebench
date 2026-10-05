@@ -1,0 +1,10 @@
+{
+  "generalgamebench-evidence-hosted-rerun-2026-10-05.tar.gz": {
+    "sha256": "d09bbfe766852bbf0ce8a7fcb5887b5a5eb8f1e21999a0d2808a5a1aa6c1677e",
+    "bytes": 256004400
+  },
+  "generalgamebench-results-hosted-rerun-2026-10-05.tar.gz": {
+    "sha256": "6d619172944c9d340cbe451b2e324fff4b79449209efc0549dacbe384d93fcf4",
+    "bytes": 292808
+  }
+}

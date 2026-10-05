@@ -1,0 +1,8 @@
+{
+  "codex_cli": "codex-cli 0.155.0-alpha.9.2",
+  "claude_cli": "2.1.278 (Claude Code)",
+  "reasoning_effort": "low, except Haiku without an effort option",
+  "transport": "authenticated-cli-per-frame",
+  "prompt_version": "pixels-json-action/2",
+  "revision_note": "Hosted weights have no pinned commit. Keep each requested model ID and each resolved model ID supplied by the provider."
+}
