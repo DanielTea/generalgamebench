@@ -45,8 +45,11 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
     for track in ("exhibition", "official"):
         rows = []
         track_metadata = snapshot.get("track_metadata", {}).get(track, {})
-        hardware_details = track_metadata.get("hardware_details", snapshot.get("hardware_details"))
         for ranking in snapshot.get(track, []):
+            hardware_details = ranking.get(
+                "hardware_details",
+                track_metadata.get("hardware_details", snapshot.get("hardware_details")),
+            )
             suite = {
                 k: ranking.get(k)
                 for k in (

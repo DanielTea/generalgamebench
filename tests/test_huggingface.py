@@ -63,6 +63,14 @@ def test_export_preserves_task_model_seed_and_trust(tmp_path):
     assert row["hardware_details"] == "M3 Max; concurrent"
     assert len(row["suite_id"]) == 64
     assert len(row["snapshot_sha256"]) == 64
+    ranking["hardware_details"] = "M3 Max; serial MLX"
+    (site / "data.json").write_text(
+        json.dumps({"exhibition": [ranking], "hardware_details": "M3 Max; concurrent"})
+    )
+    module.export(site, tmp_path / "serial")
+    serial = json.loads((tmp_path / "serial/dataset/exhibition.jsonl").read_text())
+    assert serial["hardware_details"] == "M3 Max; serial MLX"
+    assert serial["suite_id"] != row["suite_id"]
     ranking["task_metadata"]["maze"]["engine_version"] = "different-engine"
     (site / "data.json").write_text(json.dumps({"exhibition": [ranking]}))
     module.export(site, tmp_path / "different")
