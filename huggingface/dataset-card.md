@@ -11,7 +11,7 @@ tags:
   - game-ai
   - reinforcement-learning
 size_categories:
-  - 1K<n<10K
+  - {{size_category}}
 configs:
 {{configs}}
 ---
@@ -34,8 +34,7 @@ The export does not add artificial scores.
 
 Empty result groups have no configuration or rows.
 The official leaderboard is currently empty.
-The `local_previous` and `exhibition_previous` configurations contain results from earlier tests.
-Do not combine these results with current tests.
+This Dataset contains the current model exhibition.
 
 ## Load the data
 
@@ -85,7 +84,7 @@ The current hosted-model tests use one seed and eight decisions per scenario.
 Many games only start during these short tests.
 Do not use these results as a reliable ranking of model intelligence.
 
-Previous tests and local policies can use different games, durations, seeds and hardware.
+Different tests can use different games, durations, seeds and hardware.
 The `trust` column retains the source's local test status.
 A response below 100 ms does not prove independent verification.
 This Dataset does not give official ranks.
