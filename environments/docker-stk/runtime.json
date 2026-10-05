@@ -1,15 +1,15 @@
 {
-  "image": "ggbench-stk:0.7.4-render-v1-arm64",
+  "image": "ggbench-stk:0.7.4-render-v2-arm64",
   "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
   "repository": "https://github.com/bpiwowar/pystk2.git",
   "tag": "v0.7.4",
   "platform": "linux/arm64",
-  "variant": "deterministic-render-v1",
+  "variant": "deterministic-render-v2",
   "assets_directory": ".game-assets/supertuxkart/1.5",
   "assets_tree_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23",
   "assets_url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-src.tar.gz",
   "assets_archive_sha256": "33cf8841e4ff4082d80b9248014295bbbea61d14683e86dff100e3ab8f7b27cb",
-  "patch_sha256": "0fcdcc56c9ee69cc7f4a2316fe25b4171315671b52adb05dbb9ff27f3d7aac69",
+  "patch_sha256": "4a3dbacd24cdc7addb00b3c46bbe0052d09ed2c457f3751dd40e446de6c92193",
   "supported_platforms": [
     "linux/arm64",
     "linux/amd64"

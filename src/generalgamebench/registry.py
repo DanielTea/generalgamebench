@@ -140,7 +140,7 @@ TASKS.update(
             "docker-stk",
             "Drive one lap of the Lighthouse track. Accelerate and steer to stay on the road. Each action advances 0.2 seconds. Score is forward progress as a fraction of one lap.",
             (0, 1),
-            task_version="2",
+            task_version="3",
         )
     }
 )

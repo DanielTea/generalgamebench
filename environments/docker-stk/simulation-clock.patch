@@ -93,3 +93,74 @@ index c41ad6a..488e04d 100644
  
  public:
  	PySTKRace(const PySTKRace &) = delete;
+diff --git a/src/graphics/sp/sp_base.cpp b/src/graphics/sp/sp_base.cpp
+index 18970f9..09f541b 100644
+--- a/src/graphics/sp/sp_base.cpp
++++ b/src/graphics/sp/sp_base.cpp
+@@ -1102,8 +1102,9 @@ void updateModelMatrix()
+         std::sort(sorted_dc.begin(), sorted_dc.end(),
+             [](const DrawCallPair& a, const DrawCallPair& b)->bool
+             {
+-                return a.first->getDrawingPriority() <
+-                    b.first->getDrawingPriority();
++                if (a.first->getDrawingPriority() != b.first->getDrawingPriority())
++                    return a.first->getDrawingPriority() < b.first->getDrawingPriority();
++                return a.first->getName() < b.first->getName();
+             });
+         for (unsigned dc = 0; dc < sorted_dc.size(); dc++)
+         {
+@@ -1113,8 +1114,13 @@ void updateModelMatrix()
+                 std::vector<std::pair<SPMeshBuffer*, int> > > >());
+ 
+             unsigned texture = 0;
+-            for (auto& q : p.second)
++            // GGBench: hash-table iteration must not select depth-tie winners.
++            std::vector<std::string> texture_keys;
++            for (const auto& q : p.second) texture_keys.push_back(q.first);
++            std::sort(texture_keys.begin(), texture_keys.end());
++            for (const auto& texture_key : texture_keys)
+             {
++                auto& q = *p.second.find(texture_key);
+                 if (q.second.empty())
+                 {
+                     continue;
+@@ -1142,7 +1148,11 @@ void updateModelMatrix()
+                 g_final_draw_calls[i][dc].second.emplace_back
+                     (texture_names,
+                     std::vector<std::pair<SPMeshBuffer*, int> >());
+-                for (SPMeshBuffer* spmb : q.second)
++                std::vector<SPMeshBuffer*> ordered_meshes(q.second.begin(), q.second.end());
++                std::sort(ordered_meshes.begin(), ordered_meshes.end(),
++                    [](const SPMeshBuffer* a, const SPMeshBuffer* b)
++                    { return a->getBenchmarkOrder() < b->getBenchmarkOrder(); });
++                for (SPMeshBuffer* spmb : ordered_meshes)
+                 {
+                     g_final_draw_calls[i][dc].second[texture].second.push_back
+                         (std::make_pair(spmb, material_id == -1 ?
+diff --git a/src/graphics/sp/sp_mesh_buffer.hpp b/src/graphics/sp/sp_mesh_buffer.hpp
+index 3fb98c9..61fc1a1 100644
+--- a/src/graphics/sp/sp_mesh_buffer.hpp
++++ b/src/graphics/sp/sp_mesh_buffer.hpp
+@@ -65,6 +65,9 @@ protected:
+     unsigned m_pitch;
+ 
+ private:
++    // GGBench: use creation order when objects have equal drawing depth.
++    uint64_t m_benchmark_order;
++
+     std::vector<uint16_t> m_indices;
+ 
+     core::aabbox3d<f32> m_bounding_box;
+@@ -87,8 +90,12 @@ private:
+     bool initTexture();
+ 
+ public:
++    uint64_t getBenchmarkOrder() const { return m_benchmark_order; }
++
+     SPMeshBuffer()
+     {
++        static uint64_t next_benchmark_order = 0;
++        m_benchmark_order = next_benchmark_order++;
+ #ifdef _DEBUG
+         setDebugName("SMeshBuffer");
+ #endif

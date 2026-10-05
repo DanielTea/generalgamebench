@@ -422,7 +422,9 @@ class Environment:
                 track="lighthouse",
                 step_seconds=0.2,
                 neutral_preroll_steps=50,
-                renderer="Mesa software / deterministic-render-v1",
+                renderer="Mesa software / deterministic-render-v2",
+                renderer_vector_bits=128,
+                renderer_threads=1,
                 camera_size=[int(self.image.shape[1]), int(self.image.shape[0])],
                 reward_definition="max(0, native overall distance) / native track length",
             )
