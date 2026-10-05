@@ -14,6 +14,21 @@ result page and Dataset. It does not run this campaign.
 The [model inventory](model-inventory.json) gives each source URL and commit.
 The [campaign declaration](campaign.json) gives the source checksums and test settings.
 
+## Measured results
+
+All four models completed the declared 43-scenario suite. None passed the latency test.
+
+| Model | Score / 100 | Suite p95 | Reply errors | Recorded decisions |
+| --- | ---: | ---: | ---: | ---: |
+| LFM2.5-VL 450M, 4-bit | 12.718 | 663.88 ms | 1 | 337 |
+| SmolVLM2 256M | 0.211 | 1565.56 ms | 41 | 57 |
+| FastVLM 0.5B, BF16 | 0.000 | 1429.31 ms | 42 | 50 |
+| SmolVLM2 500M | 0.000 | 1982.70 ms | 43 | 43 |
+
+The suite contains 172 episodes and 487 recorded decisions. The results retain
+all 127 reply errors. An error ends its episode. A completed suite can contain
+aborted episodes. The latency test uses the unrounded values in the result files.
+
 ## Test conditions
 
 The host is an Apple M3 Max with 48 GiB of memory and 16 CPU cores.

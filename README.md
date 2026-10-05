@@ -1,18 +1,20 @@
 # GeneralGameBench
 
-[![The GeneralGameBench environment catalog: runnable games and research candidates](site/dist/media/environment-atlas.png)](https://danieltremer.com/generalgamebench/#games)
+[![The GeneralGameBench environment catalog: runnable games and research candidates](site/dist/media/environment-atlas.png)](https://huggingface.co/spaces/danieltee/generalgamebench)
 
 *45 environment cards: 36 validated cards covering 43 scenarios, plus nine unadmitted candidates. [Image credits](docs/MEDIA.md).*
 
 > “Intelligence is the ability to adapt to new environments.” — We test this.
 
-[Leaderboard](https://danieltremer.com/generalgamebench/) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
+[Leaderboard](https://huggingface.co/spaces/danieltee/generalgamebench) · [Project board](https://github.com/users/DanielTea/projects/4) · [Measured evidence](results/PROVENANCE.md)
 
 Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh observation, validate an action, measure the complete response path, and record referee-owned evidence.
 
 **Early reference implementation.** Two original 2D games, eight ViZDoom scenarios and 33 additional tasks run on the tested Mac. Version 0.3 adds ten tasks: Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. Each has native scoring and exact replay checks. The full suite has a [Linux x86_64 installer](environments/linux/README.md) and a Mac installation path. The nine container engines select the host architecture. Commercial AAA titles remain integration candidates. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
 
-The [Mac vision model campaign](results/hf-vlm-2026-10-05) uses four models with pinned Hugging Face weights. It covers all 43 scenarios with one seed and eight decisions per scenario. Each model runs alone after three uniform gray startup images. The referee keeps all game response times and failed replies. These short tests check integration. They cannot establish model skill.
+The [Mac vision model campaign](results/hf-vlm-2026-10-05) uses four models with pinned Hugging Face weights. It covers all 43 scenarios with one seed and a limit of eight decisions per scenario. Each model runs alone after three uniform gray startup images. The referee keeps all game response times and failed replies. These short tests check integration. They cannot establish model skill.
+
+All 43 scenarios passed native recording and exact replay on Linux x86_64. The [Linux validation report](results/linux-2026-10-05) links the successful workflow and each scenario result.
 
 The model table shows only the new verified runs. The [previous snapshot](results/hf-vlm-2026-10-05/previous-snapshot.json) keeps the earlier model and reference policy results. Earlier campaign directories and release files keep their original evidence and recording rules. The page has two views: Model exhibition and Official ranked. See the [test method](docs/METHODOLOGY.md) and [coverage](docs/GAMES.md).
 

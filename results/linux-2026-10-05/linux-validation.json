@@ -1,0 +1,423 @@
+[
+  {
+    "runtime": "docker-cdda",
+    "platform": "linux/amd64",
+    "games": [
+      "cdda-first-weapon"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "cdda-first-weapon": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "native_tutorial and cdda"
+  },
+  {
+    "runtime": "docker-supertux",
+    "platform": "linux/amd64",
+    "games": [
+      "supertux-first-coin"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "supertux-first-coin": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "supertux_coin"
+  },
+  {
+    "runtime": "docker-crawl",
+    "platform": "linux/amd64",
+    "games": [
+      "dcss-first-experience"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "dcss-first-experience": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "crawl_goal"
+  },
+  {
+    "runtime": "docker-football",
+    "platform": "linux/amd64",
+    "games": [
+      "football-empty-goal"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "football-empty-goal": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "football_goal"
+  },
+  {
+    "runtime": "python",
+    "platform": "linux/amd64",
+    "games": [
+      "coin-run",
+      "dodge-lanes",
+      "doom-basic",
+      "doom-defend-center",
+      "doom-defend-line",
+      "doom-take-cover",
+      "doom-health",
+      "doom-corridor",
+      "doom-home",
+      "doom-predict",
+      "procgen-bigfish",
+      "procgen-bossfight",
+      "procgen-caveflyer",
+      "procgen-chaser",
+      "procgen-climber",
+      "procgen-coinrun",
+      "procgen-dodgeball",
+      "procgen-fruitbot",
+      "procgen-heist",
+      "procgen-jumper",
+      "procgen-leaper",
+      "procgen-maze",
+      "procgen-miner",
+      "procgen-ninja",
+      "procgen-plunder",
+      "procgen-starpilot",
+      "crafter",
+      "miniworld-oneroom",
+      "pettingzoo-pistonball",
+      "atari-breakout",
+      "retro-airstriker",
+      "unity-food-collector",
+      "nethack-score",
+      "minihack-room"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "coin-run": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "dodge-lanes": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-basic": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-defend-center": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-defend-line": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-take-cover": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-health": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-corridor": {
+        "valid": true,
+        "steps": 20,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-home": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "doom-predict": {
+        "valid": true,
+        "steps": 15,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-bigfish": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-bossfight": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-caveflyer": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-chaser": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-climber": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-coinrun": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-dodgeball": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-fruitbot": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-heist": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-jumper": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-leaper": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-maze": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-miner": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-ninja": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-plunder": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "procgen-starpilot": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "crafter": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "miniworld-oneroom": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "pettingzoo-pistonball": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "atari-breakout": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "retro-airstriker": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "unity-food-collector": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "nethack-score": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      },
+      "minihack-room": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "airstriker_never or minihack_goal or unity_food or procgen_stops or crafter_respawn"
+  },
+  {
+    "runtime": "docker-stk",
+    "platform": "linux/amd64",
+    "games": [
+      "supertuxkart-lighthouse"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "supertuxkart-lighthouse": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "supertuxkart_progress or supertuxkart_random or supertuxkart_start"
+  },
+  {
+    "runtime": "docker-craftium",
+    "platform": "linux/amd64",
+    "games": [
+      "luanti-chop-tree"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "luanti-chop-tree": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "luanti_tree or luanti_scene"
+  },
+  {
+    "runtime": "docker-warzone",
+    "platform": "linux/amd64",
+    "games": [
+      "warzone-first-derrick"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "warzone-first-derrick": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "native_tutorial and warzone"
+  },
+  {
+    "runtime": "docker-openttd",
+    "platform": "linux/amd64",
+    "games": [
+      "openttd-first-road"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "openttd-first-road": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "openttd_native"
+  },
+  {
+    "runtime": "docker-mindustry",
+    "platform": "linux/amd64",
+    "games": [
+      "mindustry-copper"
+    ],
+    "source_commit": "9705b740a71f58676b0ce4e76edbc526140e6571",
+    "seed": 71,
+    "max_steps": 24,
+    "results": {
+      "mindustry-copper": {
+        "valid": true,
+        "steps": 24,
+        "replayed": true,
+        "authentication": "local-unattested"
+      }
+    },
+    "goal_checks": "mindustry_native"
+  }
+]

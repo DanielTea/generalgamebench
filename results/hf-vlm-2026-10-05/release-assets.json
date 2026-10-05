@@ -1,0 +1,10 @@
+{
+  "generalgamebench-evidence-hf-vlm-2026-10-05.tar.gz": {
+    "sha256": "4568a31d91182e6ea55860c40009703660e1f999b0b658d374eae2d042904867",
+    "bytes": 29029479
+  },
+  "generalgamebench-results-hf-vlm-2026-10-05.tar.gz": {
+    "sha256": "122fc20439cd7379ebf70b76f02ec2814d1fd4ef7328ac6e379e32664b161112",
+    "bytes": 96871
+  }
+}

@@ -1,6 +1,25 @@
 # Measured results provenance
 
-## Current latency rule — 5 October 2026
+## Current Mac vision model results — 5 October 2026
+
+The model table contains four vision models from Hugging Face. Each model ran
+all 43 scenarios on the Mac with seed 3000 and a limit of eight decisions.
+The campaign contains 172 episodes and 487 recorded decisions.
+It retains all 127 reply errors. None of the four models passed the latency test.
+The suite p95 must be below 200 ms. Exactly 200 ms fails.
+
+The [campaign report](hf-vlm-2026-10-05/README.md) gives the measured results,
+model revisions, startup procedure, source checksums, and replay evidence.
+These short runs check integration. They do not establish model skill.
+All entries remain `local-unattested`. The official leaderboard has no entries.
+
+The [previous snapshot](hf-vlm-2026-10-05/previous-snapshot.json) preserves the
+earlier table without changes. Its checksum is in the new snapshot.
+Earlier releases and campaign directories retain their original recording rules.
+The [Linux validation report](linux-2026-10-05/README.md) records successful native
+checks for all 43 scenarios on Linux x86_64.
+
+## Earlier latency policy update — 5 October 2026
 
 The current leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fails.
 The update uses every saved response time from each complete suite.
@@ -8,8 +27,8 @@ It uses linear interpolation across all decisions. It does not average per-game 
 Scores, failures, evaluator versions and trust status stay unchanged.
 This policy update adds no new leaderboard episodes or model calls.
 
-All four controls in the current model exhibition pass this latency test.
-The 11 hosted models fail it.
+All four controls in that model exhibition pass this latency test.
+Its 11 hosted models fail it.
 All four policies in the separate 516-episode baseline archive also pass it.
 All entries remain `local-unattested`. The official leaderboard has no entries.
 

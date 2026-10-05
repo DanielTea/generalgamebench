@@ -43,7 +43,7 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "These vision models run on the Mac with weights from Hugging Face. Each model uses all 43 scenarios, one seed and eight decisions per game. This short test checks integration. It cannot establish model skill. The suite p95 must be below 200 ms to pass the latency test. Scores and errors remain separate. Models run one at a time after three gray startup images. All game calls count. Run settings show the test conditions. The archive keeps the previous results.",
+      "These vision models run on the Mac with weights from Hugging Face. Each model uses all 43 scenarios, one seed and a limit of eight decisions per game. This short test checks integration. It cannot establish model skill. The suite p95 must be below 200 ms to pass the latency test. Scores and errors remain separate. Models run one at a time after three gray startup images. All game calls count. Run settings show the test conditions. The archive keeps the previous results.",
     official:
       "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
   };
