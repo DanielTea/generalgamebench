@@ -60,7 +60,10 @@ The simulation waits between actions.
 These tests do not prove continuous real-time control.
 
 The leaderboard shows the current model tests and official ranks.
-The current hosted-model tests use one seed and eight decisions per scenario.
+The current vision model tests run on a Mac.
+They use one seed and eight decisions per scenario.
+Each model uses pinned weights from Hugging Face.
+The archive keeps the previous results and their recording rules.
 These short tests show that the connections work.
 They do not give a reliable measure of model intelligence.
 All current results come from local tests without independent certification.

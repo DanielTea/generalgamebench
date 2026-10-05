@@ -14,6 +14,7 @@ import re
 import secrets
 from pathlib import Path
 
+from generalgamebench import __version__
 from generalgamebench.evidence import verify_episode
 from generalgamebench.model_prompt import PROMPT_VERSION
 from generalgamebench.models import CLIModelAgent
@@ -104,6 +105,8 @@ def evaluate(entry, args):
                         or previous["seed"] != seed
                         or previous["max_steps"] != args.steps
                         or previous["mode"] != "exhibition"
+                        or previous["version"] != __version__
+                        or previous.get("response_timeout_seconds") != args.timeout
                         or metadata.get("requested_model") != entry["model"]
                         or metadata.get("revision") != entry.get("revision")
                         or metadata.get("prompt_version") != PROMPT_VERSION
