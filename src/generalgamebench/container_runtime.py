@@ -118,6 +118,8 @@ def container_command(runtime):
         "container_architecture": info["Architecture"],
         "engine_revision": manifest["engine_revision"],
     }
+    if os.environ.get("GGBENCH_WORKER_TRACE") == "1":
+        command[-2:-2] = ["--env", "GGBENCH_WORKER_TRACE=1"]
     if "variant" in manifest:
         metadata["engine_variant"] = manifest["variant"]
     if "assets_directory" in manifest:

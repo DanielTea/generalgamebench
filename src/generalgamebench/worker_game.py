@@ -21,6 +21,7 @@ from .registry import EXPERIMENTAL_TASKS, TASKS, task_dict
 class WorkerGame:
     def __init__(self, game_id, seed, max_steps):
         self.id = game_id
+        self.steps = 0
         task = (TASKS | EXPERIMENTAL_TASKS)[game_id]
         root = Path(__file__).resolve().parents[2]
         home = Path(os.environ.get("GGBENCH_ENV_ROOT", root / ".game-envs"))
@@ -111,7 +112,12 @@ class WorkerGame:
         while b"\n" not in self.buffer:
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not self.selector.select(remaining):
-                raise TimeoutError("Game worker deadline exceeded")
+                self.log.seek(0)
+                detail = self.log.read().decode(errors="replace")[-4000:]
+                raise TimeoutError(
+                    f"Game worker deadline exceeded: {self.id}, {value['command']}, "
+                    f"completed steps={self.steps}; {detail}"
+                )
             chunk = os.read(self.reply_stream.fileno(), 65536)
             if not chunk:
                 self.log.seek(0)
@@ -140,6 +146,7 @@ class WorkerGame:
         if self.done:
             raise ValueError("Episode already finished")
         self.done = self._call({"command": "step", "action": action})["done"]
+        self.steps += 1
 
     def result(self):
         return self._call({"command": "result"})

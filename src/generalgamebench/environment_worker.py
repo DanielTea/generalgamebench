@@ -6,6 +6,7 @@ Never send structured game observations, rewards or seeds to the model.
 
 import base64
 import contextlib
+import faulthandler
 import importlib.metadata
 import io
 import json
@@ -530,10 +531,13 @@ def main():
     os.set_inheritable(reply_fd, False)
     output = os.fdopen(reply_fd, "w", buffering=1)
     os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
+    trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
     env = None
     try:
         for line in sys.stdin:
             try:
+                if trace:
+                    faulthandler.dump_traceback_later(25, file=sys.stderr)
                 request = json.loads(line)
                 command = request["command"]
                 with contextlib.redirect_stdout(sys.stderr):
@@ -563,6 +567,9 @@ def main():
                 traceback.print_exc(file=sys.stderr)
                 output.write(json.dumps({"error": f"{type(exc).__name__}: {exc}"}) + "\n")
                 break
+            finally:
+                if trace:
+                    faulthandler.cancel_dump_traceback_later()
     finally:
         if env is not None:
             env.close()

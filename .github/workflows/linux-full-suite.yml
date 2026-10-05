@@ -30,6 +30,7 @@ jobs:
       GGBENCH_CONTAINER_PLATFORM: linux/amd64
       LIBGL_ALWAYS_SOFTWARE: '1'
       LP_NUM_THREADS: '1'
+      GGBENCH_WORKER_TRACE: '1'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: astral-sh/setup-uv@v6
