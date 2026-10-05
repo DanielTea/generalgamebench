@@ -1,8 +1,8 @@
 {
   "schema_version": "generalgamebench-campaign/1",
   "id": "hf-vlm-2026-10-05",
-  "created_at": "2026-10-05T12:03:35.693116+00:00",
-  "implementation_commit": "de101fd0b80ef4433878ef6cb6a70fe3acba920b",
+  "created_at": "2026-10-05T12:22:12.690984+00:00",
+  "implementation_commit": "675c513a56f369ea3eefd4d8494acb197e64269a",
   "version": "0.5.0",
   "games": [
     "coin-run",
@@ -130,7 +130,9 @@
     "environments/vlm/requirements.lock": "6ade6b04dbc178aea6428009ae88eed5dc6c863ffbc73572803d989511033c49",
     "environments/vlm/requirements.txt": "0163d6069fedba617d45dab4e2cb1bb3f450ec817b86f67cdf271f9dd64c1e57",
     "pyproject.toml": "7a6a17e6146dd4af55786bca1a75e06b27d9d27bd0e386e8747e637d31216e3e",
-    "scripts/export_local_vlms.py": "cfeee445159555a23ee29f7130384fff7ae6e6a3480c380bb3f96569d7052579",
+    "results/hf-vlm-2026-10-05/model-inventory.json": "fc5a356534c67eaf2ea5a2a62532553832f09f5b5913cdd4dac9fa062bbc4399",
+    "results/hf-vlm-2026-10-05/model-runtime.json": "321c7ba3238a8a8720b2a4f64e02c8d1ba5fe88eee3c7c80ac24cc35381d7f81",
+    "scripts/export_local_vlms.py": "49c790d98c40cb27b2c01cc263b20636e7ede1fa760d8600ce7ad85f6ff767ed",
     "scripts/export_refresh.py": "6204116d10397e774a6c907af8b15c3cdd8f9e6ab3ed82cac5b7c01a32b22da0",
     "scripts/run_campaign.py": "52e93386022e0b556e0e728d760a42dbf009c75d6af69f44de8882904173f871",
     "src/generalgamebench/__init__.py": "7bcccff821a7011c5bdf4b3c4f32bfaa2fe385dc5e28c5dffb4b7c010468dee3",
@@ -151,6 +153,7 @@
     "src/generalgamebench/model_inventory.py": "d290c6c2a409be4c24ab077841413b376ea293eef00dd28ac4140805aba01258",
     "src/generalgamebench/model_prompt.py": "610d84d210e04b21c6cb105d6db1da5f5abfa35066ae57ad3d35b99481c5b45c",
     "src/generalgamebench/models.py": "2daa3e3bf1e698dee81e5e8eae77124612ec3264639250508db14cf7fdecb8cd",
+    "src/generalgamebench/native_trace.c": "74fe5e3be9ff5d8d7f4c4f6c2470e0ee444d46d5acf7ea81092d56648950a176",
     "src/generalgamebench/openttd_engine.py": "ab61044dd53f45f8cce33d94b086c0b82e392f580a61e1e39b0b7444fb760f09",
     "src/generalgamebench/protocol.py": "75e4b4db184ddb6ce669fe14b58e8927d3745f68c8425e3cbba8ffe7ad875c5a",
     "src/generalgamebench/ranking.py": "539b57bf0191299e19585b3398d3275ffa290344238efd2868352fe6e8611fd1",
@@ -161,7 +164,7 @@
     "src/generalgamebench/supertux_engine.py": "2ca3c6bf9b183f5daccb94aedc96e441c8a3f42fe207e29d2ecca8e120b9652d",
     "src/generalgamebench/unity_engine.py": "5089f1b223e1bb1235b077a36aeb2f10a840d04f5e1a6c1d252722541f18cfd8",
     "src/generalgamebench/warzone_engine.py": "aaf80b6a91628f50796f9f6cc4bf07eea31bd934c2a281a4f9a83d52ea5d9fe0",
-    "src/generalgamebench/worker_game.py": "c1f4e3e2bf28a8a790d756f9dfe982849130cee9a9d92d9c293d540faf8afc12",
+    "src/generalgamebench/worker_game.py": "a4d3904d18bc19d518a156bdd20de3b8904e23c14a694afd104ef711a0041713",
     "uv.lock": "3c5a2ff0c4656a1ff54bf4490c870973f686d9ed6fa059d8adf79b43b7d03bba"
   },
   "suite_file": "benchmarks/mac-hf-vlm-2026-10-05.json",
@@ -173,5 +176,6 @@
     "quantile_method": "linear",
     "sample_scope": "all_recorded_decisions_in_complete_suite"
   },
-  "publication_note": "Show only the new verified model runs. Keep an exact copy of the previous result snapshot in the archive. Keep earlier evidence and recording rules unchanged."
+  "publication_note": "Show only the new verified model runs. Keep an exact copy of the previous result snapshot in the archive. Keep earlier evidence and recording rules unchanged.",
+  "source_tag": "hf-vlm-2026-10-05-source"
 }
