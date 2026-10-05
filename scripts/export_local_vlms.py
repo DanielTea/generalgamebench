@@ -148,6 +148,7 @@ def export(report, workers):
         "note": "Keep the previous results and recording rules. The model table shows the new verified runs.",
     }
     replace_board(snapshot, board, statuses, campaign)
+    snapshot["catalog"] = json.loads((ROOT / "docs/catalog.json").read_text())
     snapshot["archives"] = [*snapshot.get("archives", []), archive]
     history = snapshot.get("campaigns", [snapshot["current_campaign"]])
     current = str(report.relative_to(ROOT) / "campaign.json")
