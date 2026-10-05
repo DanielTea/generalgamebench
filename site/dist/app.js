@@ -1,6 +1,7 @@
 "use strict";
 let dataset = { exhibition: [], official: [], catalog: [] };
-let active = "exhibition";
+const requestedTrack = new URLSearchParams(location.search).get("track");
+let active = ["exhibition", "official"].includes(requestedTrack) ? requestedTrack : "exhibition";
 const $ = (id) => document.getElementById(id);
 const mediaUrl = (path) => `${path}?v=integrations-4`;
 const labels = {
@@ -213,12 +214,15 @@ function renderGames() {
 document.querySelectorAll("[data-track]").forEach((b) =>
   b.addEventListener("click", () => {
     active = b.dataset.track;
+    const url = new URL(location.href);
+    url.searchParams.set("track", active);
+    history.replaceState(null, "", url);
     renderBoard();
   }),
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=current-results-2026-10-05", { cache: "no-cache" })
+fetch("data.json?v=baselines-current-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();

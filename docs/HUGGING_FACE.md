@@ -31,6 +31,11 @@ A suite ID identifies the test conditions.
 The `suite_` columns repeat campaign measurements on each game row.
 Do not add these values across rows.
 
+The 5 October baseline refresh has 43 scenarios, three seeds and a 24-decision horizon.
+The source snapshot keeps the new and previous baselines with their original test conditions.
+The public Hub export excludes both baseline groups.
+The existing model results stay unchanged.
+
 The root JSONL files retain nested metadata.
 The viewer files store variable engine and provider metadata as JSON strings.
 This format prevents conflicts between Dataset viewer column types.

@@ -1,0 +1,16 @@
+{
+  "status": "replay-verified",
+  "completed": 516,
+  "expected": 516,
+  "latest": {
+    "agent": "tracker",
+    "game": "warzone-first-derrick",
+    "seed": 4002,
+    "score": 0.0,
+    "steps": 1,
+    "errors": [
+      "TimeoutError"
+    ]
+  },
+  "verified_episodes": 516
+}
