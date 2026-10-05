@@ -69,7 +69,8 @@ def test_export_preserves_task_model_seed_and_trust(tmp_path):
         module.export(site, out)
 
 
-def test_archive_preserves_its_own_campaign_metadata(tmp_path):
+@pytest.mark.parametrize("track", ["exhibition_previous", "local_previous"])
+def test_archive_preserves_its_own_campaign_metadata(tmp_path, track):
     site = Path(__file__).parents[1] / "site/dist"
     snapshot = json.loads((site / "data.json").read_text())
     old = snapshot["local"][0]
@@ -80,15 +81,15 @@ def test_archive_preserves_its_own_campaign_metadata(tmp_path):
             {
                 "season": "refresh",
                 "hardware_details": "current workers",
-                "exhibition_previous": [old],
+                track: [old],
                 "track_metadata": {
-                    "exhibition_previous": {"season": "old", "hardware_details": "previous workers"}
+                    track: {"season": "old", "hardware_details": "previous workers"}
                 },
             }
         )
     )
     module.export(minimal, tmp_path / "export")
-    rows = (tmp_path / "export/dataset/exhibition_previous.jsonl").read_text().splitlines()
+    rows = (tmp_path / f"export/dataset/{track}.jsonl").read_text().splitlines()
     assert rows
     assert all(json.loads(row)["season"] == "old" for row in rows)
     assert all(json.loads(row)["hardware_details"] == "previous workers" for row in rows)

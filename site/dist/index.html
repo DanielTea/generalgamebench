@@ -14,8 +14,8 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141518'/%3E%3Cpath d='M6 24L16 6l10 18h-6l-4-8-4 8z' fill='%23ff5a1f'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="style.css?v=refresh-2026-10-05" />
-    <script src="app.js?v=refresh-2026-10-05" defer></script>
+    <link rel="stylesheet" href="style.css?v=baselines-2026-10-05" />
+    <script src="app.js?v=baselines-2026-10-05" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
@@ -49,10 +49,10 @@
       </section>
       <section class="metrics" aria-label="Benchmark statistics">
         <div>
-          <strong id="episodes">—</strong><span>leaderboard episodes</span>
+          <strong id="episodes">—</strong><span>episodes, including archives</span>
         </div>
         <div>
-          <strong id="decisions">—</strong><span>leaderboard decisions</span>
+          <strong id="decisions">—</strong><span>decisions, including archives</span>
         </div>
         <div><strong id="scenario-count">—</strong><span>runnable scenarios</span></div>
         <div>
@@ -75,6 +75,8 @@
             Model exhibition</button
           ><button data-track="exhibition_previous" aria-pressed="false">
             Previous exhibition</button
+          ><button data-track="local_previous" aria-pressed="false">
+            Previous baselines</button
           ><button data-track="official" aria-pressed="false">
             Official ranked
           </button>
@@ -124,7 +126,12 @@
         <p class="footnote">
           <a
             href="https://github.com/DanielTea/generalgamebench/releases/tag/refresh-2026-10-05"
-            >Download full replay evidence</a
+            >Model replay evidence</a
+          >
+          ·
+          <a
+            href="https://github.com/DanielTea/generalgamebench/releases/tag/baselines-2026-10-05"
+            >Baseline replay evidence</a
           >
           ·
           <a
@@ -171,7 +178,7 @@
           Three experimental cards show unranked native diagnostic captures; other candidates use credited project previews.
           These previews are not benchmark results. Clips play only when selected.
           Ten new tasks now cover Unity, Football, SuperTuxKart, Luanti, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100;
-          the current model exhibition evaluates all 43 scenarios, while the previous 33-scenario cohort remains separate.
+          the current baseline and model tracks evaluate all 43 scenarios, while the previous 33-scenario cohorts remain separate.
           Their separate validation includes 21 control runs and 4,303 decisions, all replay-verified.
           <a href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0">Download the new integration evidence.</a>
         </p>

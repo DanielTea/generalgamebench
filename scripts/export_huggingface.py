@@ -27,7 +27,7 @@ def export(site: Path, destination: Path):
         "see media/NOTICE.txt and media/sources.json.\n"
     )
     configs = []
-    for track in ("local", "exhibition", "exhibition_previous", "official"):
+    for track in ("local", "local_previous", "exhibition", "exhibition_previous", "official"):
         rows = []
         track_metadata = snapshot.get("track_metadata", {}).get(track, {})
         hardware_details = track_metadata.get("hardware_details", snapshot.get("hardware_details"))

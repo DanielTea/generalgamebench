@@ -16,6 +16,8 @@ The v0.3 export preserves the frozen v0.2 model and baseline rows (33 scenarios)
 
 The 5 October 2026 refresh publishes a separate 43-scenario hosted-model exhibition. Exports retain the older 33-scenario model results under `exhibition_previous`, including their original season and hardware/concurrency description. Current, previous and local-baseline configurations have distinct suite identities and must not be pooled.
 
+The subsequent baseline refresh evaluates the four reference policies across all 43 scenarios with seeds 4000–4002, a 24-decision horizon and serial headless execution. The new `local` configuration and archived `local_previous` configuration retain their own season, task set and timing conditions. Existing model configurations remain unchanged. Prepared exports remain local until an explicit Hub publication request.
+
 Future publication should upload these folders into separate Space and Dataset repositories, using a narrowly scoped token supplied outside the code. Keep the scored snapshot immutable and link the Dataset revision from the Space. Model cards can link to the same evidence revision. A submission service and isolated evaluation workers are separate infrastructure; a static Space must never execute uploaded agent code.
 
 Raw replay evidence remains in versioned releases. Game-frame licensing must be reviewed separately before adding frames to a Dataset. A model being downloadable on the Hub is not permission to redistribute its weights.

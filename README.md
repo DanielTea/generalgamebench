@@ -14,6 +14,8 @@ Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh obs
 
 The 5 October 2026 hosted-model refresh evaluates all 43 admitted scenarios with OpenAI and Anthropic models, plus four reference policies. It uses one seed and eight decisions per scenario: an integration exhibition, not a reliable intelligence ranking. The frozen 33-scenario v0.2 results, including local VLMs, remain in a separate previous-exhibition view. See [scoring methodology](docs/METHODOLOGY.md), [campaign evidence](results/refresh-2026-10-05) and [coverage and remaining work](docs/GAMES.md).
 
+The subsequent [local baseline refresh](results/baselines-2026-10-05) runs Idle, Random, Pixel React and Pixel Tracker across the complete 43-scenario headless suite: three seeds and 24 decisions per episode, for 516 episodes. Scored episodes run serially, followed by exact replay verification. These are coded reference policies; no hosted model calls are involved. The previous 33-scenario baselines remain in their own archive, and model exhibition scores are unchanged.
+
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
 
 ## Try it

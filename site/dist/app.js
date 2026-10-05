@@ -38,7 +38,9 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     local:
-      "Frozen v0.2 baseline runs across 33 scenarios. Provisional rankings on a fixed suite; sub-100 ms eligibility is reported separately from trust. Newly admitted tasks are not mixed into these standings.",
+      "Reference-policy refresh on 5 October 2026 across all 43 admitted scenarios. Three fixed seeds and a 24-decision horizon per game; episodes ran one at a time, headlessly, on the shared Mac. Timeouts score zero and remain in the evidence. These are simple coded policies, not trained vision models. The strict 100 ms gate is separate from official certification.",
+    local_previous:
+      "Archived v0.2 baseline runs across 33 scenarios: three seeds and 24 decisions per game. The current 43-scenario suite has a different evaluator and task set, so aggregate scores cannot be compared directly.",
     exhibition:
       "OpenAI and Claude refresh on 5 October 2026 across all 43 admitted scenarios, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Hosted calls include CLI startup. Timing reflects a shared Mac running concurrent evaluations. Provider and format failures remain in the evidence; incomplete suites receive no aggregate score.",
     exhibition_previous:
@@ -222,7 +224,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=refresh-2026-10-05", { cache: "no-cache" })
+fetch("data.json?v=baselines-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
@@ -235,7 +237,7 @@ fetch("data.json?v=refresh-2026-10-05", { cache: "no-cache" })
     (d.model_status || []).forEach(model => {
       $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.error_type ? "Setup failure: " + model.error_type : ""}`));
     });
-    const rows = [...d.local, ...d.exhibition, ...(d.exhibition_previous || [])];
+    const rows = [...d.local, ...(d.local_previous || []), ...d.exhibition, ...(d.exhibition_previous || [])];
     $("episodes").textContent = rows
       .reduce((n, r) => n + r.episodes, 0)
       .toLocaleString();
