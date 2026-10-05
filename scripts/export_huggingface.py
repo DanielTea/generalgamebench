@@ -6,8 +6,19 @@ import json
 import shutil
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+SPACE_ID = "danieltee/generalgamebench"
+DATASET_ID = "danieltee/generalgamebench-results"
 
-def export(site: Path, destination: Path):
+
+def card(name, **values):
+    text = (ROOT / "huggingface" / name).read_text()
+    for key, value in values.items():
+        text = text.replace("{{" + key + "}}", str(value))
+    return text
+
+
+def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_ID):
     if destination.exists():
         raise FileExistsError("Use a new output directory to preserve previous exports")
     snapshot_bytes = (site / "data.json").read_bytes()
@@ -17,16 +28,14 @@ def export(site: Path, destination: Path):
     shutil.copytree(site, space)
     dataset.mkdir(parents=True)
     (space / "README.md").write_text(
-        "---\ntitle: GeneralGameBench\nsdk: static\napp_file: index.html\n"
-        "license: mit\npinned: false\n---\n\n"
-        "# GeneralGameBench\n\n"
-        "“Intelligence is the ability to adapt to new environments.” — We test this.\n\n"
-        "Static, read-only leaderboard. Evaluation workers run separately. "
-        "No provider credentials or game execution belong in this Space.\n\n"
-        "MIT applies to original code. Game media retains its separate rights; "
-        "see media/NOTICE.txt and media/sources.json.\n"
+        card("space-card.md", space_id=space_id, dataset_id=dataset_id)
     )
+    for folder in (space, dataset):
+        shutil.copyfile(ROOT / "LICENSE", folder / "LICENSE")
+    (dataset / "snapshot.json").write_bytes(snapshot_bytes)
+    (dataset / "viewer").mkdir()
     configs = []
+    counts = {}
     for track in ("local", "local_previous", "exhibition", "exhibition_previous", "official"):
         rows = []
         track_metadata = snapshot.get("track_metadata", {}).get(track, {})
@@ -56,6 +65,7 @@ def export(site: Path, destination: Path):
                         "generated_at": snapshot.get("generated_at"),
                         "snapshot_sha256": snapshot_hash,
                         "agent_id": ranking["agent"],
+                        "mode": ranking.get("mode"),
                         "model_id": ranking.get("model"),
                         "model_revision": metadata.get("revision"),
                         "game_id": game,
@@ -66,11 +76,17 @@ def export(site: Path, destination: Path):
                         "task_metadata": ranking.get("task_metadata", {}).get(game),
                         "transport": metadata.get("transport"),
                         "prompt_version": metadata.get("prompt_version"),
+                        "provider_metadata": metadata,
                         "score_100": score,
                         "suite_score_100": ranking["score"],
                         "latency_eligible": ranking["latency_eligible"],
                         "suite_p95_ms": ranking["p95_ms"],
+                        "suite_p50_ms": ranking.get("p50_ms"),
                         "suite_max_ms": ranking["max_ms"],
+                        "suite_misses": ranking.get("misses"),
+                        "suite_episodes": ranking.get("episodes"),
+                        "suite_decisions": ranking.get("decisions"),
+                        "suite_ci95": ranking.get("ci95"),
                         "seeds": ranking["seeds"],
                         "decision_horizon": ranking["max_steps"],
                         "trust": ranking["trust"],
@@ -85,20 +101,41 @@ def export(site: Path, destination: Path):
             (dataset / file).write_text(
                 "".join(json.dumps(row, allow_nan=False) + "\n" for row in rows)
             )
+            # Arbitrary engine/provider dictionaries can have incompatible Arrow
+            # types. Keep lossless raw JSONL and use JSON strings in the viewer.
+            viewer_rows = []
+            for row in rows:
+                view = dict(row)
+                for key in ("task_metadata", "provider_metadata"):
+                    value = view.pop(key)
+                    view[key + "_json"] = json.dumps(value, sort_keys=True, allow_nan=False)
+                viewer_rows.append(view)
+            (dataset / "viewer" / file).write_text(
+                "".join(json.dumps(row, allow_nan=False) + "\n" for row in viewer_rows)
+            )
+            counts[track] = len(rows)
             configs.append(
-                f"- config_name: {track}\n  data_files:\n  - split: test\n    path: {file}\n"
+                f"- config_name: {track}\n  data_files:\n  - split: test\n    path: viewer/{file}\n"
             )
     (dataset / "README.md").write_text(
-        "---\nlicense: mit\nconfigs:\n" + "".join(configs) + "---\n\n"
-        "# GeneralGameBench result snapshot\n\n"
-        "One row per agent and game. Timing columns describe the complete suite, "
-        "not just that game. Compare only identical suite_id values; also inspect "
-        "transport and task metadata. Null seed_ids in legacy results mean the "
-        "exact seed set was not present in that snapshot. "
-        "Local/exhibition rows are unattested; short exhibitions show integration, "
-        "not statistically reliable intelligence rankings. No copyrighted game "
-        "frames or model weights are included in this Dataset.\n"
+        card(
+            "dataset-card.md",
+            configs="".join(configs).rstrip(),
+            space_id=space_id,
+            dataset_id=dataset_id,
+            snapshot_sha256=snapshot_hash,
+            counts="\n".join(f"| {track} | {count} |" for track, count in counts.items()),
+        )
     )
+    publication = {
+        "schema_version": "generalgamebench-hub/1",
+        "space_id": space_id,
+        "dataset_id": dataset_id,
+        "snapshot_sha256": snapshot_hash,
+        "season": snapshot.get("season"),
+        "rows": counts,
+    }
+    (destination / "publication.json").write_text(json.dumps(publication, indent=2) + "\n")
     manifest = {
         str(p.relative_to(destination)): hashlib.sha256(p.read_bytes()).hexdigest()
         for p in destination.rglob("*")
@@ -112,5 +149,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--site", type=Path, default=Path("site/dist"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--space-id", default=SPACE_ID)
+    parser.add_argument("--dataset-id", default=DATASET_ID)
     args = parser.parse_args()
-    print(json.dumps(export(args.site, args.output)))
+    print(json.dumps(export(args.site, args.output, args.space_id, args.dataset_id)))

@@ -43,7 +43,15 @@
     },
     {
       "check": "Hugging Face export",
-      "result": "138 files prepared locally; separate current/archive metadata verified; no Hub upload"
+      "result": "146 files prepared; manifest and matching snapshots verified; publication receipt will be attached to release"
+    },
+    {
+      "check": "Merged publication source and viewer exports",
+      "result": "93 passed; 54 optional engine tests skipped; formatting and JS syntax passed"
     }
-  ]
+  ],
+  "publication_merge": {
+    "upstream_commit": "533c7a1",
+    "note": "Merged Hub publication tools after all gameplay and replay checks finished. The optional publication dependencies changed. The campaign retains the original scored dependency hashes and implementation commit."
+  }
 }
