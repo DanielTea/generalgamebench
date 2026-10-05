@@ -40,7 +40,9 @@ function renderBoard() {
     local:
       "Frozen v0.2 baseline runs across 33 scenarios. Provisional rankings on a fixed suite; sub-100 ms eligibility is reported separately from trust. Newly admitted tasks are not mixed into these standings.",
     exhibition:
-      "Actual OpenAI, Claude and local vision-model gameplay in the frozen v0.2 suite of 33 scenarios, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Newly admitted tasks are not mixed into these standings. Hosted calls include CLI startup; local models stay loaded. Timing reflects a shared Mac running concurrent evaluations.",
+      "OpenAI and Claude refresh on 5 October 2026 across all 43 admitted scenarios, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Hosted calls include CLI startup. Timing reflects a shared Mac running concurrent evaluations. Provider and format failures remain in the evidence; incomplete suites receive no aggregate score.",
+    exhibition_previous:
+      "Archived v0.2 exhibition: OpenAI, Claude, local vision models and four controls across 33 scenarios on 4 October 2026. One seed and eight decisions per game. This older cohort is separate from the current 43-scenario refresh and cannot be compared directly by aggregate score.",
     official:
       "No certified entries yet. Admission requires independent isolated execution, hidden evaluation seeds and signed runner evidence. Local results cannot promote themselves.",
   };
@@ -220,7 +222,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=integrations-4", { cache: "no-cache" })
+fetch("data.json?v=refresh-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
@@ -233,7 +235,7 @@ fetch("data.json?v=integrations-4", { cache: "no-cache" })
     (d.model_status || []).forEach(model => {
       $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.error_type ? "Setup failure: " + model.error_type : ""}`));
     });
-    const rows = [...d.local, ...d.exhibition];
+    const rows = [...d.local, ...d.exhibition, ...(d.exhibition_previous || [])];
     $("episodes").textContent = rows
       .reduce((n, r) => n + r.episodes, 0)
       .toLocaleString();

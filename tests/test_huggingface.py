@@ -67,3 +67,28 @@ def test_export_preserves_task_model_seed_and_trust(tmp_path):
     assert (out / "space/index.html").read_text() == (site / "index.html").read_text()
     with pytest.raises(FileExistsError):
         module.export(site, out)
+
+
+def test_archive_preserves_its_own_campaign_metadata(tmp_path):
+    site = Path(__file__).parents[1] / "site/dist"
+    snapshot = json.loads((site / "data.json").read_text())
+    old = snapshot["local"][0]
+    minimal = tmp_path / "site"
+    minimal.mkdir()
+    (minimal / "data.json").write_text(
+        json.dumps(
+            {
+                "season": "refresh",
+                "hardware_details": "current workers",
+                "exhibition_previous": [old],
+                "track_metadata": {
+                    "exhibition_previous": {"season": "old", "hardware_details": "previous workers"}
+                },
+            }
+        )
+    )
+    module.export(minimal, tmp_path / "export")
+    rows = (tmp_path / "export/dataset/exhibition_previous.jsonl").read_text().splitlines()
+    assert rows
+    assert all(json.loads(row)["season"] == "old" for row in rows)
+    assert all(json.loads(row)["hardware_details"] == "previous workers" for row in rows)

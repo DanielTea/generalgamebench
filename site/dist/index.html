@@ -32,7 +32,7 @@
       <section class="intro">
         <div>
           <span class="eyebrow"
-            >OPEN GAME INTELLIGENCE BENCHMARK // V0.3.0</span
+            >OPEN GAME INTELLIGENCE BENCHMARK // V0.4.0</span
           >
           <h1>Agent<br /><em>leaderboard.</em></h1>
           <p class="motto">
@@ -73,6 +73,8 @@
             Local baselines</button
           ><button data-track="exhibition" class="active" aria-pressed="true">
             Model exhibition</button
+          ><button data-track="exhibition_previous" aria-pressed="false">
+            Previous exhibition</button
           ><button data-track="official" aria-pressed="false">
             Official ranked
           </button>
@@ -105,10 +107,23 @@
           </table>
         </div>
         <p id="suite" class="footnote"></p>
+        <details class="availability">
+          <summary>How is the score calculated?</summary>
+          <p>Each scenario converts its native reward to a score between 0 and 1 using fixed task rules.
+            We average the seeds within each scenario, then average all scenarios equally and multiply by 100.
+            Scores of 80, 40 and 0 therefore produce a suite score of 40/100.</p>
+          <p>Aborted episodes count as zero. An incomplete suite receives no aggregate score.
+            Normalization anchors are task-specific, not human performance or IQ. Families with more
+            scenarios have more weight; the score is not the percentage of games beaten.</p>
+          <p>Speed is a separate gate: every measured response must be strictly below 100 ms, with no
+            errors or aborted episodes. Slower models can still appear in the exhibition. One seed and
+            eight decisions are only an integration demonstration; many games barely start.</p>
+          <a href="https://github.com/DanielTea/generalgamebench/blob/main/docs/METHODOLOGY.md">Full scoring and timing methodology</a>
+        </details>
         <details class="availability"><summary>Configured models and run status</summary><ul id="availability"></ul></details>
         <p class="footnote">
           <a
-            href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.2.0"
+            href="https://github.com/DanielTea/generalgamebench/releases/tag/refresh-2026-10-05"
             >Download full replay evidence</a
           >
           ·
@@ -156,7 +171,7 @@
           Three experimental cards show unranked native diagnostic captures; other candidates use credited project previews.
           These previews are not benchmark results. Clips play only when selected.
           Ten new tasks now cover Unity, Football, SuperTuxKart, Luanti, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100;
-          the model standings above remain the frozen 33-scenario evaluation.
+          the current model exhibition evaluates all 43 scenarios, while the previous 33-scenario cohort remains separate.
           Their separate validation includes 21 control runs and 4,303 decisions, all replay-verified.
           <a href="https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0">Download the new integration evidence.</a>
         </p>
