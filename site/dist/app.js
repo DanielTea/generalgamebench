@@ -43,7 +43,7 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "Hosted models, local vision models and reference policies use the same 43 scenarios. Each game uses one seed and eight decisions. This short test checks integration. It cannot establish model skill. The suite p95 limit is below 200 ms. Scores stay visible if a model fails this limit. Hosted calls ran concurrently and include CLI startup. Local MLX models run one at a time, after three gray startup images. All game calls count. Run settings show the timing conditions. Failed episodes remain in the results. Incomplete suites receive no aggregate score.",
+      "These vision models run on the Mac with weights from Hugging Face. Each model uses all 43 scenarios, one seed and eight decisions per game. This short test checks integration. It cannot establish model skill. The suite p95 must be below 200 ms to pass the latency test. Scores and errors remain separate. Models run one at a time after three gray startup images. All game calls count. Run settings show the test conditions. The archive keeps the previous results.",
     official:
       "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
   };
@@ -235,7 +235,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=suite-p95-200-v1", { cache: "no-cache" })
+fetch("data.json?v=hf-vlm-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
