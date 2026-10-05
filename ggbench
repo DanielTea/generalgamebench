@@ -1,0 +1,30 @@
+#!/bin/sh
+# Docker-only entry point for Linux, macOS and a Windows WSL2 shell.
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+image=${GGBENCH_IMAGE:-$(cat "$root/environments/portable/image.txt")}
+results=${GGBENCH_RUNS:-"$root/runs"}
+agent=${GGBENCH_AGENT_DIR:-"$root/examples"}
+network=${GGBENCH_NETWORK:-none}
+if ! command -v docker >/dev/null 2>&1; then
+    echo "Install Docker and start its engine first. See docs/SUBMISSIONS.md." >&2
+    exit 1
+fi
+mkdir -p "$results"
+results=$(CDPATH= cd -- "$results" && pwd)
+agent=$(CDPATH= cd -- "$agent" && pwd)
+if [ "$#" -eq 0 ]; then
+    set -- benchmark --output /results/submission
+fi
+if ! docker image inspect "$image" >/dev/null 2>&1; then
+    docker pull "$image"
+fi
+image_id=$(docker image inspect "$image" --format '{{.Id}}')
+exec docker run --rm --init \
+    --network "$network" --cap-drop ALL --security-opt no-new-privileges \
+    --read-only --tmpfs /tmp:rw,nosuid,size=1g --pids-limit 256 \
+    --user "$(id -u):$(id -g)" --env HOME=/tmp \
+    --env "GGBENCH_IMAGE_REFERENCE=$image" --env "GGBENCH_IMAGE_ID=$image_id" \
+    --mount "type=bind,source=$results,target=/results" \
+    --mount "type=bind,source=$agent,target=/agent,readonly" \
+    "$image_id" "$@"

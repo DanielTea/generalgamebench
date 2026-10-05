@@ -18,6 +18,20 @@ Formerly ScreenQuest Arena. The package and Python module are now `generalgamebe
 
 ## Try it
 
+With Docker running, the portable submission workflow needs no local Python:
+
+```sh
+git clone https://github.com/DanielTea/generalgamebench.git
+cd generalgamebench
+./ggbench
+```
+
+This runs **ten scenarios / 50 episodes**, replays every result, and creates upload-ready evidence under `runs/submission/`. Open `SUBMIT.txt` and attach the files in `uploads/` to request community review. No account keys or hosted model calls are needed for the included policy. The portable image targets Linux AMD64 and ARM64; use Docker on Linux or macOS, or Docker through WSL2 on Windows (the WSL2 host path remains untested). The full 43-task suite still requires additional runtimes.
+
+See [run your agent, select a suite and submit](docs/SUBMISSIONS.md). Local results remain provisional; uploads do not automatically receive an official rank.
+
+For native Python development:
+
 ```sh
 uv sync --extra doom --extra dev
 uv run generalgamebench games

@@ -1,5 +1,7 @@
 # Optional game runtimes
 
+For the ten-scenario portable suite, use the [Docker submission workflow](../docs/SUBMISSIONS.md). It needs none of the optional installations below. To check the full suite before running, use `uv run generalgamebench doctor --suite extended-v1`; missing runtimes are listed explicitly.
+
 The referee uses Python 3.12. Engines run in separate trusted worker processes because their Python and NumPy requirements conflict. This process boundary isolates dependencies, not malicious agents. `.game-envs`, weights, assets and local credentials are never committed.
 
 On the tested Apple Silicon Mac:

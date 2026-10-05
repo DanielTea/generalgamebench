@@ -1,0 +1,1 @@
+ghcr.io/danieltea/generalgamebench:0.4.0

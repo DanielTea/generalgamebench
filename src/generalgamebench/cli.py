@@ -4,6 +4,7 @@ import argparse
 import json
 import shlex
 import sys
+import zipfile
 from pathlib import Path
 
 from .evidence import verify_episode
@@ -19,6 +20,31 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("games")
     sub.add_parser("models")
+    sub.add_parser("suites", help="Show fixed, comparable submission suites")
+    doctor = sub.add_parser("doctor", help="Check a suite's runtime requirements")
+    doctor.add_argument("--suite", default="portable-v1")
+    doctor.add_argument("--json", action="store_true")
+    campaign = sub.add_parser("benchmark", help="Run, replay and package a complete submission")
+    campaign.add_argument("--suite", default="portable-v1")
+    campaign.add_argument(
+        "--agent", choices=["idle", "random", "react", "tracker"], default="react"
+    )
+    campaign.add_argument("--agent-command")
+    campaign.add_argument("--name")
+    campaign.add_argument(
+        "--agent-revision", help="Immutable source/model revision; do not put secrets here"
+    )
+    campaign.add_argument("--hardware", help="CPU/GPU and memory description")
+    campaign.add_argument("--mode", choices=["realtime", "exhibition"], default="exhibition")
+    campaign.add_argument("--output", type=Path, default=Path("runs/submission"))
+    campaign.add_argument("--resume", action="store_true")
+    submission = sub.add_parser("verify-submission", help="Check a ZIP without executing its agent")
+    submission.add_argument("path", type=Path, nargs="+")
+    submission.add_argument(
+        "--no-replay",
+        action="store_true",
+        help="Check integrity only; cannot confirm gameplay scores",
+    )
     run = sub.add_parser("run")
     run.add_argument("--agent", choices=["idle", "random", "react", "tracker"], default="react")
     run.add_argument(
@@ -41,7 +67,52 @@ def main():
     board.add_argument("--start-seed", type=int, default=1000)
     board.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    if args.command == "games":
+    if args.command in {"suites", "doctor", "benchmark", "verify-submission"}:
+        from .doctor import diagnose
+        from .submission import benchmark, verify_uploads
+        from .suites import SUITES
+
+        if hasattr(args, "suite") and args.suite not in SUITES:
+            parser.error("Unknown suite. Choose " + ", ".join(SUITES))
+        try:
+            if args.command == "suites":
+                print(json.dumps([suite.definition() for suite in SUITES.values()], indent=2))
+            elif args.command == "doctor":
+                report = diagnose(args.suite)
+                if args.json:
+                    print(json.dumps(report, indent=2))
+                else:
+                    print(
+                        f"{report['suite']}: {report['games']} games, {report['episodes']} episodes"
+                    )
+                    for check in report["checks"]:
+                        print(
+                            f"{'OK' if check['ready'] else 'MISSING'}  {check['name']}: {check['detail']}"
+                        )
+                    print(report["scope"])
+                if not report["ready"]:
+                    raise SystemExit(1)
+            elif args.command == "verify-submission":
+                print(json.dumps(verify_uploads(args.path, replay=not args.no_replay), indent=2))
+            else:
+                if args.agent_command and not args.name:
+                    parser.error("--name is required for a custom agent")
+                result = benchmark(
+                    args.suite,
+                    args.output,
+                    agent=args.agent,
+                    agent_command=args.agent_command,
+                    name=args.name,
+                    agent_revision=args.agent_revision,
+                    hardware=args.hardware,
+                    mode=args.mode,
+                    resume=args.resume,
+                )
+                print(json.dumps(result, indent=2))
+                print(f"Submission saved to {args.output}. See SUBMIT.txt to send it for review.")
+        except (ValueError, OSError, RuntimeError, KeyError, zipfile.BadZipFile) as exc:
+            parser.exit(2, f"Cannot complete {args.command}: {exc}\n")
+    elif args.command == "games":
         from dataclasses import asdict
 
         print(

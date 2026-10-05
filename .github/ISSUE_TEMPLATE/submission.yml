@@ -4,7 +4,7 @@ title: "[Agent] "
 body:
   - type: markdown
     attributes:
-      value: "Local results are provisional. This form does not automatically run code or grant an official rank. Never include secrets or proprietary game assets."
+      value: "Run `./ggbench` or follow https://github.com/DanielTea/generalgamebench/blob/main/docs/SUBMISSIONS.md. Open SUBMIT.txt and attach every ZIP from the uploads folder. Local results are provisional; this form never automatically runs your code or grants an official rank. Never include secrets or proprietary game assets."
   - type: input
     id: agent
     attributes:
@@ -15,13 +15,14 @@ body:
     id: setup
     attributes:
       label: Exact suite, seeds, horizon, hardware, dependencies and command
+      description: Copy the suite and evaluator version from submission/report.md; describe CPU/GPU/RAM and link your pinned policy setup. Do not paste credentials.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Results and full evidence links
-      description: Include every final-campaign trial, failures, maximum reaction time and verification output.
+      label: Upload-ready evidence
+      description: Drag all ZIPs from runs/your-agent/uploads here, or link the complete submission.zip and SHA256SUMS. Include failed or interrupted campaigns; do not select only favorable trials.
     validations:
       required: true
   - type: textarea

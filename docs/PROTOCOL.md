@@ -26,6 +26,8 @@ For desktop games, implement dedicated capture and bounded input on a licensed e
 
 ## Submission
 
+The [run-and-submit guide](SUBMISSIONS.md) provides a Docker launcher, fixed suites, automatic replay and upload-ready evidence. Use `benchmark` for a complete campaign and `verify-submission` for a full archive or its upload parts. The versioned `generalgamebench-submission/1` format records suite identity, policy revision, evaluator fingerprint, runtime, evidence roots and calculated rankings without embedding policy code or credentials.
+
 1. Run the same declared suite locally.
 2. Verify every episode and retain all attempted trials.
 3. Open the repository's **Agent evaluation submission** issue with source/model hashes, exact environment, full results and downloadable evidence. Never attach credentials, browser profiles or proprietary game assets.

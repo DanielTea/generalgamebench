@@ -1,5 +1,7 @@
 # Hugging Face publication design
 
+Community submissions use the host-independent `generalgamebench-submission/1` format described in [the submission guide](SUBMISSIONS.md). A future Space can accept the same full ZIP or upload parts and show their validation status. Intake must retain suite identity, policy/evaluator revisions, hardware and provisional trust; the static site must not execute agent code or treat uploads as official ranks.
+
 The same static leaderboard can be hosted on danieltremer.com, Sites or a Hugging Face Space. Relative media and data URLs work under each host. The Space is a display layer; game installation, provider sign-ins and evaluation execution remain on separate workers.
 
 Prepare a portable Space and a separate Dataset without uploading anything:
