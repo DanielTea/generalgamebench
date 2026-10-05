@@ -122,7 +122,8 @@ def test_real_snapshot_is_loadable_and_discoverable(tmp_path):
             )
             assert row["trust"] == original["trust"]
     assert "official" not in {c["config_name"] for c in dataset_card["configs"]}
-    assert (root / "dataset/snapshot.json").read_bytes() == (site / "data.json").read_bytes()
+    assert (root / "dataset/snapshot.json").read_bytes() == (root / "space/data.json").read_bytes()
+    assert {c["config_name"] for c in dataset_card["configs"]} == {"exhibition"}
 
 
 def test_publication_rejects_changed_export_and_binds_exact_revision(tmp_path):
@@ -132,7 +133,7 @@ def test_publication_rejects_changed_export_and_binds_exact_revision(tmp_path):
     publication = publisher.verify_export(root)
     assert (
         publication["snapshot_sha256"]
-        == hashlib.sha256((site / "data.json").read_bytes()).hexdigest()
+        == hashlib.sha256((root / "space/data.json").read_bytes()).hexdigest()
     )
     revision = "a" * 40
     publication.update(dataset_revision=revision, source_commit="b" * 40)
@@ -160,6 +161,11 @@ def test_publication_uploads_dataset_before_space_and_records_its_commit(tmp_pat
 
         def upload_folder(self, **kwargs):
             events.append(kwargs["repo_type"])
+            assert set(kwargs["delete_patterns"]) == {
+                f"{prefix}{track}.jsonl"
+                for prefix in ("", "viewer/")
+                for track in ("local", "local_previous", "exhibition_previous")
+            }
             return SimpleNamespace(oid="a" * 40)
 
         def create_commit(self, **kwargs):
@@ -178,27 +184,20 @@ def test_publication_uploads_dataset_before_space_and_records_its_commit(tmp_pat
     assert publisher.verify_export(root)["snapshot_sha256"] == result["snapshot_sha256"]
 
 
-@pytest.mark.parametrize("track", ["exhibition_previous", "local_previous"])
-def test_archive_preserves_its_own_campaign_metadata(tmp_path, track):
+def test_export_removes_previous_results_without_changing_source(tmp_path):
     site = Path(__file__).parents[1] / "site/dist"
-    snapshot = json.loads((site / "data.json").read_text())
-    old = snapshot["local"][0]
-    minimal = tmp_path / "site"
-    minimal.mkdir()
-    (minimal / "data.json").write_text(
-        json.dumps(
-            {
-                "season": "refresh",
-                "hardware_details": "current workers",
-                track: [old],
-                "track_metadata": {
-                    track: {"season": "old", "hardware_details": "previous workers"}
-                },
-            }
-        )
-    )
-    module.export(minimal, tmp_path / "export")
-    rows = (tmp_path / f"export/dataset/{track}.jsonl").read_text().splitlines()
-    assert rows
-    assert all(json.loads(row)["season"] == "old" for row in rows)
-    assert all(json.loads(row)["hardware_details"] == "previous workers" for row in rows)
+    source_bytes = (site / "data.json").read_bytes()
+    source = json.loads(source_bytes)
+    root = tmp_path / "export"
+    module.export(site, root)
+    snapshot = json.loads((root / "dataset/snapshot.json").read_text())
+    assert snapshot["exhibition"] == source["exhibition"]
+    assert snapshot["official"] == source["official"]
+    for track in ("local", "local_previous", "exhibition_previous"):
+        assert track not in snapshot
+        assert track not in snapshot.get("track_metadata", {})
+        assert not (root / "dataset" / f"{track}.jsonl").exists()
+        assert not (root / "dataset/viewer" / f"{track}.jsonl").exists()
+    assert (site / "data.json").read_bytes() == source_bytes
+    publication = json.loads((root / "publication.json").read_text())
+    assert publication["source_snapshot_sha256"] == hashlib.sha256(source_bytes).hexdigest()

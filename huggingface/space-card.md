@@ -57,8 +57,7 @@ The timer includes image retrieval, encoding, transport, inference and action va
 The simulation waits between actions.
 These tests do not prove continuous real-time control.
 
-The leaderboard separates current and previous local policies from current and previous model tests.
-The current local policies use 43 scenarios, three seeds and a 24-decision horizon.
+The leaderboard shows the current model tests and official ranks.
 The current hosted-model tests use one seed and eight decisions per scenario.
 These short tests show that the connections work.
 They do not give a reliable measure of model intelligence.

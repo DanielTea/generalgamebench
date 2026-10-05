@@ -88,6 +88,14 @@ def publish(directory, source_commit, api):
         repo_type="dataset",
         folder_path=directory / "dataset",
         commit_message=f"Publish measured results from {source_commit[:12]}",
+        delete_patterns=[
+            "local.jsonl",
+            "local_previous.jsonl",
+            "exhibition_previous.jsonl",
+            "viewer/local.jsonl",
+            "viewer/local_previous.jsonl",
+            "viewer/exhibition_previous.jsonl",
+        ],
     )
     publication["dataset_revision"] = dataset_commit.oid
     bound = bind_space(directory, publication)

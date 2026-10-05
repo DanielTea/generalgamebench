@@ -38,20 +38,33 @@
       "result": "20 pages generated; existing configuration skips TypeScript validation; preexisting workspace and browser-mapping warnings"
     },
     {
-      "check": "Browser preview",
-      "result": "Current 43-scenario and archived 33-scenario tabs, direct track links, exact displayed scores and latency gate verified"
-    },
-    {
-      "check": "Hugging Face export",
-      "result": "146 files prepared; manifest and matching snapshots verified; publication receipt will be attached to release"
-    },
-    {
       "check": "Merged publication source and viewer exports",
       "result": "93 passed; 54 optional engine tests skipped; formatting and JS syntax passed"
+    },
+    {
+      "check": "Final source after current-results layout merge",
+      "result": "92 passed; 54 optional engine tests skipped; formatting and JS syntax passed"
+    },
+    {
+      "check": "Final browser preview",
+      "result": "Only Model exhibition and Official ranked; 15 model/control rows and 645 displayed episodes. Removed track query falls back to Model exhibition."
+    },
+    {
+      "check": "Final Hub export",
+      "result": "140 files; only exhibition configuration with 645 rows; baseline and previous groups excluded; no Hub upload"
     }
   ],
   "publication_merge": {
     "upstream_commit": "533c7a1",
-    "note": "Merged Hub publication tools after all gameplay and replay checks finished. The optional publication dependencies changed. The campaign retains the original scored dependency hashes and implementation commit."
+    "note": "Merged Hub publication tools after all gameplay and replay checks finished. The optional publication dependencies changed. The campaign retains the original scored dependency hashes and implementation commit.",
+    "layout_commit": "a194b777602cbd58d2d1a760cc2c37f89e312615"
+  },
+  "public_display": {
+    "views": [
+      "exhibition",
+      "official"
+    ],
+    "baseline_results": "Preserved in source snapshot, website data download and GitHub evidence",
+    "hub_publication": "Not changed; later request excludes baseline groups"
   }
 }

@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SPACE_ID = "danieltee/generalgamebench"
 DATASET_ID = "danieltee/generalgamebench-results"
+EXCLUDED_TRACKS = ("local", "local_previous", "exhibition_previous")
 
 
 def card(name, **values):
@@ -21,11 +22,16 @@ def card(name, **values):
 def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_ID):
     if destination.exists():
         raise FileExistsError("Use a new output directory to preserve previous exports")
-    snapshot_bytes = (site / "data.json").read_bytes()
-    snapshot = json.loads(snapshot_bytes)
+    source_bytes = (site / "data.json").read_bytes()
+    snapshot = json.loads(source_bytes)
+    for track in EXCLUDED_TRACKS:
+        snapshot.pop(track, None)
+        snapshot.get("track_metadata", {}).pop(track, None)
+    snapshot_bytes = (json.dumps(snapshot, indent=2, allow_nan=False) + "\n").encode()
     snapshot_hash = hashlib.sha256(snapshot_bytes).hexdigest()
     space, dataset = destination / "space", destination / "dataset"
     shutil.copytree(site, space)
+    (space / "data.json").write_bytes(snapshot_bytes)
     dataset.mkdir(parents=True)
     (space / "README.md").write_text(
         card("space-card.md", space_id=space_id, dataset_id=dataset_id)
@@ -36,7 +42,7 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
     (dataset / "viewer").mkdir()
     configs = []
     counts = {}
-    for track in ("local", "local_previous", "exhibition", "exhibition_previous", "official"):
+    for track in ("exhibition", "official"):
         rows = []
         track_metadata = snapshot.get("track_metadata", {}).get(track, {})
         hardware_details = track_metadata.get("hardware_details", snapshot.get("hardware_details"))
@@ -124,6 +130,7 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
             space_id=space_id,
             dataset_id=dataset_id,
             snapshot_sha256=snapshot_hash,
+            size_category="n<1K" if sum(counts.values()) < 1000 else "1K<n<10K",
             counts="\n".join(f"| {track} | {count} |" for track, count in counts.items()),
         )
     )
@@ -132,6 +139,7 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
         "space_id": space_id,
         "dataset_id": dataset_id,
         "snapshot_sha256": snapshot_hash,
+        "source_snapshot_sha256": hashlib.sha256(source_bytes).hexdigest(),
         "season": snapshot.get("season"),
         "rows": counts,
     }

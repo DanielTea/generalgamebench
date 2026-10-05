@@ -21,24 +21,27 @@ uv run python scripts/export_huggingface.py --output build/huggingface
 
 The export creates a static Space and a results Dataset.
 The Space card contains the tags that the Leaderboard Finder requires.
-The Dataset has one configuration for each result group with data.
+The Dataset contains the current model exhibition.
+It excludes the previous exhibition and local baseline groups.
 It does not add entries to the empty official leaderboard.
 
 Each row identifies one agent and one game.
 The export retains scores, seeds, model revisions, task versions, latency and trust status.
 A suite ID identifies the test conditions.
-Current results and previous results stay in separate configurations.
 The `suite_` columns repeat campaign measurements on each game row.
 Do not add these values across rows.
 
 The 5 October baseline refresh has 43 scenarios, three seeds and a 24-decision horizon.
-The `local` and `local_previous` configurations keep their own seasons and test conditions.
+The source snapshot keeps the new and previous baselines with their original test conditions.
+The public Hub export excludes both baseline groups.
 The existing model results stay unchanged.
 
 The root JSONL files retain nested metadata.
 The viewer files store variable engine and provider metadata as JSON strings.
 This format prevents conflicts between Dataset viewer column types.
-The original `snapshot.json` is identical to the Space file `data.json`.
+The exported `snapshot.json` is identical to the Space file `data.json`.
+Both files exclude the removed result groups.
+The publication record also retains the source snapshot checksum.
 A checksum manifest covers every export file.
 
 ## Publish an export
