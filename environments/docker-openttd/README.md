@@ -1,5 +1,7 @@
 # OpenTTD: build the first road
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `openttd-first-road` starts a new native OpenTTD 15.3 company on a seeded 64×64 map in 1950. The full 800×600 software framebuffer includes the ordinary toolbar, terrain, finances and cursor. The objective is introductory construction: native company ownership of at least two road bits scores one and ends the task. It does not measure a profitable transport network or full-game skill.
 
 ```sh

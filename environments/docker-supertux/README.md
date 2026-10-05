@@ -1,5 +1,7 @@
 # SuperTux: collect the first coin
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `supertux-first-coin` runs the real SuperTux 0.6.3 engine and its official **Welcome to Antarctica** level. The native SDL software renderer supplies the full 640×480 RGB image. The Python participant has no access to player coordinates, object lists, scripts, saves or the native coin counter.
 
 ```sh

@@ -255,19 +255,29 @@ def test_supertuxkart_progress_and_replay_despite_variable_agent_delays():
             game.close()
 
 
-def test_supertuxkart_random_controls_replay_at_seed_5001():
-    # The broad evidence run found address-dependent tree-edge depth ties on
-    # this trace, despite passing the seed-71 driving and no-op regressions.
+@pytest.mark.parametrize("steps,repeats", [(200, 3), (50, 12)])
+def test_supertuxkart_random_controls_replay_at_seed_5001(tmp_path, steps, repeats):
+    # Fresh shader mesh addresses exposed a depth tie at decision 38. Retain
+    # the long replay and cover that boundary in more independent processes.
     rng = random.Random(1729)
-    actions = [rng.randrange(6) for _ in range(200)]
+    actions = [rng.randrange(6) for _ in range(steps)]
     reference = None
-    for _ in range(3):
+
+    def compare(frame, step):
+        if reference is not None and frame != reference[0][step]:
+            (tmp_path / f"expected-{step}.png").write_bytes(reference[0][step])
+            (tmp_path / f"actual-{repeat}-{step}.png").write_bytes(frame)
+            pytest.fail(f"Replay image differs at step {step}, repeat {repeat}.")
+
+    for repeat in range(repeats):
         game = make_game("supertuxkart-lighthouse", 5001, len(actions))
         try:
             frames = [game.frame()]
-            for action in actions:
+            compare(frames[0], 0)
+            for step, action in enumerate(actions, 1):
                 game.step(action)
                 frames.append(game.frame())
+                compare(frames[-1], step)
             measured = frames, game.result(), game.metadata
             if reference is None:
                 reference = measured

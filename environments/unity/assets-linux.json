@@ -1,0 +1,11 @@
+{
+  "url": "https://storage.googleapis.com/mlagents-test-environments/1.1.0/linux/Startup.zip",
+  "archive_sha256": "80e2322215fb7ff5c192e34bd67d63edc80d8cf24e66f8af858010b84a250a5d",
+  "app_tree_sha256": "0a5a0b258c311a0d32fe6ebe56dee95a3af900e7d7955728e5092f68f3e9a566",
+  "application": "Startup",
+  "executable": "Startup.x86_64",
+  "install_directory": ".game-assets/unity-linux",
+  "platform": "Linux x86_64",
+  "python": "3.10.12",
+  "excluded_generated_directory": "Startup_Data/ML-Agents/Timers/"
+}

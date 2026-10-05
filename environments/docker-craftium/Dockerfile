@@ -1,4 +1,5 @@
 FROM python:3.12-slim-bookworm@sha256:54c85f3c47607a77f32adec749d3c81d1348bf25833671f512b26a9b6d778cb3
+ARG BUILD_JOBS=2
 ENV DEBIAN_FRONTEND=noninteractive PIP_DISABLE_PIP_VERSION_CHECK=1
 RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ make cmake libpng-dev libjpeg-dev libgl1-mesa-dev libegl1-mesa-dev \
@@ -10,7 +11,7 @@ COPY . /source
 WORKDIR /source
 RUN cmake -B build -DRUN_IN_PLACE=TRUE -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_UNITTESTS=FALSE -DBUILD_BENCHMARKS=FALSE -DENABLE_LTO=FALSE \
-    -DENABLE_SOUND=FALSE -DUSE_SDL2_SHARED=TRUE && cmake --build build -j 6
+    -DENABLE_SOUND=FALSE -DUSE_SDL2_SHARED=TRUE && cmake --build build -j "$BUILD_JOBS"
 RUN mkdir -p craftium/luanti && cp -r bin builtin client fonts textures craftium/luanti \
     && cp -r craftium-envs craftium/ \
     && printf 'recursive-include craftium/luanti *\nrecursive-include craftium/craftium-envs *\n' > MANIFEST.in \

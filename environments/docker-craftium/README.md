@@ -1,5 +1,7 @@
 # Luanti: chop one tree block
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `luanti-chop-tree` uses the official Craftium ChopTree world and native 64×64 Luanti camera. It runs a Linux ARM64 source build on this Mac through Docker Desktop. The explicit `serial-lockstep-v2` engine patch is required; the upstream asynchronous runtime does not pass exact camera replay.
 
 ```sh

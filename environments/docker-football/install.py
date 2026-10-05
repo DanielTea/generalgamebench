@@ -1,14 +1,15 @@
 """Build the pinned Football engine locally; no game binary is committed."""
 
-import json
 import shutil
 import subprocess
 from pathlib import Path
 
+from generalgamebench.container_runtime import build_arguments, runtime_manifest
+
 
 def main():
     folder = Path(__file__).resolve().parent
-    manifest = json.loads((folder / "runtime.json").read_text())
+    manifest = runtime_manifest(folder)
     root = folder.parents[1]
     source = root / ".game-cache/football-build-source"
     source.parent.mkdir(exist_ok=True)
@@ -38,6 +39,7 @@ def main():
         [
             "docker",
             "build",
+            *build_arguments(),
             "--platform",
             manifest["platform"],
             "-f",

@@ -6,6 +6,7 @@ Never send structured game observations, rewards or seeds to the model.
 
 import base64
 import contextlib
+import faulthandler
 import importlib.metadata
 import io
 import json
@@ -13,6 +14,7 @@ import os
 import sys
 import tempfile
 import traceback
+from pathlib import Path
 
 import numpy as np
 from PIL import Image
@@ -421,7 +423,9 @@ class Environment:
                 track="lighthouse",
                 step_seconds=0.2,
                 neutral_preroll_steps=50,
-                renderer="Mesa software / deterministic-render-v1",
+                renderer="Mesa software / deterministic-render-v2",
+                renderer_vector_bits=128,
+                renderer_threads=1,
                 camera_size=[int(self.image.shape[1]), int(self.image.shape[0])],
                 reward_definition="max(0, native overall distance) / native track length",
             )
@@ -523,15 +527,27 @@ class Environment:
 
 
 def main():
-    output = sys.stdout
-    # Native libraries may also print; duplicate the original protocol fd and
-    # redirect OS stdout before loading an engine.
-    output = os.fdopen(os.dup(sys.stdout.fileno()), "w", buffering=1)
+    # Linux Python workers use a separate reply pipe. Other workers use stdout.
+    # Send native library output to stderr before loading an engine.
+    descriptor = os.environ.pop("GGBENCH_WORKER_REPLY_FD", None)
+    reply_fd = int(descriptor) if descriptor is not None else os.dup(sys.stdout.fileno())
+    os.set_inheritable(reply_fd, False)
+    output = os.fdopen(reply_fd, "w", buffering=1)
     os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
+    trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
+    native_trace = None
+    if trace and Path(__file__).with_name("_native_trace.so").is_file():
+        import ctypes
+
+        native_trace = ctypes.CDLL(str(Path(__file__).with_name("_native_trace.so")))
     env = None
     try:
         for line in sys.stdin:
             try:
+                if trace:
+                    faulthandler.dump_traceback_later(25, file=sys.stderr)
+                if native_trace:
+                    native_trace.gg_trace_arm()
                 request = json.loads(line)
                 command = request["command"]
                 with contextlib.redirect_stdout(sys.stderr):
@@ -561,6 +577,11 @@ def main():
                 traceback.print_exc(file=sys.stderr)
                 output.write(json.dumps({"error": f"{type(exc).__name__}: {exc}"}) + "\n")
                 break
+            finally:
+                if trace:
+                    faulthandler.cancel_dump_traceback_later()
+                if native_trace:
+                    native_trace.gg_trace_stop()
     finally:
         if env is not None:
             env.close()

@@ -5,9 +5,12 @@ COPY . /build
 WORKDIR /build
 RUN mkdir -p /engine /control/classes && cp Mindustry.jar /engine/Mindustry.jar && cp -r arc/backends/backend-sdl/src /build/src
 RUN javac -cp jnigen.jar Generate.java && java -cp '/build/*:/build' Generate
-RUN g++ -shared -O2 -fPIC -I/usr/lib/jvm/java-17-openjdk-arm64/include -I/usr/lib/jvm/java-17-openjdk-arm64/include/linux -I/usr/include/SDL2 -I/build/native /build/native/*.cpp -lSDL2 -lGLEW -lGL -o /engine/libsdl-arcarm64.so
+ARG TARGETARCH
+RUN JAVA_INCLUDE=$(dirname $(dirname $(readlink -f $(which javac))))/include \
+    && case "$TARGETARCH" in arm64) ARC_SUFFIX=arm64 ;; amd64) ARC_SUFFIX=64 ;; *) exit 1 ;; esac \
+    && g++ -shared -O2 -fPIC -I"$JAVA_INCLUDE" -I"$JAVA_INCLUDE/linux" -I/usr/include/SDL2 -I/build/native /build/native/*.cpp -lSDL2 -lGLEW -lGL -o "/engine/libsdl-arc${ARC_SUFFIX}.so"
 WORKDIR /engine
-RUN jar uf Mindustry.jar libsdl-arcarm64.so
+RUN jar uf Mindustry.jar libsdl-arc*.so
 RUN javac -cp /engine/Mindustry.jar -d /control/classes /build/arc/backends/backend-sdl/src/arc/backend/sdl/SdlGraphics.java /build/arc/arc-core/src/arc/util/Time.java /build/BenchmarkLauncher.java
 WORKDIR /tmp
 ENV SDL_VIDEODRIVER=x11 LIBGL_ALWAYS_SOFTWARE=1 LP_NUM_THREADS=1 ALSOFT_DRIVERS=null

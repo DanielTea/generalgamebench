@@ -6,7 +6,9 @@ This isolates dependencies, not hostile code. The agent receives no worker handl
 import base64
 import json
 import os
+import platform
 import selectors
+import shutil
 import signal
 import subprocess
 import tempfile
@@ -19,6 +21,7 @@ from .registry import EXPERIMENTAL_TASKS, TASKS, task_dict
 class WorkerGame:
     def __init__(self, game_id, seed, max_steps):
         self.id = game_id
+        self.steps = 0
         task = (TASKS | EXPERIMENTAL_TASKS)[game_id]
         root = Path(__file__).resolve().parents[2]
         home = Path(os.environ.get("GGBENCH_ENV_ROOT", root / ".game-envs"))
@@ -33,23 +36,57 @@ class WorkerGame:
             raise RuntimeError(f"Install the {task.runtime} runtime; see environments/README.md")
         else:
             command = [str(python), "-u", str(Path(__file__).with_name("environment_worker.py"))]
+            if platform.system() == "Linux" and game_id in {
+                "unity-food-collector",
+                "miniworld-oneroom",
+                "retro-airstriker",
+            }:
+                xvfb = shutil.which("xvfb-run")
+                if not xvfb:
+                    raise RuntimeError("Install xvfb and xauth for off-screen Linux rendering.")
+                command = [xvfb, "-a", "-s", "-screen 0 1280x720x24", *command]
         self.log = tempfile.TemporaryFile()
-        self.process = subprocess.Popen(
-            command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=self.log,
-            bufsize=0,
-            start_new_session=True,
-            env={
-                **os.environ,
-                "PYTHONHASHSEED": "0",
-                "SDL_AUDIODRIVER": "dummy",
-                **({"SDL_VIDEODRIVER": "dummy"} if game_id == "pettingzoo-pistonball" else {}),
-            },
+        private_reply = platform.system() == "Linux" and not task.runtime.startswith("docker-")
+        reader, writer = os.pipe() if private_reply else (None, None)
+        try:
+            self.process = subprocess.Popen(
+                command,
+                stdin=subprocess.PIPE,
+                stdout=self.log if private_reply else subprocess.PIPE,
+                stderr=self.log,
+                bufsize=0,
+                start_new_session=True,
+                pass_fds=(writer,) if private_reply else (),
+                env={
+                    **{
+                        key: value
+                        for key, value in os.environ.items()
+                        if key != "GGBENCH_WORKER_REPLY_FD"
+                    },
+                    **({"GGBENCH_WORKER_REPLY_FD": str(writer)} if private_reply else {}),
+                    "PYTHONHASHSEED": "0",
+                    "SDL_AUDIODRIVER": "dummy",
+                    **(
+                        {"LIBGL_ALWAYS_SOFTWARE": "1", "LP_NUM_THREADS": "1"}
+                        if platform.system() == "Linux"
+                        else {}
+                    ),
+                    **({"SDL_VIDEODRIVER": "dummy"} if game_id == "pettingzoo-pistonball" else {}),
+                },
+            )
+        except BaseException:
+            if reader is not None:
+                os.close(reader)
+            self.log.close()
+            raise
+        finally:
+            if writer is not None:
+                os.close(writer)
+        self.reply_stream = (
+            os.fdopen(reader, "rb", buffering=0) if private_reply else self.process.stdout
         )
         self.selector = selectors.DefaultSelector()
-        self.selector.register(self.process.stdout, selectors.EVENT_READ)
+        self.selector.register(self.reply_stream, selectors.EVENT_READ)
         self.buffer = b""
         try:
             response = self._call(
@@ -70,13 +107,20 @@ class WorkerGame:
             raise
 
     def _call(self, value, timeout=30):
+        trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
+        started = time.monotonic()
         self.process.stdin.write(json.dumps(value).encode() + b"\n")
         deadline = time.monotonic() + timeout
         while b"\n" not in self.buffer:
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not self.selector.select(remaining):
-                raise TimeoutError("Game worker deadline exceeded")
-            chunk = os.read(self.process.stdout.fileno(), 65536)
+                self.log.seek(0)
+                detail = self.log.read().decode(errors="replace")[-4000:]
+                raise TimeoutError(
+                    f"Game worker deadline exceeded: {self.id}, {value['command']}, "
+                    f"completed steps={self.steps}; {detail}"
+                )
+            chunk = os.read(self.reply_stream.fileno(), 65536)
             if not chunk:
                 self.log.seek(0)
                 detail = self.log.read().decode(errors="replace")[-1500:]
@@ -85,9 +129,22 @@ class WorkerGame:
             if len(self.buffer) > 16 * 1024 * 1024:
                 raise ValueError("Game worker response too large")
         line, self.buffer = self.buffer.split(b"\n", 1)
-        response = json.loads(line)
+        try:
+            response = json.loads(line)
+        except (ValueError, UnicodeError) as exc:
+            self.log.seek(0)
+            detail = self.log.read().decode(errors="replace")[-1500:]
+            raise RuntimeError(f"Invalid game worker reply: {line[:200]!r}; {detail}") from exc
         if "error" in response:
             raise RuntimeError(response["error"])
+        if trace and time.monotonic() - started >= 25:
+            self.log.seek(0)
+            detail = self.log.read().decode(errors="replace")[-6000:]
+            print(
+                f"Slow engine reply: {self.id}, step {self.steps}, "
+                f"{time.monotonic() - started:.2f} seconds; {detail}",
+                flush=True,
+            )
         return response
 
     def frame(self):
@@ -98,7 +155,12 @@ class WorkerGame:
             raise ValueError("Illegal game action")
         if self.done:
             raise ValueError("Episode already finished")
-        self.done = self._call({"command": "step", "action": action})["done"]
+        # Native Linux software rendering took 77-79 seconds for one STK frame
+        # in the long replay check. This is an engine watchdog, not the model's
+        # response budget. Keep the full image and exact native replay checks.
+        timeout = 180 if self.id == "supertuxkart-lighthouse" else 30
+        self.done = self._call({"command": "step", "action": action}, timeout)["done"]
+        self.steps += 1
 
     def result(self):
         return self._call({"command": "result"})
@@ -120,7 +182,7 @@ class WorkerGame:
             self.process.wait()
         self.selector.close()
         self.process.stdin.close()
-        self.process.stdout.close()
+        self.reply_stream.close()
         self.log.close()
         self._remove_container()
 

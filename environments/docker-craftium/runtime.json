@@ -11,5 +11,9 @@
     "craftium-envs/common_mods/mobs": "03fbe477c31d7c55068d0b085a0ea0b071e97e01",
     "craftium-envs/common_mods/mobs_monster": "4ab678d7ec8bbd4ea3a1af711c44b05238aebb67",
     "craftium-envs/common_mods/superflat": "bdc6630f07d99245b62970214c0588fbc52f992d"
-  }
+  },
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

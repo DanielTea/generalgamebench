@@ -1,23 +1,45 @@
-# SuperTuxKart Lighthouse
+# SuperTuxKart runtime
 
-`supertuxkart-lighthouse` task version 2 runs PySuperTuxKart2 0.7.4 with the explicit `deterministic-render-v1` patch, official SuperTuxKart 1.5 assets and Mesa software rendering in Linux ARM64. It was validated through Docker Desktop on an Apple Silicon Mac. The unpatched Mac renderer remains unadmitted because repeated runs produce different animation pixels.
+Task `supertuxkart-lighthouse` version 3 uses PySuperTuxKart2 0.7.4 with patch
+`deterministic-render-v2`. It uses the official SuperTuxKart 1.5 assets and Mesa
+software rendering. The runtime supports Linux ARM64 and Linux x86_64. A Mac
+uses its native ARM64 image through Docker Desktop.
 
 ```sh
-uv run python environments/docker-stk/install.py
-GGBENCH_RUN_INTEGRATION=1 uv run pytest tests/test_integrations.py -k supertuxkart -q
-uv run generalgamebench run --agent random --games supertuxkart-lighthouse --seeds 2 --start-seed 5000 --steps 200 --mode exhibition --output runs/stk-example
+uv run --no-sync python environments/docker-stk/install.py
+GGBENCH_RUN_INTEGRATION=1 uv run --no-sync pytest tests/test_integrations.py -k supertuxkart -q
 ```
 
-The installer verifies the upstream source revision, pybind11 submodule, patch checksum, downloaded asset archive and extracted asset tree. The release does not contain engine binaries or game assets. Preserve the built image for a cohort: every episode records its immutable image ID, engine revision, patch variant and asset digest, and replay rejects a different image. Pinned source and Python packages do not make changing distribution system packages bit-for-bit reproducible.
+The installer checks the engine revision, source patch, and asset checksums.
+It keeps the assets outside the image and mounts them read-only. The engine
+has no network access. Each architecture has a separate image identity.
+Both images use one renderer thread and 128-bit vectors. Mesa documents this
+setting in its [LLVMpipe guide](https://docs.mesa3d.org/drivers/llvmpipe.html).
 
-The native camera is 320×240 RGB. Six controls are exposed: wait, accelerate, accelerate-left, accelerate-right, brake and rescue. Each decision advances 0.2 simulated seconds. One player-controlled kart drives one Lighthouse lap, without opponents. Initialization waits for the native race start and then advances 50 fixed neutral decisions to settle the introduction. The seed and private kart/track state stay with the referee.
+The patch stops the Irrlicht wall clock. It advances animation and material
+wind with the physics clock. It preserves scene registration order. It also
+sorts shader names, texture keys, and mesh creation IDs before drawing.
+This prevents memory addresses from selecting which object wins a depth tie.
+The referee uses the complete native image. It does not mask or round pixels.
 
-Score is the current nonnegative native overall distance divided by native track length, clamped to [0,1]; raw progress, distance, track length and native finish status remain in evidence. In particular, the negative pre-start sentinel must never award a lap. Native race completion or the declared horizon ends an episode. The progress regression covers 200 actions and compares all 201 camera frames, scores and metadata across fresh containers with deliberately different delays between actions. Separate wait/rescue checks cover false progress at the starting line. This validates one time-trial task, not the entire game.
+A long random-control test found a one-pixel difference in the earlier shader
+renderer. Version 2 of the patch adds a stable order to that rendering path.
+Earlier results retain task version 2 and their original image identity.
+Do not replace their metadata with the new version.
 
-## Explicit engine variant
+The task starts with 50 neutral steps. A valid action advances 0.2 seconds.
+The score is native forward distance divided by track length, limited to [0, 1].
+The negative start sentinel cannot award a lap. Tests cover driving, random
+controls, wait, rescue, and exact image and score replay.
 
-The patch stops the Irrlicht wall clock and advances it from physics ticks, including the material wind timer. It also preserves scene registration order instead of sorting solid objects by texture pointer addresses. That removes process-dependent depth ties found in the broader seed-5001 random-control trace. It does not mask or discard image regions. The task uses the complete native rendered image; exact PNG equality remains the admission gate. The patch also allows explicit native ARM compilation on macOS for diagnostics, but only the Linux ARM64 renderer is admitted. The frozen v0.2 standings do not include this new task.
+The engine step limit is 180 seconds. A native Linux x86_64 software renderer
+took 77 to 79 seconds for one frame in the long random-control test. It then
+completed with exact images and scores. A 30-second engine limit stopped that
+valid operation. The native trace showed a wait in Mesa during font drawing.
+This engine limit is separate from the model response timeout and the suite
+p95 limit below 200 ms. Engine advancement stays outside the model timer.
 
-The trusted game container has no external network, drops capabilities, uses a read-only filesystem and mounts only referee source and verified game assets. The participant runs separately. This is dependency isolation for local evaluation, not independent hostile-agent attestation.
-
-The upstream engine and this derivative patch are GPL-3.0-or-later, with bundled components and assets retaining their separate notices. See [COPYING](COPYING) and [upstream source](https://github.com/bpiwowar/pystk2/tree/dd70f6823f248ae1df2ce513839a9b2c8c940c39). The benchmark's original-code MIT license does not override these terms.
+The upstream engine and this patch use GPL-3.0-or-later. Bundled components and
+assets retain their separate notices. See [COPYING](COPYING) and the pinned
+[upstream source](https://github.com/bpiwowar/pystk2/tree/dd70f6823f248ae1df2ce513839a9b2c8c940c39).
+The benchmark MIT license does not replace these terms.

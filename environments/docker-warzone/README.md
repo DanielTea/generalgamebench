@@ -1,5 +1,7 @@
 # Warzone 2100 — first oil derrick
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `warzone-first-derrick` runs the original TUTORIAL3 base-building tutorial in Warzone 2100 4.7.0. Select a construction truck and click an oil resource to construct a derrick. The first native completed structure scores one and ends the task. Losing both trucks or reaching the horizon ends an unsuccessful attempt. This is an introductory construction task, not a campaign or multiplayer match score.
 
 ```sh
@@ -13,6 +15,6 @@ The patch also replaces the tutorial script's disabled dynamic `Function` call w
 
 A 41-decision route builds the first oil derrick. Both final worker admission tests pass exact image, score, termination and metadata replay, including deliberately delayed inputs.
 
-The installer verifies the game revision, recursive submodule revisions, source patch, generated revision cache and SDL3 3.2.26 source archive. It builds Linux ARM64 for Docker Desktop, with external networking disabled during evaluation, a read-only root and a temporary configuration directory. Evidence records the immutable image ID; local runs remain unattested.
+The installer verifies the game revision, recursive submodule revisions, source patch, generated revision cache and SDL3 3.2.26 source archive. It builds the Linux image for the host architecture, with external networking disabled during evaluation, a read-only root and a temporary configuration directory. Evidence records the immutable image ID; local runs remain unattested.
 
 The engine and source changes retain their [GPL terms](COPYING), [additional terms](COPYING.NONGPL) and [upstream notices](COPYING.README). Assets keep their original licenses. The benchmark's MIT license does not relicense the game, and evidence/Hugging Face exports contain no game binary.

@@ -1,5 +1,7 @@
 # Dungeon Crawl Stone Soup: first experience
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `dcss-first-experience` starts a new native Dungeon:1 game as a Minotaur Fighter with a war axe. It uses DCSS 0.34.0's complete 800×600 SDL tile view, including its ordinary inventory and messages. Compass controls move or attack an adjacent enemy; wait, confirm and cancel are also available. The first native experience gain scores one and ends this bounded task. Death or the declared horizon ends it without success. This is an introductory combat objective, not a full dungeon completion score.
 
 ```sh
@@ -12,6 +14,6 @@ The pinned source patch connects native key requests to the private referee and 
 
 The referee reads native experience and health privately. The agent receives pixels and legal control names only. Seed zero, which upstream reserves for unseeded games, maps to uint64 maximum; other seeds are passed unchanged. Admission tests cover a 24-key first-experience route at seed 71, a zero-seed wait trajectory, and exact fresh-process image/reward/metadata replay with varied response delays.
 
-The installer verifies the source revision and patch digest, then builds Linux ARM64 for Docker Desktop on this Mac. The trusted engine container runs with no external network, a read-only root and a temporary home/save directory. Evidence records its immutable image ID. Rebuilding distribution dependencies can change that ID; preserve the image used for an evidence cohort. Local execution is unattested.
+The installer verifies the source revision and patch digest, then builds the image for the host architecture. The trusted engine container runs with no external network, a read-only root and a temporary home/save directory. Evidence records its immutable image ID. Rebuilding distribution dependencies can change that ID; preserve the image used for an evidence cohort. Local execution is unattested.
 
 The engine and this source patch retain [GPL-2.0-or-later terms and bundled notices](LICENSE). The game's tile artwork retains [its upstream notices](TILES-LICENSE.txt); the benchmark's MIT license does not relicense it. No game binary is included in evidence or Hugging Face exports.

@@ -45,5 +45,9 @@
   },
   "sdl_archive_url": "https://github.com/libsdl-org/SDL/releases/download/release-3.2.26/SDL3-3.2.26.tar.gz",
   "sdl_archive_sha256": "dad488474a51a0b01d547cd2834893d6299328d2e30f479a3564088b5476bae2",
-  "version_cache_sha256": "19bd91883fc6cf16693187d8f6777992cb4b69994c0fdbc8d027f9c693c4b897"
+  "version_cache_sha256": "19bd91883fc6cf16693187d8f6777992cb4b69994c0fdbc8d027f9c693c4b897",
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

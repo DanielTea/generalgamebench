@@ -1,4 +1,4 @@
-# Official macOS x86_64 wheels; run under Rosetta on Apple Silicon.
+# Official Linux and macOS x86_64 wheels. Apple Silicon requires Rosetta.
 procgen==0.10.7
 gym3==0.3.3
 numpy==1.26.4
