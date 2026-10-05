@@ -75,7 +75,7 @@
   {
     "name": "SuperTuxKart",
     "category": "OPEN SOURCE · 3D RACING",
-    "note": "Validated Lighthouse time trial with the deterministic-render-v1 engine patch and Linux ARM64 renderer. Exact 200-action image/score replay passed with varied action delays. One kart and one track only; v0.2 model standings are unchanged.",
+    "note": "The Lighthouse time trial uses task version 3 and renderer deterministic-render-v2. Tests passed on the Mac and native Linux x86_64. They compare exact images and scores over long action sequences. This task uses one kart and one track.",
     "url": "https://github.com/supertuxkart/stk-code",
     "status": "runnable",
     "id": "supertuxkart",
@@ -85,7 +85,7 @@
     "media_source": "https://github.com/DanielTea/generalgamebench/releases/tag/v0.3.0",
     "media_credit": "SuperTuxKart contributors",
     "media_kind": "Recorded benchmark",
-    "media_caption": "Recorded supertuxkart-lighthouse task with the random reference policy. Consecutive evaluation frames at 6 fps; playback speed does not measure reaction time.",
+    "media_caption": "This archived clip uses task version 2 and renderer deterministic-render-v1. The random reference policy controls the kart. Consecutive frames play at 6 fps. Playback speed does not measure reaction time.",
     "integration_state": "validated",
     "task_ids": [
       "supertuxkart-lighthouse"
@@ -97,7 +97,7 @@
   {
     "name": "Luanti",
     "category": "OPEN SOURCE · 3D SANDBOX",
-    "note": "Validated one-tree task in the pinned Craftium forest with an explicit serial-lockstep engine patch on Linux ARM64. Native tree reward and long exact camera/score replay pass; coordinates and voxels remain private. New task, outside the frozen v0.2 model standings.",
+    "note": "Validated one-tree task in the pinned Craftium forest with an explicit serial-lockstep engine patch on Linux ARM64 and x86_64. Native tree reward and long exact camera/score replay pass; coordinates and voxels remain private. New task, outside the frozen v0.2 model standings.",
     "url": "https://github.com/luanti-org/luanti",
     "status": "runnable",
     "id": "luanti",
@@ -207,7 +207,7 @@
   {
     "name": "Mindustry",
     "category": "INDIE · 2D STRATEGY",
-    "note": "Mine 15 copper in native Ground Zero with movement and cursor controls. The pinned ARM64 SDL client passes native reward and delayed exact camera replay. This bounded task is outside the frozen v0.2 model standings.",
+    "note": "Mine 15 copper in native Ground Zero with movement and cursor controls. The pinned SDL clients for Linux ARM64 and x86_64 pass native reward and delayed exact camera replay. This bounded task is outside the frozen v0.2 model standings.",
     "url": "https://github.com/Anuken/Mindustry",
     "status": "runnable",
     "id": "mindustry",
@@ -255,7 +255,7 @@
   {
     "name": "NetHack",
     "category": "ROGUELIKE · 2D",
-    "note": "Validated on this Mac: nethack-score. Explore NetHack as the player character, survive and gain game score. Compass actions move or attack. The image is the game's native tile renderer. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: nethack-score. Explore NetHack as the player character, survive and gain game score. Compass actions move or attack. The image is the game's native tile renderer. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/facebookresearch/nle",
     "status": "runnable",
     "id": "nethack",
@@ -277,7 +277,7 @@
   {
     "name": "MiniHack",
     "category": "RESEARCH · 2D",
-    "note": "Validated on this Mac: minihack-room. Navigate the small room to the staircase. Use compass directions; the goal gives reward one. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: minihack-room. Navigate the small room to the staircase. Use compass directions; the goal gives reward one. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/facebookresearch/minihack",
     "status": "runnable",
     "id": "minihack",
@@ -347,7 +347,7 @@
   {
     "name": "Crafter",
     "category": "RESEARCH · 2D SURVIVAL",
-    "note": "Validated on this Mac: crafter. Survive, collect resources, craft tools and unlock achievements. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: crafter. Survive, collect resources, craft tools and unlock achievements. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/danijar/crafter",
     "status": "runnable",
     "id": "crafter",
@@ -369,7 +369,7 @@
   {
     "name": "MiniWorld",
     "category": "RESEARCH · 3D",
-    "note": "Validated on this Mac: miniworld-oneroom. Navigate the first-person room and touch the red box. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: miniworld-oneroom. Navigate the first-person room and touch the red box. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/Farama-Foundation/Miniworld",
     "status": "runnable",
     "id": "miniworld",
@@ -391,7 +391,7 @@
   {
     "name": "Unity ML-Agents environments",
     "category": "MODERN ENGINE · 3D / 2D",
-    "note": "Validated VisualFoodCollector scene with the official pinned Mac executable. Native food reward, goal collision and exact image/score replay passed; private vectors stay referee-only. This one scene is not in the frozen v0.2 model standings.",
+    "note": "Validated VisualFoodCollector scene with the official pinned executables for macOS and Linux x86_64. Native food reward, goal collision and exact image/score replay passed; private vectors stay referee-only. This one scene is not in the frozen v0.2 model standings.",
     "url": "https://github.com/Unity-Technologies/ml-agents",
     "status": "runnable",
     "id": "unity-ml-agents-environments",
@@ -413,7 +413,7 @@
   {
     "name": "Google Research Football",
     "category": "RESEARCH · 3D SPORT",
-    "note": "Validated Football Academy close-range goal task in Linux ARM64. Native goal scoring, termination and exact image/score replay passed. This Academy scenario is not a full football match or part of the frozen v0.2 model standings.",
+    "note": "Validated Football Academy close-range goal task in Linux ARM64 and x86_64. Native goal scoring, termination and exact image/score replay passed. This Academy scenario is not a full football match or part of the frozen v0.2 model standings.",
     "url": "https://github.com/google-research/football",
     "status": "runnable",
     "id": "google-research-football",
@@ -563,7 +563,7 @@
   {
     "name": "Atari / Arcade Learning Environment",
     "category": "RETRO · 2D FAMILY",
-    "note": "Validated on this Mac: atari-breakout. Move the paddle and break bricks. Fire starts the ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: atari-breakout. Move the paddle and break bricks. Fire starts the ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
     "status": "runnable",
     "id": "atari-arcade-learning-environment",
@@ -585,7 +585,7 @@
   {
     "name": "Stable-Retro library",
     "category": "RETRO · 2D FAMILY",
-    "note": "Validated on this Mac: retro-airstriker. Pilot the ship, dodge enemies and shoot. This is the freely distributed Airstriker Genesis demo. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: retro-airstriker. Pilot the ship, dodge enemies and shoot. This is the freely distributed Airstriker Genesis demo. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/Farama-Foundation/stable-retro",
     "status": "runnable",
     "id": "stable-retro-library",
@@ -607,7 +607,7 @@
   {
     "name": "PettingZoo environments",
     "category": "MULTI-AGENT · 2D FAMILY",
-    "note": "Validated on this Mac: pettingzoo-pistonball. Move the ball left. Control the middle piston; the other pistons follow a fixed periodic policy. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: pettingzoo-pistonball. Move the ball left. Control the middle piston; the other pistons follow a fixed periodic policy. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/Farama-Foundation/PettingZoo",
     "status": "runnable",
     "id": "pettingzoo-environments",
@@ -629,7 +629,7 @@
   {
     "name": "Procgen / BigFish",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-bigfish. Eat smaller fish and avoid larger fish. Move in four directions. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-bigfish. Eat smaller fish and avoid larger fish. Move in four directions. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-bigfish",
@@ -651,7 +651,7 @@
   {
     "name": "Procgen / BossFight",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-bossfight. Dodge enemy projectiles and shoot the boss. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-bossfight. Dodge enemy projectiles and shoot the boss. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-bossfight",
@@ -673,7 +673,7 @@
   {
     "name": "Procgen / CaveFlyer",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-caveflyer. Fly through the cave to the exit without hitting walls. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-caveflyer. Fly through the cave to the exit without hitting walls. D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-caveflyer",
@@ -695,7 +695,7 @@
   {
     "name": "Procgen / Chaser",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-chaser. Collect green orbs and avoid chasing enemies. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-chaser. Collect green orbs and avoid chasing enemies. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-chaser",
@@ -717,7 +717,7 @@
   {
     "name": "Procgen / Climber",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-climber. Climb platforms and collect stars; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-climber. Climb platforms and collect stars; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-climber",
@@ -739,7 +739,7 @@
   {
     "name": "Procgen / CoinRun",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-coinrun. Reach the coin at the end of the platform level; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-coinrun. Reach the coin at the end of the platform level; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-coinrun",
@@ -761,7 +761,7 @@
   {
     "name": "Procgen / Dodgeball",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-dodgeball. Avoid enemy balls and defeat enemies; D throws a ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-dodgeball. Avoid enemy balls and defeat enemies; D throws a ball. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-dodgeball",
@@ -783,7 +783,7 @@
   {
     "name": "Procgen / FruitBot",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-fruitbot. Collect fruit while avoiding obstacles and non-fruit objects; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-fruitbot. Collect fruit while avoiding obstacles and non-fruit objects; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-fruitbot",
@@ -805,7 +805,7 @@
   {
     "name": "Procgen / Heist",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-heist. Collect keys to open matching doors and reach the gem. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-heist. Collect keys to open matching doors and reach the gem. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-heist",
@@ -827,7 +827,7 @@
   {
     "name": "Procgen / Jumper",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-jumper. Jump across platforms to the carrot; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-jumper. Jump across platforms to the carrot; up jumps. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-jumper",
@@ -849,7 +849,7 @@
   {
     "name": "Procgen / Leaper",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-leaper. Cross roads and water to reach the finish without being hit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-leaper. Cross roads and water to reach the finish without being hit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-leaper",
@@ -871,7 +871,7 @@
   {
     "name": "Procgen / Maze",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-maze. Navigate the maze to the cheese using four-direction movement. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-maze. Navigate the maze to the cheese using four-direction movement. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-maze",
@@ -893,7 +893,7 @@
   {
     "name": "Procgen / Miner",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-miner. Collect diamonds, avoid falling rocks, and reach the exit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-miner. Collect diamonds, avoid falling rocks, and reach the exit. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-miner",
@@ -915,7 +915,7 @@
   {
     "name": "Procgen / Ninja",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-ninja. Reach the mushroom; hold up to charge a jump and release to jump. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-ninja. Reach the mushroom; hold up to charge a jump and release to jump. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-ninja",
@@ -937,7 +937,7 @@
   {
     "name": "Procgen / Plunder",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-plunder. Shoot enemy pirate ships and avoid friendly ships; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-plunder. Shoot enemy pirate ships and avoid friendly ships; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-plunder",
@@ -959,7 +959,7 @@
   {
     "name": "Procgen / StarPilot",
     "category": "PROCEDURAL · 2D",
-    "note": "Validated on this Mac: procgen-starpilot. Fly, dodge hazards and shoot enemies; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
+    "note": "Native replay passed on macOS and Linux x86_64: procgen-starpilot. Fly, dodge hazards and shoot enemies; D fires. Exact frame and score replay passed. This validates these tasks only, not every game in a library.",
     "url": "https://github.com/openai/procgen",
     "status": "runnable",
     "id": "procgen-starpilot",
