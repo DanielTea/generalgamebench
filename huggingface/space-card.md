@@ -57,7 +57,7 @@ The timer includes image retrieval, encoding, transport, inference and action va
 The simulation waits between actions.
 These tests do not prove continuous real-time control.
 
-The leaderboard separates local policies, current model tests and previous model tests.
+The leaderboard shows the current model tests and official ranks.
 The current hosted-model tests use one seed and eight decisions per scenario.
 These short tests show that the connections work.
 They do not give a reliable measure of model intelligence.
