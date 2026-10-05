@@ -25,7 +25,7 @@ A local process under the same user can read referee files, inspect processes or
 5. Runner signature over manifest, image/model/code digests, complete evidence root and timing policy. Signing keys live outside participant/worker containers; ingestion trusts only administrator-approved keys.
 6. Independent replay/adjudication, provenance retention, adversarial testing, rate limits, removal/appeal procedure and incident response.
 
-The portable `ggbench` launcher uses a read-only root, an unprivileged host UID, dropped capabilities, bounded processes and no network by default. Game execution is tested in Docker, but the local referee and policy still share a trust domain. This is not an adversarial worker service. The separate sample `scripts/container-agent.py` remains a development wrapper, not certified isolation.
+The portable `ggbench` launcher uses a read-only root, the invoking user’s UID, dropped capabilities, bounded processes and no network by default. Game execution is tested in Docker, but the local referee and policy still share a trust domain. This is not an adversarial worker service. The separate sample `scripts/container-agent.py` remains a development wrapper, not certified isolation.
 
 The `verify-submission` command treats archives as data. It bounds decompressed sizes and file counts, rejects unsafe paths, duplicate members and links, checks full suite membership and recalculates rankings. Native replay runs only installed repository-owned game adapters; it never executes submitted policy code or pulls an image named by the submission. Upload parts have per-part and full-archive checksums. Successful validation retains `local-unattested` trust and cannot authenticate participant timing or confer an official rank.
 
