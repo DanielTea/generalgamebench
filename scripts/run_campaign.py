@@ -5,10 +5,13 @@ Local models are evaluated serially to avoid overlapping GPU memory allocations.
 """
 
 import argparse
+import base64
 import concurrent.futures
+import io
 import json
 import os
 import re
+import secrets
 from pathlib import Path
 
 from generalgamebench.evidence import verify_episode
@@ -18,6 +21,27 @@ from generalgamebench.protocol import ProcessAgent
 from generalgamebench.runner import run_episode
 
 ROOT = Path(__file__).resolve().parents[1]
+WARMUP_PROFILE = "synthetic-gray-3/1"
+
+
+def warmup_agent(agent, profile):
+    if profile != WARMUP_PROFILE:
+        raise ValueError("Unknown model startup profile")
+    from PIL import Image
+
+    for size in ((160, 120), (320, 240), (960, 640)):
+        image = io.BytesIO()
+        Image.new("RGB", size, "gray").save(image, format="PNG")
+        agent.act(
+            {
+                "protocol": "screenquest/1",
+                "nonce": secrets.token_hex(16),
+                "image_png": base64.b64encode(image.getvalue()).decode(),
+                "actions": ["wait", "left", "right"],
+                "instructions": "This is a startup check. Choose wait.",
+            },
+            120,
+        )
 
 
 def model_id(entry):
@@ -44,6 +68,13 @@ def make_agent(entry):
             "tool_events": 0,
             "prompt_version": PROMPT_VERSION,
         }
+        if entry.get("warmup"):
+            agent.metadata["warmup"] = entry["warmup"]
+            try:
+                warmup_agent(agent, entry["warmup"])
+            except BaseException:
+                agent.close()
+                raise
     return agent
 
 
@@ -76,6 +107,7 @@ def evaluate(entry, args):
                         or metadata.get("requested_model") != entry["model"]
                         or metadata.get("revision") != entry.get("revision")
                         or metadata.get("prompt_version") != PROMPT_VERSION
+                        or metadata.get("warmup") != entry.get("warmup")
                     ):
                         raise ValueError(
                             "Existing episode configuration differs; use a new campaign directory"
