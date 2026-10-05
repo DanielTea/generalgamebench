@@ -1,1 +1,1 @@
-ghcr.io/danieltea/generalgamebench:0.4.0
+ghcr.io/danieltea/generalgamebench@sha256:1fabc2750c87ba08f4429715b2e7a07b36c20464d554744eba1164d9bda4eb2a
