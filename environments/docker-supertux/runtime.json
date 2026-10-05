@@ -11,5 +11,9 @@
     "external/sexp-cpp": "6018831abc1e5d5020c7b62f99962806dacf4c9f",
     "external/squirrel": "dda695e95f221b5e038796eab1f13d734dbd7270",
     "external/tinygettext": "355659015e557749f6b514881c3a35d44d6e5f57"
-  }
+  },
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

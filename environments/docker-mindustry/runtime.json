@@ -40,5 +40,9 @@
       "sha256": "6781985e2b17142bd07e1a7be59b793485cb026b37667377d16610ae98148b6e"
     }
   },
-  "patch_sha256": "e8b825c645b81a6eaaf5d603e460a91ddc4992425876ca04e7f7ad4b1b2afd15"
+  "patch_sha256": "e8b825c645b81a6eaaf5d603e460a91ddc4992425876ca04e7f7ad4b1b2afd15",
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

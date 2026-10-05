@@ -1,7 +1,6 @@
 """Build the GPL engine variant and install verified upstream assets separately."""
 
 import hashlib
-import json
 import shutil
 import subprocess
 import tarfile
@@ -9,7 +8,7 @@ import tempfile
 import urllib.request
 from pathlib import Path, PurePosixPath
 
-from generalgamebench.container_runtime import asset_digest
+from generalgamebench.container_runtime import asset_digest, build_arguments, runtime_manifest
 
 
 def install_assets(root, manifest):
@@ -57,7 +56,7 @@ def install_assets(root, manifest):
 def main():
     folder = Path(__file__).resolve().parent
     root = folder.parents[1]
-    manifest = json.loads((folder / "runtime.json").read_text())
+    manifest = runtime_manifest(folder)
     patch = folder / "simulation-clock.patch"
     if hashlib.sha256(patch.read_bytes()).hexdigest() != manifest["patch_sha256"]:
         raise ValueError("Engine patch differs from the task manifest")
@@ -100,6 +99,7 @@ def main():
         [
             "docker",
             "build",
+            *build_arguments(),
             "--platform",
             manifest["platform"],
             "-f",

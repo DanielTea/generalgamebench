@@ -1,10 +1,11 @@
 """Build the pinned, explicitly patched Warzone 2100 source and game snapshot."""
 
 import hashlib
-import json
 import shutil
 import subprocess
 from pathlib import Path
+
+from generalgamebench.container_runtime import build_arguments, runtime_manifest
 
 
 def git(source, *args):
@@ -14,7 +15,7 @@ def git(source, *args):
 def main():
     folder = Path(__file__).resolve().parent
     root = folder.parents[1]
-    manifest = json.loads((folder / "runtime.json").read_text())
+    manifest = runtime_manifest(folder)
     patch = folder / "lockstep.patch"
     if hashlib.sha256(patch.read_bytes()).hexdigest() != manifest["patch_sha256"]:
         raise ValueError("Warzone 2100 patch differs from the pinned manifest")
@@ -59,6 +60,7 @@ def main():
         [
             "docker",
             "build",
+            *build_arguments(),
             "--platform",
             manifest["platform"],
             "-f",

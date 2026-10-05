@@ -5,5 +5,9 @@
   "platform": "linux/arm64",
   "variant": "native-lockstep-v1",
   "patch_sha256": "d2e5aaafed8816effd74d916b1e4577318c975377fc1897e8fda3e3f2748a9a9",
-  "submodules": {}
+  "submodules": {},
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

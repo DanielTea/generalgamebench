@@ -7,6 +7,7 @@ The executable is installed separately; no Unity editor is required.
 import hashlib
 import json
 import os
+import platform
 import socket
 import tempfile
 from pathlib import Path
@@ -14,12 +15,28 @@ from pathlib import Path
 import numpy as np
 
 
+def unity_manifest(system=None, machine=None):
+    system, machine = system or platform.system(), machine or platform.machine()
+    if system == "Darwin":
+        name = "assets.json"
+    elif system == "Linux" and machine in {"x86_64", "AMD64"}:
+        name = "assets-linux.json"
+    else:
+        raise RuntimeError("The Unity task requires macOS or Linux x86_64.")
+    root = Path(__file__).resolve().parents[2]
+    return json.loads((root / "environments/unity" / name).read_text())
+
+
 def asset_digest(app):
     digest = hashlib.sha256()
     for path in sorted(app.rglob("*")):
         # The official executable writes profiler timings inside its app bundle.
         # These generated logs are not input assets and differ on every run.
-        if path.relative_to(app).as_posix().startswith("Contents/ML-Agents/Timers/"):
+        if (
+            path.relative_to(app)
+            .as_posix()
+            .startswith(("Contents/ML-Agents/Timers/", "Startup_Data/ML-Agents/Timers/"))
+        ):
             continue
         if path.is_file():
             digest.update(path.relative_to(app).as_posix().encode() + b"\0")
@@ -51,10 +68,13 @@ class UnityPixelsEnv:
         )
 
         root = Path(__file__).resolve().parents[2]
-        manifest = json.loads((root / "environments/unity/assets.json").read_text())
+        manifest = unity_manifest()
         app = Path(
             os.environ.get(
-                "GGBENCH_UNITY_APP", root / ".game-assets/unity" / manifest["application"]
+                "GGBENCH_UNITY_APP",
+                root
+                / manifest.get("install_directory", ".game-assets/unity")
+                / manifest["application"],
             )
         )
         if not app.is_dir():
@@ -75,7 +95,9 @@ class UnityPixelsEnv:
                 )
                 try:
                     self.env = UnityEnvironment(
-                        file_name=str(app),
+                        file_name=str(app / manifest["executable"])
+                        if "executable" in manifest
+                        else str(app),
                         seed=seed,
                         base_port=port,
                         worker_id=0,
@@ -86,6 +108,7 @@ class UnityPixelsEnv:
                             "--mlagents-scene-name",
                             "Assets/ML-Agents/Examples/FoodCollector/Scenes/VisualFoodCollector.unity",
                             "-batchmode",
+                            *(["-force-glcore"] if platform.system() == "Linux" else []),
                         ],
                     )
                     break

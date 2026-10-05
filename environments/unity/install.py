@@ -1,7 +1,6 @@
-"""Download the official pinned Mac example, verify it, and extract locally."""
+"""Install the pinned Unity example for the current operating system."""
 
 import hashlib
-import json
 import shutil
 import stat
 import tempfile
@@ -9,16 +8,19 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
+from generalgamebench.unity_engine import asset_digest, unity_manifest
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
-    manifest = json.loads(Path(__file__).with_name("assets.json").read_text())
-    destination = ROOT / ".game-assets/unity"
+    manifest = unity_manifest()
+    destination = ROOT / manifest.get("install_directory", ".game-assets/unity")
     if destination.exists():
-        raise FileExistsError(
-            "Unity assets already exist; preserve them and inspect before reinstalling"
-        )
+        if asset_digest(destination / manifest["application"]) != manifest["app_tree_sha256"]:
+            raise ValueError("Existing Unity assets differ. Inspect them before reinstalling.")
+        print("Pinned Unity assets are already installed.")
+        return
     destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=destination.parent) as temporary:
         folder = Path(temporary)
@@ -38,8 +40,14 @@ def main():
                 if stat.S_ISLNK(item.external_attr >> 16):
                     raise ValueError("Unexpected archive symlink")
             zipped.extractall(folder)
-        executable = folder / manifest["application"] / "Contents/MacOS/UnityEnvironment"
+        executable = (
+            folder
+            / manifest["application"]
+            / manifest.get("executable", "Contents/MacOS/UnityEnvironment")
+        )
         executable.chmod(0o755)
+        if asset_digest(folder / manifest["application"]) != manifest["app_tree_sha256"]:
+            raise ValueError("Extracted Unity assets differ from the pinned input tree.")
         folder.rename(destination)
     print("Pinned Unity example installed. See environments/README.md for verification.")
 

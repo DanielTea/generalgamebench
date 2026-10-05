@@ -6,7 +6,9 @@ This isolates dependencies, not hostile code. The agent receives no worker handl
 import base64
 import json
 import os
+import platform
 import selectors
+import shutil
 import signal
 import subprocess
 import tempfile
@@ -33,6 +35,15 @@ class WorkerGame:
             raise RuntimeError(f"Install the {task.runtime} runtime; see environments/README.md")
         else:
             command = [str(python), "-u", str(Path(__file__).with_name("environment_worker.py"))]
+            if platform.system() == "Linux" and game_id in {
+                "unity-food-collector",
+                "miniworld-oneroom",
+                "retro-airstriker",
+            }:
+                xvfb = shutil.which("xvfb-run")
+                if not xvfb:
+                    raise RuntimeError("Install xvfb and xauth for off-screen Linux rendering.")
+                command = [xvfb, "-a", "-s", "-screen 0 1280x720x24", *command]
         self.log = tempfile.TemporaryFile()
         self.process = subprocess.Popen(
             command,

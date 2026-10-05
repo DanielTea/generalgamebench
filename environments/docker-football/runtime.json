@@ -3,5 +3,9 @@
   "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81",
   "repository": "https://github.com/google-research/football.git",
   "tag": "v2.10.2",
-  "platform": "linux/arm64"
+  "platform": "linux/arm64",
+  "supported_platforms": [
+    "linux/arm64",
+    "linux/amd64"
+  ]
 }

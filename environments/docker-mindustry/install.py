@@ -1,13 +1,14 @@
 """Build Mindustry and its missing Linux ARM64 display binding from pinned inputs."""
 
 import hashlib
-import json
 import shutil
 import subprocess
 import tarfile
 import tempfile
 import urllib.request
 from pathlib import Path
+
+from generalgamebench.container_runtime import build_arguments, runtime_manifest
 
 
 def digest(path):
@@ -18,7 +19,7 @@ def digest(path):
 def main():
     folder = Path(__file__).resolve().parent
     root = folder.parents[1]
-    manifest = json.loads((folder / "runtime.json").read_text())
+    manifest = runtime_manifest(folder)
     patch = folder / "clock.patch"
     if digest(patch) != manifest["patch_sha256"]:
         raise ValueError("Mindustry clock patch differs from the pinned manifest")
@@ -49,7 +50,16 @@ def main():
             shutil.copyfile(folder / name, build / name)
         shutil.copyfile(folder / "dockerignore", build / ".dockerignore")
         subprocess.run(
-            ["docker", "build", "--platform", manifest["platform"], "-t", manifest["image"], "."],
+            [
+                "docker",
+                "build",
+                *build_arguments(),
+                "--platform",
+                manifest["platform"],
+                "-t",
+                manifest["image"],
+                ".",
+            ],
             cwd=build,
             check=True,
         )

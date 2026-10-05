@@ -1,0 +1,75 @@
+name: Full Linux suite
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/install_linux.py'
+      - 'scripts/validate_linux.py'
+      - 'environments/**'
+      - '.github/workflows/linux-full-suite.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        runtime: [python, docker-football, docker-stk, docker-craftium, docker-supertux, docker-crawl, docker-openttd, docker-mindustry, docker-cdda, docker-warzone]
+    env:
+      GGBENCH_BUILD_JOBS: '2'
+      GGBENCH_CONTAINER_PLATFORM: linux/amd64
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      LP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.9.26'
+      - run: uv sync --frozen --python 3.12 --extra doom --extra dev --extra hub
+      - name: Install Linux system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y $(uv run --no-sync python scripts/install_linux.py --system-packages)
+      - name: Install pinned runtime
+        run: uv run --no-sync python scripts/install_linux.py --runtime '${{ matrix.runtime }}'
+      - name: Record and replay the assigned scenarios
+        run: uv run --no-sync python scripts/validate_linux.py --runtime '${{ matrix.runtime }}' --output 'runs/linux/${{ matrix.runtime }}'
+      - name: Save native evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: linux-${{ matrix.runtime }}-evidence
+          path: runs/linux/${{ matrix.runtime }}/
+          retention-days: 14
+  coverage:
+    needs: validate
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: linux-*-evidence
+          path: evidence
+      - name: Require all 43 scenarios from this commit
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          suite = json.loads(Path('benchmarks/mac-hosted-exhibition-2026-10-05.json').read_text())
+          reports = [json.loads(p.read_text()) for p in Path('evidence').glob('*/validation.json')]
+          games = [g for report in reports for g in report['games']]
+          assert len(reports) == 10
+          assert len(games) == len(set(games)) == 43
+          assert set(games) == set(suite['games'])
+          assert all(r['platform'] == 'linux/amd64' and r['source_commit'] == os.environ['GITHUB_SHA'] for r in reports)
+          print('All 43 scenarios passed native Linux x86_64 record and replay checks.')
+          Path('linux-validation.json').write_text(json.dumps(reports, indent=2) + '\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: linux-full-suite-validation
+          path: linux-validation.json
+          retention-days: 14

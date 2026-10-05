@@ -7,10 +7,42 @@ This is dependency isolation, not a claim of a hostile-agent evaluation service.
 
 import hashlib
 import json
+import os
+import platform
 import shutil
 import subprocess
 import uuid
 from pathlib import Path
+
+
+def runtime_manifest(folder, target=None):
+    """Select the native Linux image and retain its pinned engine identity."""
+    manifest = json.loads((Path(folder) / "runtime.json").read_text())
+    if target is None:
+        target = os.environ.get("GGBENCH_CONTAINER_PLATFORM")
+    if target is None:
+        architecture = {"arm64": "arm64", "aarch64": "arm64", "x86_64": "amd64", "AMD64": "amd64"}
+        machine = platform.machine()
+        if machine not in architecture:
+            raise RuntimeError(f"Unsupported processor: {machine}")
+        target = "linux/" + architecture[machine]
+    if target not in manifest.get("supported_platforms", [manifest["platform"]]):
+        raise ValueError(f"Unsupported engine platform: {target}")
+    old_arch = manifest["platform"].split("/")[1]
+    new_arch = target.split("/")[1]
+    suffix = "-" + old_arch
+    if not manifest["image"].endswith(suffix):
+        raise ValueError("Engine image must include its platform suffix")
+    manifest["image"] = manifest["image"][: -len(suffix)] + "-" + new_arch
+    manifest["platform"] = target
+    return manifest
+
+
+def build_arguments():
+    jobs = int(os.environ.get("GGBENCH_BUILD_JOBS", "2"))
+    if jobs < 1:
+        raise ValueError("GGBENCH_BUILD_JOBS must be positive")
+    return ["--build-arg", f"BUILD_JOBS={jobs}"]
 
 
 def asset_digest(root):
@@ -33,7 +65,7 @@ def container_command(runtime):
     if not docker:
         raise RuntimeError("Docker is required for this engine; see environments/README.md")
     root = Path(__file__).resolve().parents[2]
-    manifest = json.loads((root / "environments" / runtime / "runtime.json").read_text())
+    manifest = runtime_manifest(root / "environments" / runtime)
     try:
         inspection = subprocess.run(
             [docker, "image", "inspect", manifest["image"]],
