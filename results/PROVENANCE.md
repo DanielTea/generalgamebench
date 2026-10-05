@@ -1,5 +1,36 @@
 # Measured results provenance
 
+## 5 October 2026 — complete headless baseline refresh
+
+The four built-in policies — **Idle, Random, Pixel React and Pixel Tracker** — each played all **43 admitted scenarios**, with seeds 4000–4002 and a 24-decision horizon in realtime mode on evaluator 0.4.0. The complete cohort contains **516 episodes and 11,641 recorded decisions**. Every scheduled episode is retained, including **21 timeouts**, which abort their episodes and score zero. No hosted model or local VLM was called.
+
+Scored episodes ran one at a time on the shared Apple M3 Max with 48 GiB RAM and 16 CPU cores. This campaign started its replay audit only after recording finished. Other desktop and project activity was uncontrolled. Each episode starts a fresh policy process with the published RNG seed (1729), matching the public CLI. Fixed readiness and codec initialization happen before the scored clock. All game rendering is off screen, including Airstriker's explicit `rgb_array` mode.
+
+| Policy | Score / 100 | Suite p95 | Suite maximum | Timeouts |
+| --- | ---: | ---: | ---: | ---: |
+| Pixel Tracker | 16.070 | 39.93 ms | 182.97 ms | 7 |
+| Pixel React | 15.906 | 40.12 ms | 169.89 ms | 6 |
+| Random | 13.325 | 37.57 ms | 137.25 ms | 4 |
+| Idle | 11.727 | 39.65 ms | 243.14 ms | 4 |
+
+**All four fail the strict sub-100-ms gate.** A low p95 does not override a single late or failed response. Timeouts occurred in Warzone (12), OpenTTD (5), Mindustry (3) and SuperTux (1). The response clock includes screenshot retrieval, PNG encoding and communication as well as policy work, so these timings are not policy-only inference measurements. Every row remains local-unattested; the official track is empty. The three-seed intervals overlap between the two pixel policies and describe seed variation only.
+
+The new `local` track has a different task set and evaluator from the prior 33-scenario baseline cohort. The old rows and their original metadata remain under `local_previous`. Both model exhibition arrays, their metadata, availability records and original campaign pointer are preserved. The shorter model exhibition has different seeds, horizon and mode, so its aggregate scores are not directly comparable to these baseline scores.
+
+### Evidence and reproduction
+
+[The campaign declaration](baselines-2026-10-05/campaign.json) records the matrix and source hashes before recording. Its implementation commit is `a75a640`, and no scored source changed during this campaign. `episodes.json` contains all final episode records; `evidence-roots.json` binds the selected ledgers; `replay-validation.json` records exact replay checks for all 516 episodes. The exporter refuses incomplete matrices, mismatched result sidecars, changed sources or overwritten snapshots. Failed episodes were not rerun for a better outcome.
+
+The [baseline release](https://github.com/DanielTea/generalgamebench/releases/tag/baselines-2026-10-05) contains the full PNG observations, event ledgers and result records in `generalgamebench-evidence-baselines-2026-10-05.tar.gz`, plus the updated portable Hugging Face export and `SHA256SUMS`. This evidence archive is a normal tar.gz, requiring no delta codec. Extract into a fresh directory, install the relevant pinned game runtimes, and replay any restored episode:
+
+```sh
+uv run generalgamebench verify /path/to/extracted/runs/baselines-2026-10-05/tracker/coin-run-4000
+```
+
+The Hugging Face export preserves separate current and archived baseline configurations alongside both model cohorts. It was prepared locally; no Space or Dataset was uploaded. Archives contain no credentials, model weights or game-engine binaries. Game media retains its separate rights. See [the runtime guide](../environments/README.md) and [scoring methodology](../docs/METHODOLOGY.md).
+
+---
+
 ## 5 October 2026 — hosted-model refresh
 
 The new cohort evaluates **eleven accessible configured models across all 43 admitted scenarios**, plus four matched reference policies. Seven OpenAI models and four Claude models, including the explicitly requested Sonnet 5.5, completed the fixed suite. Opus 5.5 returned a provider-access error through the configured connection; its one attempted episode is preserved separately and receives no aggregate score. No fallback model is substituted.

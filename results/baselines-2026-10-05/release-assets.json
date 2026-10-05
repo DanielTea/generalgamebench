@@ -1,0 +1,10 @@
+{
+  "generalgamebench-evidence-baselines-2026-10-05.tar.gz": {
+    "sha256": "451617bc08d367022596116cde1fe21216fc4c12457fb7f44b9034a407121f4e",
+    "bytes": 362351418
+  },
+  "generalgamebench-huggingface-baselines-2026-10-05.tar.gz": {
+    "sha256": "cba6807f7f11cc05219141e32f42703c86a2969ce0777f59e500eec2208ecda7",
+    "bytes": 23857301
+  }
+}

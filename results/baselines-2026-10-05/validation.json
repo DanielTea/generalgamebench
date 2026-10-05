@@ -1,0 +1,49 @@
+{
+  "validated_at": "2026-10-05T10:04:05.117747+00:00",
+  "episodes": 516,
+  "decisions": 11641,
+  "all_replays_passed": true,
+  "recorded_source_hashes_match": true,
+  "published_matrix_complete": true,
+  "earlier_cohorts_preserved": true,
+  "official_entries": 0,
+  "retained_timeouts": 21,
+  "model_calls": 0,
+  "archive": {
+    "files": 12673,
+    "episodes": 516,
+    "all_original_bytes_match": true,
+    "archive_sha256": "451617bc08d367022596116cde1fe21216fc4c12457fb7f44b9034a407121f4e",
+    "archive_bytes": 362351418
+  },
+  "snapshot_sha256": "6fc5f49487494a66eaff8660d9309cc20ba1d4458d283c43809407cf34cdc8f6",
+  "checks": [
+    {
+      "check": "GitHub Python tests, formatting and static checks",
+      "result": "90 passed; 54 optional engine tests skipped; formatting and JS syntax passed",
+      "commit": "83b643fff3f210e64c429067b9cefd4e35e8f97f",
+      "url": "https://github.com/DanielTea/generalgamebench/actions/runs/37289319743"
+    },
+    {
+      "check": "Portable Docker suite and replay on native AMD64 and ARM64",
+      "result": "passed",
+      "url": "https://github.com/DanielTea/generalgamebench/actions/runs/37289319677"
+    },
+    {
+      "check": "Final baseline-export and Hugging Face regressions",
+      "result": "4 passed"
+    },
+    {
+      "check": "Canonical website production build",
+      "result": "20 pages generated; existing configuration skips TypeScript validation; preexisting workspace and browser-mapping warnings"
+    },
+    {
+      "check": "Browser preview",
+      "result": "Current 43-scenario and archived 33-scenario tabs, direct track links, exact displayed scores and latency gate verified"
+    },
+    {
+      "check": "Hugging Face export",
+      "result": "138 files prepared locally; separate current/archive metadata verified; no Hub upload"
+    }
+  ]
+}

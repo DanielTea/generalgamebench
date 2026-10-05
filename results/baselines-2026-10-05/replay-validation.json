@@ -1,0 +1,3098 @@
+{
+  "runs/baselines-2026-10-05/idle/coin-run-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/coin-run-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/coin-run-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dodge-lanes-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dodge-lanes-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dodge-lanes-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-basic-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-basic-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-basic-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-center-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-center-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-center-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-line-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-line-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-defend-line-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-take-cover-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-take-cover-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-take-cover-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-health-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-health-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-health-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-corridor-4000": {
+    "valid": true,
+    "steps": 20,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-corridor-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-corridor-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-home-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-home-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-home-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-predict-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-predict-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/doom-predict-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bigfish-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bigfish-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bigfish-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bossfight-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bossfight-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-bossfight-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-caveflyer-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-caveflyer-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-caveflyer-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-chaser-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-chaser-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-chaser-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-climber-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-climber-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-climber-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-coinrun-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-coinrun-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-coinrun-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-dodgeball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-dodgeball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-dodgeball-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-fruitbot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-fruitbot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-fruitbot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-heist-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-heist-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-heist-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-jumper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-jumper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-jumper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-leaper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-leaper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-leaper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-maze-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-maze-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-maze-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-miner-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-miner-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-miner-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-ninja-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-ninja-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-ninja-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-plunder-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-plunder-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-plunder-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-starpilot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-starpilot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/procgen-starpilot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/crafter-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/crafter-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/crafter-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/miniworld-oneroom-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/miniworld-oneroom-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/miniworld-oneroom-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/pettingzoo-pistonball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/pettingzoo-pistonball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/pettingzoo-pistonball-4002": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/atari-breakout-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/atari-breakout-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/atari-breakout-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/retro-airstriker-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/retro-airstriker-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/retro-airstriker-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/nethack-score-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/nethack-score-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/nethack-score-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/minihack-room-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/minihack-room-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/minihack-room-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/unity-food-collector-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/unity-food-collector-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/unity-food-collector-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/football-empty-goal-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/football-empty-goal-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/football-empty-goal-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertuxkart-lighthouse-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertuxkart-lighthouse-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertuxkart-lighthouse-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/luanti-chop-tree-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/luanti-chop-tree-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/luanti-chop-tree-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertux-first-coin-4000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertux-first-coin-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/supertux-first-coin-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dcss-first-experience-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dcss-first-experience-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/dcss-first-experience-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/openttd-first-road-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/openttd-first-road-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/openttd-first-road-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/mindustry-copper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/mindustry-copper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/mindustry-copper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/cdda-first-weapon-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/cdda-first-weapon-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/cdda-first-weapon-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/warzone-first-derrick-4000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/warzone-first-derrick-4001": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/idle/warzone-first-derrick-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/coin-run-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/coin-run-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/coin-run-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dodge-lanes-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dodge-lanes-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dodge-lanes-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-basic-4000": {
+    "valid": true,
+    "steps": 22,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-basic-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-basic-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-center-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-center-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-center-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-line-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-line-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-defend-line-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-take-cover-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-take-cover-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-take-cover-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-health-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-health-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-health-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-corridor-4000": {
+    "valid": true,
+    "steps": 12,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-corridor-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-corridor-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-home-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-home-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-home-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-predict-4000": {
+    "valid": true,
+    "steps": 15,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-predict-4001": {
+    "valid": true,
+    "steps": 15,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/doom-predict-4002": {
+    "valid": true,
+    "steps": 15,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bigfish-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bigfish-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bigfish-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bossfight-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bossfight-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-bossfight-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-caveflyer-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-caveflyer-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-caveflyer-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-chaser-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-chaser-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-chaser-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-climber-4000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-climber-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-climber-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-coinrun-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-coinrun-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-coinrun-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-dodgeball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-dodgeball-4001": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-dodgeball-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-fruitbot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-fruitbot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-fruitbot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-heist-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-heist-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-heist-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-jumper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-jumper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-jumper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-leaper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-leaper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-leaper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-maze-4000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-maze-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-maze-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-miner-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-miner-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-miner-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-ninja-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-ninja-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-ninja-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-plunder-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-plunder-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-plunder-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-starpilot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-starpilot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/procgen-starpilot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/crafter-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/crafter-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/crafter-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/miniworld-oneroom-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/miniworld-oneroom-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/miniworld-oneroom-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/pettingzoo-pistonball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/pettingzoo-pistonball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/pettingzoo-pistonball-4002": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/atari-breakout-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/atari-breakout-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/atari-breakout-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/retro-airstriker-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/retro-airstriker-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/retro-airstriker-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/nethack-score-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/nethack-score-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/nethack-score-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/minihack-room-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/minihack-room-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/minihack-room-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/unity-food-collector-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/unity-food-collector-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/unity-food-collector-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/football-empty-goal-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/football-empty-goal-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/football-empty-goal-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertuxkart-lighthouse-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertuxkart-lighthouse-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertuxkart-lighthouse-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/luanti-chop-tree-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/luanti-chop-tree-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/luanti-chop-tree-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertux-first-coin-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertux-first-coin-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/supertux-first-coin-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dcss-first-experience-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dcss-first-experience-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/dcss-first-experience-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/openttd-first-road-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/openttd-first-road-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/openttd-first-road-4002": {
+    "valid": true,
+    "steps": 11,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/mindustry-copper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/mindustry-copper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/mindustry-copper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/cdda-first-weapon-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/cdda-first-weapon-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/cdda-first-weapon-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/warzone-first-derrick-4000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/warzone-first-derrick-4001": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/random/warzone-first-derrick-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/coin-run-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/coin-run-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/coin-run-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dodge-lanes-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dodge-lanes-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dodge-lanes-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-basic-4000": {
+    "valid": true,
+    "steps": 9,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-basic-4001": {
+    "valid": true,
+    "steps": 19,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-basic-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-center-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-center-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-center-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-line-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-line-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-defend-line-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-take-cover-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-take-cover-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-take-cover-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-health-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-health-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-health-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-corridor-4000": {
+    "valid": true,
+    "steps": 20,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-corridor-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-corridor-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-home-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-home-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-home-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-predict-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-predict-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/doom-predict-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bigfish-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bigfish-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bigfish-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bossfight-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bossfight-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-bossfight-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-caveflyer-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-caveflyer-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-caveflyer-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-chaser-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-chaser-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-chaser-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-climber-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-climber-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-climber-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-coinrun-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-coinrun-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-coinrun-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-dodgeball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-dodgeball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-dodgeball-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-fruitbot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-fruitbot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-fruitbot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-heist-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-heist-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-heist-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-jumper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-jumper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-jumper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-leaper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-leaper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-leaper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-maze-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-maze-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-maze-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-miner-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-miner-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-miner-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-ninja-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-ninja-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-ninja-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-plunder-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-plunder-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-plunder-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-starpilot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-starpilot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/procgen-starpilot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/crafter-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/crafter-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/crafter-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/miniworld-oneroom-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/miniworld-oneroom-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/miniworld-oneroom-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/pettingzoo-pistonball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/pettingzoo-pistonball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/pettingzoo-pistonball-4002": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/atari-breakout-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/atari-breakout-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/atari-breakout-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/retro-airstriker-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/retro-airstriker-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/retro-airstriker-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/nethack-score-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/nethack-score-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/nethack-score-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/minihack-room-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/minihack-room-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/minihack-room-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/unity-food-collector-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/unity-food-collector-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/unity-food-collector-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/football-empty-goal-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/football-empty-goal-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/football-empty-goal-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertuxkart-lighthouse-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertuxkart-lighthouse-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertuxkart-lighthouse-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/luanti-chop-tree-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/luanti-chop-tree-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/luanti-chop-tree-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertux-first-coin-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertux-first-coin-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/supertux-first-coin-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dcss-first-experience-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dcss-first-experience-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/dcss-first-experience-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/openttd-first-road-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/openttd-first-road-4001": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/openttd-first-road-4002": {
+    "valid": true,
+    "steps": 21,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/mindustry-copper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/mindustry-copper-4001": {
+    "valid": true,
+    "steps": 13,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/mindustry-copper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/cdda-first-weapon-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/cdda-first-weapon-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/cdda-first-weapon-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/warzone-first-derrick-4000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/warzone-first-derrick-4001": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/react/warzone-first-derrick-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/coin-run-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/coin-run-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/coin-run-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dodge-lanes-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dodge-lanes-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dodge-lanes-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-basic-4000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-basic-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-basic-4002": {
+    "valid": true,
+    "steps": 22,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-center-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-center-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-center-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-line-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-line-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-defend-line-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-take-cover-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-take-cover-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-take-cover-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-health-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-health-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-health-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-corridor-4000": {
+    "valid": true,
+    "steps": 20,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-corridor-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-corridor-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-home-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-home-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-home-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-predict-4000": {
+    "valid": true,
+    "steps": 18,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-predict-4001": {
+    "valid": true,
+    "steps": 18,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/doom-predict-4002": {
+    "valid": true,
+    "steps": 18,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bigfish-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bigfish-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bigfish-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bossfight-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bossfight-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-bossfight-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-caveflyer-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-caveflyer-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-caveflyer-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-chaser-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-chaser-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-chaser-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-climber-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-climber-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-climber-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-coinrun-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-coinrun-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-coinrun-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-dodgeball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-dodgeball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-dodgeball-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-fruitbot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-fruitbot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-fruitbot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-heist-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-heist-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-heist-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-jumper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-jumper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-jumper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-leaper-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-leaper-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-leaper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-maze-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-maze-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-maze-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-miner-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-miner-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-miner-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-ninja-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-ninja-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-ninja-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-plunder-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-plunder-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-plunder-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-starpilot-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-starpilot-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/procgen-starpilot-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/crafter-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/crafter-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/crafter-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/miniworld-oneroom-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/miniworld-oneroom-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/miniworld-oneroom-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/pettingzoo-pistonball-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/pettingzoo-pistonball-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/pettingzoo-pistonball-4002": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/atari-breakout-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/atari-breakout-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/atari-breakout-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/retro-airstriker-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/retro-airstriker-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/retro-airstriker-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/nethack-score-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/nethack-score-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/nethack-score-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/minihack-room-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/minihack-room-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/minihack-room-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/unity-food-collector-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/unity-food-collector-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/unity-food-collector-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/football-empty-goal-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/football-empty-goal-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/football-empty-goal-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertuxkart-lighthouse-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertuxkart-lighthouse-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertuxkart-lighthouse-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/luanti-chop-tree-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/luanti-chop-tree-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/luanti-chop-tree-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertux-first-coin-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertux-first-coin-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/supertux-first-coin-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dcss-first-experience-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dcss-first-experience-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/dcss-first-experience-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/openttd-first-road-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/openttd-first-road-4001": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/openttd-first-road-4002": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/mindustry-copper-4000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/mindustry-copper-4001": {
+    "valid": true,
+    "steps": 12,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/mindustry-copper-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/cdda-first-weapon-4000": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/cdda-first-weapon-4001": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/cdda-first-weapon-4002": {
+    "valid": true,
+    "steps": 24,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/warzone-first-derrick-4000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/warzone-first-derrick-4001": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/baselines-2026-10-05/tracker/warzone-first-derrick-4002": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  }
+}

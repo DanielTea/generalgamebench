@@ -1,6 +1,8 @@
 "use strict";
 let dataset = { local: [], exhibition: [], catalog: [] };
-let active = "exhibition";
+const requestedTrack = new URLSearchParams(location.search).get("track");
+let active = ["local", "local_previous", "exhibition", "exhibition_previous", "official"].includes(requestedTrack)
+  ? requestedTrack : "exhibition";
 const $ = (id) => document.getElementById(id);
 const mediaUrl = (path) => `${path}?v=integrations-4`;
 const labels = {
@@ -219,6 +221,9 @@ function renderGames() {
 document.querySelectorAll("[data-track]").forEach((b) =>
   b.addEventListener("click", () => {
     active = b.dataset.track;
+    const url = new URL(location.href);
+    url.searchParams.set("track", active);
+    history.replaceState(null, "", url);
     renderBoard();
   }),
 );

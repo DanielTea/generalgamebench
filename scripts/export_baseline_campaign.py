@@ -84,6 +84,10 @@ def export(report, workers=4):
     save(report / "replay-validation.json", checks)
     save(report / "snapshot.json", snapshot)
     save(ROOT / "site/dist/data.json", snapshot)
+    save(
+        report / "run-status.json",
+        {**status, "status": "replay-verified", "verified_episodes": len(rows)},
+    )
     print(
         json.dumps(
             {
