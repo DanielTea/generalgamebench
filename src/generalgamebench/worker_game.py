@@ -108,8 +108,6 @@ class WorkerGame:
 
     def _call(self, value, timeout=30):
         trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
-        if trace and timeout == 30:
-            timeout = 180
         started = time.monotonic()
         self.process.stdin.write(json.dumps(value).encode() + b"\n")
         deadline = time.monotonic() + timeout
@@ -157,7 +155,11 @@ class WorkerGame:
             raise ValueError("Illegal game action")
         if self.done:
             raise ValueError("Episode already finished")
-        self.done = self._call({"command": "step", "action": action})["done"]
+        # Native Linux software rendering took 77-79 seconds for one STK frame
+        # in the long replay check. This is an engine watchdog, not the model's
+        # response budget. Keep the full image and exact native replay checks.
+        timeout = 180 if self.id == "supertuxkart-lighthouse" else 30
+        self.done = self._call({"command": "step", "action": action}, timeout)["done"]
         self.steps += 1
 
     def result(self):

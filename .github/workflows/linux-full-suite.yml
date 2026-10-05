@@ -15,6 +15,10 @@ on:
         description: 'Runtime groups as a JSON array. Leave empty for all 43 scenarios.'
         required: false
         default: ''
+      diagnostics:
+        description: 'Capture Python and native stacks for slow engine calls.'
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -31,7 +35,7 @@ jobs:
       GGBENCH_CONTAINER_PLATFORM: linux/amd64
       LIBGL_ALWAYS_SOFTWARE: '1'
       LP_NUM_THREADS: '1'
-      GGBENCH_WORKER_TRACE: '1'
+      GGBENCH_WORKER_TRACE: ${{ inputs.diagnostics && '1' || '0' }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: astral-sh/setup-uv@v6
@@ -45,7 +49,7 @@ jobs:
       - name: Install pinned runtime
         run: uv run --no-sync python scripts/install_linux.py --runtime '${{ matrix.runtime }}'
       - name: Build the optional native trace
-        if: matrix.runtime == 'docker-stk'
+        if: matrix.runtime == 'docker-stk' && inputs.diagnostics
         run: |
           docker run --rm --entrypoint gcc \
             --mount type=bind,src="$PWD/src/generalgamebench",dst=/worker \

@@ -32,6 +32,13 @@ The score is native forward distance divided by track length, limited to [0, 1].
 The negative start sentinel cannot award a lap. Tests cover driving, random
 controls, wait, rescue, and exact image and score replay.
 
+The engine step limit is 180 seconds. A native Linux x86_64 software renderer
+took 77 to 79 seconds for one frame in the long random-control test. It then
+completed with exact images and scores. A 30-second engine limit stopped that
+valid operation. The native trace showed a wait in Mesa during font drawing.
+This engine limit is separate from the model response timeout and the suite
+p95 limit below 200 ms. Engine advancement stays outside the model timer.
+
 The upstream engine and this patch use GPL-3.0-or-later. Bundled components and
 assets retain their separate notices. See [COPYING](COPYING) and the pinned
 [upstream source](https://github.com/bpiwowar/pystk2/tree/dd70f6823f248ae1df2ce513839a9b2c8c940c39).

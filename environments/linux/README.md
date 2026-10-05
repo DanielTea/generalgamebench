@@ -43,3 +43,8 @@ missing scenarios, duplicate scenarios, and reports from a different commit.
 
 The workflow retains the screenshots and action records as downloadable artifacts.
 A successful installation check alone does not establish replay correctness.
+
+SuperTuxKart uses a 180-second engine step limit. A long software-rendered frame
+can exceed 30 seconds on the Linux test host. This limit does not change the
+model response timer or the suite p95 rule. The normal workflow runs without
+diagnostic traces. Set its `diagnostics` input to `true` to capture slow calls.
