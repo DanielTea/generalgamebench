@@ -523,8 +523,8 @@ class Environment:
 
 
 def main():
-    # Native libraries may also print; duplicate the original protocol fd and
-    # redirect OS stdout before loading an engine.
+    # Linux Python workers use a separate reply pipe. Other workers use stdout.
+    # Send native library output to stderr before loading an engine.
     descriptor = os.environ.pop("GGBENCH_WORKER_REPLY_FD", None)
     reply_fd = int(descriptor) if descriptor is not None else os.dup(sys.stdout.fileno())
     os.set_inheritable(reply_fd, False)

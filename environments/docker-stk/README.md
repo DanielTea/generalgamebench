@@ -18,7 +18,7 @@ Score is the current nonnegative native overall distance divided by native track
 
 ## Explicit engine variant
 
-The patch stops the Irrlicht wall clock and advances it from physics ticks, including the material wind timer. It also preserves scene registration order instead of sorting solid objects by texture pointer addresses. That removes process-dependent depth ties found in the broader seed-5001 random-control trace. It does not mask or discard image regions. The task uses the complete native rendered image; exact PNG equality remains the admission gate. The patch also allows explicit native ARM compilation on macOS for diagnostics, but only the Linux ARM64 renderer is admitted. The frozen v0.2 standings do not include this new task.
+The patch stops the Irrlicht wall clock and advances it from physics ticks, including the material wind timer. It also preserves scene registration order instead of sorting solid objects by texture pointer addresses. That removes process-dependent depth ties found in the broader seed-5001 random-control trace. It does not mask or discard image regions. The task uses the complete native rendered image; exact PNG equality remains the admission gate. The patch also allows explicit native ARM compilation on macOS for diagnostics, but the admitted renderer runs in the pinned Linux images. The frozen v0.2 standings do not include this new task.
 
 The trusted game container has no external network, drops capabilities, uses a read-only filesystem and mounts only referee source and verified game assets. The participant runs separately. This is dependency isolation for local evaluation, not independent hostile-agent attestation.
 
