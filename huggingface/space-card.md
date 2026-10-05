@@ -1,6 +1,5 @@
 ---
 title: GeneralGameBench
-emoji: 🎮
 colorFrom: red
 colorTo: gray
 sdk: static
@@ -52,7 +51,10 @@ An incomplete suite does not receive a total score.
 
 Compare results only when the suite IDs, seeds, test duration, task versions and hardware are the same.
 The latency limit is separate from the score.
-Each measured response must take **less than 100 ms**, with no errors or aborted episodes.
+The **suite p95 must be below 200 ms**. Exactly 200 ms fails.
+The calculation pools all recorded response times, including failed episodes.
+It uses linear interpolation. It does not average per-game p95 values.
+Errors and aborted episodes stay visible. A latency pass does not grant an official rank.
 The timer includes image retrieval, encoding, transport, inference and action validation.
 The simulation waits between actions.
 These tests do not prove continuous real-time control.

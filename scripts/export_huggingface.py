@@ -57,6 +57,7 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
                     "hardware",
                     "version",
                     "task_metadata",
+                    "response_timeout_seconds",
                 )
             }
             suite["hardware_details"] = hardware_details
@@ -86,6 +87,8 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
                         "score_100": score,
                         "suite_score_100": ranking["score"],
                         "latency_eligible": ranking["latency_eligible"],
+                        "latency_policy_id": ranking.get("latency_policy", {}).get("id"),
+                        "latency_limit_ms": ranking.get("latency_policy", {}).get("limit_ms"),
                         "suite_p95_ms": ranking["p95_ms"],
                         "suite_p50_ms": ranking.get("p50_ms"),
                         "suite_max_ms": ranking["max_ms"],

@@ -15,7 +15,7 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141518'/%3E%3Cpath d='M6 24L16 6l10 18h-6l-4-8-4 8z' fill='%23ff5a1f'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="style.css?v=refresh-2026-10-05" />
-    <script src="app.js?v=baselines-current-2026-10-05" defer></script>
+    <script src="app.js?v=suite-p95-200-v1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
@@ -32,7 +32,7 @@
       <section class="intro">
         <div>
           <span class="eyebrow"
-            >OPEN GAME INTELLIGENCE BENCHMARK // V0.4.0</span
+            >OPEN GAME INTELLIGENCE BENCHMARK // V0.5.0</span
           >
           <h1>Agent<br /><em>leaderboard.</em></h1>
           <p class="motto">
@@ -41,9 +41,9 @@
           </p>
         </div>
         <aside class="standard">
-          <span class="eyebrow">REACTION STANDARD</span
-          ><strong>&lt;100<span>ms</span></strong>
-          <p>Every measured action.<br />From observation to accepted input.</p>
+          <span class="eyebrow">SUITE P95 LIMIT</span
+          ><strong>&lt;200<span>ms</span></strong>
+          <p>The 95th percentile of all response times.<br />From observation to accepted input.</p>
           <span class="chip">Pixels in. Actions out.</span>
         </aside>
       </section>
@@ -92,7 +92,7 @@
                 <th scope="col">Suite p95</th>
                 <th scope="col">Suite maximum</th>
                 <th scope="col">Suite errors</th>
-                <th scope="col">&lt;100 ms</th>
+                <th scope="col">Suite p95 &lt;200 ms</th>
               </tr>
             </thead>
             <tbody id="rankings">
@@ -112,9 +112,13 @@
           <p>Aborted episodes count as zero. An incomplete suite receives no aggregate score.
             Normalization anchors are task-specific, not human performance or IQ. Families with more
             scenarios have more weight; the score is not the percentage of games beaten.</p>
-          <p>Speed is a separate gate: every measured response must be strictly below 100 ms, with no
-            errors or aborted episodes. Slower models can still appear in the exhibition. One seed and
-            eight decisions are only an integration demonstration; many games barely start.</p>
+          <p>The latency limit is suite p95 below 200 ms. Exactly 200 ms fails.
+            We calculate p95 from all recorded response times, including failed episodes, with linear interpolation.
+            We do not average the p95 values of individual games. The score is separate from this limit.</p>
+          <p>The pass decision uses the unrounded p95. The table shows rounded response times.</p>
+          <p>Responses above 200 ms, errors and aborted episodes stay in the results.
+            A latency pass does not grant an official rank. Slower agents can appear in the model exhibition.
+            One seed and eight decisions show that the connection works. Many games only start during these short tests.</p>
           <a href="https://github.com/DanielTea/generalgamebench/blob/main/docs/METHODOLOGY.md">Full scoring and timing methodology</a>
         </details>
         <details class="availability"><summary>Model availability and run status</summary><ul id="availability"></ul></details>
