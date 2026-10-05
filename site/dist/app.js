@@ -84,6 +84,7 @@ function renderBoard() {
       if (j === 1) {
         const transport = r.provider_metadata?.transport;
         cell.append(el("small", transport === "persistent-mlx-jsonl" ? "Local vision model" : transport === "authenticated-cli-per-frame" ? "Hosted model · per-image call" : "Reference policy", "agent-kind"));
+        cell.append(el("small", `Evaluator ${r.version}`, "agent-kind"));
         const settings = r.hardware_details || dataset.track_metadata?.[active]?.hardware_details || dataset.hardware_details;
         if (settings) {
           const details = el("details", undefined, "run-settings");
