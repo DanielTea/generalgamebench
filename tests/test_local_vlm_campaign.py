@@ -157,6 +157,8 @@ def test_export_preserves_the_previous_snapshot_bytes(tmp_path, monkeypatch):
     site.mkdir(parents=True)
     previous = b'{ "exhibition": [{"agent":"old"}], "season":"old", "current_campaign":"old.json", "coverage": {} }\n'
     (site / "data.json").write_bytes(previous)
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs/catalog.json").write_text("[]")
     row = {
         **new,
         "game": "coin-run",
