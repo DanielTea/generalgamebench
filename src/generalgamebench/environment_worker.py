@@ -523,10 +523,12 @@ class Environment:
 
 
 def main():
-    output = sys.stdout
     # Native libraries may also print; duplicate the original protocol fd and
     # redirect OS stdout before loading an engine.
-    output = os.fdopen(os.dup(sys.stdout.fileno()), "w", buffering=1)
+    descriptor = os.environ.pop("GGBENCH_WORKER_REPLY_FD", None)
+    reply_fd = int(descriptor) if descriptor is not None else os.dup(sys.stdout.fileno())
+    os.set_inheritable(reply_fd, False)
+    output = os.fdopen(reply_fd, "w", buffering=1)
     os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
     env = None
     try:

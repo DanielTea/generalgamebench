@@ -1,5 +1,7 @@
 # Dungeon Crawl Stone Soup: first experience
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `dcss-first-experience` starts a new native Dungeon:1 game as a Minotaur Fighter with a war axe. It uses DCSS 0.34.0's complete 800×600 SDL tile view, including its ordinary inventory and messages. Compass controls move or attack an adjacent enemy; wait, confirm and cancel are also available. The first native experience gain scores one and ends this bounded task. Death or the declared horizon ends it without success. This is an introductory combat objective, not a full dungeon completion score.
 
 ```sh

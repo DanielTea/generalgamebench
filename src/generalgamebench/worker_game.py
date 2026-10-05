@@ -45,22 +45,47 @@ class WorkerGame:
                     raise RuntimeError("Install xvfb and xauth for off-screen Linux rendering.")
                 command = [xvfb, "-a", "-s", "-screen 0 1280x720x24", *command]
         self.log = tempfile.TemporaryFile()
-        self.process = subprocess.Popen(
-            command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=self.log,
-            bufsize=0,
-            start_new_session=True,
-            env={
-                **os.environ,
-                "PYTHONHASHSEED": "0",
-                "SDL_AUDIODRIVER": "dummy",
-                **({"SDL_VIDEODRIVER": "dummy"} if game_id == "pettingzoo-pistonball" else {}),
-            },
+        private_reply = platform.system() == "Linux" and not task.runtime.startswith("docker-")
+        reader, writer = os.pipe() if private_reply else (None, None)
+        try:
+            self.process = subprocess.Popen(
+                command,
+                stdin=subprocess.PIPE,
+                stdout=self.log if private_reply else subprocess.PIPE,
+                stderr=self.log,
+                bufsize=0,
+                start_new_session=True,
+                pass_fds=(writer,) if private_reply else (),
+                env={
+                    **{
+                        key: value
+                        for key, value in os.environ.items()
+                        if key != "GGBENCH_WORKER_REPLY_FD"
+                    },
+                    **({"GGBENCH_WORKER_REPLY_FD": str(writer)} if private_reply else {}),
+                    "PYTHONHASHSEED": "0",
+                    "SDL_AUDIODRIVER": "dummy",
+                    **(
+                        {"LIBGL_ALWAYS_SOFTWARE": "1", "LP_NUM_THREADS": "1"}
+                        if platform.system() == "Linux"
+                        else {}
+                    ),
+                    **({"SDL_VIDEODRIVER": "dummy"} if game_id == "pettingzoo-pistonball" else {}),
+                },
+            )
+        except BaseException:
+            if reader is not None:
+                os.close(reader)
+            self.log.close()
+            raise
+        finally:
+            if writer is not None:
+                os.close(writer)
+        self.reply_stream = (
+            os.fdopen(reader, "rb", buffering=0) if private_reply else self.process.stdout
         )
         self.selector = selectors.DefaultSelector()
-        self.selector.register(self.process.stdout, selectors.EVENT_READ)
+        self.selector.register(self.reply_stream, selectors.EVENT_READ)
         self.buffer = b""
         try:
             response = self._call(
@@ -87,7 +112,7 @@ class WorkerGame:
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not self.selector.select(remaining):
                 raise TimeoutError("Game worker deadline exceeded")
-            chunk = os.read(self.process.stdout.fileno(), 65536)
+            chunk = os.read(self.reply_stream.fileno(), 65536)
             if not chunk:
                 self.log.seek(0)
                 detail = self.log.read().decode(errors="replace")[-1500:]
@@ -136,7 +161,7 @@ class WorkerGame:
             self.process.wait()
         self.selector.close()
         self.process.stdin.close()
-        self.process.stdout.close()
+        self.reply_stream.close()
         self.log.close()
         self._remove_container()
 

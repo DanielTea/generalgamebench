@@ -1,5 +1,7 @@
 # SuperTuxKart Lighthouse
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `supertuxkart-lighthouse` task version 2 runs PySuperTuxKart2 0.7.4 with the explicit `deterministic-render-v1` patch, official SuperTuxKart 1.5 assets and Mesa software rendering in Linux ARM64. It was validated through Docker Desktop on an Apple Silicon Mac. The unpatched Mac renderer remains unadmitted because repeated runs produce different animation pixels.
 
 ```sh

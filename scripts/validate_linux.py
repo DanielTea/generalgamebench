@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 import platform
 import subprocess
 import sys
@@ -12,6 +13,19 @@ from generalgamebench.games import DOOM, NATIVE
 from generalgamebench.protocol import ProcessAgent
 from generalgamebench.registry import TASKS
 from generalgamebench.runner import run_episode
+
+GOAL_CHECKS = {
+    "python": "airstriker_never or minihack_goal or unity_food or procgen_stops or crafter_respawn",
+    "docker-football": "football_goal",
+    "docker-stk": "supertuxkart_progress or supertuxkart_random or supertuxkart_start",
+    "docker-craftium": "luanti_tree or luanti_scene",
+    "docker-supertux": "supertux_coin",
+    "docker-crawl": "crawl_goal",
+    "docker-openttd": "openttd_native",
+    "docker-mindustry": "mindustry_native",
+    "docker-cdda": "native_tutorial and cdda",
+    "docker-warzone": "native_tutorial and warzone",
+}
 
 
 def runtime_games(runtime):
@@ -47,6 +61,19 @@ def main():
             raise ValueError(f"The referee failed for {game}.")
         results[game] = verify_episode(episode)
         print(f"Native frame and score replay passed: {game}", flush=True)
+    subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "tests/test_integrations.py",
+            "-q",
+            "-k",
+            GOAL_CHECKS[args.runtime],
+        ],
+        check=True,
+        env={**os.environ, "GGBENCH_RUN_INTEGRATION": "1"},
+    )
     report = {
         "runtime": args.runtime,
         "platform": "linux/amd64",
@@ -55,6 +82,7 @@ def main():
         "seed": 71,
         "max_steps": 24,
         "results": results,
+        "goal_checks": GOAL_CHECKS[args.runtime],
     }
     (args.output / "validation.json").write_text(json.dumps(report, indent=2) + "\n")
 

@@ -1,5 +1,7 @@
 # Cataclysm: Dark Days Ahead — first weapon
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `cdda-first-weapon` starts the official 0.I-1 tutorial as its preset character and asks the player to find and wield the baseball bat. It renders the complete native 960×640 SDL tile view with UltimateCataclysm artwork, messages, menus and tutorial popups. Compass keys move or open doors. Dismiss advances a popup; wield and numbered choices use the native item menu. The first wielded bat scores one and ends this bounded task. Death or the horizon ends an unsuccessful attempt. This introductory navigation and inventory task does not measure full survival gameplay.
 
 ```sh

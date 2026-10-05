@@ -1,5 +1,7 @@
 # Warzone 2100 — first oil derrick
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `warzone-first-derrick` runs the original TUTORIAL3 base-building tutorial in Warzone 2100 4.7.0. Select a construction truck and click an oil resource to construct a derrick. The first native completed structure scores one and ends the task. Losing both trucks or reaching the horizon ends an unsuccessful attempt. This is an introductory construction task, not a campaign or multiplayer match score.
 
 ```sh

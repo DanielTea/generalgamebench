@@ -1,5 +1,7 @@
 # Football Academy
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 `football-empty-goal` runs Google Research Football 2.10.2's `academy_empty_goal_close` scenario. Tested on this Mac using Docker Desktop's native Linux ARM64 runtime and Mesa software rendering. The engine source revision and base image digest are pinned; the actual built image ID is recorded in every episode and checked during replay. Rebuilding with different system packages can produce a different image ID, so preserve the image used for a cohort.
 
 ```sh

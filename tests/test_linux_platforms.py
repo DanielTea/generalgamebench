@@ -70,3 +70,33 @@ def test_linux_validation_covers_full_suite_once():
     games = [game for runtime in runtimes for game in module.runtime_games(runtime)]
     assert len(games) == len(set(games)) == 43
     assert set(games) == set(EXTENDED_GAMES)
+
+
+def test_linux_worker_keeps_display_messages_out_of_replies(monkeypatch, tmp_path):
+    import sys
+
+    from generalgamebench.worker_game import WorkerGame
+
+    python = tmp_path / "research/bin/python"
+    python.parent.mkdir(parents=True)
+    python.write_text(
+        f"#!{sys.executable}\n"
+        "import json, os, sys\n"
+        "reply = os.fdopen(int(os.environ['GGBENCH_WORKER_REPLY_FD']), 'w', buffering=1)\n"
+        "print('Falling back to num_samples=4', flush=True)\n"
+        "for line in sys.stdin:\n"
+        "    command = json.loads(line)['command']\n"
+        "    value = {'actions': ['wait'], 'instructions': 'Wait.', 'metadata': {}}\n"
+        "    if command == 'close': value = {'closed': True}\n"
+        "    reply.write(json.dumps(value) + '\\n')\n"
+        "    if command == 'close': break\n"
+    )
+    python.chmod(0o755)
+    monkeypatch.setenv("GGBENCH_ENV_ROOT", str(tmp_path))
+    monkeypatch.setattr("generalgamebench.worker_game.platform.system", lambda: "Linux")
+    game = WorkerGame("crafter", 71, 24)
+    try:
+        assert game.actions == ["wait"]
+        assert game.instructions == "Wait."
+    finally:
+        game.close()

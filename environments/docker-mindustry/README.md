@@ -1,5 +1,7 @@
 # Mindustry: Ground Zero copper
 
+For Linux x86_64, use the [full-suite installer](../linux/README.md). The installer selects an AMD64 image on that platform. Apple Silicon uses the existing ARM64 image.
+
 This adapter runs the official Mindustry v160.5 desktop game and its built-in
 Ground Zero map. The introductory task is to mine 15 copper using ordinary
 movement and mouse controls. It does not claim campaign-wide coverage.
