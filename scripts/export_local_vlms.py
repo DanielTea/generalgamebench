@@ -10,10 +10,12 @@ from export_refresh import verify_source
 from run_campaign import model_id
 
 from generalgamebench.evidence import read_ledger, verify_episode
+from generalgamebench.latency import policy
 from generalgamebench.ranking import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
-COHORT_KEYS = ("games", "seed_ids", "max_steps", "mode", "hardware", "version", "task_metadata")
+COHORT_KEYS = ("games", "seed_ids", "max_steps", "mode", "hardware", "task_metadata")
+EXHIBITION_VERSIONS = {"0.4.0", "0.5.0"}
 
 
 def append_board(snapshot, board, statuses):
@@ -26,6 +28,14 @@ def append_board(snapshot, board, statuses):
         raise ValueError("Do not replace an existing model result")
     reference = {key: existing[0].get(key) for key in COHORT_KEYS}
     for row in [*existing, *board]:
+        # Version 0.5 changes the response timeout and latency policy. Preserve
+        # each version in the table; require identical native task metadata.
+        if (
+            row["version"] not in EXHIBITION_VERSIONS
+            or row["mode"] != "exhibition"
+            or row.get("latency_policy") != policy()
+        ):
+            raise ValueError("Unknown exhibition version or latency policy")
         if {key: row.get(key) for key in COHORT_KEYS} != reference:
             raise ValueError("The new results must use the same game suite and referee settings")
     snapshot["exhibition"] = sorted(

@@ -61,8 +61,9 @@ def test_append_keeps_existing_rows_and_rejects_mixed_suites():
         "version": "0.4.0",
         "max_steps": 8,
         "task_metadata": {"coin-run": {}},
+        "latency_policy": exporter.policy(),
     }
-    new = {**old, "agent": "new", "score": 20}
+    new = {**old, "agent": "new", "score": 20, "version": "0.5.0"}
     original = {"exhibition": [old], "official": [], "local": [{"agent": "archived"}]}
     result = exporter.append_board(copy.deepcopy(original), [new], [])
     assert result["exhibition"] == [new, old]
@@ -72,3 +73,7 @@ def test_append_keeps_existing_rows_and_rejects_mixed_suites():
         exporter.append_board(copy.deepcopy(original), [old], [])
     with pytest.raises(ValueError, match="same game suite"):
         exporter.append_board(copy.deepcopy(original), [{**new, "seed_ids": [4000]}], [])
+    with pytest.raises(ValueError, match="Unknown exhibition"):
+        exporter.append_board(copy.deepcopy(original), [{**new, "version": "0.3.0"}], [])
+    with pytest.raises(ValueError, match="Unknown exhibition"):
+        exporter.append_board(copy.deepcopy(original), [{**new, "latency_policy": {}}], [])
