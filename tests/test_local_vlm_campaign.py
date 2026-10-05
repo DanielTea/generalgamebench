@@ -61,6 +61,7 @@ def model_cohort():
         "timeout_s": 120,
         "hardware_details": "Mac. One model at a time.",
         "suite_file": "benchmarks/new.json",
+        "warmup": campaign.WARMUP_PROFILE,
     }
     new = {
         "agent": "new",

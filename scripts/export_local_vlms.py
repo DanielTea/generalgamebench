@@ -85,6 +85,8 @@ def export(report, workers):
     verify_source(campaign)
     paths, statuses, expected = [], [], {}
     for entry in inventory["models"]:
+        if entry.get("warmup") != campaign["warmup"]:
+            raise ValueError("The model startup differs from the declared campaign")
         folder = ROOT / campaign["run_root"] / model_id(entry)
         status = json.loads((folder / "status.json").read_text())
         if status["status"] != "complete":
