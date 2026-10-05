@@ -1,16 +1,64 @@
 # Evaluation methodology
 
-**Evaluator version:** 0.4.0. Historical cohorts retain their original versions. No official certified entries. The public board displays measured local/provisional results and a separate model exhibition.
+**Evaluator version:** 0.5.0. **Latency policy:** `suite-p95-200-v1`.
+Earlier recordings retain their original evaluator versions.
+All current results are local measurements without independent certification.
+The official leaderboard has no entries.
 
-## Response contract
+## Response time
 
-Start a monotonic nanosecond timer immediately before the referee requests the current rendered observation. Engine advancement and eager renderer updates between decisions are outside the clock; snapshot retrieval and PNG encoding are inside it. Include PNG encoding, nonce creation, JSON serialization, IPC or CLI startup, inference, JSON parsing and action validation. Stop at validated action receipt, before simulation advances. This is not photon-to-photon latency; display/compositor delay and the game response are not measured.
+Start the monotonic timer before the referee requests the current game image.
+Include image retrieval, PNG encoding, nonce creation, serialization, transport, inference, parsing and action validation.
+Stop the timer when the referee accepts the validated action.
+Exclude game advancement, renderer updates between decisions and evidence storage.
+Display delay and the game's response to the action are not measured.
 
-Strict eligibility requires **all recorded responses <100 ms**, zero protocol errors and no aborted episodes. Exactly 100 ms fails. p95 alone never grants eligibility. A finite sample cannot prove all future reactions will meet the deadline.
+The leaderboard latency limit is **suite p95 below 200 ms**.
+Exactly 200 ms fails.
+Pool every recorded response time from all declared games and seeds for one agent.
+Include response times from failed and aborted episodes.
+Do not calculate the mean of per-game or per-episode p95 values.
+Do not remove slow samples or select successful retries.
 
-Image codecs are warmed before readiness for every baseline. Process startup and imports occur before the ready handshake and are excluded for persistent baseline processes. Model CLI startup is included on every decision; model exhibition timings must not be interpreted as raw provider inference latency. No selectively removed warmup observations.
+Use NumPy's linear quantile method: `numpy.quantile(times, 0.95, method="linear")`.
+For sorted samples, interpolate at index `0.95 * (sample_count - 1)`.
+Use the unrounded value for the pass decision.
+The displayed value can be rounded.
+A response above 200 ms does not cause an automatic suite failure.
+The complete sample distribution determines p95.
+A finite test does not establish future response times.
 
-Realtime simulation is **lockstep**, applying each accepted action for one task-defined step (see the optional runtime definitions). It stops while the policy thinks. Late valid actions become wait; transport timeouts abort with zero score. Thus sub-100 ms qualification here measures the response path, not sustained 10 Hz service or continuous gameplay. A future realtime adapter must continue ticking independently and account for capture age, missed ticks and input acknowledgement.
+Publish p50, p95, maximum response time and the count of responses at or above 200 ms.
+Also publish errors, aborted episodes and the number of decisions.
+In aggregate rows, `latency_eligible` reports only the suite latency test.
+Individual episode flags do not decide the suite result.
+Errors and aborted episodes remain in the results. Aborted episodes score zero.
+An incomplete suite has no aggregate result.
+A latency pass does not establish valid replay, independent timing or official admission.
+
+Warm image codecs before recording.
+Persistent agent startup and model loading occur before readiness and stay outside the timer.
+Per-frame model CLI startup stays inside the timer.
+These different transports have different costs.
+Keep them visible in each result.
+
+Both modes use lockstep simulation. The game waits for the agent.
+From version 0.5.0, both modes accept valid actions until the configured transport timeout.
+The default timeout is 60 seconds. A timeout aborts the episode with score zero.
+The 200 ms leaderboard limit is not a per-action timeout.
+This keeps slow samples available for p95.
+These results do not establish continuous real-time gameplay.
+
+## Saved evidence
+
+The current board applies `suite-p95-200-v1` to saved response times.
+The update does not change scores, actions, failures, versions or trust status.
+Versions 0.1.0 through 0.4.0 used a different rule: every response had to be below 100 ms.
+Their realtime mode used a 100 ms deadline and replaced late actions with wait.
+Those historical deadlines can affect both scores and recorded response times.
+Do not compare those runs directly with new version 0.5.0 runs.
+The evidence verifier uses the recorded version and policy.
+Released ledgers and snapshots remain unchanged.
 
 ## Scoring
 
@@ -20,7 +68,7 @@ Each seed contributes equally within a scenario; each scenario contributes equal
 
 For `G` scenarios and `S` fixed seeds, the displayed score is `100 × sum(normalized_score[g,s]) / (G × S)`. For example, three scenario means of 0.8, 0.4 and 0 give 40/100. Normalization commonly uses `clip((raw - lower_anchor) / (upper_anchor - lower_anchor), 0, 1)`; success tasks use their declared success reward. The anchors are fixed before evaluation, never fitted to the observed models. Raw rewards remain in the episode evidence.
 
-Equal scenario weights are not equal franchise weights: eight Doom and sixteen Procgen scenarios contribute eight and sixteen times the weight of a single scenario. A score is not an IQ measurement, a human-normalized skill estimate, or the percentage of games beaten. Some short survival tasks score highly even for an idle policy. Latency does not alter exhibition scores; it is reported as a separate eligibility gate.
+Equal scenario weights are not equal franchise weights: eight Doom and sixteen Procgen scenarios contribute eight and sixteen times the weight of a single scenario. A score is not an IQ measurement, a human-normalized skill estimate, or the percentage of games beaten. Some short survival tasks score highly even for an idle policy. The suite p95 limit is separate from the score.
 
 Normalization can also place a zero native reward above zero on the display scale. For example, Doom Basic's fixed anchors are -320 and 100, so a raw reward of 0 maps to about 76.2/100. This is why the raw reward, task rules and reference-policy controls matter when interpreting an aggregate.
 

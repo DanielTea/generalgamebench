@@ -81,7 +81,14 @@ Use the evaluator release and pinned image recorded in the submission. Verificat
 
 Each suite uses seeds 1000–1004 and at most 80 decisions per episode, respecting native terminal states. Suite definitions and task revisions are fingerprinted. These community suites are separate from historical leaderboard cohorts.
 
-The default **exhibition** mode includes slower agents and publishes measured latency. Add `--mode realtime` for the strict deadline track. Every measured decision must be **strictly below 100 ms** for latency eligibility. Five development seeds are an accessible starting cohort, not strong evidence of broad generalization.
+The default mode is **exhibition**. Both modes report the complete suite p95.
+The leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fails.
+The calculation includes all recorded response times, including failed episodes.
+The transport timeout is separate. It defaults to 60 seconds in version 0.5.0.
+A valid response above 200 ms remains in the test. A timeout aborts the episode with score zero.
+A latency pass does not grant an official rank.
+Five public seeds support an initial test. They do not establish performance on unseen games.
+Use the evaluator version recorded in an earlier submission to verify that submission.
 
 ```sh
 ./ggbench doctor

@@ -114,3 +114,10 @@ Sources: [Leaderboard guide](https://huggingface.co/docs/leaderboards/en/leaderb
 [Finder submission rules](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard/blob/main/client/src/pages/HowToSubmitPage/HowToSubmitPage.jsx),
 [Space metadata](https://huggingface.co/docs/hub/en/spaces-config-reference),
 and [Dataset configurations](https://huggingface.co/docs/hub/en/datasets-data-files-configuration).
+
+## Latency rule
+
+The Space and Dataset use **suite p95 below 200 ms**. Exactly 200 ms fails.
+The export preserves the policy ID, threshold, response times, scores and trust status.
+A latency pass does not grant an official rank.
+Older Dataset revisions keep their original rules and measurements.

@@ -1,4 +1,36 @@
-# Portable runner 0.4.0
+# Portable runner 0.5.0
+
+The default image is pinned in `image.txt`:
+
+```text
+ghcr.io/danieltea/generalgamebench@sha256:9cceac2129ea970b45b76aa63b1f554097bbbe7ac25305425f6a1dbe4d5a4a69
+```
+
+The image contains native Linux AMD64 and ARM64 builds.
+Both builds use source revision `ae95579a99d8b8362114ac933e7f5ce6bf0c238e`.
+Both passed all 50 portable episodes and separate submission replay before publication.
+The [publication run](https://github.com/DanielTea/generalgamebench/actions/runs/37300621975) identifies the tested builds.
+The [pull request check](https://github.com/DanielTea/generalgamebench/actions/runs/37300271471) also passed on both architectures.
+
+The leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fails.
+The calculation pools all recorded response times. It uses linear interpolation.
+A valid response above 200 ms stays in the test until the configured transport timeout.
+The default timeout is 60 seconds. A timeout aborts the episode with score zero.
+Scores, errors and trust status stay separate from the latency test.
+
+Anonymous registry requests retrieved the index and both platform manifests on 5 October 2026.
+Their content hashes match the published digests.
+No registry login is needed to download this image.
+
+The image contains the ten portable scenarios.
+The full 43-scenario suite needs additional runtimes.
+Local results remain `local-unattested`. A latency pass does not grant an official rank.
+
+---
+
+The following record describes the previous image. Its evidence remains unchanged.
+
+# Historical portable runner 0.4.0
 
 The published multi-architecture image is pinned in `image.txt`:
 

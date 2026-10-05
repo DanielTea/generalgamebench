@@ -6,6 +6,8 @@ from collections import defaultdict
 
 import numpy as np
 
+from .latency import LIMIT_MS, passes, policy
+
 
 def summarize(
     results: list[dict], games: list[str], seeds: list[int], bootstraps=2000
@@ -17,6 +19,8 @@ def summarize(
     cohorts = {(r["mode"], r["hardware"], r["version"], r["max_steps"]) for r in results}
     if len(cohorts) > 1:
         raise ValueError("A leaderboard must use one mode, hardware, version and horizon")
+    if len({r.get("response_timeout_seconds") for r in results}) > 1:
+        raise ValueError("A leaderboard must use one response timeout")
     for row in results:
         identity = json.dumps(row.get("game_metadata", {}), sort_keys=True)
         if row["game"] in task_metadata and task_metadata[row["game"]] != identity:
@@ -64,9 +68,7 @@ def summarize(
         values = matrix[:, samples].mean(axis=(0, 2)) * 100
         ci = np.quantile(values, [0.025, 0.975]).tolist() if len(seeds) >= 2 else None
         times = np.array([t for row in rows for t in row["latencies_ms"]])
-        eligible = bool(np.max(times) < 100) and all(
-            not r["errors"] and not r["aborted"] for r in rows
-        )
+        eligible = passes(times)
         board.append(
             {
                 "agent": agent,
@@ -85,8 +87,10 @@ def summarize(
                 "p50_ms": float(np.median(times)),
                 "p95_ms": float(np.quantile(times, 0.95)),
                 "max_ms": float(np.max(times)),
-                "misses": int(np.sum(times >= 100)),
+                "misses": int(np.sum(times >= LIMIT_MS)),
                 "latency_eligible": eligible,
+                "latency_policy": policy(),
+                "response_timeout_seconds": rows[0].get("response_timeout_seconds"),
                 "trust": "local-unattested",
                 "official_rank": None,
                 "per_game": {

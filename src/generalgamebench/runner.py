@@ -10,6 +10,7 @@ from pathlib import Path
 from . import __version__
 from .evidence import Ledger, digest
 from .games import make_game
+from .latency import POLICY_ID, passes
 from .protocol import ProtocolError, validate_reply
 
 
@@ -43,7 +44,9 @@ def run_episode(
         "actions": game.actions,
         "hardware": f"{platform.system()} {platform.machine()}",
         "timing": "observation request to validated action receipt; includes snapshot, PNG and IPC; engine advance/render updates between decisions excluded",
-        "simulation": "lockstep; late actions replaced with wait in realtime mode",
+        "simulation": "lockstep; valid actions applied until the transport timeout",
+        "latency_policy": POLICY_ID,
+        "response_timeout_seconds": timeout,
         "trust": "local-unattested",
         "created_at": time.time(),
         "game_metadata": getattr(game, "metadata", {}),
@@ -64,11 +67,8 @@ def run_episode(
             }
             reply, error, action = None, None, 0
             try:
-                budget = (
-                    max(0.000001, 0.1 - (time.perf_counter_ns() - started) / 1e9)
-                    if mode == "realtime"
-                    else timeout
-                )
+                # Keep slow samples. A per-response 200 ms cutoff would censor p95.
+                budget = max(0.000001, timeout - (time.perf_counter_ns() - started) / 1e9)
                 reply = agent.act(obs, budget)
                 action = validate_reply(reply, obs)
             except (TimeoutError, ProtocolError, BrokenPipeError, OSError, ValueError) as exc:
@@ -77,7 +77,7 @@ def run_episode(
                 aborted = True
             accepted = time.perf_counter_ns()
             latency = (accepted - started) / 1e6
-            applied = 0 if error or (mode == "realtime" and latency >= 100) else action
+            applied = 0 if error else action
             step = len(latencies)
             latencies.append(latency)
             game.step(applied)
@@ -118,7 +118,10 @@ def run_episode(
             "version": __version__,
             "hardware": manifest["hardware"],
             "max_steps": max_steps,
-            "latency_eligible": bool(latencies) and max(latencies) < 100 and not errors,
+            # This episode statistic does not decide the complete suite result.
+            "latency_eligible": passes(latencies),
+            "latency_policy": POLICY_ID,
+            "response_timeout_seconds": timeout,
             "model": getattr(agent, "model", None),
             "provider_metadata": getattr(agent, "metadata", {}),
             "game_metadata": manifest["game_metadata"],

@@ -1,5 +1,35 @@
 # Measured results provenance
 
+## Current latency rule — 5 October 2026
+
+The current leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fails.
+The update uses every saved response time from each complete suite.
+It uses linear interpolation across all decisions. It does not average per-game p95 values.
+Scores, failures, evaluator versions and trust status stay unchanged.
+This policy update adds no new leaderboard episodes or model calls.
+
+All four controls in the current model exhibition pass this latency test.
+The 11 hosted models fail it.
+All four policies in the separate 516-episode baseline archive also pass it.
+All entries remain `local-unattested`. The official leaderboard has no entries.
+
+| Baseline | Score / 100 | Suite p95 / ms | Below 200 ms |
+| --- | ---: | ---: | --- |
+| Pixel Tracker | 16.070 | 39.926 | Pass |
+| Pixel React | 15.906 | 40.123 | Pass |
+| Random | 13.325 | 37.573 | Pass |
+| Idle | 11.727 | 39.651 | Pass |
+
+The [policy snapshot](policy-p95-200-2026-10-05/snapshot.json) records the new status of all 44 saved rows.
+The [validation report](policy-p95-200-2026-10-05/validation.json) records the input checksums and each status change.
+Run `scripts/update_latency_policy.py` with the files listed in that report to reproduce the update.
+
+The sections below describe the rules and evidence at each original publication.
+Their 100 ms references are historical. Released evidence and snapshots remain unchanged.
+The current [methodology](../docs/METHODOLOGY.md) gives the new rule.
+
+---
+
 ## 5 October 2026 — complete headless baseline refresh
 
 The four built-in policies — **Idle, Random, Pixel React and Pixel Tracker** — each played all **43 admitted scenarios**, with seeds 4000–4002 and a 24-decision horizon in realtime mode on evaluator 0.4.0. The complete cohort contains **516 episodes and 11,641 recorded decisions**. Every scheduled episode is retained, including **21 timeouts**, which abort their episodes and score zero. No hosted model or local VLM was called.

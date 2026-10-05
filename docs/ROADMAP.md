@@ -2,7 +2,7 @@
 
 The [public GitHub project](https://github.com/users/DanielTea/projects/4) tracks the work.
 
-Shipped: portable evaluation package, two original 2D games, eight ViZDoom scenarios, four local policies, real Astra/Claude exhibition, strict measured deadline gate, evidence replay, uncertainty intervals, tests, static public leaderboard and submission form.
+Shipped: portable evaluation package, two original 2D games, eight ViZDoom scenarios, four local policies, real Astra/Claude exhibition, suite p95 limit below 200 ms, evidence replay, uncertainty intervals, tests, static public leaderboard and submission form.
 
 Next milestones:
 

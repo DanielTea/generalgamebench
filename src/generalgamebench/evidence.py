@@ -5,6 +5,8 @@ import json
 import math
 from pathlib import Path
 
+from .latency import legacy_evidence, passes
+
 
 def canonical(obj) -> bytes:
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
@@ -54,6 +56,15 @@ def verify_episode(directory: Path, replay: bool = True) -> dict:
 
     rows = read_ledger(directory / "events.jsonl")
     manifest, result = rows[0], rows[-1]
+    legacy = legacy_evidence(manifest)
+    if not legacy and result.get("latency_policy") != manifest["latency_policy"]:
+        raise ValueError("Manifest/result latency policy mismatch")
+    if not legacy and (
+        not math.isfinite(manifest.get("response_timeout_seconds", float("nan")))
+        or manifest["response_timeout_seconds"] <= 0
+        or result.get("response_timeout_seconds") != manifest["response_timeout_seconds"]
+    ):
+        raise ValueError("Invalid or inconsistent response timeout")
     events = rows[1:-1]
     if manifest.get("mode") not in {"realtime", "exhibition"}:
         raise ValueError("Unknown evaluation mode")
@@ -101,7 +112,7 @@ def verify_episode(directory: Path, replay: bool = True) -> dict:
                 raise ValueError("Episode continued after transport failure")
             expected = (
                 0
-                if event["error"] or (manifest["mode"] == "realtime" and elapsed >= 100)
+                if event["error"] or (legacy and manifest["mode"] == "realtime" and elapsed >= 100)
                 else event["reply"]["action"]
             )
             if event["applied_action"] != expected:
@@ -116,7 +127,8 @@ def verify_episode(directory: Path, replay: bool = True) -> dict:
             raise ValueError("Result timing/errors do not match evidence")
         if result["aborted"] != bool(errors):
             raise ValueError("Incorrect abort status")
-        if result["latency_eligible"] != (max(times) < 100 and not errors):
+        eligible = (max(times) < 100 and not errors) if legacy else passes(times)
+        if result["latency_eligible"] != eligible:
             raise ValueError("Incorrect latency eligibility")
         expected_score = 0.0 if errors else result["game_result"]["score"]
         if (
