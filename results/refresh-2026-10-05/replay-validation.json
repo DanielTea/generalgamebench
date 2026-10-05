@@ -1,0 +1,3878 @@
+{
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/coin-run-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-basic-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/crafter-3000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/atari-breakout-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/minihack-room-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-sonnet-5-5/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/minihack-room-3000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-astra/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-basic-3000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-home-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/minihack-room-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-sol/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/coin-run-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-6-luna/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/coin-run-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-basic-3000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-health-3000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-home-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/doom-predict-3000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 5,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-climber-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/minihack-room-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-sol/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/coin-run-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-basic-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 6,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-health-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-corridor-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-home-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/doom-predict-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-climber-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-terra/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-6-luna/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/minihack-room-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/openai-gpt-5-5/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/minihack-room-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-opus-5-1m-/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/minihack-room-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-sonnet-5/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 7,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 3,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-maze-3000": {
+    "valid": true,
+    "steps": 4,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 2,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/anthropic/claude-claude-haiku-4-5-20251001/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/idle/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/random/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/react/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/controls/tracker/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/refresh-2026-10-05/episodes/claude-claude-opus-5-5/coin-run-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  }
+}

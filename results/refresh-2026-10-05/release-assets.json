@@ -1,0 +1,10 @@
+{
+  "generalgamebench-evidence-refresh-2026-10-05.tar.gz": {
+    "sha256": "562604b655295e8cabea6803df63be19e0d81c97e93795ad12913a60a04a4988",
+    "bytes": 299980838
+  },
+  "generalgamebench-huggingface-refresh-2026-10-05.tar.gz": {
+    "sha256": "747baa1e26c67b6f94ec70bd740171469f567ea209faba8e848a040d219a0a9f",
+    "bytes": 23857418
+  }
+}

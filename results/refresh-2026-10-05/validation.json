@@ -1,0 +1,48 @@
+{
+  "source_commit": "069dc88e21367aebd33433b7a840fb04425fcbff",
+  "unit_checks": {
+    "passed": 88,
+    "skipped": 54,
+    "reason_for_skips": "Optional engine tests require explicitly installed game runtimes",
+    "ci_run": "https://github.com/DanielTea/generalgamebench/actions/runs/37279337698"
+  },
+  "portable_native_checks": {
+    "architectures": [
+      "linux/amd64",
+      "linux/arm64"
+    ],
+    "status": "passed",
+    "ci_run": "https://github.com/DanielTea/generalgamebench/actions/runs/37279343525"
+  },
+  "offscreen_checks": {
+    "command": "GGBENCH_RUN_INTEGRATION=1 uv run pytest tests/test_integrations.py -k airstriker -q",
+    "passed": 2,
+    "original_episodes_replayed": 15,
+    "report": "headless-replay.json"
+  },
+  "test_source_hashes": {
+    "tests/test_compact_evidence.py": "344e33190666f524b7e2198f211467ab9f0af260a27ef71b3ec0b4906e68e7e2",
+    "tests/test_container_runtime.py": "ae25b1dd4e6118f81e416d753a06917428a799cd076ac691ee0b5e228cd2cb89",
+    "tests/test_evidence.py": "697318bad501ac38ca4b68f5e927bdf81e456fe21789e890fbd1c6ed8a31a373",
+    "tests/test_games.py": "14f26d4f3cde277ee18a58243464bb3e2f9de076e8c199c81b9eb5ed5e6a8ce4",
+    "tests/test_huggingface.py": "c96d75356637fdedfdda4217b0d0b691386cacfc06849c33b0cb41a42c3e61bc",
+    "tests/test_integrations.py": "29ffc29d4a81ae67fa4cbf17c6a3b9152b3895ab76c752f05b8840e37358927e",
+    "tests/test_models.py": "0f2e58b22c6ec8a13011cef1f34fb747c9c7e1680d86e3097a2be15596720d42",
+    "tests/test_protocol.py": "152bd6ba88b501db3cc1d2013fcab3ee2335a9b4e34878e8274a2154351bac82",
+    "tests/test_ranking.py": "6236f9c9fe8fdad2b271c97922f59450ba75abacc4b770da8158e126e3499159",
+    "tests/test_refresh_export.py": "f7ad980c6dd5e18180346f33ce6d9b0c8e282a5326a427b078ad9023149f96e8",
+    "tests/test_registry.py": "5bb8fdfa22b2254cb56bb73519cc757029660195a522a5546a05b1ab267be73e",
+    "tests/test_submission.py": "67362e004a7dcf666e6c59111ee5ee88623295efd4983f400dfd734fa54ee381",
+    "tests/test_worker_game.py": "387b893b5bc8a860ce40a580c63cacdf72abdc9fc74442af6d6e38f30f208ee6"
+  },
+  "evidence_replay": {
+    "status": "passed",
+    "episodes": 646,
+    "ranked_episodes": 645,
+    "incomplete_episodes": 1,
+    "ranked_decisions": 4933,
+    "all_result_sidecars_match_ledger": true,
+    "packaged_selection_matches_audit": true,
+    "authentication": "local-unattested"
+  }
+}
