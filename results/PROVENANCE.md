@@ -1,6 +1,31 @@
 # Measured results provenance
 
-## Current Mac vision model results — 5 October 2026
+## Current combined model results — 5 October 2026
+
+Eleven OpenAI and Anthropic models completed new runs with the current renderer.
+Each model used all 43 scenarios, seed 3000, and a limit of eight decisions.
+The Mac ran one model and one game at a time. The providers ran model inference.
+The new runs contain 473 episodes, 3,721 decisions, and 11 reply errors.
+Every new episode passed native replay twice. All 104 fixed source checksums match.
+
+The combined table keeps the four verified local vision model rows unchanged.
+It now contains 15 models, 645 episodes, 4,208 decisions, and 138 reply errors.
+No model passed the test for suite p95 below 200 ms. Exactly 200 ms fails.
+Scores, errors, and trust status remain separate. All entries remain
+`local-unattested`. The official leaderboard has no entries.
+
+The [campaign report](hosted-rerun-2026-10-05/README.md) gives the model results
+and evidence checks. The [previous snapshot](hosted-rerun-2026-10-05/previous-snapshot.json)
+keeps the four-model table without changes. Earlier archives remain unchanged.
+The public page and Dataset still exclude local baselines and previous-result views.
+
+Each hosted action uses a fresh authenticated command call. Its measured time
+includes command startup, image transfer, network time, inference, and action
+validation. The local MLX path keeps weights in memory. The Dataset records
+these test conditions under two suite identifiers. These timings do not measure
+model-only speed. The short runs check integration. They do not establish model skill.
+
+## Earlier Mac vision model results — 5 October 2026
 
 The model table contains four vision models from Hugging Face. Each model ran
 all 43 scenarios on the Mac with seed 3000 and a limit of eight decisions.
