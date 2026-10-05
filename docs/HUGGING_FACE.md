@@ -34,7 +34,13 @@ Do not add these values across rows.
 The 5 October baseline refresh has 43 scenarios, three seeds and a 24-decision horizon.
 The source snapshot keeps the new and previous baselines with their original test conditions.
 The public Hub export excludes both baseline groups.
-The existing model results stay unchanged.
+That update kept the existing model results unchanged.
+
+The later [Mac vision model campaign](../results/hf-vlm-2026-10-05/README.md)
+replaces the model table with four models and 172 verified episodes.
+It keeps the previous snapshot without changes in the archive.
+The Mac runs all model tests. Hugging Face hosts the page and the results Dataset.
+The full suite also passed [Linux x86_64 validation](../results/linux-2026-10-05/README.md).
 
 The root JSONL files retain nested metadata.
 The viewer files store variable engine and provider metadata as JSON strings.

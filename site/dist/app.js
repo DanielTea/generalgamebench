@@ -11,6 +11,10 @@ const labels = {
   tracker: "Pixel Tracker",
   astra: "GPT-6 Astra",
   claude: "Claude",
+  "mlx-community/SmolVLM2-256M-Video-Instruct-mlx": "SmolVLM2 256M",
+  "mlx-community/SmolVLM2-500M-Video-Instruct-mlx": "SmolVLM2 500M",
+  "LiquidAI/LFM2.5-VL-450M-MLX-4bit": "LFM2.5-VL 450M · 4 bit",
+  "mlx-community/FastVLM-0.5B-bf16": "FastVLM 0.5B · BF16",
 };
 const ms = (n) =>
   n >= 1000 ? `${(n / 1000).toFixed(2)} s` : `${n.toFixed(2)} ms`;
@@ -39,7 +43,7 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "These tests cover 43 scenarios with one seed and eight decisions per game. They include OpenAI models, Claude models and reference policies. These short tests check the connections. They do not establish a reliable skill ranking. The suite p95 limit is below 200 ms. Scores stay visible if an agent fails this limit. Hosted response times include CLI startup on a shared Mac. Failed replies stay in the evidence. An incomplete suite has no aggregate score.",
+      "These vision models run on the Mac with weights from Hugging Face. Each model uses all 43 scenarios, one seed and a limit of eight decisions per game. This short test checks integration. It cannot establish model skill. The suite p95 must be below 200 ms to pass the latency test. Scores and errors remain separate. Models run one at a time after three gray startup images. All game calls count. Run settings show the test conditions. The archive keeps the previous results.",
     official:
       "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
   };
@@ -62,7 +66,7 @@ function renderBoard() {
   rows.forEach((r, i) => {
     if (i === 0 || scoreOf(r) < scoreOf(rows[i - 1]) - 1e-9) rank = i + 1;
     const tr = el("tr");
-    const name = r.model || labels[r.agent] || r.agent;
+    const name = labels[r.model] || r.model || labels[r.agent] || r.agent;
     const vals = [
       String(rank).padStart(2, "0"),
       name,
@@ -80,6 +84,18 @@ function renderBoard() {
       if (j === 1) {
         const transport = r.provider_metadata?.transport;
         cell.append(el("small", transport === "persistent-mlx-jsonl" ? "Local vision model" : transport === "authenticated-cli-per-frame" ? "Hosted model · per-image call" : "Reference policy", "agent-kind"));
+        cell.append(el("small", `Evaluator ${r.version}`, "agent-kind"));
+        const settings = r.hardware_details || dataset.track_metadata?.[active]?.hardware_details || dataset.hardware_details;
+        if (settings) {
+          const details = el("details", undefined, "run-settings");
+          details.append(el("summary", "Run settings"), el("p", settings));
+          cell.append(details);
+        }
+        if (transport === "persistent-mlx-jsonl" && /^[\w.-]+\/[\w.-]+$/.test(r.model)) {
+          const source = el("a", "Model source", "agent-kind");
+          source.href = `https://huggingface.co/${r.model}`;
+          cell.append(source);
+        }
       }
       tr.append(cell);
     });
@@ -219,7 +235,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=suite-p95-200-v1", { cache: "no-cache" })
+fetch("data.json?v=hf-vlm-2026-10-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();

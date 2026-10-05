@@ -85,7 +85,10 @@ The files in `viewer/` supply the Dataset viewer.
 
 This benchmark measures visual game control within fixed limits.
 It does not measure intelligence in full.
-The current hosted-model tests use one seed and eight decisions per scenario.
+The current vision model tests run on a Mac.
+They use one seed and a limit of eight decisions per scenario.
+Each model uses pinned weights from Hugging Face.
+The archive keeps the previous results and their recording rules.
 Many games only start during these short tests.
 Do not use these results as a reliable ranking of model intelligence.
 

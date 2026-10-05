@@ -1,0 +1,1034 @@
+{
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/coin-run-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-basic-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-health-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-home-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/doom-predict-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-climber-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-heist-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-maze-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-miner-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/crafter-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/atari-breakout-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/nethack-score-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/minihack-room-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/coin-run-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-basic-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-health-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-corridor-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-home-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/doom-predict-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-climber-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-heist-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-maze-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-miner-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/crafter-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/atari-breakout-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/nethack-score-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/minihack-room-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/coin-run-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-basic-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-health-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-corridor-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-home-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/doom-predict-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-climber-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-heist-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-maze-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-miner-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/crafter-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/nethack-score-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/minihack-room-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/coin-run-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/dodge-lanes-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-basic-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-defend-center-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-defend-line-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-take-cover-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-health-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-corridor-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-home-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/doom-predict-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-bigfish-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-bossfight-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-caveflyer-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-chaser-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-climber-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-coinrun-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-dodgeball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-fruitbot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-heist-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-jumper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-leaper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-maze-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-miner-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-ninja-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-plunder-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/procgen-starpilot-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/crafter-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/miniworld-oneroom-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/pettingzoo-pistonball-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/atari-breakout-3000": {
+    "valid": true,
+    "steps": 8,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/retro-airstriker-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/nethack-score-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/minihack-room-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/unity-food-collector-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/football-empty-goal-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/supertuxkart-lighthouse-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/luanti-chop-tree-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/supertux-first-coin-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/dcss-first-experience-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/openttd-first-road-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/mindustry-copper-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/cdda-first-weapon-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  },
+  "runs/hf-vlm-2026-10-05/episodes/mlx-mlx-community-FastVLM-0-5B-bf16/warzone-first-derrick-3000": {
+    "valid": true,
+    "steps": 1,
+    "replayed": true,
+    "authentication": "local-unattested"
+  }
+}
