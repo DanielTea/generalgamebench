@@ -14,6 +14,7 @@ import os
 import sys
 import tempfile
 import traceback
+from pathlib import Path
 
 import numpy as np
 from PIL import Image
@@ -534,12 +535,19 @@ def main():
     output = os.fdopen(reply_fd, "w", buffering=1)
     os.dup2(sys.stderr.fileno(), sys.stdout.fileno())
     trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
+    native_trace = None
+    if trace and Path(__file__).with_name("_native_trace.so").is_file():
+        import ctypes
+
+        native_trace = ctypes.CDLL(str(Path(__file__).with_name("_native_trace.so")))
     env = None
     try:
         for line in sys.stdin:
             try:
                 if trace:
                     faulthandler.dump_traceback_later(25, file=sys.stderr)
+                if native_trace:
+                    native_trace.gg_trace_arm()
                 request = json.loads(line)
                 command = request["command"]
                 with contextlib.redirect_stdout(sys.stderr):
@@ -572,6 +580,8 @@ def main():
             finally:
                 if trace:
                     faulthandler.cancel_dump_traceback_later()
+                if native_trace:
+                    native_trace.gg_trace_stop()
     finally:
         if env is not None:
             env.close()

@@ -24,3 +24,4 @@ _vizdoom.ini
 .game-envs/
 .game-assets
 .game-cache/
+src/generalgamebench/_native_trace.so

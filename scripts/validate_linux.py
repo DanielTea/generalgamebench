@@ -68,6 +68,7 @@ def main():
             "pytest",
             "tests/test_integrations.py",
             "-q",
+            "-rP",
             "--basetemp",
             str(args.output / "goal-tests"),
             "-k",

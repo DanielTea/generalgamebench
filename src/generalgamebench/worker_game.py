@@ -107,6 +107,10 @@ class WorkerGame:
             raise
 
     def _call(self, value, timeout=30):
+        trace = os.environ.get("GGBENCH_WORKER_TRACE") == "1"
+        if trace and timeout == 30:
+            timeout = 180
+        started = time.monotonic()
         self.process.stdin.write(json.dumps(value).encode() + b"\n")
         deadline = time.monotonic() + timeout
         while b"\n" not in self.buffer:
@@ -135,6 +139,14 @@ class WorkerGame:
             raise RuntimeError(f"Invalid game worker reply: {line[:200]!r}; {detail}") from exc
         if "error" in response:
             raise RuntimeError(response["error"])
+        if trace and time.monotonic() - started >= 25:
+            self.log.seek(0)
+            detail = self.log.read().decode(errors="replace")[-6000:]
+            print(
+                f"Slow engine reply: {self.id}, step {self.steps}, "
+                f"{time.monotonic() - started:.2f} seconds; {detail}",
+                flush=True,
+            )
         return response
 
     def frame(self):

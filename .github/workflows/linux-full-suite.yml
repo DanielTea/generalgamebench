@@ -44,6 +44,13 @@ jobs:
           sudo apt-get install -y $(uv run --no-sync python scripts/install_linux.py --system-packages)
       - name: Install pinned runtime
         run: uv run --no-sync python scripts/install_linux.py --runtime '${{ matrix.runtime }}'
+      - name: Build the optional native trace
+        if: matrix.runtime == 'docker-stk'
+        run: |
+          docker run --rm --entrypoint gcc \
+            --mount type=bind,src="$PWD/src/generalgamebench",dst=/worker \
+            ggbench-stk:0.7.4-render-v2-amd64 -shared -fPIC -O0 -g \
+            -o /worker/_native_trace.so /worker/native_trace.c
       - name: Record and replay the assigned scenarios
         run: uv run --no-sync python scripts/validate_linux.py --runtime '${{ matrix.runtime }}' --output 'runs/linux/${{ matrix.runtime }}'
       - name: Save native evidence
