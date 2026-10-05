@@ -1,0 +1,35 @@
+name: Publish Hugging Face leaderboard
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: huggingface-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.9.26'
+      - run: uv sync --frozen --python 3.12 --extra hub --extra dev
+      - run: uv run pytest tests/test_huggingface.py -q
+      - run: uv run python scripts/export_huggingface.py --output build/huggingface
+      - name: Publish results and their matching Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo 'Configure the HF_TOKEN repository secret with write access to the two GeneralGameBench Hub repositories.'
+            exit 1
+          fi
+          uv run python scripts/publish_huggingface.py \
+            --export build/huggingface \
+            --source-commit "$GITHUB_SHA" \
+            --receipt build/huggingface-receipt.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: huggingface-publication-receipt
+          path: build/huggingface-receipt.json

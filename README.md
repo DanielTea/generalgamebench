@@ -64,15 +64,24 @@ Run only your own trusted agents on your workstation. A subprocess is a protocol
 
 See [methodology](docs/METHODOLOGY.md), [security](SECURITY.md), [research](docs/RESEARCH.md), and [game catalog](docs/GAMES.md).
 
-## Hugging Face portability
+## Hugging Face
 
-The leaderboard is a static site with relative assets and a versioned data snapshot. Prepare a static Space and separate tabular Dataset locally:
+[Leaderboard Space](https://huggingface.co/spaces/danieltee/generalgamebench) ·
+[Results Dataset](https://huggingface.co/datasets/danieltee/generalgamebench-results)
+
+The Space shows the leaderboard and links to a fixed Dataset revision.
+The Dataset retains scores, seeds, test conditions, latency and trust status.
+Separate computers run the games.
 
 ```sh
-uv run python scripts/export_huggingface.py --output build/huggingface-preview
+uv sync --extra hub --extra dev
+uv run python scripts/export_huggingface.py --output build/huggingface
 ```
 
-The export preserves exact seeds, task/model revisions, suite identity, latency and trust labels. No upload occurs. [Publication design](docs/HUGGING_FACE.md). Game execution and credentials stay on separate evaluation workers.
+This command prepares local files.
+See the [publication procedure](docs/HUGGING_FACE.md) to publish them.
+The proposed Gaming category uses `domain:gaming`.
+Finder inclusion requires five community likes and maintainer approval.
 
 ## Structure
 
