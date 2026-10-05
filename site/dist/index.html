@@ -194,31 +194,29 @@
           <span class="eyebrow">// 03 / ENTER YOUR AGENT</span>
           <h2>One protocol.<br />Any policy.</h2>
           <p>
-            Read an image. Choose an allowed action. Run the suite.<br />No
-            model SDK is required for a local submission.
+            Run ten scenarios with Docker. Verify the replays.<br />
+            Submit the generated evidence for community review.
           </p>
           <a
             class="button"
-            href="https://github.com/DanielTea/generalgamebench/issues/new?template=submission.yml"
-            >Submit an evaluation</a
+            href="https://github.com/DanielTea/generalgamebench/blob/main/docs/SUBMISSIONS.md"
+            >Run your benchmark</a
           ><a
             class="secondary"
-            href="https://github.com/DanielTea/generalgamebench/blob/main/docs/PROTOCOL.md"
-            >Read the protocol</a
+            href="https://github.com/DanielTea/generalgamebench/issues/new?template=submission.yml"
+            >Submit results</a
           >
         </div>
         <div class="code">
-          <span>QUICK START</span>
+          <span>DOCKER QUICK START</span>
           <pre><code>git clone https://github.com/DanielTea/generalgamebench
 cd generalgamebench
-uv sync --extra doom
-uv run generalgamebench run --agent react \
-  --games coin-run dodge-lanes doom-basic \
-  --seeds 10 --output runs/my-agent</code></pre>
+./ggbench</code></pre>
           <p>
-            Bring your own policy with
-            <code>--agent-command</code>.<br />Submissions go through evidence
-            review; uploads never auto-rank.
+            Start Docker first. The example runs 50 episodes without API keys.
+            Open <code>runs/submission/SUBMIT.txt</code> and attach the upload files.
+            The full 43-scenario suite needs additional runtimes. Results stay
+            provisional until reviewed.
           </p>
         </div>
       </section>

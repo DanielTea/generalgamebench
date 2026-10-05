@@ -4,7 +4,7 @@ Run `uv sync --extra doom --extra dev`, then `uv run pytest`, `uv run ruff check
 
 Game adapters need documented asset rights, reset/seed semantics, rendered observations, allowed controls, native scoring, fixed normalization bounds, termination and a deterministic replay test. Commercial game files and model weights must not be committed. Never claim a researched candidate is integrated.
 
-Agent submissions use the issue form. State model/version, policy hash, hardware, external services, training/test separation and all run failures. Public development results remain provisional. Do not ask reviewers to execute untrusted code on their workstation.
+Agent submissions use the [run-and-submit workflow](docs/SUBMISSIONS.md) and issue form. The `benchmark` command packages a fixed suite, native replay evidence, calculated rankings and upload-ready ZIP parts. State model/version, policy hash, hardware, external services, training/test separation and all run failures. Public results remain provisional. Reviewers use `verify-submission` without executing submitted agent code.
 
 Timing or scoring changes require a version/season bump and new results. Formatting, documentation and semantic validation improvements that do not change observations, controls or scoring do not authorize silently rerunning only bad seeds. Preserve all final-campaign trials.
 

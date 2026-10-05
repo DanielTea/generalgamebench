@@ -1,0 +1,84 @@
+name: Portable benchmark
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - 'environments/portable/Dockerfile*'
+      - '.github/workflows/portable.yml'
+      - 'ggbench'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Build the actual distribution image
+        run: docker build --build-arg REVISION="$GITHUB_SHA" -f environments/portable/Dockerfile -t ggbench-portable:ci .
+      - name: Run all ten portable tasks and package their evidence
+        env:
+          GGBENCH_IMAGE: ggbench-portable:ci
+        run: |
+          ./ggbench doctor
+          ./ggbench benchmark --output /results/portable --hardware "GitHub-hosted Linux ${{ matrix.arch }}"
+          ./ggbench verify-submission /results/portable/submission.zip
+      - name: Retain the exact validation evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: portable-${{ matrix.arch }}-evidence
+          path: |
+            runs/portable/submission.zip
+            runs/portable/SHA256SUMS
+          retention-days: 7
+      - name: Publish the tested architecture image
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.repository == 'DanielTea/generalgamebench'
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY_USER: ${{ github.actor }}
+          ARCH: ${{ matrix.arch }}
+        run: |
+          printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io --username "$REGISTRY_USER" --password-stdin
+          docker tag ggbench-portable:ci "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA-$ARCH"
+          docker push "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA-$ARCH"
+
+  publish:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.repository == 'DanielTea/generalgamebench'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Publish one image reference for both tested architectures
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY_USER: ${{ github.actor }}
+        run: |
+          printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io --username "$REGISTRY_USER" --password-stdin
+          VERSION=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
+          docker buildx imagetools create \
+            --tag "ghcr.io/danieltea/generalgamebench:$VERSION" \
+            --tag "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA" \
+            "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA-amd64" \
+            "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA-arm64"
+          docker buildx imagetools inspect "ghcr.io/danieltea/generalgamebench:sha-$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
