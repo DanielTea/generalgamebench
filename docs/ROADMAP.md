@@ -16,6 +16,6 @@ The public reference suite is ready for local experimentation. The production ad
 
 ## Expanded Mac implementation
 
-33 optional tasks now pass local deterministic replay. The suite covers 43 scenarios across 36 of 45 catalog cards, adding ten of the previously unfinished integrations. Three native candidates still fail admission (0 A.D., StarCraft II and Veloren), and six game families lack usable local installations. The frozen model standings retain their original 33-task cohort. See the [coverage matrix and blockers](GAMES.md).
+33 optional tasks now pass local deterministic replay. The suite covers 43 scenarios across 36 of 45 catalog cards, adding ten of the previously unfinished integrations. Three native candidates still fail admission (0 A.D., StarCraft II and Veloren), and six game families lack usable local installations. The 5 October hosted-model refresh uses all 43 scenarios; the archived model standings retain their original 33-task cohort. Longer horizons and more seeds remain necessary for reliable skill comparisons. See the [coverage matrix and blockers](GAMES.md).
 
 Hugging Face is a planned second distribution channel: a static Space displays a pinned snapshot from a separate versioned Dataset. The tested local export preserves task/model revisions, exact seed sets, suite identity and trust labels. Evaluation workers, credentials and submission execution stay outside the Space. No Hugging Face repository has been created or published yet.

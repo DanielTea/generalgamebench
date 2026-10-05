@@ -15,6 +15,18 @@ from generalgamebench.ranking import summarize
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def verify_source(campaign):
+    recorded = campaign["source_hashes"]
+    replay = campaign.get("replay_source_hashes", recorded)
+    if replay.keys() != recorded.keys():
+        raise ValueError("Replay source must cover exactly the recorded source files")
+    if replay != recorded and not campaign.get("source_change_note"):
+        raise ValueError("Document source changes before replaying recorded evidence")
+    for source, expected in replay.items():
+        if hashlib.sha256((ROOT / source).read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Scored/replay source changed: {source}")
+
+
 def export(report, workers=4):
     if workers < 1:
         raise ValueError("Workers must be positive")
@@ -22,9 +34,7 @@ def export(report, workers=4):
     inventory = json.loads((report / "model-inventory.json").read_text())
     if (report / "snapshot.json").exists():
         raise FileExistsError("Preserve published snapshots; choose a new campaign")
-    for source, expected in campaign["source_hashes"].items():
-        if hashlib.sha256((ROOT / source).read_bytes()).hexdigest() != expected:
-            raise ValueError(f"Scored source changed: {source}")
+    verify_source(campaign)
 
     rows, attempts, roots, checks, statuses = [], [], {}, {}, []
     ranked_paths, incomplete_paths = [], []
@@ -56,9 +66,11 @@ def export(report, workers=4):
             statuses.append(status)
             if status["status"] == "complete":
                 ranked_paths.extend(paths(folder))
-            elif status["status"] in {"provider-unavailable", "blocked"}:
+            elif status["status"] == "provider-unavailable":
                 # Retain failed/incomplete evidence, but never fabricate a suite score.
                 incomplete_paths.extend(p.parent for p in sorted(folder.glob("*/result.json")))
+            elif status["status"] == "blocked":
+                raise ValueError(f"Resolve blocked campaign before publishing: {model}")
             else:
                 raise ValueError(f"Campaign still running: {model}")
     for name in campaign["controls"]:
@@ -70,9 +82,7 @@ def export(report, workers=4):
                 roots[relative], checks[relative] = head, check
                 if index % 25 == 0:
                     print(f"Replayed {index}/{len(selection)} episodes", flush=True)
-    for source, expected in campaign["source_hashes"].items():
-        if hashlib.sha256((ROOT / source).read_bytes()).hexdigest() != expected:
-            raise ValueError(f"Scored source changed during export: {source}")
+    verify_source(campaign)
     board = summarize(rows, campaign["games"], campaign["seeds"])
     previous = json.loads((ROOT / "results/season-0.2/snapshot.json").read_text())
     snapshot = json.loads((ROOT / "site/dist/data.json").read_text())

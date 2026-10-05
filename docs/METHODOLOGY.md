@@ -22,6 +22,8 @@ For `G` scenarios and `S` fixed seeds, the displayed score is `100 × sum(normal
 
 Equal scenario weights are not equal franchise weights: eight Doom and sixteen Procgen scenarios contribute eight and sixteen times the weight of a single scenario. A score is not an IQ measurement, a human-normalized skill estimate, or the percentage of games beaten. Some short survival tasks score highly even for an idle policy. Latency does not alter exhibition scores; it is reported as a separate eligibility gate.
 
+Normalization can also place a zero native reward above zero on the display scale. For example, Doom Basic's fixed anchors are -320 and 100, so a raw reward of 0 maps to about 76.2/100. This is why the raw reward, task rules and reference-policy controls matter when interpreting an aggregate.
+
 95% percentile intervals use 2,000 bootstrap draws of seed blocks across the fixed scenarios, with a fixed analysis RNG. They describe seed variability, not model-training variability, machine variability, provider drift or future-task generalization. One seed gets no interval. Two seeds yield particularly weak uncertainty estimates.
 
 ## Evidence and verification

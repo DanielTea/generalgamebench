@@ -3,7 +3,9 @@
 import io
 import os
 import random
+import subprocess
 import time
+from pathlib import Path
 
 import pytest
 from PIL import Image
@@ -15,6 +17,40 @@ pytestmark = pytest.mark.skipif(
     os.environ.get("GGBENCH_RUN_INTEGRATION") != "1",
     reason="Set GGBENCH_RUN_INTEGRATION=1 after installing optional runtimes",
 )
+
+
+def test_airstriker_never_opens_a_display():
+    root = Path(__file__).resolve().parents[1]
+    runtime = Path(os.environ.get("GGBENCH_ENV_ROOT", root / ".game-envs")) / "research"
+    python = runtime / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    # Run the real adapter in its pinned runtime. The previous default calls
+    # render() on reset/step to open a window; fail before any GUI is created.
+    subprocess.run(
+        [
+            str(python),
+            "-c",
+            """
+from stable_retro.retro_env import RetroEnv
+from generalgamebench.environment_worker import Environment
+from generalgamebench.registry import task_dict
+def reject_display(self):
+    raise AssertionError("Airstriker attempted to open a game display")
+RetroEnv.render = reject_display
+game = Environment(task_dict("retro-airstriker"), 3000, 24)
+try:
+    for tick in range(24):
+        assert game.frame()
+        assert game.engine.viewer is None
+        game.step(tick % len(game.actions))
+    assert game.done
+finally:
+    game.close()
+""",
+        ],
+        check=True,
+        timeout=60,
+        env={**os.environ, "PYTHONPATH": str(root / "src")},
+    )
 
 
 @pytest.mark.parametrize("task", list(TASKS))

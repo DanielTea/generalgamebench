@@ -1,12 +1,42 @@
 """A provider failure must remain evidence without becoming an aggregate rank."""
 
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
 
+import pytest
+
 from generalgamebench import __version__
 from generalgamebench.models import ProviderUnavailable
 from generalgamebench.runner import run_episode
+
+
+def test_replay_source_revision_requires_provenance_and_exact_hashes(tmp_path, monkeypatch):
+    scripts = Path(__file__).parents[1] / "scripts"
+    monkeypatch.syspath_prepend(str(scripts))
+    spec = importlib.util.spec_from_file_location("refresh_export", scripts / "export_refresh.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    source = tmp_path / "adapter.py"
+    source.write_text("offscreen")
+    current = hashlib.sha256(source.read_bytes()).hexdigest()
+    campaign = {"source_hashes": {"adapter.py": "original"}}
+    with pytest.raises(ValueError, match="source changed"):
+        module.verify_source(campaign)
+    campaign["replay_source_hashes"] = {"adapter.py": current}
+    with pytest.raises(ValueError, match="Document source changes"):
+        module.verify_source(campaign)
+    campaign["source_change_note"] = "Original frames and scores replayed off-screen exactly."
+    module.verify_source(campaign)
+    assert campaign["source_hashes"] == {"adapter.py": "original"}
+    source.write_text("unexpected change")
+    with pytest.raises(ValueError, match="source changed"):
+        module.verify_source(campaign)
+    campaign["replay_source_hashes"] = {}
+    with pytest.raises(ValueError, match="exactly the recorded source files"):
+        module.verify_source(campaign)
 
 
 def test_refresh_excludes_incomplete_models_and_preserves_failure(tmp_path, monkeypatch):
@@ -80,6 +110,13 @@ def test_refresh_excludes_incomplete_models_and_preserves_failure(tmp_path, monk
     )
     save(tmp_path / "site/dist/data.json", {"coverage": {}, "local": [], "official": []})
 
+    failed_status = tmp_path / "runs/models/openai-inaccessible/status.json"
+    prior = json.loads(failed_status.read_text())
+    save(failed_status, {**prior, "status": "blocked"})
+    with pytest.raises(ValueError, match="Resolve blocked campaign"):
+        module.export(report)
+    assert not (report / "snapshot.json").exists()
+    save(failed_status, prior)
     module.export(report)
     snapshot = json.loads((report / "snapshot.json").read_text())
     assert {row["agent"] for row in snapshot["exhibition"]} == {"openai-working", "idle"}
