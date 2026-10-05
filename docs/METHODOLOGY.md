@@ -30,7 +30,8 @@ A finite test does not establish future response times.
 
 Publish p50, p95, maximum response time and the count of responses at or above 200 ms.
 Also publish errors, aborted episodes and the number of decisions.
-The field `latency_eligible` reports only the suite latency test.
+In aggregate rows, `latency_eligible` reports only the suite latency test.
+Individual episode flags do not decide the suite result.
 Errors and aborted episodes remain in the results. Aborted episodes score zero.
 An incomplete suite has no aggregate result.
 A latency pass does not establish valid replay, independent timing or official admission.
