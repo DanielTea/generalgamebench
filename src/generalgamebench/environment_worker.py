@@ -295,7 +295,9 @@ class Environment:
 
             self.package = "stable-retro"
             self.engine = retro.make(
-                game="Airstriker-Genesis-v0", inttype=retro.data.Integrations.STABLE
+                game="Airstriker-Genesis-v0",
+                inttype=retro.data.Integrations.STABLE,
+                render_mode="rgb_array",
             )
             self.image, _ = self.engine.reset(seed=seed)
             self.mapping = [np.zeros(len(self.engine.buttons), dtype=np.int8)]

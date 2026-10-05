@@ -4,6 +4,8 @@ For the ten-scenario portable suite, use the [Docker submission workflow](../doc
 
 The referee uses Python 3.12. Engines run in separate trusted worker processes because their Python and NumPy requirements conflict. This process boundary isolates dependencies, not malicious agents. `.game-envs`, weights, assets and local credentials are never committed.
 
+Benchmark runs and evidence replay render off-screen by default. Airstriker, MiniWorld and Pistonball use RGB arrays; Doom hides its window; Unity uses batch mode with its visual camera enabled. Linux games render inside their containers using off-screen drivers or an internal virtual display. No game window should open on the host desktop. Off-screen rendering retains the real game pixels supplied to agents; it does not disable graphics or substitute screenshots.
+
 On the tested Apple Silicon Mac:
 
 ```sh

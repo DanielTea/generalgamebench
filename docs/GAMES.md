@@ -2,7 +2,7 @@
 
 Reviewed 2026-10-04. **43 runnable scenarios across 36 catalog cards; nine cards remain unadmitted.** Ten of the previous 19 unfinished integrations now have a verified bounded task. The 45 cards include game families, not 45 fully implemented unique games. No modern commercial AAA title is admitted yet.
 
-The 33 optional tasks pass real-engine control, native scoring/termination and exact frame/score replay checks on this Apple M3 Max Mac. Together with the original ten scenarios they form the expanded suite. See [installation and task definitions](../environments/README.md). The frozen v0.2 model rankings still cover 33 scenarios; new integration controls do not update model scores.
+The 33 optional tasks pass real-engine control, native scoring/termination and exact frame/score replay checks on this Apple M3 Max Mac. Together with the original ten scenarios they form the expanded suite. See [installation and task definitions](../environments/README.md). The 5 October 2026 hosted-model refresh covers all 43 scenarios in a new cohort; the frozen v0.2 rankings retain their original 33 scenarios.
 
 | Environment | Status | Scope |
 | --- | --- | --- |

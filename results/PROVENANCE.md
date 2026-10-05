@@ -1,5 +1,29 @@
 # Measured results provenance
 
+## 5 October 2026 — hosted-model refresh
+
+The new cohort evaluates **eleven accessible configured models across all 43 admitted scenarios**, plus four matched reference policies. Seven OpenAI models and four Claude models, including the explicitly requested Sonnet 5.5, completed the fixed suite. Opus 5.5 returned a provider-access error through the configured connection; its one attempted episode is preserved separately and receives no aggregate score. No fallback model is substituted.
+
+The scored cohort contains **645 episodes and 4,933 recorded decisions**: 473 model episodes and 172 control episodes. All use seed 3000, an eight-decision horizon and exhibition mode on evaluator 0.4.0. It contains **52 aborted episodes**, each scored zero: 38 provider/transport failures and 14 JSON response-format failures. The separate unavailable Opus 5.5 attempt adds one failed decision. Failures were retained rather than replaced by successful retries. One explicitly approved Codex reset credit was used during the campaign; failed episodes from before the reset remain in the scores.
+
+This is a short integration demonstration, not a reliable measure of model intelligence or general game-playing skill. One seed provides no confidence interval; many games barely start in eight decisions. Every current model and reference row fails the strict all-responses-below-100-ms gate. The official track remains empty. Hosted calls use the authenticated CLI once per image, including startup and network overhead. Up to eleven hosted evaluations temporarily overlapped on the shared Mac; these are not isolated latency measurements. See the campaign's concurrency and recovery notes.
+
+### Scoring and historical comparison
+
+Each task maps its native reward to [0,1] with frozen task rules. Seeds are averaged within each scenario, then all 43 scenario means receive equal weight and the result is multiplied by 100. Errors and aborted episodes disqualify timing eligibility; aborted scores are zero. The speed gate does not multiply or otherwise alter the exhibition score. Families with several scenarios receive more total weight. Normalization anchors do not represent IQ, human performance or percentage of games beaten.
+
+The earlier 33-scenario v0.2 exhibition, including seven local vision models, is preserved as `exhibition_previous`. Its 693 episodes and the 396 original local-control episodes remain unchanged. Old and new aggregate scores must not be compared directly. Hugging Face exports retain each track's original suite and hardware metadata in separate Dataset configurations.
+
+### Headless execution and reproducibility
+
+The spaceship window came from Stable-Retro's default human renderer. Airstriker now explicitly uses RGB-array rendering, so both gameplay and replay run off-screen. All 15 original Airstriker episodes passed exact frame, metadata and score replay under the fixed adapter. A real-engine regression check rejects any attempt to open its display. Other admitted engines use RGB arrays, hidden windows, Unity batch mode or container-local virtual displays.
+
+`refresh-2026-10-05/campaign.json` retains the original scored source hashes and the final replay source hashes separately. The only engine-source change during this campaign is Airstriker's display mode, made after its complete cohort was recorded; no scored episode was replaced. The original timings remain as measured. `headless-replay.json` records the exact checks, and `validation.json` records the automated tests and final audit. The source implementation before this display fix is commit `486b6f1bf9820c67434c2e1ab77783fdfc367f78`; the fix and regression tests are in `069dc88e21367aebd33433b7a840fb04425fcbff`.
+
+`episodes.json` contains every scored episode; `incomplete-episodes.json` preserves the unavailable model attempt. `evidence-roots.json` binds the complete public selection to its ledger hashes, and `replay-validation.json` contains its exact replay checks. The [refresh release](https://github.com/DanielTea/generalgamebench/releases/tag/refresh-2026-10-05) packages the selected ledgers, results and PNG observations plus a portable Hugging Face export and SHA-256 checksums. No credentials, provider logs, model weights or game executables are included. Nothing has been uploaded to Hugging Face.
+
+---
+
 ## Version 0.3 — native integration validation
 
 Evaluated on 2026-10-04 on the same Apple M3 Max Mac. Ten additional bounded tasks bring the runnable catalog to **43 scenarios across 36 cards**. The new tasks are Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. Nine engines run in local Linux ARM64 containers; Unity uses the pinned native Mac example.

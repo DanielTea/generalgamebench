@@ -27,8 +27,10 @@ def export(site: Path, destination: Path):
         "see media/NOTICE.txt and media/sources.json.\n"
     )
     configs = []
-    for track in ("local", "exhibition", "official"):
+    for track in ("local", "exhibition", "exhibition_previous", "official"):
         rows = []
+        track_metadata = snapshot.get("track_metadata", {}).get(track, {})
+        hardware_details = track_metadata.get("hardware_details", snapshot.get("hardware_details"))
         for ranking in snapshot.get(track, []):
             suite = {
                 k: ranking.get(k)
@@ -42,7 +44,7 @@ def export(site: Path, destination: Path):
                     "task_metadata",
                 )
             }
-            suite["hardware_details"] = snapshot.get("hardware_details")
+            suite["hardware_details"] = hardware_details
             suite_id = hashlib.sha256(json.dumps(suite, sort_keys=True).encode()).hexdigest()
             for game, score in ranking.get("per_game", {}).items():
                 metadata = ranking.get("provider_metadata", {})
@@ -50,7 +52,7 @@ def export(site: Path, destination: Path):
                     {
                         "schema_version": "generalgamebench-results/1",
                         "track": track,
-                        "season": snapshot.get("season"),
+                        "season": track_metadata.get("season", snapshot.get("season")),
                         "generated_at": snapshot.get("generated_at"),
                         "snapshot_sha256": snapshot_hash,
                         "agent_id": ranking["agent"],
@@ -73,7 +75,7 @@ def export(site: Path, destination: Path):
                         "decision_horizon": ranking["max_steps"],
                         "trust": ranking["trust"],
                         "hardware": ranking["hardware"],
-                        "hardware_details": snapshot.get("hardware_details"),
+                        "hardware_details": hardware_details,
                         "suite_errors": ranking.get("errors", 0),
                         "suite_aborted_episodes": ranking.get("aborted_episodes"),
                     }

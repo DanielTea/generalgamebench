@@ -12,7 +12,7 @@ Open-source, pixels-only game-agent evaluation. Render a game, issue a fresh obs
 
 **Early reference implementation.** Two original 2D games, eight ViZDoom scenarios and 33 additional tasks run on the tested Mac. Version 0.3 adds ten tasks: Unity VisualFoodCollector, Football Academy, SuperTuxKart Lighthouse, Luanti ChopTree, SuperTux, Dungeon Crawl Stone Soup, OpenTTD, Mindustry, Cataclysm: DDA and Warzone 2100. Each has native scoring and exact replay checks. The nine Linux engines use local ARM64 containers. Commercial AAA titles remain integration candidates. The motto describes our ambition; this benchmark measures bounded visual gameplay, not intelligence in its entirety.
 
-The published model standings remain the frozen v0.2 cohort of 33 scenarios. New integrations have separate control-policy validation evidence; they are not mixed into older model rankings. See [coverage and remaining work](docs/GAMES.md).
+The 5 October 2026 hosted-model refresh evaluates all 43 admitted scenarios with OpenAI and Anthropic models, plus four reference policies. It uses one seed and eight decisions per scenario: an integration exhibition, not a reliable intelligence ranking. The frozen 33-scenario v0.2 results, including local VLMs, remain in a separate previous-exhibition view. See [scoring methodology](docs/METHODOLOGY.md), [campaign evidence](results/refresh-2026-10-05) and [coverage and remaining work](docs/GAMES.md).
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.
 
