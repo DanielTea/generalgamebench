@@ -6,7 +6,7 @@ The current leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fail
 The update uses every saved response time from each complete suite.
 It uses linear interpolation across all decisions. It does not average per-game p95 values.
 Scores, failures, evaluator versions and trust status stay unchanged.
-No games or model calls were run for this policy update.
+This policy update adds no new leaderboard episodes or model calls.
 
 All four controls in the current model exhibition pass this latency test.
 The 11 hosted models fail it.
