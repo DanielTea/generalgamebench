@@ -94,7 +94,7 @@ The default **exhibition** mode includes slower agents and publishes measured la
 
 ## Full suite and native installation
 
-The portable image does **not** contain all 43 scenarios or commercial games. Nine additional engines use separately built Linux ARM64 containers; other tasks have isolated Python environments, and Unity uses a Mac executable. See [runtime installation and platform limits](../environments/README.md).
+The portable image does **not** contain all 43 scenarios or commercial games. Use the [Linux x86_64 installer](../environments/linux/README.md) for the full suite. Nine engines use separate Docker images. Other tasks use isolated Python environments. Unity uses a pinned executable for Linux or macOS. See [runtime installation and platform limits](../environments/README.md).
 
 ```sh
 uv sync --frozen --extra doom

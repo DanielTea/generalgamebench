@@ -22,5 +22,5 @@ _vizdoom.ini
 
 /dist/
 .game-envs/
-.game-assets/
+.game-assets
 .game-cache/

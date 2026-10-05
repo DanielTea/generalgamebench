@@ -1,6 +1,7 @@
 name: Full Linux suite
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - 'src/**'
       - 'scripts/install_linux.py'
@@ -8,16 +9,22 @@ on:
       - 'environments/**'
       - '.github/workflows/linux-full-suite.yml'
   workflow_dispatch:
+    inputs:
+      runtimes:
+        description: 'Runtime groups as a JSON array. Leave empty for all 43 scenarios.'
+        required: false
+        default: ''
 permissions:
   contents: read
 jobs:
   validate:
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     runs-on: ubuntu-24.04
     timeout-minutes: 150
     strategy:
       fail-fast: false
       matrix:
-        runtime: [python, docker-football, docker-stk, docker-craftium, docker-supertux, docker-crawl, docker-openttd, docker-mindustry, docker-cdda, docker-warzone]
+        runtime: ${{ fromJSON(inputs.runtimes || '["python", "docker-football", "docker-stk", "docker-craftium", "docker-supertux", "docker-crawl", "docker-openttd", "docker-mindustry", "docker-cdda", "docker-warzone"]') }}
     env:
       GGBENCH_BUILD_JOBS: '2'
       GGBENCH_CONTAINER_PLATFORM: linux/amd64
@@ -46,6 +53,7 @@ jobs:
           retention-days: 14
   coverage:
     needs: validate
+    if: inputs.runtimes == ''
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262

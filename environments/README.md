@@ -1,5 +1,7 @@
 # Optional game runtimes
 
+For all 43 scenarios on Ubuntu x86_64, use the [Linux installer](linux/README.md). It selects AMD64 engine images and the pinned Linux Unity build.
+
 For the ten-scenario portable suite, use the [Docker submission workflow](../docs/SUBMISSIONS.md). It needs none of the optional installations below. To check the full suite before running, use `uv run generalgamebench doctor --suite extended-v1`; missing runtimes are listed explicitly.
 
 The referee uses Python 3.12. Engines run in separate trusted worker processes because their Python and NumPy requirements conflict. This process boundary isolates dependencies, not malicious agents. `.game-envs`, weights, assets and local credentials are never committed.
@@ -54,16 +56,16 @@ Install the ten new runtimes separately:
 
 | Game task | Runtime |
 | --- | --- |
-| Unity VisualFoodCollector | [Pinned Mac executable](unity/README.md) |
-| Football Academy | [Linux ARM64](docker-football/README.md) |
-| SuperTuxKart Lighthouse | [Linux ARM64](docker-stk/README.md) |
-| Luanti ChopTree | [Linux ARM64](docker-craftium/README.md) |
-| SuperTux first coin | [Linux ARM64](docker-supertux/README.md) |
-| Dungeon Crawl Stone Soup first experience | [Linux ARM64](docker-crawl/README.md) |
-| OpenTTD first road | [Linux ARM64](docker-openttd/README.md) |
-| Mindustry copper | [Linux ARM64](docker-mindustry/README.md) |
-| Cataclysm: DDA first weapon | [Linux ARM64](docker-cdda/README.md) |
-| Warzone 2100 first derrick | [Linux ARM64](docker-warzone/README.md) |
+| Unity VisualFoodCollector | [Pinned Linux or Mac executable](unity/README.md) |
+| Football Academy | [Linux AMD64 or ARM64](docker-football/README.md) |
+| SuperTuxKart Lighthouse | [Linux AMD64 or ARM64](docker-stk/README.md) |
+| Luanti ChopTree | [Linux AMD64 or ARM64](docker-craftium/README.md) |
+| SuperTux first coin | [Linux AMD64 or ARM64](docker-supertux/README.md) |
+| Dungeon Crawl Stone Soup first experience | [Linux AMD64 or ARM64](docker-crawl/README.md) |
+| OpenTTD first road | [Linux AMD64 or ARM64](docker-openttd/README.md) |
+| Mindustry copper | [Linux AMD64 or ARM64](docker-mindustry/README.md) |
+| Cataclysm: DDA first weapon | [Linux AMD64 or ARM64](docker-cdda/README.md) |
+| Warzone 2100 first derrick | [Linux AMD64 or ARM64](docker-warzone/README.md) |
 
 Docker Desktop must be running for the Linux engines. Installers verify upstream revisions and patches; game binaries are not committed. Containers have no external network and mount only referee source plus separately verified assets where needed. The immutable image ID enters episode metadata, so replay fails closed after an image change. These are trusted engine containers, not arbitrary submission sandboxes.
 

@@ -8,11 +8,17 @@ import pytest
 from generalgamebench import container_runtime
 
 
-def image_info():
+@pytest.fixture(params=["arm64", "amd64"])
+def architecture(request, monkeypatch):
+    monkeypatch.setenv("GGBENCH_CONTAINER_PLATFORM", "linux/" + request.param)
+    return request.param
+
+
+def image_info(architecture):
     return {
         "Id": "sha256:" + "a" * 64,
         "Os": "linux",
-        "Architecture": "arm64",
+        "Architecture": architecture,
         "Config": {
             "Labels": {
                 "org.generalgamebench.engine-revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81"
@@ -30,12 +36,12 @@ def install_inspection(monkeypatch, info):
     )
 
 
-def test_engine_uses_immutable_image_and_only_worker_mount(monkeypatch):
-    info = image_info()
+def test_engine_uses_immutable_image_and_only_worker_mount(monkeypatch, architecture):
+    info = image_info(architecture)
     install_inspection(monkeypatch, info)
     command, metadata, cleanup = container_runtime.container_command("docker-football")
     assert info["Id"] in command
-    assert "ggbench-football:2.10.2-arm64" not in command
+    assert f"ggbench-football:2.10.2-{architecture}" not in command
     assert command[command.index("--network") + 1] == "none"
     assert "--read-only" in command
     assert command[command.index("--tmpfs") + 1] == "/tmp:rw,size=1g"
@@ -46,8 +52,8 @@ def test_engine_uses_immutable_image_and_only_worker_mount(monkeypatch):
     assert cleanup[-1] == command[command.index("--name") + 1]
 
 
-def test_craftium_can_execute_its_temporary_engine_copy(monkeypatch):
-    info = image_info()
+def test_craftium_can_execute_its_temporary_engine_copy(monkeypatch, architecture):
+    info = image_info(architecture)
     info["Config"]["Labels"] = {
         "org.generalgamebench.engine-revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
         "org.generalgamebench.variant": "serial-lockstep-v2",
@@ -61,12 +67,12 @@ def test_craftium_can_execute_its_temporary_engine_copy(monkeypatch):
 
 
 @pytest.mark.parametrize("changed", ["revision", "architecture"])
-def test_unverified_engine_is_rejected(monkeypatch, changed):
-    info = image_info()
+def test_unverified_engine_is_rejected(monkeypatch, changed, architecture):
+    info = image_info(architecture)
     if changed == "revision":
         info["Config"]["Labels"] = {}
     else:
-        info["Architecture"] = "amd64"
+        info["Architecture"] = "amd64" if architecture == "arm64" else "arm64"
     install_inspection(monkeypatch, info)
     with pytest.raises(ValueError, match="does not match"):
         container_runtime.container_command("docker-football")

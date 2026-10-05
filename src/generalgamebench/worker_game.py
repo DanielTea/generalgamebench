@@ -96,7 +96,12 @@ class WorkerGame:
             if len(self.buffer) > 16 * 1024 * 1024:
                 raise ValueError("Game worker response too large")
         line, self.buffer = self.buffer.split(b"\n", 1)
-        response = json.loads(line)
+        try:
+            response = json.loads(line)
+        except (ValueError, UnicodeError) as exc:
+            self.log.seek(0)
+            detail = self.log.read().decode(errors="replace")[-1500:]
+            raise RuntimeError(f"Invalid game worker reply: {line[:200]!r}; {detail}") from exc
         if "error" in response:
             raise RuntimeError(response["error"])
         return response
