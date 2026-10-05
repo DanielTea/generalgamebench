@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "generalgamebench"
-version = "0.4.0"
-description = "Pixels-only game-agent evaluation with measured deadlines and auditable evidence"
+version = "0.5.0"
+description = "Visual game-agent tests with a suite p95 limit and replay evidence"
 requires-python = ">=3.11"
 license = "MIT"
 readme = "README.md"

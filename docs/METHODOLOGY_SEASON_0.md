@@ -1,3 +1,6 @@
+> Historical rules. This document applies only to Season 0 evidence.
+> The current board uses [suite p95 below 200 ms](METHODOLOGY.md).
+
 # Season 0 methodology
 
 **Version:** 0.1.0. No official certified entries. The public board displays measured local/provisional results and a separate model exhibition.

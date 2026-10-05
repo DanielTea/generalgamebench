@@ -1,0 +1,328 @@
+{
+  "latency_policy": {
+    "id": "suite-p95-200-v1",
+    "metric": "suite_p95_ms",
+    "limit_ms": 200.0,
+    "comparison": "strictly_less_than",
+    "quantile_method": "linear",
+    "sample_scope": "all_recorded_decisions_in_complete_suite"
+  },
+  "source_sha256": {
+    "results/baselines-2026-10-05/snapshot.json": "6fc5f49487494a66eaff8660d9309cc20ba1d4458d283c43809407cf34cdc8f6",
+    "results/baselines-2026-10-05/episodes.json": "e7666a22ad0e5a9decfaddab21e9fe2b2873b5f1ff615973da92d2fe5b9dbaf0",
+    "results/refresh-2026-10-05/episodes.json": "f2cc94acf19fbbf1cb1f3e2c26d15be0d2fa52b7f3b26a52449f7d1be3052a18",
+    "results/season-0.2/episodes.json": "154824c9a3ff7e8a0b748c2a398d9448e713e09e3e02516a1f57924ad2c2481e"
+  },
+  "scores_unchanged": true,
+  "evidence_unchanged": true,
+  "changes": [
+    {
+      "track": "local",
+      "agent": "tracker",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 39.9264211
+    },
+    {
+      "track": "local",
+      "agent": "react",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 40.12306679999995
+    },
+    {
+      "track": "local",
+      "agent": "random",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 37.57304999999999
+    },
+    {
+      "track": "local",
+      "agent": "idle",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 39.65054639999999
+    },
+    {
+      "track": "local_previous",
+      "agent": "react",
+      "previous_pass": true,
+      "current_pass": true,
+      "suite_p95_ms": 3.3881040000000002
+    },
+    {
+      "track": "local_previous",
+      "agent": "tracker",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 9.115541499999999
+    },
+    {
+      "track": "local_previous",
+      "agent": "random",
+      "previous_pass": true,
+      "current_pass": true,
+      "suite_p95_ms": 2.677008
+    },
+    {
+      "track": "local_previous",
+      "agent": "idle",
+      "previous_pass": true,
+      "current_pass": true,
+      "suite_p95_ms": 2.614042
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-opus-5-1m-",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 4624.93136525
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-astra",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 23320.21358325
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-sonnet-5",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 3483.4923673
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-5",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 20345.9627226
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-sol",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 23898.88399375
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-luna",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 22183.19492055
+    },
+    {
+      "track": "exhibition",
+      "agent": "tracker",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 89.679817
+    },
+    {
+      "track": "exhibition",
+      "agent": "react",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 99.77728124999996
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-luna",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 17017.425987500003
+    },
+    {
+      "track": "exhibition",
+      "agent": "random",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 111.96403304999995
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-haiku-4-5-20251001",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 11893.538708199996
+    },
+    {
+      "track": "exhibition",
+      "agent": "idle",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 74.34278925
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-sonnet-5-5",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 4394.8721437499935
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-terra",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 29213.0801975
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-sol",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 28645.893541499998
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-6-sol",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 13074.2353625
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-5-5",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 13122.106626749997
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "claude-claude-opus-5-1m-",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 4292.807310749998
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "claude-claude-sonnet-5",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 3634.74117355
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-6-astra",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 13649.173187199996
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-5-6-sol",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 13159.620625599997
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-5-6-terra",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 11513.894582699999
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-5-6-luna",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 13977.998396399998
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "tracker",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 16.94086609999999
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "react",
+      "previous_pass": true,
+      "current_pass": true,
+      "suite_p95_ms": 14.246751699999999
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "openai-gpt-6-luna",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 8587.2306751
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "claude-claude-haiku-4-5-20251001",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 12744.364450599995
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-Qwen3-5-27B-4bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 7339.852333
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-Qwen3-5-0-8B-4bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 490.50756605
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-Qwen3-5-9B-4bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 2255.409328849996
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-Qwen3-5-4B-4bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 1381.5720580500001
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "random",
+      "previous_pass": false,
+      "current_pass": true,
+      "suite_p95_ms": 13.746260799999996
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "idle",
+      "previous_pass": true,
+      "current_pass": true,
+      "suite_p95_ms": 20.526683049999992
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-UI-Venus-1-5-2B-6bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 768.0421785499992
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-Qwen3-5-2B-4bit",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 790.71546235
+    },
+    {
+      "track": "exhibition_previous",
+      "agent": "mlx-mlx-community-FastVLM-0-5B-bf16",
+      "previous_pass": false,
+      "current_pass": false,
+      "suite_p95_ms": 916.8122735499996
+    }
+  ]
+}

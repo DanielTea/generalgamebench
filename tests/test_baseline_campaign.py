@@ -96,7 +96,8 @@ def test_complete_baseline_matrix_preserves_history_and_failed_episodes(tmp_path
     assert snapshot["track_metadata"]["exhibition"] == prior["track_metadata"]["exhibition"]
     row = snapshot["local"][0]
     assert row["episodes"] == 2 and row["errors"] == 1
-    assert not row["latency_eligible"]
+    assert row["latency_eligible"] == (row["p95_ms"] < 200)
+    assert row["aborted_episodes"] == 1
     assert len(json.loads((report / "replay-validation.json").read_text())) == 2
     assert json.loads((report / "run-status.json").read_text())["status"] == "replay-verified"
     assert json.loads((report / "episodes.json").read_text())[1]["score"] == 0

@@ -57,13 +57,30 @@ Run only your own trusted agents on your workstation. A subprocess is a protocol
 
 ## Ranking rules
 
-- **100 ms means strictly less than 100 ms for every measured decision**, including snapshot retrieval, encoding, transport, inference, parsing and validation. Engine advancement and eager rendering between decisions are outside this response clock. Exactly 100 ms fails. p50, p95, maximum and misses are published.
-- Realtime mode has a 100 ms response deadline and applies wait for late responses. A timeout aborts the episode with score zero. Simulation is currently lockstep; these results do not prove continuous real-time commercial-game control.
-- Exhibition mode allows slow decisions. Configured OpenAI, Claude and locally cached vision models may be shown here without being represented as sub-100 ms agents.
-- Use identical game versions, horizons, seeds, hardware and observation/control interfaces. Scores are normalized using fixed scenario-specific ranges and averaged equally across the fixed game suite. No invented Elo for independent single-player episodes.
-- Local scores are **provisional, unattested**. The official leaderboard stays empty until an independently administered isolated runner and attestation service are deployed. A hash chain detects modifications against retained evidence; it does not prevent a local operator rewriting a whole run.
-- Confidence intervals resample seed blocks. Small exhibition samples are demonstrations, not reliable model rankings.
+The leaderboard limit is **suite p95 below 200 ms**.
+Exactly 200 ms fails.
+The score and the latency result are separate.
 
+- Use every recorded response time from the complete suite, including failed episodes.
+- Calculate p95 with linear interpolation. Do not average the p95 values of individual games.
+- Keep the full response path in the timer: image retrieval, encoding, transport, inference, parsing and validation.
+- Publish p50, p95, maximum response time, responses at or above 200 ms, errors and aborted episodes.
+- Keep aborted episodes with score zero. Reject incomplete suites.
+- Use the same games, seeds, versions, hardware, interfaces and decision limits for score comparisons.
+- Keep local results `local-unattested`. A latency pass does not give an official rank.
+
+The simulation waits while the agent responds.
+New runs use the configured transport timeout, which defaults to 60 seconds.
+A response above 200 ms stays in the evidence and can still control the game.
+A transport timeout aborts the episode.
+This prevents a 200 ms response cutoff from removing the slow samples used to calculate p95.
+These tests do not establish continuous real-time control.
+
+The current board applies this rule to the saved response times.
+Scores and original evidence stay unchanged.
+Earlier realtime recordings used a 100 ms response deadline.
+Those recordings retain their original actions, failures and evaluator versions.
+Released snapshots retain the rules used at publication.
 See [methodology](docs/METHODOLOGY.md), [security](SECURITY.md), [research](docs/RESEARCH.md), and [game catalog](docs/GAMES.md).
 
 ## Hugging Face

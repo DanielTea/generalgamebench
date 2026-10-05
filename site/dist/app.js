@@ -39,9 +39,9 @@ function renderBoard() {
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "OpenAI and Claude refresh on 5 October 2026 across all 43 admitted scenarios, with our reference policies as controls. One seed and eight decisions per game: an integration demonstration, not a reliable skill ranking. Hosted calls include CLI startup. Timing reflects a shared Mac running concurrent evaluations. Provider and format failures remain in the evidence; incomplete suites receive no aggregate score.",
+      "These tests cover 43 scenarios with one seed and eight decisions per game. They include OpenAI models, Claude models and reference policies. These short tests check the connections. They do not establish a reliable skill ranking. The suite p95 limit is below 200 ms. Scores stay visible if an agent fails this limit. Hosted response times include CLI startup on a shared Mac. Failed replies stay in the evidence. An incomplete suite has no aggregate score.",
     official:
-      "No certified entries yet. Admission requires independent isolated execution, hidden evaluation seeds and signed runner evidence. Local results cannot promote themselves.",
+      "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
   };
   $("track-description").textContent = descriptions[active];
   if (!rows.length) {
@@ -76,6 +76,7 @@ function renderBoard() {
     ];
     vals.forEach((v, j) => {
       const cell = el("td", v, j === 0 ? "rank" : "");
+      if (j === 4) cell.title = `Unrounded suite p95: ${r.p95_ms} ms`;
       if (j === 1) {
         const transport = r.provider_metadata?.transport;
         cell.append(el("small", transport === "persistent-mlx-jsonl" ? "Local vision model" : transport === "authenticated-cli-per-frame" ? "Hosted model · per-image call" : "Reference policy", "agent-kind"));
@@ -86,11 +87,7 @@ function renderBoard() {
     td.append(
       el(
         "span",
-        r.latency_eligible
-          ? "PASS"
-          : r.mode === "exhibition"
-            ? "EXHIBITION"
-            : "FAIL",
+        r.latency_eligible ? "PASS" : "FAIL",
         r.latency_eligible ? "pass" : "fail",
       ),
     );
@@ -98,7 +95,7 @@ function renderBoard() {
     $("rankings").append(tr);
   });
   $("suite").textContent = rows.length
-    ? `${game === "all" ? rows[0].games.length + " equally weighted scenarios" : "Scores for " + game} | ${rows[0].seeds} seed(s) per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation. Timing, errors and the 100 ms gate always describe the entire suite. ${rows[0].seeds < 2 ? "One seed: no confidence interval. Some games barely start within this horizon." : "Intervals reflect seed variation only."}`
+    ? `${game === "all" ? rows[0].games.length + " equally weighted scenarios" : "Scores for " + game} | ${rows[0].seeds} seed(s) per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation. Timing, errors and the p95 limit below 200 ms always describe the entire suite. Exactly 200 ms fails. ${rows[0].seeds < 2 ? "One seed: no confidence interval. Some games barely start within this horizon." : "Intervals reflect seed variation only."}`
     : "";
   document.querySelectorAll("[data-track]").forEach((b) => {
     b.classList.toggle("active", b.dataset.track === active);
@@ -222,7 +219,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=baselines-current-2026-10-05", { cache: "no-cache" })
+fetch("data.json?v=suite-p95-200-v1", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
