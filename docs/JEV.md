@@ -1,6 +1,11 @@
 # Jev with native images
 
-The Jev adapter sends the original PNG frame to TypeSafe.
+The Jev adapter receives the original PNG frame.
+TypeSafe requires both image dimensions to be at least 280 pixels.
+For smaller frames, the adapter repeats pixels with integer nearest-neighbor upscaling.
+It keeps the full image and aspect ratio. It adds no new scene information.
+Frames that already fit are sent without changes.
+This preparation time remains inside the response clock.
 It sends no game coordinates, rewards, seeds, OCR or generated image descriptions.
 The frozen exhibition prompt supplies the game rules and controls.
 A native Choice question lists the same allowed integer actions.

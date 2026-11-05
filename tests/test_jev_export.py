@@ -49,7 +49,7 @@ def test_export_replays_failed_suite_and_keeps_previous_rows(exporter, tmp_path,
     from export_hosted_rerun import __dict__ as base_globals
 
     from generalgamebench.evidence import verify_episode
-    from generalgamebench.jev import ACTION_SCHEMA, TRANSPORT
+    from generalgamebench.jev import ACTION_SCHEMA, IMAGE_PREPROCESSING, TRANSPORT
     from generalgamebench.model_prompt import PROMPT_VERSION
     from generalgamebench.protocol import ProtocolError
     from generalgamebench.ranking import summarize
@@ -138,6 +138,7 @@ def test_export_replays_failed_suite_and_keeps_previous_rows(exporter, tmp_path,
             "retries": 0,
             "tool_events": 0,
             "images_header": True,
+            "image_preprocessing": IMAGE_PREPROCESSING,
         }
 
         def act(self, obs, timeout):

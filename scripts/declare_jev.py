@@ -10,7 +10,7 @@ from pathlib import Path
 from run_campaign import WARMUP_PROFILE
 
 from generalgamebench import __version__
-from generalgamebench.jev import ACTION_SCHEMA, TRANSPORT
+from generalgamebench.jev import ACTION_SCHEMA, IMAGE_PREPROCESSING, TRANSPORT
 from generalgamebench.latency import policy
 from generalgamebench.model_prompt import PROMPT_VERSION
 
@@ -61,6 +61,7 @@ def declare(report, preflight):
         "workers": 1,
         "prompt_version": PROMPT_VERSION,
         "action_schema": ACTION_SCHEMA,
+        "image_preprocessing": IMAGE_PREPROCESSING,
         "transport": TRANSPORT,
         "warmup": WARMUP_PROFILE,
         "latency_policy": policy(),
@@ -71,11 +72,11 @@ def declare(report, preflight):
         "engine_rebuild_audit": str(audit.relative_to(ROOT)),
         "engine_rebuild_sha256": hashlib.sha256(audit.read_bytes()).hexdigest(),
         "scope": "One seed and eight decisions per scenario check integration. These short runs cannot establish model skill.",
-        "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. Jev uses a persistent direct HTTPS connection and native multipart PNG input. Three uniform gray startup calls occur before scoring. The original frozen prompt supplies the rules and controls; a native Choice schema supplies the same integer action options. There is no OCR, text description of the frame, tool use, retry, or fallback action. The nine container engines were rebuilt from their pinned sources. Their new image IDs and fixed-trace replay checks are in the campaign report. Provider hardware is not known. Normal desktop tasks can use the same Mac.",
+        "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. Jev uses a persistent direct HTTPS connection and native multipart PNG input. Frames with either dimension below 280 pixels use integer nearest-neighbor upscaling; the full frame and aspect ratio are preserved. Image preparation remains in the timer. Three uniform gray startup calls occur before scoring. The original frozen prompt supplies the rules and controls; a native Choice schema supplies the same integer action options. There is no OCR, text description of the frame, tool use, retry, or fallback action. The nine container engines were rebuilt from their pinned sources. Their new image IDs and fixed-trace replay checks are in the campaign report. Provider hardware is not known. Normal desktop tasks can use the same Mac.",
         "timing_note": "The clock includes frame capture, PNG encoding, multipart encoding, network transfer, provider inference, parsing and action validation. Game advancement is outside the clock. Use all recorded times, including failures, for suite p95 below 200 ms. Exactly 200 ms fails. The simulation waits for each action.",
         "failure_note": "Keep every scored error and aborted episode. Aborted episodes score zero. Do not replace failures. Publish an aggregate only after all 43 episodes pass native replay.",
         "publication_note": "Keep all previous model rows unchanged. Append one complete local-unattested Jev image suite to the model exhibition. Keep the official ranking separate.",
-        "comparison_note": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference.",
+        "comparison_note": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output, integer nearest-neighbor upscaling for frames below the API minimum, and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference.",
     }
     source_paths = set(base["source_hashes"]) | {
         "src/generalgamebench/jev.py",

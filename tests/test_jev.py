@@ -1,18 +1,23 @@
 import base64
+import io
 import json
 from email.parser import BytesParser
 from email.policy import default
 
 import pytest
 
-from generalgamebench.jev import JevAgent
+from generalgamebench.jev import JevAgent, prepare_image
 from generalgamebench.models import ProviderUnavailable
 from generalgamebench.protocol import ProtocolError
 
 
 def observation():
+    from PIL import Image
+
+    png = io.BytesIO()
+    Image.new("RGB", (280, 280), "gray").save(png, format="PNG")
     return {
-        "image_png": base64.b64encode(b"exact PNG bytes").decode(),
+        "image_png": base64.b64encode(png.getvalue()).decode(),
         "nonce": "fresh-nonce",
         "instructions": "Collect the coin.",
         "actions": ["wait", "left", "right"],
@@ -46,7 +51,7 @@ def test_native_image_and_actions_are_sent_without_private_state(monkeypatch):
     )
     parts = list(message.iter_parts())
     request_json = json.loads(parts[0].get_payload(decode=True))
-    assert parts[1].get_payload(decode=True) == b"exact PNG bytes"
+    assert parts[1].get_payload(decode=True) == base64.b64decode(obs["image_png"])
     assert request_json["questions"]["action"]["criteria"] == {
         "0": "wait",
         "1": "left",
@@ -105,3 +110,18 @@ def test_http_failure_is_not_retried_or_written_to_metadata():
     assert connection.requests == 1 and connection.closed
     assert "private" not in str(error.value)
     assert "private" not in json.dumps(agent.metadata)
+
+
+def test_small_frames_repeat_original_pixels_without_cropping():
+    from PIL import Image
+
+    original = Image.new("RGB", (64, 64), "blue")
+    original.putpixel((10, 20), (255, 0, 0))
+    png = io.BytesIO()
+    original.save(png, format="PNG")
+    enlarged = Image.open(io.BytesIO(prepare_image(png.getvalue())))
+    assert enlarged.size == (320, 320)
+    for y in range(64):
+        for x in range(64):
+            block = enlarged.crop((x * 5, y * 5, (x + 1) * 5, (y + 1) * 5))
+            assert block.tobytes() == bytes(original.getpixel((x, y))) * 25

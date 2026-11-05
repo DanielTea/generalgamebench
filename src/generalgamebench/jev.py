@@ -2,7 +2,9 @@
 
 import base64
 import http.client
+import io
 import json
+import math
 import os
 import secrets
 import time
@@ -13,7 +15,25 @@ from .protocol import ProtocolError
 
 TRANSPORT = "persistent-typesafe-https-multipart"
 ACTION_SCHEMA = "native-choice/1"
+IMAGE_PREPROCESSING = "integer-nearest-upscale-min280/1"
 MAX_RESPONSE = 1024 * 1024
+
+
+def prepare_image(png):
+    """Meet the API minimum by repeating whole pixels. Preserve the full frame."""
+    from PIL import Image
+
+    with Image.open(io.BytesIO(png)) as image:
+        width, height = image.size
+        factor = max(1, math.ceil(280 / width), math.ceil(280 / height))
+        if max(width, height) * factor > 1568:
+            raise ProtocolError("Frame cannot fit Jev image limits without downsampling")
+        if factor == 1:
+            return png
+        enlarged = image.resize((width * factor, height * factor), Image.Resampling.NEAREST)
+        output = io.BytesIO()
+        enlarged.save(output, format="PNG")
+        return output.getvalue()
 
 
 class JevAgent:
@@ -31,6 +51,7 @@ class JevAgent:
             "requested_model": model,
             "prompt_version": PROMPT_VERSION,
             "action_schema": ACTION_SCHEMA,
+            "image_preprocessing": IMAGE_PREPROCESSING,
             "observation": "png-only",
             "images_header": True,
             "retries": 0,
@@ -115,7 +136,7 @@ class JevAgent:
             'name="screenshot"; filename="frame.png"\r\n'
             "Content-Type: image/png\r\n\r\n"
         ).encode()
-        body += base64.b64decode(obs["image_png"], validate=True)
+        body += prepare_image(base64.b64decode(obs["image_png"], validate=True))
         body += f"\r\n--{boundary}--\r\n".encode()
         self.metadata["calls"] += 1
         value = self._request(

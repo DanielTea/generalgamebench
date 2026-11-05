@@ -10,7 +10,7 @@ from export_hosted_rerun import COMPARISON_KEYS, load, read_base
 from export_refresh import verify_source
 
 from generalgamebench.evidence import read_ledger, verify_episode
-from generalgamebench.jev import ACTION_SCHEMA, TRANSPORT
+from generalgamebench.jev import ACTION_SCHEMA, IMAGE_PREPROCESSING, TRANSPORT
 from generalgamebench.ranking import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +106,7 @@ def export(report):
             metadata.get("retries"),
             metadata.get("tool_events"),
             metadata.get("images_header"),
+            metadata.get("image_preprocessing"),
         ) != (
             campaign["model"],
             [campaign["model"]],
@@ -117,6 +118,7 @@ def export(report):
             0,
             0,
             True,
+            IMAGE_PREPROCESSING,
         ):
             raise ValueError("The model or native image settings differ")
         compare_tasks(
