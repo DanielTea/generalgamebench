@@ -1,5 +1,22 @@
 # Measured results provenance
 
+## Weighted score update — 5 November 2026
+
+The current leaderboard uses `quality70-speed30-p95-v1`.
+It combines 70% quality and 30% speed with a weighted geometric mean.
+Speed is `100 / (1 + suite_p95_ms / 1000)`. There is no hard latency cutoff.
+The fixed 1000 ms reference is a scale, not a deadline.
+Quality and p95 remain visible. The current table has no latency pass/fail badge.
+
+The [policy report](weighted-score-2026-11-05/README.md) explains the weighting.
+Its previous snapshot preserves the original quality-only ranking.
+The update uses existing measured quality and unrounded p95 for all 16 model entries.
+It makes zero new model or game calls. All 688 episodes and 4,550 decisions remain unchanged.
+All original scores, timings, errors, replay evidence and trust status remain intact.
+Earlier sections below describe their original recording and publication rules.
+Their old latency cutoff does not apply to the current leaderboard.
+
+
 ## Native-image Jev results — 5 November 2026
 
 Jev 1.14.0 completed the 43-scenario suite with seed 3000 and an eight-decision limit.

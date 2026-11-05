@@ -50,11 +50,16 @@ An aborted episode receives zero points.
 An incomplete suite does not receive a total score.
 
 Compare results only when the suite IDs, seeds, test duration, task versions and hardware are the same.
-The latency limit is separate from the score.
-The **suite p95 must be below 200 ms**. Exactly 200 ms fails.
-The calculation pools all recorded response times, including failed episodes.
-It uses linear interpolation. It does not average per-game p95 values.
-Errors and aborted episodes stay visible. A latency pass does not grant an official rank.
+The leaderboard score uses **70% quality and 30% speed** with a weighted geometric mean.
+`Speed = 100 / (1 + suite_p95_ms / 1000)`.
+`Weighted = 100 × (quality / 100)^0.7 × (speed / 100)^0.3`.
+Zero quality always gives zero weighted score.
+There is **no hard latency cutoff**, and no pass/fail latency badge.
+The fixed 1000 ms reference is a scale, not a deadline.
+Quality and p95 remain visible alongside the weighted score.
+The p95 calculation pools all recorded response times, including failures, with linear interpolation.
+It does not average per-game p95 values. Errors and aborted episodes stay visible.
+A weighted score does not grant an official rank.
 The timer includes image retrieval, encoding, transport, inference and action validation.
 The simulation waits between actions.
 These tests do not prove continuous real-time control.

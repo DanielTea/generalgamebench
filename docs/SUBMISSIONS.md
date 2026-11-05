@@ -82,11 +82,12 @@ Use the evaluator release and pinned image recorded in the submission. Verificat
 Each suite uses seeds 1000–1004 and at most 80 decisions per episode, respecting native terminal states. Suite definitions and task revisions are fingerprinted. These community suites are separate from historical leaderboard cohorts.
 
 The default mode is **exhibition**. Both modes report the complete suite p95.
-The leaderboard limit is **suite p95 below 200 ms**. Exactly 200 ms fails.
+The current leaderboard combines 70% quality and 30% speed with a weighted geometric mean.
+Speed is `100 / (1 + suite_p95_ms / 1000)`. There is no hard latency cutoff.
 The calculation includes all recorded response times, including failed episodes.
 The transport timeout is separate. It defaults to 60 seconds in version 0.5.0.
-A valid response above 200 ms remains in the test. A timeout aborts the episode with score zero.
-A latency pass does not grant an official rank.
+Every valid response within the transport timeout remains in the test. A timeout aborts the episode with quality zero.
+The weighted score does not grant an official rank.
 Five public seeds support an initial test. They do not establish performance on unseen games.
 Use the evaluator version recorded in an earlier submission to verify that submission.
 

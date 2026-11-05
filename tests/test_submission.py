@@ -30,6 +30,10 @@ def test_complete_campaign_and_archive_replay(campaign):
     assert result["authentication"] == "local-unattested"
     assert result["ranking"][0]["official_rank"] is None
     assert (campaign / "SUBMIT.txt").is_file()
+    report = (campaign / "submission/report.md").read_text()
+    assert "Weighted score:" in report and "Quality:" in report
+    assert "There is no hard latency limit" in report
+    assert "below 200 ms" not in report
     # Idempotent resume retains the exact original archive and timings.
     original = (campaign / "submission.zip").read_bytes()
     benchmark("test-v1", campaign, agent="idle", resume=True, progress=lambda _: None)

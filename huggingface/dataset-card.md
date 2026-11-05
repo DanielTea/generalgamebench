@@ -53,26 +53,35 @@ Its SHA-256 checksum is `{{snapshot_sha256}}`.
 
 ## Column definitions
 
-The `score_100` column gives the normalized game score.
-The `suite_score_100` column gives the mean score across the complete suite.
-The calculation first averages seeds within each scenario.
-It then averages scenarios with equal weight.
-An aborted episode receives zero points.
+The primary score is `suite_weighted_score_100`.
+It uses 70% quality and 30% speed with a weighted geometric mean.
+Speed is `100 / (1 + suite_p95_ms / 1000)`.
+The score is `100 × (quality / 100)^0.7 × (speed / 100)^0.3`.
+The reference is fixed; there is no hard latency cutoff.
+Zero quality always gives zero weighted score.
+
+`quality_score_100` is the normalized game quality.
+`suite_quality_score_100` is the mean quality across the complete suite.
+`score_100` and `suite_score_100` remain aliases for those quality values.
+`weighted_score_100` combines game quality with the same observed suite p95.
+The benchmark first averages quality across seeds within each scenario,
+then averages scenarios with equal weight. Aborted episodes receive quality zero.
+
+Schema version 2 removes active latency eligibility, cutoff and threshold-miss columns.
+`scoring_policy_id`, `quality_weight`, `speed_weight` and `latency_reference_ms` identify the formula.
+The original recordings and older Dataset revisions keep their historical metadata.
 
 Columns with the `suite_` prefix describe the complete campaign.
-These columns include timing, confidence intervals, episode counts, decision counts and errors.
+They include quality, weighted score, response time, counts and quality confidence intervals.
 The export repeats these values on each game row.
-The field `latency_eligible` is true when the complete suite p95 is below 200 ms.
-Exactly 200 ms fails. The calculation uses all recorded response times and linear interpolation.
-The fields `latency_policy_id` and `latency_limit_ms` identify this rule.
-The field `suite_misses` counts responses at or above 200 ms.
-Errors and aborted episodes do not change this latency test. They remain in the scores and error counts.
+The p95 calculation uses all recorded response times and linear interpolation.
+Quality intervals do not estimate uncertainty in the weighted score.
 Do not add these values across rows.
 Do not interpret them as measurements for individual games.
 
 Compare only rows with the same `suite_id`.
 Also examine `mode`, `transport`, task details, model revision and prompt version.
-The suite ID includes games, seeds, decision limits, evaluator versions, task versions and hardware conditions.
+The suite ID includes games, seeds, decision limits, evaluator versions, task versions, hardware conditions and the scoring policy ID.
 A null seed list or model revision means that the source did not record this value.
 Some reference policies do not have a model ID.
 
@@ -104,7 +113,7 @@ Do not use these results as a reliable ranking of model intelligence.
 
 Different tests can use different games, durations, seeds and hardware.
 The `trust` column retains the source's local test status.
-A suite p95 below 200 ms does not prove independent verification.
+A weighted score does not prove independent verification.
 This Dataset does not give official ranks.
 Public seeds and local execution do not prove protection against cheating.
 See the [security model](https://github.com/DanielTea/generalgamebench/blob/main/SECURITY.md).

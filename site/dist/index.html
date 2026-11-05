@@ -14,8 +14,8 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141518'/%3E%3Cpath d='M6 24L16 6l10 18h-6l-4-8-4 8z' fill='%23ff5a1f'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="style.css?v=jev-image-2026-11-05" />
-    <script src="app.js?v=jev-image-2026-11-05" defer></script>
+    <link rel="stylesheet" href="style.css?v=weighted-score-2026-11-05" />
+    <script src="app.js?v=weighted-score-2026-11-05" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
@@ -41,9 +41,9 @@
           </p>
         </div>
         <aside class="standard">
-          <span class="eyebrow">SUITE P95 LIMIT</span
-          ><strong>&lt;200<span>ms</span></strong>
-          <p>The 95th percentile of all response times.<br />From observation to accepted input.</p>
+          <span class="eyebrow">QUALITY / SPEED WEIGHT</span
+          ><strong>70<span>/</span>30</strong>
+          <p>70% quality. 30% speed.<br />Continuous scoring. No hard latency cutoff.</p>
           <span class="chip">Pixels in. Actions out.</span>
         </aside>
       </section>
@@ -87,12 +87,12 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Agent</th>
-                <th scope="col">Score / 100</th>
-                <th scope="col">95% interval</th>
+                <th scope="col">Weighted / 100</th>
+                <th scope="col">Quality / 100</th>
+                <th scope="col">Quality 95% interval</th>
                 <th scope="col">Suite p95</th>
                 <th scope="col">Suite maximum</th>
                 <th scope="col">Suite errors</th>
-                <th scope="col">Suite p95 &lt;200 ms</th>
               </tr>
             </thead>
             <tbody id="rankings">
@@ -105,19 +105,25 @@
         <p id="suite" class="footnote"></p>
         <!-- HUB_PUBLICATION -->
         <details class="availability">
-          <summary>How is the score calculated?</summary>
+          <summary>How is the weighted score calculated?</summary>
+          <p>Quality has 70% weight. Speed has 30% weight. We use a weighted geometric mean,
+            so a model with zero quality cannot earn points from speed alone.</p>
+          <p class="score-formula"><code>Speed = 100 / (1 + p95_ms / 1000)<br />Weighted = 100 × (Quality / 100)^0.7 × (Speed / 100)^0.3</code></p>
+          <p>The fixed 1000 ms reference is a scale, not a cutoff. At p95 of 100 ms, speed is 90.91/100.
+            At 1000 ms it is 50/100. At 10000 ms it is 9.09/100.
+            Faster responses and better quality each improve the weighted score.</p>
           <p>Each scenario converts its native reward to a score between 0 and 1 using fixed task rules.
             We average the seeds within each scenario, then average all scenarios equally and multiply by 100.
-            Scores of 80, 40 and 0 therefore produce a suite score of 40/100.</p>
+            Quality scores of 80, 40 and 0 therefore produce suite quality of 40/100.</p>
           <p>Aborted episodes count as zero. An incomplete suite receives no aggregate score.
             Normalization anchors are task-specific, not human performance or IQ. Families with more
             scenarios have more weight; the score is not the percentage of games beaten.</p>
-          <p>The latency limit is suite p95 below 200 ms. Exactly 200 ms fails.
-            We calculate p95 from all recorded response times, including failed episodes, with linear interpolation.
-            We do not average the p95 values of individual games. The score is separate from this limit.</p>
-          <p>The pass decision uses the unrounded p95. The table shows rounded response times.</p>
-          <p>Responses above 200 ms, errors and aborted episodes stay in the results.
-            A latency pass does not grant an official rank. Slower agents can appear in the model exhibition.
+          <p>There is no hard latency limit and no pass/fail latency badge.
+            We calculate suite p95 from all recorded response times, including failed episodes, with linear interpolation.
+            We do not average per-game p95 values. The formula and ranking use unrounded p95 and weighted scores.</p>
+          <p>A game view combines that game's quality with the same observed suite p95.
+            The quality interval does not measure uncertainty in the weighted score.
+            Errors and aborted episodes stay visible. A weighted score does not grant an official rank.
             One seed and eight decisions show that the connection works. Many games only start during these short tests.</p>
           <a href="https://github.com/DanielTea/generalgamebench/blob/main/docs/METHODOLOGY.md">Full scoring and timing methodology</a>
         </details>
