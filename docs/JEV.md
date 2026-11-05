@@ -65,7 +65,8 @@ It retains all previous model rows without changes.
 
 The response clock includes capture, encoding, transfer, inference and validation.
 Game advancement occurs outside this clock.
-Suite p95 must be below 200 ms. Exactly 200 ms fails.
+The current leaderboard combines 70% quality and 30% speed with a geometric mean.
+There is no hard latency cutoff. The original Jev campaign keeps its former latency flags as historical evidence.
 The direct API path differs from the fresh command process used for earlier hosted models.
 Each result identifies its transport and startup conditions.
 

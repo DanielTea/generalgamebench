@@ -63,30 +63,37 @@ Run only your own trusted agents on your workstation. A subprocess is a protocol
 
 ## Ranking rules
 
-The leaderboard limit is **suite p95 below 200 ms**.
-Exactly 200 ms fails.
-The score and the latency result are separate.
+The leaderboard uses **70% quality and 30% speed** with a weighted geometric mean.
+There is **no hard latency cutoff** and no latency pass/fail badge.
+
+```text
+Speed = 100 / (1 + suite_p95_ms / 1000)
+Weighted score = 100 × (quality / 100)^0.7 × (speed / 100)^0.3
+```
+
+Quality is the existing mean of equally weighted scenario scores.
+The fixed 1000 ms reference maps a one-second p95 to a speed score of 50/100.
+It is a scale, not a deadline. Zero quality always gives zero weighted score.
+Better quality and lower p95 each improve the score when quality is positive.
+The [scoring report](results/weighted-score-2026-11-05/README.md) explains this choice.
 
 - Use every recorded response time from the complete suite, including failed episodes.
-- Calculate p95 with linear interpolation. Do not average the p95 values of individual games.
-- Keep the full response path in the timer: image retrieval, encoding, transport, inference, parsing and validation.
-- Publish p50, p95, maximum response time, responses at or above 200 ms, errors and aborted episodes.
-- Keep aborted episodes with score zero. Reject incomplete suites.
-- Use the same games, seeds, versions, hardware, interfaces and decision limits for score comparisons.
-- Keep local results `local-unattested`. A latency pass does not give an official rank.
+- Calculate p95 with linear interpolation. Do not average per-game p95 values.
+- Keep the full response path in the timer: image retrieval, encoding, transport, inference and validation.
+- Publish quality, weighted score, p50, p95, maximum response time, errors and aborted episodes.
+- Keep aborted episodes with quality zero. Reject incomplete suites.
+- Use the same games, seeds, versions, hardware, interfaces and decision limits for comparisons.
+- Keep local results `local-unattested`. The weighted score does not grant an official rank.
 
 The simulation waits while the agent responds.
-New runs use the configured transport timeout, which defaults to 60 seconds.
-A response above 200 ms stays in the evidence and can still control the game.
-A transport timeout aborts the episode.
-This prevents a 200 ms response cutoff from removing the slow samples used to calculate p95.
+The separate transport timeout prevents a hung call from running forever.
+A timeout aborts the episode. It is not a leaderboard latency cutoff.
 These tests do not establish continuous real-time control.
 
-The current board applies this rule to the saved response times.
-Scores and original evidence stay unchanged.
-Earlier realtime recordings used a 100 ms response deadline.
-Those recordings retain their original actions, failures and evaluator versions.
-Released snapshots retain the rules used at publication.
+The current score is calculated from saved quality and response times.
+Original measurements, evidence and released snapshots remain unchanged.
+Historical recordings retain their original timing rules and flags for replay verification.
+Quality confidence intervals do not measure uncertainty in the weighted score.
 See [methodology](docs/METHODOLOGY.md), [security](SECURITY.md), [research](docs/RESEARCH.md), and [game catalog](docs/GAMES.md).
 
 ## Hugging Face

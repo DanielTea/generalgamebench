@@ -129,9 +129,13 @@ def test_real_snapshot_is_loadable_and_discoverable(tmp_path):
                 row["game_id"]
             )
             assert row["trust"] == original["trust"]
-            assert row["latency_policy_id"] == "suite-p95-200-v1"
-            assert row["latency_limit_ms"] == 200
-            assert row["latency_eligible"] == (row["suite_p95_ms"] < 200)
+            assert row["scoring_policy_id"] == "quality70-speed30-p95-v1"
+            assert row["suite_quality_score_100"] == original["quality_score"]
+            assert row["suite_weighted_score_100"] == original["weighted_score"]
+            assert row["weighted_score_100"] == original["weighted_per_game"][row["game_id"]]
+            assert row["quality_weight"] == 0.7 and row["speed_weight"] == 0.3
+            assert row["latency_reference_ms"] == 1000
+            assert not {"latency_eligible", "latency_limit_ms", "suite_misses"} & row.keys()
     assert "official" not in {c["config_name"] for c in dataset_card["configs"]}
     assert (root / "dataset/snapshot.json").read_bytes() == (root / "space/data.json").read_bytes()
     assert {c["config_name"] for c in dataset_card["configs"]} == {"exhibition"}

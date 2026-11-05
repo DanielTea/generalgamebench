@@ -348,15 +348,20 @@ def verify_uploads(paths, replay=True):
 
 
 def _report(manifest):
+    from .weighted_score import add_weighted_score
+
     rank = manifest["ranking"][0]
+    weighted = add_weighted_score(rank)
     return (
         f"# GeneralGameBench submission: {manifest['agent']['name']}\n\n"
         f"Suite: {manifest['suite']['id']} · mode: {manifest['mode']}\n\n"
-        f"Score: {rank['score']}/100 across {rank['episodes']} episodes. "
+        f"Weighted score: {weighted['weighted_score']:.3f}/100. "
+        f"Quality: {rank['score']}/100 across {rank['episodes']} episodes. "
         f"Maximum response: {rank['max_ms']:.3f} ms. "
         f"Suite p95: {rank['p95_ms']:.3f} ms. "
-        f"Suite p95 below 200 ms: {rank['latency_eligible']}. "
         f"Aborted episodes: {rank['aborted_episodes']}.\n\n"
+        "The weighted score uses 70% quality and 30% speed with a geometric mean. "
+        "Speed is 100 / (1 + p95_ms / 1000). There is no hard latency limit.\n\n"
         "Every episode was replayed locally before packaging. Results remain local-unattested; "
         "successful replay does not authenticate hardware, timing or the operator. "
         "Compare only matching suites, versions, runtimes, hardware and modes.\n\n"

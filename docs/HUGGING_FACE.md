@@ -127,9 +127,21 @@ Sources: [Leaderboard guide](https://huggingface.co/docs/leaderboards/en/leaderb
 [Space metadata](https://huggingface.co/docs/hub/en/spaces-config-reference),
 and [Dataset configurations](https://huggingface.co/docs/hub/en/datasets-data-files-configuration).
 
-## Latency rule
+## Weighted score
 
-The Space and Dataset use **suite p95 below 200 ms**. Exactly 200 ms fails.
-The export preserves the policy ID, threshold, response times, scores and trust status.
-A latency pass does not grant an official rank.
-Older Dataset revisions keep their original rules and measurements.
+The Space and Dataset use `quality70-speed30-p95-v1`.
+The weighted score is `100 × (quality / 100)^0.7 × (1 / (1 + p95_ms / 1000))^0.3`.
+There is no hard latency cutoff and no pass/fail latency field.
+The fixed 1000 ms reference is a scale, not a deadline.
+
+`weighted_score_100` combines game quality with the observed suite p95.
+`suite_weighted_score_100` is the complete-suite weighted score.
+`quality_score_100` and `suite_quality_score_100` retain the measured quality.
+For compatibility, `score_100` and `suite_score_100` remain quality aliases.
+`scoring_policy_id`, weights and the latency reference identify the score definition.
+Dataset schema version 2 removes active latency eligibility, cutoff and threshold-miss columns.
+Each suite ID includes the scoring policy ID as well as the measurement conditions.
+
+All original measurements, confidence intervals, errors and trust status remain intact.
+Quality confidence intervals do not describe weighted-score uncertainty.
+Older Dataset revisions retain the original scores, flags and recording rules.

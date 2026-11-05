@@ -1,0 +1,212 @@
+[
+  {
+    "quality_weight": 0.6,
+    "speed_weight": 0.4,
+    "ranked_rows": [
+      {
+        "model": "jev-1.14.0",
+        "weighted_score": 30.852503068062212
+      },
+      {
+        "model": "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
+        "weighted_score": 23.670233033902935
+      },
+      {
+        "model": "claude-sonnet-5",
+        "weighted_score": 20.867929052336407
+      },
+      {
+        "model": "claude-opus-5[1m]",
+        "weighted_score": 19.991147179411726
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "weighted_score": 15.931898717318246
+      },
+      {
+        "model": "gpt-5.5",
+        "weighted_score": 12.47838343961817
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "weighted_score": 11.678824521510757
+      },
+      {
+        "model": "gpt-6-astra",
+        "weighted_score": 11.047074067558583
+      },
+      {
+        "model": "gpt-6-sol",
+        "weighted_score": 10.941770432498327
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "weighted_score": 10.691933939402977
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "weighted_score": 10.31074904919413
+      },
+      {
+        "model": "gpt-6-luna",
+        "weighted_score": 9.879941279820981
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "weighted_score": 9.573688087960539
+      },
+      {
+        "model": "mlx-community/SmolVLM2-256M-Video-Instruct-mlx",
+        "weighted_score": 1.7017545878838594
+      },
+      {
+        "model": "mlx-community/FastVLM-0.5B-bf16",
+        "weighted_score": 0.0
+      },
+      {
+        "model": "mlx-community/SmolVLM2-500M-Video-Instruct-mlx",
+        "weighted_score": 0.0
+      }
+    ]
+  },
+  {
+    "quality_weight": 0.7,
+    "speed_weight": 0.3,
+    "ranked_rows": [
+      {
+        "model": "jev-1.14.0",
+        "weighted_score": 26.764916077529453
+      },
+      {
+        "model": "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
+        "weighted_score": 20.265466497083654
+      },
+      {
+        "model": "claude-sonnet-5",
+        "weighted_score": 20.04250092500307
+      },
+      {
+        "model": "claude-opus-5[1m]",
+        "weighted_score": 19.473066604221152
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "weighted_score": 15.47351850958761
+      },
+      {
+        "model": "gpt-5.5",
+        "weighted_score": 13.548963137313818
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "weighted_score": 13.011255658036106
+      },
+      {
+        "model": "gpt-6-astra",
+        "weighted_score": 12.502732896864945
+      },
+      {
+        "model": "gpt-6-sol",
+        "weighted_score": 11.97598812432814
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "weighted_score": 11.525544163901797
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "weighted_score": 11.384228731543004
+      },
+      {
+        "model": "gpt-6-luna",
+        "weighted_score": 10.97249818585184
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "weighted_score": 10.37435639110282
+      },
+      {
+        "model": "mlx-community/SmolVLM2-256M-Video-Instruct-mlx",
+        "weighted_score": 1.0098184736243443
+      },
+      {
+        "model": "mlx-community/FastVLM-0.5B-bf16",
+        "weighted_score": 0.0
+      },
+      {
+        "model": "mlx-community/SmolVLM2-500M-Video-Instruct-mlx",
+        "weighted_score": 0.0
+      }
+    ]
+  },
+  {
+    "quality_weight": 0.8,
+    "speed_weight": 0.2,
+    "ranked_rows": [
+      {
+        "model": "jev-1.14.0",
+        "weighted_score": 23.218885386928438
+      },
+      {
+        "model": "claude-sonnet-5",
+        "weighted_score": 19.24972249624232
+      },
+      {
+        "model": "claude-opus-5[1m]",
+        "weighted_score": 18.96841234618892
+      },
+      {
+        "model": "LiquidAI/LFM2.5-VL-450M-MLX-4bit",
+        "weighted_score": 17.350447363834093
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "weighted_score": 15.028326460943795
+      },
+      {
+        "model": "gpt-5.5",
+        "weighted_score": 14.711392944814488
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "weighted_score": 14.49570318373764
+      },
+      {
+        "model": "gpt-6-astra",
+        "weighted_score": 14.150202029458773
+      },
+      {
+        "model": "gpt-6-sol",
+        "weighted_score": 13.107960218947923
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "weighted_score": 12.569471257010044
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "weighted_score": 12.424147869498364
+      },
+      {
+        "model": "gpt-6-luna",
+        "weighted_score": 12.185873683725323
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "weighted_score": 11.24198632133873
+      },
+      {
+        "model": "mlx-community/SmolVLM2-256M-Video-Instruct-mlx",
+        "weighted_score": 0.5992246807696543
+      },
+      {
+        "model": "mlx-community/FastVLM-0.5B-bf16",
+        "weighted_score": 0.0
+      },
+      {
+        "model": "mlx-community/SmolVLM2-500M-Video-Instruct-mlx",
+        "weighted_score": 0.0
+      }
+    ]
+  }
+]

@@ -39,14 +39,16 @@ function renderBoard() {
   });
   $("score-game").value = game;
   $("score-game").disabled = !available.length;
+  const qualityOf = r => game === "all" ? r.quality_score : r.per_game[game];
+  const scoreOf = r => game === "all" ? r.weighted_score : r.weighted_per_game[game];
   const rows = [...(dataset[active] || [])].sort((a, b) =>
-    (game === "all" ? b.score - a.score : b.per_game[game] - a.per_game[game]) || a.agent.localeCompare(b.agent));
+    scoreOf(b) - scoreOf(a) || qualityOf(b) - qualityOf(a) || a.p95_ms - b.p95_ms || a.agent.localeCompare(b.agent));
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
-      "These models use the same 43 scenarios, seed 3000 and a limit of eight decisions per game. The Mac runs one model and one game at a time. Local vision models retain their weights after three gray startup images. OpenAI and Anthropic models start a new command process for each image. Jev uses native image input and a persistent API connection. It upscales small frames to meet the API image limits. Run settings describe this preparation and the rebuilt game containers. All timings include network time where applicable. Run settings identify each transport and startup procedure. The suite p95 must be below 200 ms to pass the latency test. All game calls count. Scores and errors remain separate. These short tests check integration. They cannot establish model skill. The archive keeps the previous results.",
+      "The weighted score combines 70% quality and 30% speed with a geometric mean. Zero quality gives zero weighted score. Lower suite p95 improves the score continuously; there is no hard latency cutoff. Quality and p95 remain visible. These models use the same 43 scenarios, seed 3000 and at most eight decisions per game. The Mac runs one model and one game at a time. Timings include the complete response path. Persistent local models, hosted command calls and Jev's native image API have different transport and image preparation costs. Run settings identify these conditions. All game calls count, including failures. These short tests check integration. They cannot establish model skill. The archive keeps the original measurements and rankings.",
     official:
-      "There are no certified entries. Official admission requires suite p95 below 200 ms, independent isolated execution, hidden evaluation seeds and signed evidence. A local latency pass does not grant an official rank.",
+      "There are no certified entries. Official admission requires independent isolated execution, hidden evaluation seeds and signed evidence. The weighted score has no hard latency cutoff. A local score does not grant an official rank.",
   };
   $("track-description").textContent = descriptions[active];
   if (!rows.length) {
@@ -63,7 +65,6 @@ function renderBoard() {
     $("rankings").append(tr);
   }
   let rank = 0;
-  const scoreOf = r => game === "all" ? r.score : r.per_game[game];
   rows.forEach((r, i) => {
     if (i === 0 || scoreOf(r) < scoreOf(rows[i - 1]) - 1e-9) rank = i + 1;
     const tr = el("tr");
@@ -71,17 +72,20 @@ function renderBoard() {
     const vals = [
       String(rank).padStart(2, "0"),
       name,
-      (game === "all" ? r.score : r.per_game[game]).toFixed(1),
+      scoreOf(r).toFixed(2),
+      qualityOf(r).toFixed(2),
       r.ci95 && game === "all"
         ? `${r.ci95[0].toFixed(1)} – ${r.ci95[1].toFixed(1)}`
-        : game !== "all" ? "Suite interval only" : "Insufficient seeds",
+        : game !== "all" ? "Suite quality only" : "Insufficient seeds",
       ms(r.p95_ms),
       ms(r.max_ms),
       String(r.errors || 0),
     ];
     vals.forEach((v, j) => {
       const cell = el("td", v, j === 0 ? "rank" : "");
-      if (j === 4) cell.title = `Unrounded suite p95: ${r.p95_ms} ms`;
+      if (j === 2) cell.title = `Weighted score: ${scoreOf(r)}. Quality 70%, speed 30%; suite p95 applies to every game view.`;
+      if (j === 3) cell.title = `Measured quality: ${qualityOf(r)}/100`;
+      if (j === 5) cell.title = `Unrounded suite p95: ${r.p95_ms} ms`;
       if (j === 1) {
         const transport = r.provider_metadata?.transport;
         cell.append(el("small", transport === "persistent-mlx-jsonl" ? "Local vision model" : transport === "authenticated-cli-per-frame" ? "Hosted model · per-image call" : transport === "persistent-typesafe-https-multipart" ? "Hosted model · native image API" : "Reference policy", "agent-kind"));
@@ -100,19 +104,10 @@ function renderBoard() {
       }
       tr.append(cell);
     });
-    const td = el("td");
-    td.append(
-      el(
-        "span",
-        r.latency_eligible ? "PASS" : "FAIL",
-        r.latency_eligible ? "pass" : "fail",
-      ),
-    );
-    tr.append(td);
     $("rankings").append(tr);
   });
   $("suite").textContent = rows.length
-    ? `${game === "all" ? rows[0].games.length + " equally weighted scenarios" : "Scores for " + game} | ${rows[0].seeds} seed(s) per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation. Timing, errors and the p95 limit below 200 ms always describe the entire suite. Exactly 200 ms fails. ${rows[0].seeds < 2 ? "One seed: no confidence interval. Some games barely start within this horizon." : "Intervals reflect seed variation only."}`
+    ? `${game === "all" ? rows[0].games.length + " equally weighted scenarios" : "Quality for " + game} | ${rows[0].seeds} seed(s) per game | ${rows[0].max_steps} decision horizon | ${rows[0].hardware} | lockstep simulation. The weighted score always uses the observed suite p95, including in a game view. Quality intervals do not describe uncertainty in the weighted score. There is no hard latency cutoff. ${rows[0].seeds < 2 ? "One seed: no confidence interval. Some games barely start within this horizon." : "Quality intervals reflect seed variation only."}`
     : "";
   document.querySelectorAll("[data-track]").forEach((b) => {
     b.classList.toggle("active", b.dataset.track === active);
@@ -236,7 +231,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=jev-image-2026-11-05", { cache: "no-cache" })
+fetch("data.json?v=weighted-score-2026-11-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();

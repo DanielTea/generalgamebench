@@ -173,7 +173,6 @@ def main():
                                     "game",
                                     "seed",
                                     "score",
-                                    "latency_eligible",
                                     "errors",
                                 )
                             }
@@ -193,8 +192,13 @@ def main():
         rankings = summarize(
             results, args.games, list(range(args.start_seed, args.start_seed + args.seeds))
         )
+        from .weighted_score import policy, rank_rows
+
+        rankings = rank_rows(rankings)
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps({"rankings": rankings}, indent=2))
+        args.output.write_text(
+            json.dumps({"scoring_policy": policy(), "rankings": rankings}, indent=2)
+        )
         print(args.output)
 
 

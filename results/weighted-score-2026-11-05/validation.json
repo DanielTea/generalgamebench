@@ -1,0 +1,180 @@
+{
+  "policy": {
+    "id": "quality70-speed30-p95-v1",
+    "quality_weight": 0.7,
+    "speed_weight": 0.3,
+    "latency_reference_ms": 1000.0,
+    "speed_formula": "100 / (1 + p95_ms / 1000)",
+    "score_formula": "100 * (quality / 100)^0.7 * (speed / 100)^0.3",
+    "aggregation": "weighted_geometric_mean",
+    "hard_latency_limit_ms": null,
+    "quantile_method": "linear",
+    "latency_sample_scope": "all_recorded_decisions_in_complete_suite",
+    "per_game_latency": "same_observed_suite_p95",
+    "ci95_metric": "quality_only"
+  },
+  "source_snapshot_sha256": "f1b2d6a893d036d388c6032be5f519321ffdf161e0e941c27438fc4e1684abe2",
+  "measurements_unchanged": true,
+  "evidence_unchanged": true,
+  "new_model_calls": 0,
+  "active_tracks": [
+    "exhibition",
+    "official"
+  ],
+  "changes": [
+    {
+      "track": "exhibition",
+      "agent": "typesafe-jev-1.14.0",
+      "position": 1,
+      "quality": 17.474,
+      "p95_ms": 381.5368919999997,
+      "speed": 72.38315572972772,
+      "weighted_score": 26.764916077529453
+    },
+    {
+      "track": "exhibition",
+      "agent": "mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit",
+      "position": 2,
+      "quality": 12.718,
+      "p95_ms": 663.8795995999999,
+      "speed": 60.10050247868909,
+      "weighted_score": 20.265466497083654
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-sonnet-5",
+      "position": 3,
+      "quality": 17.757,
+      "p95_ms": 2761.4562360500004,
+      "speed": 26.585448221248615,
+      "weighted_score": 20.04250092500307
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-opus-5-1m-",
+      "position": 4,
+      "quality": 17.998,
+      "p95_ms": 3273.0903916500006,
+      "speed": 23.40226647098524,
+      "weighted_score": 19.473066604221156
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-sonnet-5-5",
+      "position": 5,
+      "quality": 14.176,
+      "p95_ms": 4268.193458300002,
+      "speed": 18.98183899121068,
+      "weighted_score": 15.473518509587612
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-5",
+      "position": 6,
+      "quality": 17.344,
+      "p95_ms": 12131.91553605,
+      "speed": 7.615035272308749,
+      "weighted_score": 13.54896313731382
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-terra",
+      "position": 7,
+      "quality": 17.992,
+      "p95_ms": 15372.738708350005,
+      "speed": 6.1077136685141475,
+      "weighted_score": 13.011255658036108
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-astra",
+      "position": 8,
+      "quality": 18.125,
+      "p95_ms": 18023.86950655,
+      "speed": 5.256554139291671,
+      "weighted_score": 12.502732896864945
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-sol",
+      "position": 9,
+      "quality": 15.703,
+      "p95_ms": 14712.849447749999,
+      "speed": 6.3642180453984745,
+      "weighted_score": 11.975988124328142
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-luna",
+      "position": 10,
+      "quality": 14.437,
+      "p95_ms": 13674.887067049998,
+      "speed": 6.814362491724605,
+      "weighted_score": 11.5255441639018
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-5-6-sol",
+      "position": 11,
+      "quality": 15.323,
+      "p95_ms": 16570.744368699987,
+      "speed": 5.69127851965891,
+      "weighted_score": 11.384228731543006
+    },
+    {
+      "track": "exhibition",
+      "agent": "openai-gpt-6-luna",
+      "position": 12,
+      "quality": 15.03,
+      "p95_ms": 17991.2067731,
+      "speed": 5.265594819474268,
+      "weighted_score": 10.972498185851842
+    },
+    {
+      "track": "exhibition",
+      "agent": "claude-claude-haiku-4-5-20251001",
+      "position": 13,
+      "quality": 13.201,
+      "p95_ms": 15912.665583,
+      "speed": 5.912728511614183,
+      "weighted_score": 10.37435639110282
+    },
+    {
+      "track": "exhibition",
+      "agent": "mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx",
+      "position": 14,
+      "quality": 0.211,
+      "p95_ms": 1565.5551666,
+      "speed": 38.977918425556574,
+      "weighted_score": 1.0098184736243445
+    },
+    {
+      "track": "exhibition",
+      "agent": "mlx-mlx-community-FastVLM-0-5B-bf16",
+      "position": 15,
+      "quality": 0.0,
+      "p95_ms": 1429.3062501499992,
+      "speed": 41.1640154442551,
+      "weighted_score": 0.0
+    },
+    {
+      "track": "exhibition",
+      "agent": "mlx-mlx-community-SmolVLM2-500M-Video-Instruct-mlx",
+      "position": 16,
+      "quality": 0.0,
+      "p95_ms": 1982.700783,
+      "speed": 33.52666166514363,
+      "weighted_score": 0.0
+    }
+  ],
+  "checks": {
+    "pytest_passed": 169,
+    "pytest_optional_skipped": 55,
+    "ruff": "passed",
+    "javascript_syntax": "passed",
+    "independent_log_formula": "matches all 16 rows",
+    "browser_game_filter": "passed; selected-game quality with suite p95",
+    "browser_official_track": "empty; no latency gate",
+    "active_latency_flags_removed": true
+  }
+}

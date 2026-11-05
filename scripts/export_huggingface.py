@@ -6,6 +6,8 @@ import json
 import shutil
 from pathlib import Path
 
+from generalgamebench.weighted_score import POLICY_ID, policy, rank_rows
+
 ROOT = Path(__file__).resolve().parents[1]
 SPACE_ID = "danieltee/generalgamebench"
 DATASET_ID = "danieltee/generalgamebench-results"
@@ -24,6 +26,10 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
         raise FileExistsError("Use a new output directory to preserve previous exports")
     source_bytes = (site / "data.json").read_bytes()
     snapshot = json.loads(source_bytes)
+    for track in ("exhibition", "official"):
+        snapshot[track] = rank_rows(snapshot.get(track, []))
+    snapshot["scoring_policy"] = policy()
+    snapshot.pop("latency_policy", None)
     for track in EXCLUDED_TRACKS:
         snapshot.pop(track, None)
         snapshot.get("track_metadata", {}).pop(track, None)
@@ -64,12 +70,13 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
                 )
             }
             suite["hardware_details"] = hardware_details
+            suite["scoring_policy_id"] = POLICY_ID
             suite_id = hashlib.sha256(json.dumps(suite, sort_keys=True).encode()).hexdigest()
             for game, score in ranking.get("per_game", {}).items():
                 metadata = ranking.get("provider_metadata", {})
                 rows.append(
                     {
-                        "schema_version": "generalgamebench-results/1",
+                        "schema_version": "generalgamebench-results/2",
                         "track": track,
                         "season": track_metadata.get("season", snapshot.get("season")),
                         "generated_at": snapshot.get("generated_at"),
@@ -89,13 +96,18 @@ def export(site: Path, destination: Path, space_id=SPACE_ID, dataset_id=DATASET_
                         "provider_metadata": metadata,
                         "score_100": score,
                         "suite_score_100": ranking["score"],
-                        "latency_eligible": ranking["latency_eligible"],
-                        "latency_policy_id": ranking.get("latency_policy", {}).get("id"),
-                        "latency_limit_ms": ranking.get("latency_policy", {}).get("limit_ms"),
+                        "quality_score_100": score,
+                        "suite_quality_score_100": ranking["quality_score"],
+                        "weighted_score_100": ranking["weighted_per_game"][game],
+                        "suite_weighted_score_100": ranking["weighted_score"],
+                        "suite_speed_score_100": ranking["speed_score"],
+                        "scoring_policy_id": POLICY_ID,
+                        "quality_weight": policy()["quality_weight"],
+                        "speed_weight": policy()["speed_weight"],
+                        "latency_reference_ms": policy()["latency_reference_ms"],
                         "suite_p95_ms": ranking["p95_ms"],
                         "suite_p50_ms": ranking.get("p50_ms"),
                         "suite_max_ms": ranking["max_ms"],
-                        "suite_misses": ranking.get("misses"),
                         "suite_episodes": ranking.get("episodes"),
                         "suite_decisions": ranking.get("decisions"),
                         "suite_ci95": ranking.get("ci95"),
