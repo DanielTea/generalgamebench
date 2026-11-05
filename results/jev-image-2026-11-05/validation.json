@@ -1,0 +1,26 @@
+{
+  "method": "Independent score mean and sorted linear quantile calculation from episode ledgers/results; exact native replay reports; comparison with immutable previous snapshot.",
+  "model": "jev-1.14.0",
+  "computed": {
+    "score": 17.474,
+    "episodes": 43,
+    "decisions": 342,
+    "p50_ms": 197.74145850000002,
+    "p95_ms": 381.5368919999997,
+    "max_ms": 639.601083,
+    "misses": 159,
+    "errors": 0,
+    "aborted_episodes": 0
+  },
+  "exhibition_rank": 5,
+  "exhibition_models": 16,
+  "all_new_native_replays_passed": true,
+  "retained_model_rows_unchanged": 15,
+  "retained_episodes": 645,
+  "source_checksums_match": 111,
+  "combined_episodes": 688,
+  "combined_decisions": 4550,
+  "combined_errors": 138,
+  "official_entries": 0,
+  "trust": "local-unattested"
+}

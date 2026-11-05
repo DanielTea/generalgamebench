@@ -1,0 +1,10 @@
+{
+  "generalgamebench-evidence-jev-image-2026-11-05.tar.gz": {
+    "sha256": "72c248a86bd8bdde5b8f0ae598f5584a399572094a30073af4acfaf48d52e3ef",
+    "bytes": 20566279
+  },
+  "generalgamebench-results-jev-image-2026-11-05.tar.gz": {
+    "sha256": "3b120277f8dd824f3f714f7544bd6bb5493e1a9d31e6e6af6cf24d15a9d81b48",
+    "bytes": 249394
+  }
+}

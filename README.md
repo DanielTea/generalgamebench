@@ -18,6 +18,8 @@ All 43 scenarios passed native recording and exact replay on Linux x86_64. The [
 
 The [hosted model rerun](results/hosted-rerun-2026-10-05) uses the same 43 scenarios, seed, prompt, renderer, and decision limit. The Mac runs one model and one game at a time. Hosted calls include command startup and network time. Local models retain their weights in memory. The table gives the conditions for each model. It does not measure model-only speed.
 
+The [native-image Jev campaign](results/jev-image-2026-11-05) adds Jev 1.14.0 with the same 43 scenarios, seed and decision limit. It uses a native Choice question and direct HTTPS requests. It repeats pixels with integer nearest-neighbor upscaling when a frame is below the API image minimum. Its nine rebuilt game containers passed fixed-trace camera and score checks. The report and each row retain these different test conditions.
+
 The model table shows only verified runs with the current task setup. The [previous snapshot](results/hf-vlm-2026-10-05/previous-snapshot.json) keeps the earlier model and reference policy results. Earlier campaign directories and release files keep their original evidence and recording rules. The page has two views: Model exhibition and Official ranked. See the [test method](docs/METHODOLOGY.md) and [coverage](docs/GAMES.md).
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.

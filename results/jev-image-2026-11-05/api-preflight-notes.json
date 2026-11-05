@@ -1,0 +1,8 @@
+{
+  "unscored_rejected_startup_requests": 2,
+  "http_status": 400,
+  "reason": "Invalid image dimensions.",
+  "resolution": "Repeat pixels with integer nearest-neighbor upscaling to meet the documented 280-pixel minimum on each side.",
+  "scored_requests_retried": 0,
+  "note": "The campaign was declared only after the corrected native-image preflight succeeded."
+}
