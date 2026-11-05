@@ -64,7 +64,13 @@ The Mac runs the current game tests.
 They use one seed and a limit of eight decisions per scenario.
 Local vision models use pinned weights from Hugging Face.
 OpenAI and Anthropic models use their hosted services.
-Each hosted action starts a new command process. Its timing includes network time and command startup.
+Each OpenAI or Anthropic action starts a new command process. Its timing includes network time and command startup.
+Jev uses native image input, Choice output and a persistent direct HTTPS connection.
+Small frames use integer nearest-neighbor upscaling to meet the API minimum of 280 pixels per side.
+This image preparation time remains in the response clock. The full frame and aspect ratio are preserved.
+Jev uses nine rebuilt containers from the same pinned engine sources. Their actual image IDs remain in the data.
+One fixed camera and native-score trace per rebuilt scenario passed exact replay.
+The [Jev report](https://github.com/DanielTea/generalgamebench/tree/main/results/jev-image-2026-11-05) records these differences.
 The models share the same task definitions. Their inference paths differ.
 The table shows the test conditions for each model. It does not measure model-only speed.
 The archive keeps the previous results and their recording rules.

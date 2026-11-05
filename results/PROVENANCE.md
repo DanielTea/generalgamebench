@@ -1,5 +1,31 @@
 # Measured results provenance
 
+## Native-image Jev results — 5 November 2026
+
+Jev 1.14.0 completed the 43-scenario suite with seed 3000 and an eight-decision limit.
+The latest model alias resolved to this version before the campaign was declared.
+The run contains 342 decisions, zero errors and zero aborted episodes.
+Its score is **17.474/100**, position 5 of 16 in the model exhibition.
+Its suite p95 is **381.54 ms**, which fails the limit below 200 ms.
+Exactly 200 ms fails. Scores and trust status remain separate from this latency test.
+
+Jev receives native images and returns an allowed action through a Choice question.
+Small frames use integer nearest-neighbor upscaling to meet the API image minimum.
+The full frame and aspect ratio remain intact. Image preparation stays inside the response clock.
+The direct persistent HTTPS path differs from the command process used for earlier hosted entries.
+Nine game containers were rebuilt from their pinned sources. Their actual image IDs remain in the data.
+All 72 frames and native scores from one fixed prior trace per rebuilt scenario match exactly.
+Each of the 43 new episodes also passed exact native replay.
+
+The [campaign report](jev-image-2026-11-05/README.md) records the settings and limitations.
+The [validation report](jev-image-2026-11-05/validation.json) independently checks the results.
+All 111 fixed source checksums match.
+The previous 15 model rows and 645 episodes remain unchanged.
+The combined exhibition contains 688 episodes and 4,550 decisions.
+All entries remain `local-unattested`. The official leaderboard has no entries.
+One seed and eight decisions check integration; they do not establish model skill.
+
+
 ## Current combined model results — 5 October 2026
 
 Eleven OpenAI and Anthropic models completed new runs with the current renderer.

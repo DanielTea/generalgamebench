@@ -1,0 +1,596 @@
+{
+  "schema_version": "generalgamebench-engine-rebuild-audit/1",
+  "scope": "One fixed published action trace per rebuilt scenario. Pinned source, task metadata, camera frames and native score match. Container image IDs differ. This audit does not establish equivalence for all possible trajectories.",
+  "games": {
+    "football-empty-goal": {
+      "original_metadata": {
+        "task_id": "football-empty-goal",
+        "task_version": "1",
+        "engine": "gfootball",
+        "engine_version": "2.10.2",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "academy_empty_goal_close",
+        "camera_size": [
+          320,
+          180
+        ],
+        "control_policy": "release movement and shot before each decision",
+        "reward_definition": "native goal reward, no checkpoint shaping",
+        "container_image": "sha256:8774faa312fa0791f01966ef3152d23c012dda5117fd01366972a0bebfc13635",
+        "container_architecture": "arm64",
+        "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81"
+      },
+      "rebuilt_metadata": {
+        "task_id": "football-empty-goal",
+        "task_version": "1",
+        "engine": "gfootball",
+        "engine_version": "2.10.2",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "academy_empty_goal_close",
+        "camera_size": [
+          320,
+          180
+        ],
+        "control_policy": "release movement and shot before each decision",
+        "reward_definition": "native goal reward, no checkpoint shaping",
+        "container_image": "sha256:38e20b0b67e813c5622e7e19fdc6536c1c7bbdfcec01e2b424b3644367faaeb4",
+        "container_architecture": "arm64",
+        "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/football-empty-goal-3000",
+      "evidence_root": "d324fe85313cb6bf4d103b774efb4425becd7ac96380a06ff91595ddd62d72ef",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "supertuxkart-lighthouse": {
+      "original_metadata": {
+        "task_id": "supertuxkart-lighthouse",
+        "task_version": "3",
+        "engine": "PySuperTuxKart2",
+        "engine_version": "0.7.4+ggbrender2",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "track": "lighthouse",
+        "step_seconds": 0.2,
+        "neutral_preroll_steps": 50,
+        "renderer": "Mesa software / deterministic-render-v2",
+        "renderer_vector_bits": 128,
+        "renderer_threads": 1,
+        "camera_size": [
+          320,
+          240
+        ],
+        "reward_definition": "max(0, native overall distance) / native track length",
+        "container_image": "sha256:257166494f158e6b5b3441d4b52f99b83e8cef4ff60c6ce5b333251aa7cf4738",
+        "container_architecture": "arm64",
+        "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+        "engine_variant": "deterministic-render-v2",
+        "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23"
+      },
+      "rebuilt_metadata": {
+        "task_id": "supertuxkart-lighthouse",
+        "task_version": "3",
+        "engine": "PySuperTuxKart2",
+        "engine_version": "0.7.4+ggbrender2",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "track": "lighthouse",
+        "step_seconds": 0.2,
+        "neutral_preroll_steps": 50,
+        "renderer": "Mesa software / deterministic-render-v2",
+        "renderer_vector_bits": 128,
+        "renderer_threads": 1,
+        "camera_size": [
+          320,
+          240
+        ],
+        "reward_definition": "max(0, native overall distance) / native track length",
+        "container_image": "sha256:2888ec0eb5a39d35570efc1b87be53897555ead8782be8e9c4249fc7fbcb2944",
+        "container_architecture": "arm64",
+        "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+        "engine_variant": "deterministic-render-v2",
+        "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/supertuxkart-lighthouse-3000",
+      "evidence_root": "2deacf6fc19f42ad0e2d986ca2a2d2258ca28c91cd65389ad615fc284807ed85",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "luanti-chop-tree": {
+      "original_metadata": {
+        "task_id": "luanti-chop-tree",
+        "task_version": "1",
+        "engine": "craftium",
+        "engine_version": "0.0.1",
+        "numpy_version": "2.5.3",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "Craftium/ChopTree-v0: first tree block",
+        "camera_size": [
+          64,
+          64
+        ],
+        "step_seconds": 0.02,
+        "engine_variant": "serial-lockstep-v2",
+        "weather": "disabled via upstream enable_weather setting",
+        "mesh_generation_threads": 1,
+        "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+        "container_image": "sha256:f3f2df899b8709a904350472825f3253fd1a46a8d913322634a604e389fbb0fe",
+        "container_architecture": "arm64",
+        "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0"
+      },
+      "rebuilt_metadata": {
+        "task_id": "luanti-chop-tree",
+        "task_version": "1",
+        "engine": "craftium",
+        "engine_version": "0.0.1",
+        "numpy_version": "2.5.3",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "Craftium/ChopTree-v0: first tree block",
+        "camera_size": [
+          64,
+          64
+        ],
+        "step_seconds": 0.02,
+        "engine_variant": "serial-lockstep-v2",
+        "weather": "disabled via upstream enable_weather setting",
+        "mesh_generation_threads": 1,
+        "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+        "container_image": "sha256:b8f1c938eb11357818462dd08cc34306b66de1bf02819bddee9271e11fa252e6",
+        "container_architecture": "arm64",
+        "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0"
+      },
+      "episode": "runs/hosted-rerun-2026-10-05/episodes/claude-claude-sonnet-5-5/luanti-chop-tree-3000",
+      "evidence_root": "50b9d4b52fd99558733a0e7c277ea36c1204120548ceb7110a2903300d7587a7",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "supertux-first-coin": {
+      "original_metadata": {
+        "task_id": "supertux-first-coin",
+        "task_version": "1",
+        "engine": "SuperTux",
+        "engine_version": "0.6.3+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "level": "world1/welcome_antarctica.stl",
+        "camera_size": [
+          640,
+          480
+        ],
+        "renderer": "SDL software",
+        "frames_per_action": 8,
+        "physics_step_seconds": 0.015,
+        "reward_definition": "native level coin count; first coin completes task",
+        "initialization": "skip level-introduction menu and fades; fresh player/save",
+        "container_image": "sha256:b3f936e8da2a38c0eab38ea1acfe56c1c47829cbe1f288775a135f0a67faadbf",
+        "container_architecture": "arm64",
+        "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "supertux-first-coin",
+        "task_version": "1",
+        "engine": "SuperTux",
+        "engine_version": "0.6.3+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "level": "world1/welcome_antarctica.stl",
+        "camera_size": [
+          640,
+          480
+        ],
+        "renderer": "SDL software",
+        "frames_per_action": 8,
+        "physics_step_seconds": 0.015,
+        "reward_definition": "native level coin count; first coin completes task",
+        "initialization": "skip level-introduction menu and fades; fresh player/save",
+        "container_image": "sha256:09dc2a47e53072c7c93aede85b4ddc2735ae4f47ac08dcb48c0e471db8a9ae31",
+        "container_architecture": "arm64",
+        "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/supertux-first-coin-3000",
+      "evidence_root": "3721ed2633d257e798fcd418813e1c4c0bdde005baff185297f6d76314e59950",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "dcss-first-experience": {
+      "original_metadata": {
+        "task_id": "dcss-first-experience",
+        "task_version": "1",
+        "engine": "DCSS",
+        "engine_version": "0.34.0+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+        "camera_size": [
+          800,
+          600
+        ],
+        "renderer": "native SDL2 tiles / Mesa",
+        "control_policy": "one native key per decision; no auto-explore or auto-fight",
+        "reward_definition": "one on first native experience gain; death ends task",
+        "initialization": "advance title and seed-confirmation menus before observing",
+        "container_image": "sha256:942c43c70e0682b3d612e7c0b6e42eb8b35aeef42aad8bb77982bbbad4d617b8",
+        "container_architecture": "arm64",
+        "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "dcss-first-experience",
+        "task_version": "1",
+        "engine": "DCSS",
+        "engine_version": "0.34.0+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+        "camera_size": [
+          800,
+          600
+        ],
+        "renderer": "native SDL2 tiles / Mesa",
+        "control_policy": "one native key per decision; no auto-explore or auto-fight",
+        "reward_definition": "one on first native experience gain; death ends task",
+        "initialization": "advance title and seed-confirmation menus before observing",
+        "container_image": "sha256:1e7ca78cca08b7ca041b88dda82fb1dca7e6d10a2405a3c9ad6912eef8af870e",
+        "container_architecture": "arm64",
+        "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/dcss-first-experience-3000",
+      "evidence_root": "7fc1a8c9ef529224d5e15844f3c0ac4220ac345241bf5e572f4be94609c01990",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "openttd-first-road": {
+      "original_metadata": {
+        "task_id": "openttd-first-road",
+        "task_version": "1",
+        "engine": "OpenTTD",
+        "engine_version": "15.3+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "new 64x64 company in 1950; first owned road",
+        "camera_size": [
+          800,
+          600
+        ],
+        "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+        "cursor_step_pixels": 32,
+        "step_milliseconds": 30,
+        "initialization": "16 native ticks; fresh company and configuration",
+        "reward_definition": "one when native company infrastructure owns at least two road bits",
+        "container_image": "sha256:227f7a13d0f6a96f2574ac0b428755101ad54def2217d629d08d059f4e2996b0",
+        "container_architecture": "arm64",
+        "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "openttd-first-road",
+        "task_version": "1",
+        "engine": "OpenTTD",
+        "engine_version": "15.3+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "new 64x64 company in 1950; first owned road",
+        "camera_size": [
+          800,
+          600
+        ],
+        "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+        "cursor_step_pixels": 32,
+        "step_milliseconds": 30,
+        "initialization": "16 native ticks; fresh company and configuration",
+        "reward_definition": "one when native company infrastructure owns at least two road bits",
+        "container_image": "sha256:243ae8e7300d3d3551203bb06e95c7ea8a9f42afcc08c66e0d3c087095e6dedb",
+        "container_architecture": "arm64",
+        "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/openttd-first-road-3000",
+      "evidence_root": "fbace56c193b26b970ca791073f9e36cd1418f2eb5766e271f352e20c0fe7693",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "mindustry-copper": {
+      "original_metadata": {
+        "task_id": "mindustry-copper",
+        "task_version": "1",
+        "engine": "Mindustry",
+        "engine_version": "160.5+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          15
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+        "initialization": "120 native frames; fresh player and settings",
+        "cursor_step_pixels": 32,
+        "frames_per_action": 6,
+        "physics_step_seconds": 0.016666666666666666,
+        "optional_effects": false,
+        "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+        "container_image": "sha256:90468c4e5dde3dfaf18e1ec5fe337b4d32906271d3a7be899efd5b87756082a2",
+        "container_architecture": "arm64",
+        "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "mindustry-copper",
+        "task_version": "1",
+        "engine": "Mindustry",
+        "engine_version": "160.5+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          15
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+        "initialization": "120 native frames; fresh player and settings",
+        "cursor_step_pixels": 32,
+        "frames_per_action": 6,
+        "physics_step_seconds": 0.016666666666666666,
+        "optional_effects": false,
+        "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+        "container_image": "sha256:5508ebf744bd11906e7bb0b692b2b001c7441a5c413333d3a31c64ff1d4d987d",
+        "container_architecture": "arm64",
+        "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/mindustry-copper-3000",
+      "evidence_root": "a0ad2b1c1239a5fdf42968f795168dbc020f483ad81cfc2ce2fc78fc7a337953",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "warzone-first-derrick": {
+      "original_metadata": {
+        "task_id": "warzone-first-derrick",
+        "task_version": "1",
+        "engine": "Warzone 2100",
+        "engine_version": "4.7.0+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "native TUTORIAL3; first constructed oil derrick",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+        "cursor_step_pixels": 32,
+        "fine_cursor_step_pixels": 8,
+        "step_milliseconds": 100,
+        "initialization": "40 native frames; fresh tutorial and settings",
+        "reward_definition": "one on first native completed structure; two unit losses end task",
+        "container_image": "sha256:c2c0aee72affd4e5d5be6aa03659c533e3c968365e0f62eccf1f9fbdd30f6c22",
+        "container_architecture": "arm64",
+        "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "warzone-first-derrick",
+        "task_version": "1",
+        "engine": "Warzone 2100",
+        "engine_version": "4.7.0+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "native TUTORIAL3; first constructed oil derrick",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+        "cursor_step_pixels": 32,
+        "fine_cursor_step_pixels": 8,
+        "step_milliseconds": 100,
+        "initialization": "40 native frames; fresh tutorial and settings",
+        "reward_definition": "one on first native completed structure; two unit losses end task",
+        "container_image": "sha256:1b98e03d909991b93546e3f5264d4e8a75e93ee0389a1f895b8079a155cc55d2",
+        "container_architecture": "arm64",
+        "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/warzone-first-derrick-3000",
+      "evidence_root": "8d912b3bed9ef4e5da4d1b54b8e7ed5b121881a3d4c79afd219ccd1fb5a205d3",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    },
+    "cdda-first-weapon": {
+      "original_metadata": {
+        "task_id": "cdda-first-weapon",
+        "task_version": "1",
+        "engine": "Cataclysm: Dark Days Ahead",
+        "engine_version": "0.I-1+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "native tutorial; first wielded baseball bat",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL2 software / UltimateCataclysm tiles",
+        "control_policy": "one native key per decision; tutorial popups remain visible",
+        "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+        "initialization": "native tutorial world and preset character; fresh user directory",
+        "container_image": "sha256:eee69b35296e92b6ddc84a9ffbf737ab66ab48ae42dbbc3f1ee8e236b97c1b1f",
+        "container_architecture": "arm64",
+        "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "rebuilt_metadata": {
+        "task_id": "cdda-first-weapon",
+        "task_version": "1",
+        "engine": "Cataclysm: Dark Days Ahead",
+        "engine_version": "0.I-1+ggbench1",
+        "numpy_version": "1.26.4",
+        "observation": "rendered-rgb-only",
+        "score_range": [
+          0,
+          1
+        ],
+        "seed_policy": "fixed-initial-reset",
+        "simulation": "lockstep",
+        "replay": "exact-frame-and-score",
+        "scenario": "native tutorial; first wielded baseball bat",
+        "camera_size": [
+          960,
+          640
+        ],
+        "renderer": "native SDL2 software / UltimateCataclysm tiles",
+        "control_policy": "one native key per decision; tutorial popups remain visible",
+        "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+        "initialization": "native tutorial world and preset character; fresh user directory",
+        "container_image": "sha256:3b5b86786dd8fd140b5543b8628b972df8f270f7add94344c1fd7d6a3c07832d",
+        "container_architecture": "arm64",
+        "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+        "engine_variant": "native-lockstep-v1"
+      },
+      "episode": "runs/hf-vlm-2026-10-05/episodes/mlx-LiquidAI-LFM2-5-VL-450M-MLX-4bit/cdda-first-weapon-3000",
+      "evidence_root": "454b02c88aad3771980e19e638f9c0050d9224ff0190afcbbe9c7007e3fdc0ee",
+      "exact_frames": 8,
+      "exact_native_score": true,
+      "seed": 3000,
+      "max_steps": 8
+    }
+  }
+}

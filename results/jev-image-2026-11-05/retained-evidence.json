@@ -1,0 +1,8 @@
+{
+  "campaign": "results/hosted-rerun-2026-10-05/campaign.json",
+  "snapshot_sha256": "1d3be201d5f268651ae1995ac1cb9eedbff0a2f6a779710db9ec02057e95c274",
+  "evidence_roots_sha256": "86f0b524d723389b2cf0aa7219b9facc473b44bb94d13f6fa6c61c57aab0da4a",
+  "replay_validation_sha256": "18775a66b4227deaa1e933628550985586920f85707d949fbaf5bf50921a8f04",
+  "episodes": 645,
+  "note": "Native replay passed before the local model publication. This export checks the unchanged source, ledger, image hashes, and ranking again. It reuses that fixed native replay report."
+}
