@@ -1,0 +1,11 @@
+{
+  "openai_cli": "codex-cli 0.166.0-alpha.5.1",
+  "claude_cli": "2.1.318 (Claude Code)",
+  "transport": "authenticated-cli-per-frame",
+  "reasoning_effort": "low",
+  "warmup": null,
+  "scored_workers": 1,
+  "tools": false,
+  "image_input": "original full-frame PNG",
+  "provider_hardware": "unknown"
+}

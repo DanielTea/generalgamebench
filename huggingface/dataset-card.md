@@ -99,6 +99,9 @@ They use one seed and a limit of eight decisions per scenario.
 Local vision models use pinned weights from Hugging Face.
 OpenAI and Anthropic models use their hosted services.
 Each OpenAI or Anthropic action starts a new command process. Its timing includes network time and command startup.
+The [new account cohort](https://github.com/DanielTea/generalgamebench/tree/main/results/account-models-2026-11-05) adds GPT-6.1 Sol, GPT-6.1 Terra, Claude Opus 5.5 and Claude Haiku 5.5.
+Each uses original PNG input and explicit low reasoning effort on the same 43 scenarios.
+The report records client versions and image access checks. Fable 5.1 has no score because the account does not meet its data retention requirement.
 Jev uses native image input, Choice output and a persistent direct HTTPS connection.
 Small frames use integer nearest-neighbor upscaling to meet the API minimum of 280 pixels per side.
 This image preparation time remains in the response clock. The full frame and aspect ratio are preserved.

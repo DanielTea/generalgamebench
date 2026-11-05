@@ -1,0 +1,12 @@
+{
+  "report": "results/jev-image-2026-11-05",
+  "episodes": 688,
+  "files": {
+    "episodes.json": "01b88b706d31dcc93c57227d92d6a216045c7dcfae69c16b75adcfcd3b47fec6",
+    "evidence-roots.json": "933f5517ea3688bd414772a9069bb3240e8aba9facc1b6b6609ec5e045b4e37c",
+    "replay-validation.json": "2232b2283e0a770021fbd64883480d23863b53cb8831327dd2d514144e4ba092",
+    "snapshot.json": "f1b2d6a893d036d388c6032be5f519321ffdf161e0e941c27438fc4e1684abe2",
+    "campaign.json": "fe146537c25630e30b5e1c751ec37355af4a25b6f0dc3fa9203a8b5bbfec28e1"
+  },
+  "note": "Rechecked ledger and PNG hashes and all weighted rows. Reused the unchanged native replay proof. Historical sources and recording rules remain archived."
+}

@@ -1,0 +1,210 @@
+{
+  "synthetic_only": true,
+  "scored_calls": 0,
+  "attempts": [
+    {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "accessible",
+      "action": 0,
+      "metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6.1-sol",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 1,
+        "prompt_version": "pixels-json-action/2"
+      },
+      "exit_code": 0,
+      "signals": [],
+      "elapsed_ms": 6009.245624765754
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.1-terra",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "accessible",
+      "action": 0,
+      "metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6.1-terra",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 1,
+        "prompt_version": "pixels-json-action/2"
+      },
+      "exit_code": 0,
+      "signals": [],
+      "elapsed_ms": 7066.104707773775
+    },
+    {
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "probe-failed",
+      "error_type": "ProviderUnavailable",
+      "exit_code": 1,
+      "signals": [],
+      "resolved_models": [],
+      "result_is_error": true,
+      "elapsed_ms": 1562.0197500102222
+    },
+    {
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "probe-failed",
+      "error_type": "ProviderUnavailable",
+      "exit_code": 1,
+      "signals": [],
+      "resolved_models": [],
+      "result_is_error": true,
+      "elapsed_ms": 2073.0770830996335
+    },
+    {
+      "provider": "claude",
+      "model": "claude-haiku-5-5",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "accessible",
+      "action": 0,
+      "metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-haiku-5-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 1,
+        "prompt_version": "pixels-json-action/2",
+        "resolved_models": [
+          "claude-haiku-5-5"
+        ]
+      },
+      "exit_code": 0,
+      "signals": [],
+      "resolved_models": [
+        "claude-haiku-5-5"
+      ],
+      "result_is_error": false,
+      "elapsed_ms": 1944.233332760632
+    },
+    {
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "probe-failed",
+      "error_type": "ProviderUnavailable",
+      "exit_code": 1,
+      "signals": [],
+      "resolved_models": [],
+      "result_is_error": true,
+      "sanitized_provider_reason": "API Error: 400 In order to access this model, your organization or workspace must have data retention enabled.",
+      "elapsed_ms": 1274.8165000230074
+    },
+    {
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "probe-failed",
+      "error_type": "ProviderUnavailable",
+      "exit_code": 1,
+      "signals": [],
+      "resolved_models": [],
+      "result_is_error": true,
+      "sanitized_provider_reason": "API Error: 400 Claude Code 2.1.278 does not support this model; version 2.1.280 or newer is required. Run 'claude update', or update the Claude desktop app, then try again.",
+      "elapsed_ms": 2917.145499959588
+    },
+    {
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "accessible",
+      "action": 0,
+      "metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-opus-5-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 1,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low",
+        "resolved_models": [
+          "claude-opus-5-5"
+        ]
+      },
+      "exit_code": 0,
+      "signals": [],
+      "resolved_models": [
+        "claude-opus-5-5"
+      ],
+      "result_is_error": false,
+      "elapsed_ms": 6705.787416081876
+    },
+    {
+      "provider": "claude",
+      "model": "claude-haiku-5-5",
+      "synthetic_image": [
+        320,
+        240
+      ],
+      "scored": false,
+      "status": "accessible",
+      "action": 0,
+      "metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-haiku-5-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 1,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low",
+        "resolved_models": [
+          "claude-haiku-5-5"
+        ]
+      },
+      "exit_code": 0,
+      "signals": [],
+      "resolved_models": [
+        "claude-haiku-5-5"
+      ],
+      "result_is_error": false,
+      "elapsed_ms": 3968.1915841065347
+    }
+  ],
+  "notes": [
+    "The first Claude probes used client 2.1.278. Opus required 2.1.280 or newer. Updated to 2.1.318, then confirmed Opus and Haiku with low effort.",
+    "Fable returned HTTP 400: the organization or workspace must enable data retention. No account setting was changed.",
+    "OpenAI catalog HTTP 403 does not establish entitlement. Both selected OpenAI models passed image inference through the authenticated Codex CLI."
+  ]
+}

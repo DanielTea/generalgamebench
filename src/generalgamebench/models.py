@@ -49,6 +49,7 @@ class CLIModelAgent:
             "observation": "png-only",
             "calls": 0,
             "prompt_version": PROMPT_VERSION,
+            "reasoning_effort": "default" if "haiku-4" in model else "low",
         }
         self.temp = tempfile.TemporaryDirectory(prefix="arena-model-")
         self.cwd = Path(self.temp.name)
@@ -78,7 +79,7 @@ class CLIModelAgent:
                 "stream-json",
                 "--verbose",
             ]
-            if "haiku" in self.model:
+            if "haiku-4" in self.model:
                 index = cmd.index("--effort")
                 del cmd[index : index + 2]
             payload = {

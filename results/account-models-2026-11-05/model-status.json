@@ -1,0 +1,34 @@
+[
+  {
+    "agent": "openai-gpt-6-1-sol",
+    "provider": "openai",
+    "model": "gpt-6.1-sol",
+    "revision": null,
+    "status": "complete",
+    "completed": 43
+  },
+  {
+    "agent": "openai-gpt-6-1-terra",
+    "provider": "openai",
+    "model": "gpt-6.1-terra",
+    "revision": null,
+    "status": "complete",
+    "completed": 43
+  },
+  {
+    "agent": "claude-claude-opus-5-5",
+    "provider": "claude",
+    "model": "claude-opus-5-5",
+    "revision": null,
+    "status": "complete",
+    "completed": 43
+  },
+  {
+    "agent": "claude-claude-haiku-5-5",
+    "provider": "claude",
+    "model": "claude-haiku-5-5",
+    "revision": null,
+    "status": "complete",
+    "completed": 43
+  }
+]

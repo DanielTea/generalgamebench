@@ -1,0 +1,19 @@
+{
+  "tag": "account-models-2026-11-05",
+  "release_url": "https://github.com/DanielTea/generalgamebench/releases/tag/account-models-2026-11-05",
+  "assets": [
+    {
+      "name": "generalgamebench-evidence-account-models-2026-11-05.tar.gz",
+      "bytes": 71874438,
+      "sha256": "5e8a56c26ffa5885f11de7d2d4ba05f3bfb17fa5130ef5afc62d79099a3a25ce"
+    },
+    {
+      "name": "generalgamebench-huggingface-account-models-2026-11-05.tar.gz",
+      "bytes": 23963103,
+      "sha256": "3bc7658535f89e9bbd347bc91e1351eea8d20c1172ce6694c7bb39a0bd36b470"
+    }
+  ],
+  "evidence_episodes": 172,
+  "evidence_files": 1636,
+  "prepared_hub_snapshot_sha256": "4b931c430b43c09e03ff381e26c874d2ddfe30ecb3729791d14fe9ca24176d40"
+}

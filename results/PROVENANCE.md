@@ -1,5 +1,31 @@
 # Measured results provenance
 
+## New account model results — 5 November 2026
+
+Four newly accessible models completed the same 43-scenario image suite.
+They are GPT-6.1 Sol, GPT-6.1 Terra, Claude Opus 5.5 and Claude Haiku 5.5.
+Each uses seed 3000, at most eight decisions and explicit low reasoning effort.
+The [campaign report](account-models-2026-11-05/README.md) records the results and access checks.
+
+The new runs contain 172 episodes, 1,292 recorded decisions and 16 errors.
+Opus has 15 JSON parsing failures. Haiku has one action protocol failure.
+These failed episodes remain in the suite and score zero. No scored call was repeated.
+Every new episode passed native replay. All previous 16 weighted rows remain unchanged.
+The combined table has 20 models, 860 episodes and 5,842 recorded decisions.
+The score keeps 70% quality and 30% P95 speed. There is no hard latency cutoff.
+
+Each action uses an original PNG and a fresh authenticated CLI process.
+Claude Code was updated to 2.1.318 so the account could use Opus 5.5.
+Codex CLI is 0.166.0-alpha.5.1. The client versions matched after the run.
+Haiku 5.5 supports explicit low effort; the old Haiku 4.5 run used its default effort.
+The new cohort uses the same audited rebuilt containers as Jev. Each row keeps its actual image IDs.
+The report retains the fixed source hashes, runtime settings and replay proof.
+
+Fable 5.1 requires data retention to be enabled for the organization or workspace.
+No account setting was changed. Fable has no scored run or leaderboard entry.
+One seed and eight decisions only check integration. They do not establish model skill.
+All entries remain `local-unattested`. The official track has no entries.
+
 ## Weighted score update — 5 November 2026
 
 The current leaderboard uses `quality70-speed30-p95-v1`.

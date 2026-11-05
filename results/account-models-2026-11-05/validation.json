@@ -1,0 +1,80 @@
+{
+  "new_models": 4,
+  "new_episodes": 172,
+  "new_decisions": 1292,
+  "new_errors": 16,
+  "native_replay_passed": 172,
+  "retained_rows_unchanged": 16,
+  "active_models": 20,
+  "active_episodes": 860,
+  "active_decisions": 5842,
+  "scoring_policy": {
+    "id": "quality70-speed30-p95-v1",
+    "quality_weight": 0.7,
+    "speed_weight": 0.3,
+    "latency_reference_ms": 1000.0,
+    "speed_formula": "100 / (1 + p95_ms / 1000)",
+    "score_formula": "100 * (quality / 100)^0.7 * (speed / 100)^0.3",
+    "aggregation": "weighted_geometric_mean",
+    "hard_latency_limit_ms": null,
+    "quantile_method": "linear",
+    "latency_sample_scope": "all_recorded_decisions_in_complete_suite",
+    "per_game_latency": "same_observed_suite_p95",
+    "ci95_metric": "quality_only"
+  },
+  "independent_quality_p95_geometric_formula": "passed",
+  "all_times_including_failures": true,
+  "no_scored_retries": true,
+  "snapshot_sha256": "d0e45dd29398725526b211b3602c1129d7e2e99dd81751d101ddf92e5702a2ff",
+  "models": [
+    {
+      "model": "claude-haiku-5-5",
+      "weighted_score": 15.798331850472065,
+      "quality_score": 15.03,
+      "p95_ms": 4634.64874025,
+      "decisions": 340,
+      "errors": 1,
+      "aborted_episodes": 1,
+      "error_types": {
+        "ProtocolError": 1
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "weighted_score": 15.088575622552156,
+      "quality_score": 18.203,
+      "p95_ms": 9268.47889965,
+      "decisions": 342,
+      "errors": 0,
+      "aborted_episodes": 0,
+      "error_types": {}
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "weighted_score": 12.537483781512858,
+      "quality_score": 15.689,
+      "p95_ms": 12459.254324899997,
+      "decisions": 344,
+      "errors": 0,
+      "aborted_episodes": 0,
+      "error_types": {}
+    },
+    {
+      "model": "claude-opus-5-5",
+      "weighted_score": 9.004796900278,
+      "quality_score": 7.323,
+      "p95_ms": 5855.324333250001,
+      "decisions": 266,
+      "errors": 15,
+      "aborted_episodes": 15,
+      "error_types": {
+        "JSONDecodeError": 15
+      }
+    }
+  ],
+  "checks": {
+    "pytest_passed": 173,
+    "pytest_optional_skipped": 55,
+    "ruff": "passed"
+  }
+}
