@@ -25,6 +25,7 @@ class JevAgent:
         if not self._key:
             raise ValueError("Configure TYPESAFE_API_KEY before calling Jev")
         self._connection = None
+        self._last_used = None
         self.metadata = {
             "transport": TRANSPORT,
             "requested_model": model,
@@ -33,6 +34,7 @@ class JevAgent:
             "observation": "png-only",
             "images_header": True,
             "retries": 0,
+            "connection_idle_expiry_seconds": 5,
             "tool_events": 0,
             "calls": 0,
             "input_tokens": 0,
@@ -42,6 +44,10 @@ class JevAgent:
     def _request(self, method, path, body, content_type, timeout):
         if timeout <= 0:
             raise TimeoutError("Jev response deadline exceeded")
+        if self._last_used is not None and time.perf_counter() - self._last_used > 5:
+            # Engine startup can take a minute. Open a new connection after idle
+            # time, before sending a request; this does not retry a model call.
+            self.close()
         if self._connection is None:
             self._connection = http.client.HTTPSConnection("api.typesafe.ai", timeout=timeout)
         connection = self._connection
@@ -69,6 +75,7 @@ class JevAgent:
             value = json.loads(payload)
             if not isinstance(value, dict):
                 raise ProtocolError("Invalid TypeSafe response")
+            self._last_used = time.perf_counter()
             return value
         except (OSError, http.client.HTTPException) as exc:
             self.close()
@@ -147,3 +154,4 @@ class JevAgent:
         if self._connection is not None:
             self._connection.close()
             self._connection = None
+        self._last_used = None
