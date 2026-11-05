@@ -14,8 +14,8 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141518'/%3E%3Cpath d='M6 24L16 6l10 18h-6l-4-8-4 8z' fill='%23ff5a1f'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="style.css?v=account-models-2026-11-05" />
-    <script src="app.js?v=account-models-2026-11-05" defer></script>
+    <link rel="stylesheet" href="style.css?v=weighted-bars-2026-11-05" />
+    <script src="app.js?v=weighted-bars-2026-11-05" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#leaderboard">Skip to leaderboard</a>
@@ -81,6 +81,21 @@
         <label class="score-filter">Score view
           <select id="score-game"><option value="all">Entire fixed suite</option></select>
         </label>
+        <figure id="score-chart" class="score-chart" aria-labelledby="chart-title" hidden>
+          <figcaption>
+            <div>
+              <h3 id="chart-title">Weighted score comparison</h3>
+              <p id="chart-caption"></p>
+            </div>
+            <span class="chart-unit">Weighted / 100</span>
+          </figcaption>
+          <div class="chart-axis" aria-hidden="true">
+            <span></span><div id="chart-ticks"></div><span>Score</span>
+          </div>
+          <ol id="score-bars" class="score-bars"></ol>
+          <p class="chart-note">Bars use 70% quality and 30% P95 speed. Each game view uses the same suite P95.
+            Select a model to see its detailed measurements below.</p>
+        </figure>
         <div class="table-wrap">
           <table>
             <thead>

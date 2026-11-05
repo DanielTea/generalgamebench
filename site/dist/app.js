@@ -23,11 +23,45 @@ const labels = {
 };
 const ms = (n) =>
   n >= 1000 ? `${(n / 1000).toFixed(2)} s` : `${n.toFixed(2)} ms`;
+const modelName = r => labels[r.model] || r.model || labels[r.agent] || r.agent;
 function el(tag, text, cls) {
   const e = document.createElement(tag);
   if (text !== undefined) e.textContent = text;
   if (cls) e.className = cls;
   return e;
+}
+function renderScoreChart(rows, game, scoreOf, qualityOf) {
+  $("score-chart").hidden = !rows.length;
+  $("score-bars").replaceChildren();
+  $("chart-ticks").replaceChildren();
+  if (!rows.length) return;
+  const highest = Math.max(...rows.map(scoreOf));
+  const step = highest <= 25 ? 5 : highest <= 50 ? 10 : 25;
+  const scale = Math.min(100, Math.max(step, Math.ceil(highest / step) * step));
+  $("score-chart").style.setProperty("--chart-grid-step", `${step / scale * 100}%`);
+  $("chart-caption").textContent = `${game === "all" ? "Entire fixed suite" : game} · ${rows.length} models · score scale 0–${scale}. Local results; not certified.`;
+  for (let tick = 0; tick <= scale; tick += step) {
+    $("chart-ticks").append(el("span", String(tick)));
+  }
+  rows.forEach(r => {
+    const row = el("li", undefined, "chart-row");
+    const label = el("div", undefined, "chart-label");
+    const name = el("a", modelName(r), "chart-name");
+    name.href = `#ranking-${encodeURIComponent(r.agent)}`;
+    name.title = `View all measurements for ${modelName(r)}`;
+    const context = el("span", `Quality ${qualityOf(r).toFixed(2)} · P95 ${ms(r.p95_ms)} · ${r.errors || 0} suite error${r.errors === 1 ? "" : "s"}`, "chart-context");
+    label.append(name, context);
+    const track = el("div", undefined, "chart-track");
+    track.setAttribute("aria-hidden", "true");
+    const bar = el("span", undefined, "chart-bar");
+    bar.style.width = `${scoreOf(r) / scale * 100}%`;
+    track.append(bar);
+    const value = el("span", scoreOf(r).toFixed(2), "chart-value");
+    value.setAttribute("aria-label", `Weighted score ${scoreOf(r).toFixed(2)} out of 100`);
+    value.title = `Unrounded weighted score: ${scoreOf(r)}`;
+    row.append(label, track, value);
+    $("score-bars").append(row);
+  });
 }
 function renderBoard() {
   const requested = $("score-game").value;
@@ -47,6 +81,7 @@ function renderBoard() {
   const scoreOf = r => game === "all" ? r.weighted_score : r.weighted_per_game[game];
   const rows = [...(dataset[active] || [])].sort((a, b) =>
     scoreOf(b) - scoreOf(a) || qualityOf(b) - qualityOf(a) || a.p95_ms - b.p95_ms || a.agent.localeCompare(b.agent));
+  renderScoreChart(rows, game, scoreOf, qualityOf);
   $("rankings").replaceChildren();
   const descriptions = {
     exhibition:
@@ -72,7 +107,8 @@ function renderBoard() {
   rows.forEach((r, i) => {
     if (i === 0 || scoreOf(r) < scoreOf(rows[i - 1]) - 1e-9) rank = i + 1;
     const tr = el("tr");
-    const name = labels[r.model] || r.model || labels[r.agent] || r.agent;
+    tr.id = `ranking-${r.agent}`;
+    const name = modelName(r);
     const vals = [
       String(rank).padStart(2, "0"),
       name,
@@ -235,7 +271,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=account-models-2026-11-05", { cache: "no-cache" })
+fetch("data.json?v=weighted-bars-2026-11-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
