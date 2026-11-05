@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-11-05T13:11:34.138810+00:00",
+  "campaign_status": [
+    {
+      "agent": "openai-gpt-6-1-sol",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "openai-gpt-6-1-terra",
+      "provider": "openai",
+      "model": "gpt-6.1-terra",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "claude-claude-opus-5-5",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "claude-claude-haiku-5-5",
+      "provider": "claude",
+      "model": "claude-haiku-5-5",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    }
+  ],
+  "cli_versions_after_run": {
+    "openai": "codex-cli 0.166.0-alpha.5.1",
+    "claude": "2.1.318 (Claude Code)"
+  },
+  "scored_workers": 1,
+  "new_episodes": 172,
+  "new_decisions": 1292,
+  "new_errors": 16,
+  "scored_retries": 0
+}

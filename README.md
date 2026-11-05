@@ -20,6 +20,8 @@ The [hosted model rerun](results/hosted-rerun-2026-10-05) uses the same 43 scena
 
 The [native-image Jev campaign](results/jev-image-2026-11-05) adds Jev 1.14.0 with the same 43 scenarios, seed and decision limit. It uses a native Choice question and direct HTTPS requests. It repeats pixels with integer nearest-neighbor upscaling when a frame is below the API image minimum. Its nine rebuilt game containers passed fixed-trace camera and score checks. The report and each row retain these different test conditions.
 
+The [new account model campaign](results/account-models-2026-11-05) tests GPT-6.1 Sol, GPT-6.1 Terra, Claude Opus 5.5 and Claude Haiku 5.5 with image input. It uses the same 43 scenarios, seed and decision limit. Each frame uses a fresh authenticated CLI call with low reasoning effort. The report records client versions and access checks. Fable 5.1 requires data retention to be enabled for the account. It has no score. No account setting was changed.
+
 The model table shows only verified runs with the current task setup. The [previous snapshot](results/hf-vlm-2026-10-05/previous-snapshot.json) keeps the earlier model and reference policy results. Earlier campaign directories and release files keep their original evidence and recording rules. The page has two views: Model exhibition and Official ranked. See the [test method](docs/METHODOLOGY.md) and [coverage](docs/GAMES.md).
 
 Formerly ScreenQuest Arena. The package and Python module are now `generalgamebench`; the `arena` command remains available as a compatibility alias. Published Season 0 evidence remains unchanged.

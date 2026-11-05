@@ -1,7 +1,7 @@
 {
   "schema_version": "generalgamebench-snapshot/1",
-  "season": "jev-image-2026-11-05",
-  "generated_at": "2026-11-05T10:15:57.136004+00:00",
+  "season": "account-models-2026-11-05",
+  "generated_at": "2026-11-05T13:19:28.862749+00:00",
   "local": [
     {
       "agent": "tracker",
@@ -6382,6 +6382,823 @@
       }
     },
     {
+      "agent": "claude-claude-haiku-5-5",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.5.0",
+      "max_steps": 8,
+      "score": 15.03,
+      "ci95": null,
+      "episodes": 43,
+      "seeds": 1,
+      "seed_ids": [
+        3000
+      ],
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict",
+        "procgen-bigfish",
+        "procgen-bossfight",
+        "procgen-caveflyer",
+        "procgen-chaser",
+        "procgen-climber",
+        "procgen-coinrun",
+        "procgen-dodgeball",
+        "procgen-fruitbot",
+        "procgen-heist",
+        "procgen-jumper",
+        "procgen-leaper",
+        "procgen-maze",
+        "procgen-miner",
+        "procgen-ninja",
+        "procgen-plunder",
+        "procgen-starpilot",
+        "crafter",
+        "miniworld-oneroom",
+        "pettingzoo-pistonball",
+        "atari-breakout",
+        "retro-airstriker",
+        "nethack-score",
+        "minihack-room",
+        "unity-food-collector",
+        "football-empty-goal",
+        "supertuxkart-lighthouse",
+        "luanti-chop-tree",
+        "supertux-first-coin",
+        "dcss-first-experience",
+        "openttd-first-road",
+        "mindustry-copper",
+        "cdda-first-weapon",
+        "warzone-first-derrick"
+      ],
+      "task_metadata": {
+        "coin-run": {},
+        "dodge-lanes": {},
+        "doom-basic": {},
+        "doom-defend-center": {},
+        "doom-defend-line": {},
+        "doom-take-cover": {},
+        "doom-health": {},
+        "doom-corridor": {},
+        "doom-home": {},
+        "doom-predict": {},
+        "procgen-bigfish": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            40
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bigfish",
+          "task_version": "1"
+        },
+        "procgen-bossfight": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bossfight",
+          "task_version": "1"
+        },
+        "procgen-caveflyer": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2,
+            12
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-caveflyer",
+          "task_version": "1"
+        },
+        "procgen-chaser": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-chaser",
+          "task_version": "1"
+        },
+        "procgen-climber": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            12.6
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-climber",
+          "task_version": "1"
+        },
+        "procgen-coinrun": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-coinrun",
+          "task_version": "1"
+        },
+        "procgen-dodgeball": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            19
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-dodgeball",
+          "task_version": "1"
+        },
+        "procgen-fruitbot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -1.5,
+            32.4
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-fruitbot",
+          "task_version": "1"
+        },
+        "procgen-heist": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-heist",
+          "task_version": "1"
+        },
+        "procgen-jumper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-jumper",
+          "task_version": "1"
+        },
+        "procgen-leaper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-leaper",
+          "task_version": "1"
+        },
+        "procgen-maze": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-maze",
+          "task_version": "1"
+        },
+        "procgen-miner": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-miner",
+          "task_version": "1"
+        },
+        "procgen-ninja": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-ninja",
+          "task_version": "1"
+        },
+        "procgen-plunder": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            4.5,
+            30
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-plunder",
+          "task_version": "1"
+        },
+        "procgen-starpilot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2.5,
+            64
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-starpilot",
+          "task_version": "1"
+        },
+        "crafter": {
+          "engine": "crafter",
+          "engine_version": "1.8.3",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            22
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "crafter",
+          "task_version": "2"
+        },
+        "miniworld-oneroom": {
+          "engine": "miniworld",
+          "engine_version": "2.1.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "miniworld-oneroom",
+          "task_version": "1"
+        },
+        "pettingzoo-pistonball": {
+          "engine": "pettingzoo",
+          "engine_version": "1.27.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -100,
+            100
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "pettingzoo-pistonball",
+          "task_version": "1"
+        },
+        "atari-breakout": {
+          "engine": "ale-py",
+          "engine_version": "0.12.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            864
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "atari-breakout",
+          "task_version": "1"
+        },
+        "retro-airstriker": {
+          "engine": "stable-retro",
+          "engine_version": "1.0.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            10000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "retro-airstriker",
+          "task_version": "1"
+        },
+        "nethack-score": {
+          "engine": "nle",
+          "engine_version": "1.3.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "nethack-score",
+          "task_version": "1"
+        },
+        "minihack-room": {
+          "engine": "minihack",
+          "engine_version": "1.0.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "minihack-room",
+          "task_version": "1"
+        },
+        "unity-food-collector": {
+          "assets_sha256": "c28e27b2d3af4391a3e1e95b0871e01a16ef657ee062bb91e7740ac9d0c99be5",
+          "camera_size": [
+            84,
+            84
+          ],
+          "capture_frame_rate": 30,
+          "controlled_agent": "lowest-initial-agent-id",
+          "engine": "mlagents-envs",
+          "engine_version": "1.1.0",
+          "numpy_version": "1.23.5",
+          "observation": "rendered-rgb-only",
+          "peer_policy": "no-op",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "sum of native food rewards; green +1, red -1",
+          "scene": "VisualFoodCollector",
+          "score_range": [
+            0,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "unity-food-collector",
+          "task_version": "1"
+        },
+        "football-empty-goal": {
+          "camera_size": [
+            320,
+            180
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:38e20b0b67e813c5622e7e19fdc6536c1c7bbdfcec01e2b424b3644367faaeb4",
+          "control_policy": "release movement and shot before each decision",
+          "engine": "gfootball",
+          "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81",
+          "engine_version": "2.10.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native goal reward, no checkpoint shaping",
+          "scenario": "academy_empty_goal_close",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "football-empty-goal",
+          "task_version": "1"
+        },
+        "supertuxkart-lighthouse": {
+          "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23",
+          "camera_size": [
+            320,
+            240
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:2888ec0eb5a39d35570efc1b87be53897555ead8782be8e9c4249fc7fbcb2944",
+          "engine": "PySuperTuxKart2",
+          "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+          "engine_variant": "deterministic-render-v2",
+          "engine_version": "0.7.4+ggbrender2",
+          "neutral_preroll_steps": 50,
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "Mesa software / deterministic-render-v2",
+          "renderer_threads": 1,
+          "renderer_vector_bits": 128,
+          "replay": "exact-frame-and-score",
+          "reward_definition": "max(0, native overall distance) / native track length",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.2,
+          "task_id": "supertuxkart-lighthouse",
+          "task_version": "3",
+          "track": "lighthouse"
+        },
+        "luanti-chop-tree": {
+          "camera_size": [
+            64,
+            64
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:b8f1c938eb11357818462dd08cc34306b66de1bf02819bddee9271e11fa252e6",
+          "engine": "craftium",
+          "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
+          "engine_variant": "serial-lockstep-v2",
+          "engine_version": "0.0.1",
+          "mesh_generation_threads": 1,
+          "numpy_version": "2.5.3",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+          "scenario": "Craftium/ChopTree-v0: first tree block",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.02,
+          "task_id": "luanti-chop-tree",
+          "task_version": "1",
+          "weather": "disabled via upstream enable_weather setting"
+        },
+        "supertux-first-coin": {
+          "camera_size": [
+            640,
+            480
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:09dc2a47e53072c7c93aede85b4ddc2735ae4f47ac08dcb48c0e471db8a9ae31",
+          "engine": "SuperTux",
+          "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.6.3+ggbench1",
+          "frames_per_action": 8,
+          "initialization": "skip level-introduction menu and fades; fresh player/save",
+          "level": "world1/welcome_antarctica.stl",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "physics_step_seconds": 0.015,
+          "renderer": "SDL software",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native level coin count; first coin completes task",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "supertux-first-coin",
+          "task_version": "1"
+        },
+        "dcss-first-experience": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1e7ca78cca08b7ca041b88dda82fb1dca7e6d10a2405a3c9ad6912eef8af870e",
+          "control_policy": "one native key per decision; no auto-explore or auto-fight",
+          "engine": "DCSS",
+          "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.34.0+ggbench1",
+          "initialization": "advance title and seed-confirmation menus before observing",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 tiles / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native experience gain; death ends task",
+          "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+          "simulation": "lockstep",
+          "task_id": "dcss-first-experience",
+          "task_version": "1"
+        },
+        "openttd-first-road": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:243ae8e7300d3d3551203bb06e95c7ea8a9f42afcc08c66e0d3c087095e6dedb",
+          "cursor_step_pixels": 32,
+          "engine": "OpenTTD",
+          "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "15.3+ggbench1",
+          "initialization": "16 native ticks; fresh company and configuration",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when native company infrastructure owns at least two road bits",
+          "scenario": "new 64x64 company in 1950; first owned road",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 30,
+          "task_id": "openttd-first-road",
+          "task_version": "1"
+        },
+        "mindustry-copper": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:5508ebf744bd11906e7bb0b692b2b001c7441a5c413333d3a31c64ff1d4d987d",
+          "cursor_step_pixels": 32,
+          "engine": "Mindustry",
+          "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "160.5+ggbench1",
+          "frames_per_action": 6,
+          "initialization": "120 native frames; fresh player and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "optional_effects": false,
+          "physics_step_seconds": 0.016666666666666666,
+          "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+          "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+          "score_range": [
+            0,
+            15
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "mindustry-copper",
+          "task_version": "1"
+        },
+        "cdda-first-weapon": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:3b5b86786dd8fd140b5543b8628b972df8f270f7add94344c1fd7d6a3c07832d",
+          "control_policy": "one native key per decision; tutorial popups remain visible",
+          "engine": "Cataclysm: Dark Days Ahead",
+          "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.I-1+ggbench1",
+          "initialization": "native tutorial world and preset character; fresh user directory",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 software / UltimateCataclysm tiles",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+          "scenario": "native tutorial; first wielded baseball bat",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "cdda-first-weapon",
+          "task_version": "1"
+        },
+        "warzone-first-derrick": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1b98e03d909991b93546e3f5264d4e8a75e93ee0389a1f895b8079a155cc55d2",
+          "cursor_step_pixels": 32,
+          "engine": "Warzone 2100",
+          "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "4.7.0+ggbench1",
+          "fine_cursor_step_pixels": 8,
+          "initialization": "40 native frames; fresh tutorial and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native completed structure; two unit losses end task",
+          "scenario": "native TUTORIAL3; first constructed oil derrick",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 100,
+          "task_id": "warzone-first-derrick",
+          "task_version": "1"
+        }
+      },
+      "decisions": 340,
+      "p50_ms": 3461.775083,
+      "p95_ms": 4634.64874025,
+      "max_ms": 8059.011709,
+      "response_timeout_seconds": 120.0,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19,
+        "doom-defend-center": 9.524,
+        "doom-defend-line": 9.524,
+        "doom-take-cover": 100.0,
+        "doom-health": 100.0,
+        "doom-corridor": 9.091,
+        "doom-home": 0.0,
+        "doom-predict": 76.183,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 4.425,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 0.0,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 69.988,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 100.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 1.362,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "errors": 1,
+      "aborted_episodes": 1,
+      "model": "claude-haiku-5-5",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-haiku-5-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 95,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low",
+        "resolved_models": [
+          "claude-haiku-5-5"
+        ]
+      },
+      "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. A fresh authenticated CLI process receives each original PNG and the frozen prompt. Low reasoning effort. No tools, OCR, frame descriptions, warmup game data, scored retries or fallback actions. Provider hardware is unknown. Normal desktop tasks can use the same Mac. Claude Code 2.1.318; Codex CLI 0.166.0-alpha.5.1.",
+      "quality_score": 15.03,
+      "speed_score": 17.74733521287135,
+      "weighted_score": 15.798331850472065,
+      "weighted_per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 59.53055695135282,
+        "doom-basic": 44.595867091892046,
+        "doom-defend-center": 11.479250057740858,
+        "doom-defend-line": 11.479250057740858,
+        "doom-take-cover": 59.53055695135282,
+        "doom-health": 59.53055695135282,
+        "doom-corridor": 11.111382706491833,
+        "doom-home": 0.0,
+        "doom-predict": 49.20855306739139,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 6.7124217852413,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 0.0,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 46.37206691851225,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 59.53055695135282,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 2.9421439731448893,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "scoring_policy_id": "quality70-speed30-p95-v1"
+    },
+    {
       "agent": "claude-claude-sonnet-5-5",
       "mode": "exhibition",
       "hardware": "Darwin arm64",
@@ -7204,6 +8021,820 @@
         "quantile_method": "linear",
         "sample_scope": "all_recorded_decisions_in_complete_suite"
       }
+    },
+    {
+      "agent": "openai-gpt-6-1-terra",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.5.0",
+      "max_steps": 8,
+      "score": 18.203,
+      "ci95": null,
+      "episodes": 43,
+      "seeds": 1,
+      "seed_ids": [
+        3000
+      ],
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict",
+        "procgen-bigfish",
+        "procgen-bossfight",
+        "procgen-caveflyer",
+        "procgen-chaser",
+        "procgen-climber",
+        "procgen-coinrun",
+        "procgen-dodgeball",
+        "procgen-fruitbot",
+        "procgen-heist",
+        "procgen-jumper",
+        "procgen-leaper",
+        "procgen-maze",
+        "procgen-miner",
+        "procgen-ninja",
+        "procgen-plunder",
+        "procgen-starpilot",
+        "crafter",
+        "miniworld-oneroom",
+        "pettingzoo-pistonball",
+        "atari-breakout",
+        "retro-airstriker",
+        "nethack-score",
+        "minihack-room",
+        "unity-food-collector",
+        "football-empty-goal",
+        "supertuxkart-lighthouse",
+        "luanti-chop-tree",
+        "supertux-first-coin",
+        "dcss-first-experience",
+        "openttd-first-road",
+        "mindustry-copper",
+        "cdda-first-weapon",
+        "warzone-first-derrick"
+      ],
+      "task_metadata": {
+        "coin-run": {},
+        "dodge-lanes": {},
+        "doom-basic": {},
+        "doom-defend-center": {},
+        "doom-defend-line": {},
+        "doom-take-cover": {},
+        "doom-health": {},
+        "doom-corridor": {},
+        "doom-home": {},
+        "doom-predict": {},
+        "procgen-bigfish": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            40
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bigfish",
+          "task_version": "1"
+        },
+        "procgen-bossfight": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bossfight",
+          "task_version": "1"
+        },
+        "procgen-caveflyer": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2,
+            12
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-caveflyer",
+          "task_version": "1"
+        },
+        "procgen-chaser": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-chaser",
+          "task_version": "1"
+        },
+        "procgen-climber": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            12.6
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-climber",
+          "task_version": "1"
+        },
+        "procgen-coinrun": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-coinrun",
+          "task_version": "1"
+        },
+        "procgen-dodgeball": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            19
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-dodgeball",
+          "task_version": "1"
+        },
+        "procgen-fruitbot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -1.5,
+            32.4
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-fruitbot",
+          "task_version": "1"
+        },
+        "procgen-heist": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-heist",
+          "task_version": "1"
+        },
+        "procgen-jumper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-jumper",
+          "task_version": "1"
+        },
+        "procgen-leaper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-leaper",
+          "task_version": "1"
+        },
+        "procgen-maze": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-maze",
+          "task_version": "1"
+        },
+        "procgen-miner": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-miner",
+          "task_version": "1"
+        },
+        "procgen-ninja": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-ninja",
+          "task_version": "1"
+        },
+        "procgen-plunder": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            4.5,
+            30
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-plunder",
+          "task_version": "1"
+        },
+        "procgen-starpilot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2.5,
+            64
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-starpilot",
+          "task_version": "1"
+        },
+        "crafter": {
+          "engine": "crafter",
+          "engine_version": "1.8.3",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            22
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "crafter",
+          "task_version": "2"
+        },
+        "miniworld-oneroom": {
+          "engine": "miniworld",
+          "engine_version": "2.1.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "miniworld-oneroom",
+          "task_version": "1"
+        },
+        "pettingzoo-pistonball": {
+          "engine": "pettingzoo",
+          "engine_version": "1.27.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -100,
+            100
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "pettingzoo-pistonball",
+          "task_version": "1"
+        },
+        "atari-breakout": {
+          "engine": "ale-py",
+          "engine_version": "0.12.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            864
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "atari-breakout",
+          "task_version": "1"
+        },
+        "retro-airstriker": {
+          "engine": "stable-retro",
+          "engine_version": "1.0.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            10000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "retro-airstriker",
+          "task_version": "1"
+        },
+        "nethack-score": {
+          "engine": "nle",
+          "engine_version": "1.3.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "nethack-score",
+          "task_version": "1"
+        },
+        "minihack-room": {
+          "engine": "minihack",
+          "engine_version": "1.0.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "minihack-room",
+          "task_version": "1"
+        },
+        "unity-food-collector": {
+          "assets_sha256": "c28e27b2d3af4391a3e1e95b0871e01a16ef657ee062bb91e7740ac9d0c99be5",
+          "camera_size": [
+            84,
+            84
+          ],
+          "capture_frame_rate": 30,
+          "controlled_agent": "lowest-initial-agent-id",
+          "engine": "mlagents-envs",
+          "engine_version": "1.1.0",
+          "numpy_version": "1.23.5",
+          "observation": "rendered-rgb-only",
+          "peer_policy": "no-op",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "sum of native food rewards; green +1, red -1",
+          "scene": "VisualFoodCollector",
+          "score_range": [
+            0,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "unity-food-collector",
+          "task_version": "1"
+        },
+        "football-empty-goal": {
+          "camera_size": [
+            320,
+            180
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:38e20b0b67e813c5622e7e19fdc6536c1c7bbdfcec01e2b424b3644367faaeb4",
+          "control_policy": "release movement and shot before each decision",
+          "engine": "gfootball",
+          "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81",
+          "engine_version": "2.10.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native goal reward, no checkpoint shaping",
+          "scenario": "academy_empty_goal_close",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "football-empty-goal",
+          "task_version": "1"
+        },
+        "supertuxkart-lighthouse": {
+          "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23",
+          "camera_size": [
+            320,
+            240
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:2888ec0eb5a39d35570efc1b87be53897555ead8782be8e9c4249fc7fbcb2944",
+          "engine": "PySuperTuxKart2",
+          "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+          "engine_variant": "deterministic-render-v2",
+          "engine_version": "0.7.4+ggbrender2",
+          "neutral_preroll_steps": 50,
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "Mesa software / deterministic-render-v2",
+          "renderer_threads": 1,
+          "renderer_vector_bits": 128,
+          "replay": "exact-frame-and-score",
+          "reward_definition": "max(0, native overall distance) / native track length",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.2,
+          "task_id": "supertuxkart-lighthouse",
+          "task_version": "3",
+          "track": "lighthouse"
+        },
+        "luanti-chop-tree": {
+          "camera_size": [
+            64,
+            64
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:b8f1c938eb11357818462dd08cc34306b66de1bf02819bddee9271e11fa252e6",
+          "engine": "craftium",
+          "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
+          "engine_variant": "serial-lockstep-v2",
+          "engine_version": "0.0.1",
+          "mesh_generation_threads": 1,
+          "numpy_version": "2.5.3",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+          "scenario": "Craftium/ChopTree-v0: first tree block",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.02,
+          "task_id": "luanti-chop-tree",
+          "task_version": "1",
+          "weather": "disabled via upstream enable_weather setting"
+        },
+        "supertux-first-coin": {
+          "camera_size": [
+            640,
+            480
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:09dc2a47e53072c7c93aede85b4ddc2735ae4f47ac08dcb48c0e471db8a9ae31",
+          "engine": "SuperTux",
+          "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.6.3+ggbench1",
+          "frames_per_action": 8,
+          "initialization": "skip level-introduction menu and fades; fresh player/save",
+          "level": "world1/welcome_antarctica.stl",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "physics_step_seconds": 0.015,
+          "renderer": "SDL software",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native level coin count; first coin completes task",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "supertux-first-coin",
+          "task_version": "1"
+        },
+        "dcss-first-experience": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1e7ca78cca08b7ca041b88dda82fb1dca7e6d10a2405a3c9ad6912eef8af870e",
+          "control_policy": "one native key per decision; no auto-explore or auto-fight",
+          "engine": "DCSS",
+          "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.34.0+ggbench1",
+          "initialization": "advance title and seed-confirmation menus before observing",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 tiles / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native experience gain; death ends task",
+          "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+          "simulation": "lockstep",
+          "task_id": "dcss-first-experience",
+          "task_version": "1"
+        },
+        "openttd-first-road": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:243ae8e7300d3d3551203bb06e95c7ea8a9f42afcc08c66e0d3c087095e6dedb",
+          "cursor_step_pixels": 32,
+          "engine": "OpenTTD",
+          "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "15.3+ggbench1",
+          "initialization": "16 native ticks; fresh company and configuration",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when native company infrastructure owns at least two road bits",
+          "scenario": "new 64x64 company in 1950; first owned road",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 30,
+          "task_id": "openttd-first-road",
+          "task_version": "1"
+        },
+        "mindustry-copper": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:5508ebf744bd11906e7bb0b692b2b001c7441a5c413333d3a31c64ff1d4d987d",
+          "cursor_step_pixels": 32,
+          "engine": "Mindustry",
+          "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "160.5+ggbench1",
+          "frames_per_action": 6,
+          "initialization": "120 native frames; fresh player and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "optional_effects": false,
+          "physics_step_seconds": 0.016666666666666666,
+          "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+          "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+          "score_range": [
+            0,
+            15
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "mindustry-copper",
+          "task_version": "1"
+        },
+        "cdda-first-weapon": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:3b5b86786dd8fd140b5543b8628b972df8f270f7add94344c1fd7d6a3c07832d",
+          "control_policy": "one native key per decision; tutorial popups remain visible",
+          "engine": "Cataclysm: Dark Days Ahead",
+          "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.I-1+ggbench1",
+          "initialization": "native tutorial world and preset character; fresh user directory",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 software / UltimateCataclysm tiles",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+          "scenario": "native tutorial; first wielded baseball bat",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "cdda-first-weapon",
+          "task_version": "1"
+        },
+        "warzone-first-derrick": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1b98e03d909991b93546e3f5264d4e8a75e93ee0389a1f895b8079a155cc55d2",
+          "cursor_step_pixels": 32,
+          "engine": "Warzone 2100",
+          "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "4.7.0+ggbench1",
+          "fine_cursor_step_pixels": 8,
+          "initialization": "40 native frames; fresh tutorial and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native completed structure; two unit losses end task",
+          "scenario": "native TUTORIAL3; first constructed oil derrick",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 100,
+          "task_id": "warzone-first-derrick",
+          "task_version": "1"
+        }
+      },
+      "decisions": 342,
+      "p50_ms": 5578.1625005000005,
+      "p95_ms": 9268.47889965,
+      "max_ms": 14700.27125,
+      "response_timeout_seconds": 120.0,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 100.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19,
+        "doom-defend-center": 9.524,
+        "doom-defend-line": 9.524,
+        "doom-take-cover": 100.0,
+        "doom-health": 100.0,
+        "doom-corridor": 9.091,
+        "doom-home": 0.0,
+        "doom-predict": 76.183,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 4.425,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 4.545,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 95.231,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 100.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 1.362,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 6.667,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "errors": 0,
+      "aborted_episodes": 0,
+      "model": "gpt-6.1-terra",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6.1-terra",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 342,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low"
+      },
+      "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. A fresh authenticated CLI process receives each original PNG and the frozen prompt. Low reasoning effort. No tools, OCR, frame descriptions, warmup game data, scored retries or fallback actions. Provider hardware is unknown. Normal desktop tasks can use the same Mac. Claude Code 2.1.318; Codex CLI 0.166.0-alpha.5.1.",
+      "quality_score": 18.203,
+      "speed_score": 9.738540730059688,
+      "weighted_score": 15.088575622552156,
+      "weighted_per_game": {
+        "coin-run": 49.72195148691207,
+        "dodge-lanes": 49.72195148691207,
+        "doom-basic": 37.24798916079089,
+        "doom-defend-center": 9.587861154122008,
+        "doom-defend-line": 9.587861154122008,
+        "doom-take-cover": 49.72195148691207,
+        "doom-health": 49.72195148691207,
+        "doom-corridor": 9.28060579604817,
+        "doom-home": 0.0,
+        "doom-predict": 41.100661805623695,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 5.606443605730034,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 5.7124430942808715,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 48.0499573859308,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 49.72195148691207,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 2.457378989747492,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 7.46963677721748,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "scoring_policy_id": "quality70-speed30-p95-v1"
     },
     {
       "agent": "openai-gpt-5-5",
@@ -8846,6 +10477,820 @@
         "quantile_method": "linear",
         "sample_scope": "all_recorded_decisions_in_complete_suite"
       }
+    },
+    {
+      "agent": "openai-gpt-6-1-sol",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.5.0",
+      "max_steps": 8,
+      "score": 15.689,
+      "ci95": null,
+      "episodes": 43,
+      "seeds": 1,
+      "seed_ids": [
+        3000
+      ],
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict",
+        "procgen-bigfish",
+        "procgen-bossfight",
+        "procgen-caveflyer",
+        "procgen-chaser",
+        "procgen-climber",
+        "procgen-coinrun",
+        "procgen-dodgeball",
+        "procgen-fruitbot",
+        "procgen-heist",
+        "procgen-jumper",
+        "procgen-leaper",
+        "procgen-maze",
+        "procgen-miner",
+        "procgen-ninja",
+        "procgen-plunder",
+        "procgen-starpilot",
+        "crafter",
+        "miniworld-oneroom",
+        "pettingzoo-pistonball",
+        "atari-breakout",
+        "retro-airstriker",
+        "nethack-score",
+        "minihack-room",
+        "unity-food-collector",
+        "football-empty-goal",
+        "supertuxkart-lighthouse",
+        "luanti-chop-tree",
+        "supertux-first-coin",
+        "dcss-first-experience",
+        "openttd-first-road",
+        "mindustry-copper",
+        "cdda-first-weapon",
+        "warzone-first-derrick"
+      ],
+      "task_metadata": {
+        "coin-run": {},
+        "dodge-lanes": {},
+        "doom-basic": {},
+        "doom-defend-center": {},
+        "doom-defend-line": {},
+        "doom-take-cover": {},
+        "doom-health": {},
+        "doom-corridor": {},
+        "doom-home": {},
+        "doom-predict": {},
+        "procgen-bigfish": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            40
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bigfish",
+          "task_version": "1"
+        },
+        "procgen-bossfight": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bossfight",
+          "task_version": "1"
+        },
+        "procgen-caveflyer": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2,
+            12
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-caveflyer",
+          "task_version": "1"
+        },
+        "procgen-chaser": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-chaser",
+          "task_version": "1"
+        },
+        "procgen-climber": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            12.6
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-climber",
+          "task_version": "1"
+        },
+        "procgen-coinrun": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-coinrun",
+          "task_version": "1"
+        },
+        "procgen-dodgeball": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            19
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-dodgeball",
+          "task_version": "1"
+        },
+        "procgen-fruitbot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -1.5,
+            32.4
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-fruitbot",
+          "task_version": "1"
+        },
+        "procgen-heist": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-heist",
+          "task_version": "1"
+        },
+        "procgen-jumper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-jumper",
+          "task_version": "1"
+        },
+        "procgen-leaper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-leaper",
+          "task_version": "1"
+        },
+        "procgen-maze": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-maze",
+          "task_version": "1"
+        },
+        "procgen-miner": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-miner",
+          "task_version": "1"
+        },
+        "procgen-ninja": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-ninja",
+          "task_version": "1"
+        },
+        "procgen-plunder": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            4.5,
+            30
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-plunder",
+          "task_version": "1"
+        },
+        "procgen-starpilot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2.5,
+            64
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-starpilot",
+          "task_version": "1"
+        },
+        "crafter": {
+          "engine": "crafter",
+          "engine_version": "1.8.3",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            22
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "crafter",
+          "task_version": "2"
+        },
+        "miniworld-oneroom": {
+          "engine": "miniworld",
+          "engine_version": "2.1.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "miniworld-oneroom",
+          "task_version": "1"
+        },
+        "pettingzoo-pistonball": {
+          "engine": "pettingzoo",
+          "engine_version": "1.27.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -100,
+            100
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "pettingzoo-pistonball",
+          "task_version": "1"
+        },
+        "atari-breakout": {
+          "engine": "ale-py",
+          "engine_version": "0.12.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            864
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "atari-breakout",
+          "task_version": "1"
+        },
+        "retro-airstriker": {
+          "engine": "stable-retro",
+          "engine_version": "1.0.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            10000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "retro-airstriker",
+          "task_version": "1"
+        },
+        "nethack-score": {
+          "engine": "nle",
+          "engine_version": "1.3.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "nethack-score",
+          "task_version": "1"
+        },
+        "minihack-room": {
+          "engine": "minihack",
+          "engine_version": "1.0.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "minihack-room",
+          "task_version": "1"
+        },
+        "unity-food-collector": {
+          "assets_sha256": "c28e27b2d3af4391a3e1e95b0871e01a16ef657ee062bb91e7740ac9d0c99be5",
+          "camera_size": [
+            84,
+            84
+          ],
+          "capture_frame_rate": 30,
+          "controlled_agent": "lowest-initial-agent-id",
+          "engine": "mlagents-envs",
+          "engine_version": "1.1.0",
+          "numpy_version": "1.23.5",
+          "observation": "rendered-rgb-only",
+          "peer_policy": "no-op",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "sum of native food rewards; green +1, red -1",
+          "scene": "VisualFoodCollector",
+          "score_range": [
+            0,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "unity-food-collector",
+          "task_version": "1"
+        },
+        "football-empty-goal": {
+          "camera_size": [
+            320,
+            180
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:38e20b0b67e813c5622e7e19fdc6536c1c7bbdfcec01e2b424b3644367faaeb4",
+          "control_policy": "release movement and shot before each decision",
+          "engine": "gfootball",
+          "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81",
+          "engine_version": "2.10.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native goal reward, no checkpoint shaping",
+          "scenario": "academy_empty_goal_close",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "football-empty-goal",
+          "task_version": "1"
+        },
+        "supertuxkart-lighthouse": {
+          "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23",
+          "camera_size": [
+            320,
+            240
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:2888ec0eb5a39d35570efc1b87be53897555ead8782be8e9c4249fc7fbcb2944",
+          "engine": "PySuperTuxKart2",
+          "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+          "engine_variant": "deterministic-render-v2",
+          "engine_version": "0.7.4+ggbrender2",
+          "neutral_preroll_steps": 50,
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "Mesa software / deterministic-render-v2",
+          "renderer_threads": 1,
+          "renderer_vector_bits": 128,
+          "replay": "exact-frame-and-score",
+          "reward_definition": "max(0, native overall distance) / native track length",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.2,
+          "task_id": "supertuxkart-lighthouse",
+          "task_version": "3",
+          "track": "lighthouse"
+        },
+        "luanti-chop-tree": {
+          "camera_size": [
+            64,
+            64
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:b8f1c938eb11357818462dd08cc34306b66de1bf02819bddee9271e11fa252e6",
+          "engine": "craftium",
+          "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
+          "engine_variant": "serial-lockstep-v2",
+          "engine_version": "0.0.1",
+          "mesh_generation_threads": 1,
+          "numpy_version": "2.5.3",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+          "scenario": "Craftium/ChopTree-v0: first tree block",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.02,
+          "task_id": "luanti-chop-tree",
+          "task_version": "1",
+          "weather": "disabled via upstream enable_weather setting"
+        },
+        "supertux-first-coin": {
+          "camera_size": [
+            640,
+            480
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:09dc2a47e53072c7c93aede85b4ddc2735ae4f47ac08dcb48c0e471db8a9ae31",
+          "engine": "SuperTux",
+          "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.6.3+ggbench1",
+          "frames_per_action": 8,
+          "initialization": "skip level-introduction menu and fades; fresh player/save",
+          "level": "world1/welcome_antarctica.stl",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "physics_step_seconds": 0.015,
+          "renderer": "SDL software",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native level coin count; first coin completes task",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "supertux-first-coin",
+          "task_version": "1"
+        },
+        "dcss-first-experience": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1e7ca78cca08b7ca041b88dda82fb1dca7e6d10a2405a3c9ad6912eef8af870e",
+          "control_policy": "one native key per decision; no auto-explore or auto-fight",
+          "engine": "DCSS",
+          "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.34.0+ggbench1",
+          "initialization": "advance title and seed-confirmation menus before observing",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 tiles / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native experience gain; death ends task",
+          "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+          "simulation": "lockstep",
+          "task_id": "dcss-first-experience",
+          "task_version": "1"
+        },
+        "openttd-first-road": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:243ae8e7300d3d3551203bb06e95c7ea8a9f42afcc08c66e0d3c087095e6dedb",
+          "cursor_step_pixels": 32,
+          "engine": "OpenTTD",
+          "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "15.3+ggbench1",
+          "initialization": "16 native ticks; fresh company and configuration",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when native company infrastructure owns at least two road bits",
+          "scenario": "new 64x64 company in 1950; first owned road",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 30,
+          "task_id": "openttd-first-road",
+          "task_version": "1"
+        },
+        "mindustry-copper": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:5508ebf744bd11906e7bb0b692b2b001c7441a5c413333d3a31c64ff1d4d987d",
+          "cursor_step_pixels": 32,
+          "engine": "Mindustry",
+          "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "160.5+ggbench1",
+          "frames_per_action": 6,
+          "initialization": "120 native frames; fresh player and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "optional_effects": false,
+          "physics_step_seconds": 0.016666666666666666,
+          "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+          "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+          "score_range": [
+            0,
+            15
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "mindustry-copper",
+          "task_version": "1"
+        },
+        "cdda-first-weapon": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:3b5b86786dd8fd140b5543b8628b972df8f270f7add94344c1fd7d6a3c07832d",
+          "control_policy": "one native key per decision; tutorial popups remain visible",
+          "engine": "Cataclysm: Dark Days Ahead",
+          "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.I-1+ggbench1",
+          "initialization": "native tutorial world and preset character; fresh user directory",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 software / UltimateCataclysm tiles",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+          "scenario": "native tutorial; first wielded baseball bat",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "cdda-first-weapon",
+          "task_version": "1"
+        },
+        "warzone-first-derrick": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1b98e03d909991b93546e3f5264d4e8a75e93ee0389a1f895b8079a155cc55d2",
+          "cursor_step_pixels": 32,
+          "engine": "Warzone 2100",
+          "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "4.7.0+ggbench1",
+          "fine_cursor_step_pixels": 8,
+          "initialization": "40 native frames; fresh tutorial and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native completed structure; two unit losses end task",
+          "scenario": "native TUTORIAL3; first constructed oil derrick",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 100,
+          "task_id": "warzone-first-derrick",
+          "task_version": "1"
+        }
+      },
+      "decisions": 344,
+      "p50_ms": 8070.8372295,
+      "p95_ms": 12459.254324899997,
+      "max_ms": 16462.069917,
+      "response_timeout_seconds": 120.0,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 100.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 66.19,
+        "doom-defend-center": 9.524,
+        "doom-defend-line": 9.524,
+        "doom-take-cover": 100.0,
+        "doom-health": 100.0,
+        "doom-corridor": 9.091,
+        "doom-home": 0.0,
+        "doom-predict": 76.183,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 4.425,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 4.545,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 93.775,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 0.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 1.353,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "errors": 0,
+      "aborted_episodes": 0,
+      "model": "gpt-6.1-sol",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "gpt-6.1-sol",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 344,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low"
+      },
+      "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. A fresh authenticated CLI process receives each original PNG and the frozen prompt. Low reasoning effort. No tools, OCR, frame descriptions, warmup game data, scored retries or fallback actions. Provider hardware is unknown. Normal desktop tasks can use the same Mac. Claude Code 2.1.318; Codex CLI 0.166.0-alpha.5.1.",
+      "quality_score": 15.689,
+      "speed_score": 7.429832112986913,
+      "weighted_score": 12.537483781512858,
+      "weighted_per_game": {
+        "coin-run": 45.845181889631206,
+        "dodge-lanes": 45.845181889631206,
+        "doom-basic": 34.3438016214822,
+        "doom-defend-center": 8.84030544655823,
+        "doom-defend-line": 8.84030544655823,
+        "doom-take-cover": 45.845181889631206,
+        "doom-health": 45.845181889631206,
+        "doom-corridor": 8.557006473846617,
+        "doom-home": 0.0,
+        "doom-predict": 37.89608532881132,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 5.169314943849476,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 5.267049760917149,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 43.82830256448177,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 0.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 2.2552887718491004,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "scoring_policy_id": "quality70-speed30-p95-v1"
     },
     {
       "agent": "openai-gpt-6-astra",
@@ -13777,6 +16222,823 @@
       }
     },
     {
+      "agent": "claude-claude-opus-5-5",
+      "mode": "exhibition",
+      "hardware": "Darwin arm64",
+      "version": "0.5.0",
+      "max_steps": 8,
+      "score": 7.323,
+      "ci95": null,
+      "episodes": 43,
+      "seeds": 1,
+      "seed_ids": [
+        3000
+      ],
+      "games": [
+        "coin-run",
+        "dodge-lanes",
+        "doom-basic",
+        "doom-defend-center",
+        "doom-defend-line",
+        "doom-take-cover",
+        "doom-health",
+        "doom-corridor",
+        "doom-home",
+        "doom-predict",
+        "procgen-bigfish",
+        "procgen-bossfight",
+        "procgen-caveflyer",
+        "procgen-chaser",
+        "procgen-climber",
+        "procgen-coinrun",
+        "procgen-dodgeball",
+        "procgen-fruitbot",
+        "procgen-heist",
+        "procgen-jumper",
+        "procgen-leaper",
+        "procgen-maze",
+        "procgen-miner",
+        "procgen-ninja",
+        "procgen-plunder",
+        "procgen-starpilot",
+        "crafter",
+        "miniworld-oneroom",
+        "pettingzoo-pistonball",
+        "atari-breakout",
+        "retro-airstriker",
+        "nethack-score",
+        "minihack-room",
+        "unity-food-collector",
+        "football-empty-goal",
+        "supertuxkart-lighthouse",
+        "luanti-chop-tree",
+        "supertux-first-coin",
+        "dcss-first-experience",
+        "openttd-first-road",
+        "mindustry-copper",
+        "cdda-first-weapon",
+        "warzone-first-derrick"
+      ],
+      "task_metadata": {
+        "coin-run": {},
+        "dodge-lanes": {},
+        "doom-basic": {},
+        "doom-defend-center": {},
+        "doom-defend-line": {},
+        "doom-take-cover": {},
+        "doom-health": {},
+        "doom-corridor": {},
+        "doom-home": {},
+        "doom-predict": {},
+        "procgen-bigfish": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            40
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bigfish",
+          "task_version": "1"
+        },
+        "procgen-bossfight": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-bossfight",
+          "task_version": "1"
+        },
+        "procgen-caveflyer": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2,
+            12
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-caveflyer",
+          "task_version": "1"
+        },
+        "procgen-chaser": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-chaser",
+          "task_version": "1"
+        },
+        "procgen-climber": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1,
+            12.6
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-climber",
+          "task_version": "1"
+        },
+        "procgen-coinrun": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-coinrun",
+          "task_version": "1"
+        },
+        "procgen-dodgeball": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            19
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-dodgeball",
+          "task_version": "1"
+        },
+        "procgen-fruitbot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -1.5,
+            32.4
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-fruitbot",
+          "task_version": "1"
+        },
+        "procgen-heist": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-heist",
+          "task_version": "1"
+        },
+        "procgen-jumper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-jumper",
+          "task_version": "1"
+        },
+        "procgen-leaper": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-leaper",
+          "task_version": "1"
+        },
+        "procgen-maze": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-maze",
+          "task_version": "1"
+        },
+        "procgen-miner": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            1.5,
+            13
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-miner",
+          "task_version": "1"
+        },
+        "procgen-ninja": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            3.5,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-ninja",
+          "task_version": "1"
+        },
+        "procgen-plunder": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            4.5,
+            30
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-plunder",
+          "task_version": "1"
+        },
+        "procgen-starpilot": {
+          "engine": "procgen",
+          "engine_version": "0.10.7",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            2.5,
+            64
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "procgen-starpilot",
+          "task_version": "1"
+        },
+        "crafter": {
+          "engine": "crafter",
+          "engine_version": "1.8.3",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            22
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "crafter",
+          "task_version": "2"
+        },
+        "miniworld-oneroom": {
+          "engine": "miniworld",
+          "engine_version": "2.1.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "miniworld-oneroom",
+          "task_version": "1"
+        },
+        "pettingzoo-pistonball": {
+          "engine": "pettingzoo",
+          "engine_version": "1.27.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            -100,
+            100
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "pettingzoo-pistonball",
+          "task_version": "1"
+        },
+        "atari-breakout": {
+          "engine": "ale-py",
+          "engine_version": "0.12.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            864
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "atari-breakout",
+          "task_version": "1"
+        },
+        "retro-airstriker": {
+          "engine": "stable-retro",
+          "engine_version": "1.0.1",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            10000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "retro-airstriker",
+          "task_version": "1"
+        },
+        "nethack-score": {
+          "engine": "nle",
+          "engine_version": "1.3.0",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1000
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "nethack-score",
+          "task_version": "1"
+        },
+        "minihack-room": {
+          "engine": "minihack",
+          "engine_version": "1.0.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "minihack-room",
+          "task_version": "1"
+        },
+        "unity-food-collector": {
+          "assets_sha256": "c28e27b2d3af4391a3e1e95b0871e01a16ef657ee062bb91e7740ac9d0c99be5",
+          "camera_size": [
+            84,
+            84
+          ],
+          "capture_frame_rate": 30,
+          "controlled_agent": "lowest-initial-agent-id",
+          "engine": "mlagents-envs",
+          "engine_version": "1.1.0",
+          "numpy_version": "1.23.5",
+          "observation": "rendered-rgb-only",
+          "peer_policy": "no-op",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "sum of native food rewards; green +1, red -1",
+          "scene": "VisualFoodCollector",
+          "score_range": [
+            0,
+            10
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "unity-food-collector",
+          "task_version": "1"
+        },
+        "football-empty-goal": {
+          "camera_size": [
+            320,
+            180
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:38e20b0b67e813c5622e7e19fdc6536c1c7bbdfcec01e2b424b3644367faaeb4",
+          "control_policy": "release movement and shot before each decision",
+          "engine": "gfootball",
+          "engine_revision": "ba9952130898bde2879b01ff2b49d3d48d26ce81",
+          "engine_version": "2.10.2",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native goal reward, no checkpoint shaping",
+          "scenario": "academy_empty_goal_close",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "football-empty-goal",
+          "task_version": "1"
+        },
+        "supertuxkart-lighthouse": {
+          "assets_sha256": "56cd754653224efde4a40aef0400a71f03f72f18d2c35a89896db052dc096b23",
+          "camera_size": [
+            320,
+            240
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:2888ec0eb5a39d35570efc1b87be53897555ead8782be8e9c4249fc7fbcb2944",
+          "engine": "PySuperTuxKart2",
+          "engine_revision": "dd70f6823f248ae1df2ce513839a9b2c8c940c39",
+          "engine_variant": "deterministic-render-v2",
+          "engine_version": "0.7.4+ggbrender2",
+          "neutral_preroll_steps": 50,
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "Mesa software / deterministic-render-v2",
+          "renderer_threads": 1,
+          "renderer_vector_bits": 128,
+          "replay": "exact-frame-and-score",
+          "reward_definition": "max(0, native overall distance) / native track length",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.2,
+          "task_id": "supertuxkart-lighthouse",
+          "task_version": "3",
+          "track": "lighthouse"
+        },
+        "luanti-chop-tree": {
+          "camera_size": [
+            64,
+            64
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:b8f1c938eb11357818462dd08cc34306b66de1bf02819bddee9271e11fa252e6",
+          "engine": "craftium",
+          "engine_revision": "8cffe4176e793f78d00b17fa7e46ccf333a7b5b0",
+          "engine_variant": "serial-lockstep-v2",
+          "engine_version": "0.0.1",
+          "mesh_generation_threads": 1,
+          "numpy_version": "2.5.3",
+          "observation": "rendered-rgb-only",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native Lua tree-node dig reward; first reward completes task",
+          "scenario": "Craftium/ChopTree-v0: first tree block",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "pinned world snapshot; fixed map/Lua seed on initial reset",
+          "simulation": "lockstep",
+          "step_seconds": 0.02,
+          "task_id": "luanti-chop-tree",
+          "task_version": "1",
+          "weather": "disabled via upstream enable_weather setting"
+        },
+        "supertux-first-coin": {
+          "camera_size": [
+            640,
+            480
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:09dc2a47e53072c7c93aede85b4ddc2735ae4f47ac08dcb48c0e471db8a9ae31",
+          "engine": "SuperTux",
+          "engine_revision": "c1ddb4f28c54de77f07aa9965231a91c0ed06708",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.6.3+ggbench1",
+          "frames_per_action": 8,
+          "initialization": "skip level-introduction menu and fades; fresh player/save",
+          "level": "world1/welcome_antarctica.stl",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "physics_step_seconds": 0.015,
+          "renderer": "SDL software",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native level coin count; first coin completes task",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "supertux-first-coin",
+          "task_version": "1"
+        },
+        "dcss-first-experience": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1e7ca78cca08b7ca041b88dda82fb1dca7e6d10a2405a3c9ad6912eef8af870e",
+          "control_policy": "one native key per decision; no auto-explore or auto-fight",
+          "engine": "DCSS",
+          "engine_revision": "19cb0921cbcb6463fcedd1bb06636446c50b1905",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.34.0+ggbench1",
+          "initialization": "advance title and seed-confirmation menus before observing",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 tiles / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native experience gain; death ends task",
+          "scenario": "Dungeon:1; Minotaur Fighter with war axe; first experience",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "native uint64 seed; benchmark zero maps to uint64 maximum",
+          "simulation": "lockstep",
+          "task_id": "dcss-first-experience",
+          "task_version": "1"
+        },
+        "openttd-first-road": {
+          "camera_size": [
+            800,
+            600
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:243ae8e7300d3d3551203bb06e95c7ea8a9f42afcc08c66e0d3c087095e6dedb",
+          "cursor_step_pixels": 32,
+          "engine": "OpenTTD",
+          "engine_revision": "14ec60f248547d4d062a1160f0fc26d742319888",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "15.3+ggbench1",
+          "initialization": "16 native ticks; fresh company and configuration",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native 32bpp software framebuffer; OpenGFX 7.1",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when native company infrastructure owns at least two road bits",
+          "scenario": "new 64x64 company in 1950; first owned road",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 30,
+          "task_id": "openttd-first-road",
+          "task_version": "1"
+        },
+        "mindustry-copper": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:5508ebf744bd11906e7bb0b692b2b001c7441a5c413333d3a31c64ff1d4d987d",
+          "cursor_step_pixels": 32,
+          "engine": "Mindustry",
+          "engine_revision": "067c720a8817c1c9fb586c03898a7d948caaed56",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "160.5+ggbench1",
+          "frames_per_action": 6,
+          "initialization": "120 native frames; fresh player and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "optional_effects": false,
+          "physics_step_seconds": 0.016666666666666666,
+          "renderer": "native SDL/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "native player-plus-core copper gain from initial total; target 15",
+          "scenario": "serpulo/groundZero; native first-15-copper tutorial objective",
+          "score_range": [
+            0,
+            15
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "mindustry-copper",
+          "task_version": "1"
+        },
+        "cdda-first-weapon": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:3b5b86786dd8fd140b5543b8628b972df8f270f7add94344c1fd7d6a3c07832d",
+          "control_policy": "one native key per decision; tutorial popups remain visible",
+          "engine": "Cataclysm: Dark Days Ahead",
+          "engine_revision": "7b2efa5cea38e4d4d97dd0e63b28b9148623da59",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "0.I-1+ggbench1",
+          "initialization": "native tutorial world and preset character; fresh user directory",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL2 software / UltimateCataclysm tiles",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one when the native avatar wields the tutorial baseball bat",
+          "scenario": "native tutorial; first wielded baseball bat",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "task_id": "cdda-first-weapon",
+          "task_version": "1"
+        },
+        "warzone-first-derrick": {
+          "camera_size": [
+            960,
+            640
+          ],
+          "container_architecture": "arm64",
+          "container_image": "sha256:1b98e03d909991b93546e3f5264d4e8a75e93ee0389a1f895b8079a155cc55d2",
+          "cursor_step_pixels": 32,
+          "engine": "Warzone 2100",
+          "engine_revision": "7d3d8e51a61ceee89e6bf672a41337e1a9cd7392",
+          "engine_variant": "native-lockstep-v1",
+          "engine_version": "4.7.0+ggbench1",
+          "fine_cursor_step_pixels": 8,
+          "initialization": "40 native frames; fresh tutorial and settings",
+          "numpy_version": "1.26.4",
+          "observation": "rendered-rgb-only",
+          "renderer": "native SDL3/OpenGL / Xvfb / Mesa",
+          "replay": "exact-frame-and-score",
+          "reward_definition": "one on first native completed structure; two unit losses end task",
+          "scenario": "native TUTORIAL3; first constructed oil derrick",
+          "score_range": [
+            0,
+            1
+          ],
+          "seed_policy": "fixed-initial-reset",
+          "simulation": "lockstep",
+          "step_milliseconds": 100,
+          "task_id": "warzone-first-derrick",
+          "task_version": "1"
+        }
+      },
+      "decisions": 266,
+      "p50_ms": 3528.8785625,
+      "p95_ms": 5855.324333250001,
+      "max_ms": 8725.550125,
+      "response_timeout_seconds": 120.0,
+      "trust": "local-unattested",
+      "official_rank": null,
+      "per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 100.0,
+        "doom-basic": 0.0,
+        "doom-defend-center": 0.0,
+        "doom-defend-line": 0.0,
+        "doom-take-cover": 100.0,
+        "doom-health": 100.0,
+        "doom-corridor": 9.091,
+        "doom-home": 0.0,
+        "doom-predict": 0.0,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 4.425,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 0.0,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 0.0,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 0.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 1.362,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "errors": 15,
+      "aborted_episodes": 15,
+      "model": "claude-opus-5-5",
+      "provider_metadata": {
+        "transport": "authenticated-cli-per-frame",
+        "requested_model": "claude-opus-5-5",
+        "tool_events": 0,
+        "observation": "png-only",
+        "calls": 2,
+        "prompt_version": "pixels-json-action/2",
+        "reasoning_effort": "low",
+        "resolved_models": [
+          "claude-opus-5-5"
+        ]
+      },
+      "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One model and one game run at a time. A fresh authenticated CLI process receives each original PNG and the frozen prompt. Low reasoning effort. No tools, OCR, frame descriptions, warmup game data, scored retries or fallback actions. Provider hardware is unknown. Normal desktop tasks can use the same Mac. Claude Code 2.1.318; Codex CLI 0.166.0-alpha.5.1.",
+      "quality_score": 7.323,
+      "speed_score": 14.58720187970911,
+      "weighted_score": 9.004796900278,
+      "weighted_per_game": {
+        "coin-run": 0.0,
+        "dodge-lanes": 56.12955486000235,
+        "doom-basic": 0.0,
+        "doom-defend-center": 0.0,
+        "doom-defend-line": 0.0,
+        "doom-take-cover": 56.12955486000235,
+        "doom-health": 56.12955486000235,
+        "doom-corridor": 10.476585423250299,
+        "doom-home": 0.0,
+        "doom-predict": 0.0,
+        "procgen-bigfish": 0.0,
+        "procgen-bossfight": 0.0,
+        "procgen-caveflyer": 0.0,
+        "procgen-chaser": 0.0,
+        "procgen-climber": 0.0,
+        "procgen-coinrun": 0.0,
+        "procgen-dodgeball": 0.0,
+        "procgen-fruitbot": 6.328938718750129,
+        "procgen-heist": 0.0,
+        "procgen-jumper": 0.0,
+        "procgen-leaper": 0.0,
+        "procgen-maze": 0.0,
+        "procgen-miner": 0.0,
+        "procgen-ninja": 0.0,
+        "procgen-plunder": 0.0,
+        "procgen-starpilot": 0.0,
+        "crafter": 0.0,
+        "miniworld-oneroom": 0.0,
+        "pettingzoo-pistonball": 0.0,
+        "atari-breakout": 0.0,
+        "retro-airstriker": 0.0,
+        "nethack-score": 0.0,
+        "minihack-room": 0.0,
+        "unity-food-collector": 0.0,
+        "football-empty-goal": 0.0,
+        "supertuxkart-lighthouse": 2.7740582316676705,
+        "luanti-chop-tree": 0.0,
+        "supertux-first-coin": 0.0,
+        "dcss-first-experience": 0.0,
+        "openttd-first-road": 0.0,
+        "mindustry-copper": 0.0,
+        "cdda-first-weapon": 0.0,
+        "warzone-first-derrick": 0.0
+      },
+      "scoring_policy_id": "quality70-speed30-p95-v1"
+    },
+    {
       "agent": "mlx-mlx-community-SmolVLM2-256M-Video-Instruct-mlx",
       "mode": "exhibition",
       "hardware": "Darwin arm64",
@@ -17363,10 +20625,50 @@
       "provider": "typesafe",
       "status": "complete",
       "completed": 43
+    },
+    {
+      "agent": "openai-gpt-6-1-sol",
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "openai-gpt-6-1-terra",
+      "provider": "openai",
+      "model": "gpt-6.1-terra",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "claude-claude-opus-5-5",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "agent": "claude-claude-haiku-5-5",
+      "provider": "claude",
+      "model": "claude-haiku-5-5",
+      "revision": null,
+      "status": "complete",
+      "completed": 43
+    },
+    {
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "status": "access-blocked",
+      "completed": 0,
+      "reason": "The provider requires data retention to be enabled for the organization or workspace."
     }
   ],
   "hardware_details": "Apple M3 Max; 48 GiB RAM; 16 CPU cores; macOS arm64. One local MLX model and one game run at a time. Weights remain loaded between games. Each model receives three gray startup images before scored actions. Startup image sizes: 160x120, 320x240, 960x640. Startup has no game data. Every game action remains in the measured result. Normal desktop tasks can use the same Mac.",
   "suite_files": [
+    "benchmarks/mac-account-models-2026-11-05.json",
     "benchmarks/mac-jev-image-2026-11-05.json",
     "benchmarks/mac-hosted-rerun-2026-10-05.json",
     "benchmarks/mac-hf-vlm-2026-10-05.json",
@@ -27244,15 +30546,15 @@
       "hardware_details": "Shared Apple M3 Max, 48 GiB RAM, 16 CPU cores. Up to ten hosted CLI evaluations and one local VLM; these are throughput exhibitions, not isolated latency microbenchmarks."
     },
     "exhibition": {
-      "season": "jev-image-2026-11-05",
-      "hardware_details": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output, integer nearest-neighbor upscaling for frames below the API minimum, and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference."
+      "season": "account-models-2026-11-05",
+      "hardware_details": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output, integer nearest-neighbor upscaling for frames below the API minimum, and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference. The new account cohort uses the same fresh-CLI image path as the earlier hosted models, with updated clients and low effort. Haiku 5.5 supports explicit low effort; the old Haiku 4.5 run used its default effort. The new cohort uses the audited rebuilt container images. Client and transport costs remain in the measured reaction time."
     },
     "local_previous": {
       "season": "0.2.0",
       "hardware_details": "Shared Apple M3 Max, 48 GiB RAM, 16 CPU cores. Up to ten hosted CLI evaluations and one local VLM; these are throughput exhibitions, not isolated latency microbenchmarks."
     }
   },
-  "current_campaign": "results/jev-image-2026-11-05/campaign.json",
+  "current_campaign": "results/account-models-2026-11-05/campaign.json",
   "local_previous": [
     {
       "agent": "react",
@@ -29145,15 +32447,22 @@
       "sha256": "f1b2d6a893d036d388c6032be5f519321ffdf161e0e941c27438fc4e1684abe2",
       "season": "jev-image-2026-11-05",
       "note": "Previous quality-only ranking and historical latency rule. Measurements remain unchanged."
+    },
+    {
+      "snapshot": "results/account-models-2026-11-05/previous-snapshot.json",
+      "sha256": "2122b955805c871d35c9bab02e517fe1b081ce2c4f25c19c01ccaef9327a17c6",
+      "season": "jev-image-2026-11-05",
+      "note": "The previous weighted snapshot and all 16 model rows remain unchanged."
     }
   ],
   "campaigns": [
     "results/refresh-2026-10-05/campaign.json",
     "results/hf-vlm-2026-10-05/campaign.json",
     "results/hosted-rerun-2026-10-05/campaign.json",
-    "results/jev-image-2026-11-05/campaign.json"
+    "results/jev-image-2026-11-05/campaign.json",
+    "results/account-models-2026-11-05/campaign.json"
   ],
-  "comparison_note": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output, integer nearest-neighbor upscaling for frames below the API minimum, and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference.",
+  "comparison_note": "Models use the same task definitions, scenarios, seed and decision horizon. Jev uses native Choice output, integer nearest-neighbor upscaling for frames below the API minimum, and a persistent image API; earlier hosted models use a fresh CLI process per frame. Jev's nine container engines have new image IDs from pinned source rebuilds. One fixed previous camera and score trace per rebuilt scenario passed exact replay. This does not establish equivalence for every possible trajectory. Each row retains its actual engine IDs and transport. Timings measure the full response path, not model-only inference. The new account cohort uses the same fresh-CLI image path as the earlier hosted models, with updated clients and low effort. Haiku 5.5 supports explicit low effort; the old Haiku 4.5 run used its default effort. The new cohort uses the audited rebuilt container images. Client and transport costs remain in the measured reaction time.",
   "scoring_policy": {
     "id": "quality70-speed30-p95-v1",
     "quality_weight": 0.7,

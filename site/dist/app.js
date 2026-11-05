@@ -12,6 +12,10 @@ const labels = {
   astra: "GPT-6 Astra",
   claude: "Claude",
   "jev-1.14.0": "Jev 1.14 · native images",
+  "gpt-6.1-sol": "GPT-6.1 Sol",
+  "gpt-6.1-terra": "GPT-6.1 Terra",
+  "claude-opus-5-5": "Claude Opus 5.5",
+  "claude-haiku-5-5": "Claude Haiku 5.5",
   "mlx-community/SmolVLM2-256M-Video-Instruct-mlx": "SmolVLM2 256M",
   "mlx-community/SmolVLM2-500M-Video-Instruct-mlx": "SmolVLM2 500M",
   "LiquidAI/LFM2.5-VL-450M-MLX-4bit": "LFM2.5-VL 450M · 4 bit",
@@ -231,7 +235,7 @@ document.querySelectorAll("[data-track]").forEach((b) =>
 );
 $("game-filter").addEventListener("change", renderGames);
 $("score-game").addEventListener("change", renderBoard);
-fetch("data.json?v=weighted-score-2026-11-05", { cache: "no-cache" })
+fetch("data.json?v=account-models-2026-11-05", { cache: "no-cache" })
   .then((r) => {
     if (!r.ok) throw new Error("Results unavailable");
     return r.json();
@@ -243,7 +247,7 @@ fetch("data.json?v=weighted-score-2026-11-05", { cache: "no-cache" })
     $("scenario-count").textContent = d.integration_coverage?.task_count || d.coverage?.task_count || games.length;
     $("availability").replaceChildren();
     (d.model_status || []).forEach(model => {
-      $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.error_type ? "Setup failure: " + model.error_type : ""}`));
+      $("availability").append(el("li", `${model.model}: ${model.status === "complete" ? `${model.completed} episodes recorded` : model.status}. ${model.reason || (model.error_type ? "Setup failure: " + model.error_type : "")}`));
     });
     $("episodes").textContent = rows
       .reduce((n, r) => n + r.episodes, 0)
